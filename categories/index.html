@@ -156,6 +156,112 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/25/git教程/">搭建git服务器教程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/25/git教程/" class="archive-article-date">
+  	<time datetime="2018-07-25T08:51:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##1.下载安装git</p>
+<p>###安装依赖库和编译工具<br>为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具    </p>
+<pre><code>yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+</code></pre><p>安装编译工具  </p>
+<pre><code>yum install gcc perl-ExtUtils-MakeMaker
+</code></pre><p>###下载git<br>选一个目录，用来放下载下来的安装包，这里将安装包放在 /usr/local/src 目录里   </p>
+<pre><code>cd /usr/local/src    
+</code></pre><p>到官网找一个新版稳定的源码包下载到 /usr/local/src 文件夹里    </p>
+<pre><code>wget https://www.kernel.org/pub/software/scm/git/git-2.10.0.tar.gz
+</code></pre><p>###解压和编译<br>解压下载的资源包 </p>
+<pre><code>tar -zvxf git-2.10.0.tar.gz
+</code></pre><p>解压后进入git-2.10.0  </p>
+<pre><code>cd git-2.10.0
+</code></pre><p>执行编译</p>
+<pre><code>make all prefix=/usr/local/git
+</code></pre><p>编译完成后, 安装到 /usr/local/git 目录下   </p>
+<pre><code>make install prefix=/usr/local/git
+</code></pre><p>##2.配置环境变量</p>
+<p>###将git目录加入PATH<br>将原来的PATH指向目录修改为现在的目录   </p>
+<pre><code>echo &apos;export PATH=$PATH:/usr/local/git/bin&apos; &gt;&gt; /etc/bashrc
+</code></pre><p>生成环境变量   </p>
+<pre><code>source /etc/bashrc
+</code></pre><p>此时我们查看git版本号，说明我们已经安装成功了。   </p>
+<pre><code>git --version
+</code></pre><p>##3.创建git账号密码</p>
+<p>###创建git账号<br>为我们刚刚搭建好的 git 创建一个账号   </p>
+<pre><code>useradd -m gituser
+</code></pre><p>然后为这个账号设置密码[?]   </p>
+<pre><code>passwd gituser
+</code></pre><p>##4.初始化git仓库并配置用户权限</p>
+<p>###创建git参考并初始化<br>我们创建 /data/repositories 目录用于存放 git 仓库   </p>
+<pre><code>mkdir -p /data/repositories
+</code></pre><p>创建好后，初始化这个仓库   </p>
+<pre><code>cd /data/repositories/ &amp;&amp; git init --bare test.git
+</code></pre><p>###配置用户权限<br>给 git 仓库目录设置用户和用户组并设置权限   </p>
+<pre><code>chown -R gituser:gituser /data/repositories
+
+chmod 755 /data/repositories
+</code></pre><p>[查找 git-shell 所在目录] , 编辑 /etc/passwd 文件，将最后一行关于 gituser 的登录 shell 配置改为 如下</p>
+<p>示例代码：/etc/passwd</p>
+<pre><code>gituser:x:500:500::/home/gituser:/usr/local/git/bin/git-shell
+</code></pre><p>###使用搭建好的 Git 服务<br>克隆test repo 到本地</p>
+<pre><code>cd ~ &amp;&amp; git clone gituser@&lt;您的 CVM IP 地址&gt;:/data/repositories/test.git
+</code></pre><p>恭喜，Git 服务器搭建完成, 从此以后你可以方便地将你的本地代码提交到 Git 服务器托管了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/25/git教程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
