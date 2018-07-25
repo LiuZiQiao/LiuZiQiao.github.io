@@ -176,19 +176,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##1.下载安装git</p>
-<p>###安装依赖库和编译工具</p>
-<p>为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具    </p>
+        <h2 id="1-下载安装git"><a href="#1-下载安装git" class="headerlink" title="1.下载安装git"></a>1.下载安装git</h2><h3 id="安装依赖库和编译工具"><a href="#安装依赖库和编译工具" class="headerlink" title="安装依赖库和编译工具"></a>安装依赖库和编译工具</h3><p>为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具    </p>
 <pre><code>yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
 </code></pre><p>安装编译工具  </p>
 <pre><code>yum install gcc perl-ExtUtils-MakeMaker
-</code></pre><p>###下载git</p>
-<p>选一个目录，用来放下载下来的安装包，这里将安装包放在 /usr/local/src 目录里   </p>
+</code></pre><h3 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h3><p>选一个目录，用来放下载下来的安装包，这里将安装包放在 /usr/local/src 目录里   </p>
 <pre><code>cd /usr/local/src    
 </code></pre><p>到官网找一个新版稳定的源码包下载到 /usr/local/src 文件夹里    </p>
 <pre><code>wget https://www.kernel.org/pub/software/scm/git/git-2.10.0.tar.gz
-</code></pre><p>###解压和编译  </p>
-<p>解压下载的资源包 </p>
+</code></pre><h3 id="解压和编译"><a href="#解压和编译" class="headerlink" title="解压和编译"></a>解压和编译</h3><p>解压下载的资源包 </p>
 <pre><code>tar -zvxf git-2.10.0.tar.gz
 </code></pre><p>解压后进入git-2.10.0  </p>
 <pre><code>cd git-2.10.0
@@ -196,36 +192,28 @@
 <pre><code>make all prefix=/usr/local/git
 </code></pre><p>编译完成后, 安装到 /usr/local/git 目录下   </p>
 <pre><code>make install prefix=/usr/local/git
-</code></pre><p>##2.配置环境变量</p>
-<p>###将git目录加入PATH   </p>
-<p>将原来的PATH指向目录修改为现在的目录   </p>
+</code></pre><h2 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h2><h3 id="将git目录加入PATH"><a href="#将git目录加入PATH" class="headerlink" title="将git目录加入PATH"></a>将git目录加入PATH</h3><p>将原来的PATH指向目录修改为现在的目录   </p>
 <pre><code>echo &apos;export PATH=$PATH:/usr/local/git/bin&apos; &gt;&gt; /etc/bashrc
 </code></pre><p>生成环境变量   </p>
 <pre><code>source /etc/bashrc
 </code></pre><p>此时我们查看git版本号，说明我们已经安装成功了。   </p>
 <pre><code>git --version
-</code></pre><p>##3.创建git账号密码</p>
-<p>###创建git账号</p>
-<p>为我们刚刚搭建好的 git 创建一个账号   </p>
+</code></pre><h2 id="3-创建git账号密码"><a href="#3-创建git账号密码" class="headerlink" title="3.创建git账号密码"></a>3.创建git账号密码</h2><h3 id="创建git账号"><a href="#创建git账号" class="headerlink" title="创建git账号"></a>创建git账号</h3><p>为我们刚刚搭建好的 git 创建一个账号   </p>
 <pre><code>useradd -m gituser
 </code></pre><p>然后为这个账号设置密码[?]   </p>
 <pre><code>passwd gituser
-</code></pre><p>##4.初始化git仓库并配置用户权限</p>
-<p>###创建git参考并初始化</p>
-<p>我们创建 /data/repositories 目录用于存放 git 仓库   </p>
+</code></pre><h2 id="4-初始化git仓库并配置用户权限"><a href="#4-初始化git仓库并配置用户权限" class="headerlink" title="4.初始化git仓库并配置用户权限"></a>4.初始化git仓库并配置用户权限</h2><h3 id="创建git参考并初始化"><a href="#创建git参考并初始化" class="headerlink" title="创建git参考并初始化"></a>创建git参考并初始化</h3><p>我们创建 /data/repositories 目录用于存放 git 仓库   </p>
 <pre><code>mkdir -p /data/repositories
 </code></pre><p>创建好后，初始化这个仓库   </p>
 <pre><code>cd /data/repositories/ &amp;&amp; git init --bare test.git
-</code></pre><p>###配置用户权限</p>
-<p>给 git 仓库目录设置用户和用户组并设置权限   </p>
+</code></pre><h3 id="配置用户权限"><a href="#配置用户权限" class="headerlink" title="配置用户权限"></a>配置用户权限</h3><p>给 git 仓库目录设置用户和用户组并设置权限   </p>
 <pre><code>chown -R gituser:gituser /data/repositories
 
 chmod 755 /data/repositories
 </code></pre><p>[查找 git-shell 所在目录] , 编辑 /etc/passwd 文件，将最后一行关于 gituser 的登录 shell 配置改为 如下</p>
 <p>示例代码：/etc/passwd</p>
 <pre><code>gituser:x:500:500::/home/gituser:/usr/local/git/bin/git-shell
-</code></pre><p>###使用搭建好的 Git 服务</p>
-<p>克隆test repo 到本地</p>
+</code></pre><h3 id="使用搭建好的-Git-服务"><a href="#使用搭建好的-Git-服务" class="headerlink" title="使用搭建好的 Git 服务"></a>使用搭建好的 Git 服务</h3><p>克隆test repo 到本地</p>
 <pre><code>cd ~ &amp;&amp; git clone gituser@&lt;您的 CVM IP 地址&gt;:/data/repositories/test.git
 </code></pre><p>恭喜，Git 服务器搭建完成, 从此以后你可以方便地将你的本地代码提交到 Git 服务器托管了。</p>
 
