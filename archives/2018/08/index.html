@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>搭建git服务器教程 | Liuxiaokun</title>
+  <title>Archives: 2018/8 | Liuxiaokun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.下载安装git安装依赖库和编译工具为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具     yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 安装编译工具   yum install gcc perl-ExtUtils-MakeMaker 下载git选一个目录，用来放下载下来的安装包，">
-<meta property="og:type" content="article">
-<meta property="og:title" content="搭建git服务器教程">
-<meta property="og:url" content="http://yoursite.com/2018/07/25/git教程/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Liuxiaokun">
+<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
 <meta property="og:site_name" content="Liuxiaokun">
-<meta property="og:description" content="1.下载安装git安装依赖库和编译工具为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具     yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 安装编译工具   yum install gcc perl-ExtUtils-MakeMaker 下载git选一个目录，用来放下载下来的安装包，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-25T09:22:14.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建git服务器教程">
-<meta name="twitter:description" content="1.下载安装git安装依赖库和编译工具为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具     yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 安装编译工具   yum install gcc perl-ExtUtils-MakeMaker 下载git选一个目录，用来放下载下来的安装包，">
+<meta name="twitter:title" content="Liuxiaokun">
   
     <link rel="alternative" href="/atom.xml" title="Liuxiaokun" type="application/atom+xml">
   
@@ -158,209 +154,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git教程" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      搭建git服务器教程
-    </h1>
-  
-
-        
-        <a href="/2018/07/25/git教程/" class="archive-article-date">
-  	<time datetime="2018-07-25T08:51:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/08/23/栈应用/" class="archive-article-date">
+  	<time datetime="2018-08-23T00:41:39.164Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-下载安装git"><a href="#1-下载安装git" class="headerlink" title="1.下载安装git"></a>1.下载安装git</h2><h3 id="安装依赖库和编译工具"><a href="#安装依赖库和编译工具" class="headerlink" title="安装依赖库和编译工具"></a>安装依赖库和编译工具</h3><p>为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具    </p>
-<pre><code>yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
-</code></pre><p>安装编译工具  </p>
-<pre><code>yum install gcc perl-ExtUtils-MakeMaker
-</code></pre><h3 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h3><p>选一个目录，用来放下载下来的安装包，这里将安装包放在 /usr/local/src 目录里   </p>
-<pre><code>cd /usr/local/src    
-</code></pre><p>到官网找一个新版稳定的源码包下载到 /usr/local/src 文件夹里    </p>
-<pre><code>wget https://www.kernel.org/pub/software/scm/git/git-2.10.0.tar.gz
-</code></pre><h3 id="解压和编译"><a href="#解压和编译" class="headerlink" title="解压和编译"></a>解压和编译</h3><p>解压下载的资源包 </p>
-<pre><code>tar -zvxf git-2.10.0.tar.gz
-</code></pre><p>解压后进入git-2.10.0  </p>
-<pre><code>cd git-2.10.0
-</code></pre><p>执行编译</p>
-<pre><code>make all prefix=/usr/local/git
-</code></pre><p>编译完成后, 安装到 /usr/local/git 目录下   </p>
-<pre><code>make install prefix=/usr/local/git
-</code></pre><h2 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h2><h3 id="将git目录加入PATH"><a href="#将git目录加入PATH" class="headerlink" title="将git目录加入PATH"></a>将git目录加入PATH</h3><p>将原来的PATH指向目录修改为现在的目录   </p>
-<pre><code>echo &apos;export PATH=$PATH:/usr/local/git/bin&apos; &gt;&gt; /etc/bashrc
-</code></pre><p>生成环境变量   </p>
-<pre><code>source /etc/bashrc
-</code></pre><p>此时我们查看git版本号，说明我们已经安装成功了。   </p>
-<pre><code>git --version
-</code></pre><h2 id="3-创建git账号密码"><a href="#3-创建git账号密码" class="headerlink" title="3.创建git账号密码"></a>3.创建git账号密码</h2><h3 id="创建git账号"><a href="#创建git账号" class="headerlink" title="创建git账号"></a>创建git账号</h3><p>为我们刚刚搭建好的 git 创建一个账号   </p>
-<pre><code>useradd -m gituser
-</code></pre><p>然后为这个账号设置密码[?]   </p>
-<pre><code>passwd gituser
-</code></pre><h2 id="4-初始化git仓库并配置用户权限"><a href="#4-初始化git仓库并配置用户权限" class="headerlink" title="4.初始化git仓库并配置用户权限"></a>4.初始化git仓库并配置用户权限</h2><h3 id="创建git参考并初始化"><a href="#创建git参考并初始化" class="headerlink" title="创建git参考并初始化"></a>创建git参考并初始化</h3><p>我们创建 /data/repositories 目录用于存放 git 仓库   </p>
-<pre><code>mkdir -p /data/repositories
-</code></pre><p>创建好后，初始化这个仓库   </p>
-<pre><code>cd /data/repositories/ &amp;&amp; git init --bare test.git
-</code></pre><h3 id="配置用户权限"><a href="#配置用户权限" class="headerlink" title="配置用户权限"></a>配置用户权限</h3><p>给 git 仓库目录设置用户和用户组并设置权限   </p>
-<pre><code>chown -R gituser:gituser /data/repositories
-
-chmod 755 /data/repositories
-</code></pre><p>[查找 git-shell 所在目录] , 编辑 /etc/passwd 文件，将最后一行关于 gituser 的登录 shell 配置改为 如下</p>
-<p>示例代码：/etc/passwd</p>
-<pre><code>gituser:x:500:500::/home/gituser:/usr/local/git/bin/git-shell
-</code></pre><h3 id="使用搭建好的-Git-服务"><a href="#使用搭建好的-Git-服务" class="headerlink" title="使用搭建好的 Git 服务"></a>使用搭建好的 Git 服务</h3><p>克隆test repo 到本地</p>
-<pre><code>cd ~ &amp;&amp; git clone gituser@&lt;您的 CVM IP 地址&gt;:/data/repositories/test.git
-</code></pre><p>恭喜，Git 服务器搭建完成, 从此以后你可以方便地将你的本地代码提交到 Git 服务器托管了。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>坚持原创技术分享,你的支持将鼓励我继续创作!<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wechat.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/25/git教程/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/08/23/栈应用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/07/19/my-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">点心工作室暑假学习计划</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -383,8 +213,8 @@ chmod 755 /data/repositories
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
