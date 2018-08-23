@@ -174,6 +174,7 @@
         
       </header>
     
+	
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="判断元素入栈出栈的合法性"><a href="#判断元素入栈出栈的合法性" class="headerlink" title="判断元素入栈出栈的合法性"></a>判断元素入栈出栈的合法性</h3><p>一般来说，这种判断性的问题会出现在一些面试题目的选择题中，当然学习了栈之后，我们就要有解决这种问题的能力。<br><strong>思路：</strong> 判断元素是否相同，相同就进行下一个元素比较，当栈不为空并且栈顶元素和输出的栈元素相同，则将该元素出栈并指向输出元素的下一个，否则就将该元素进栈，并指向比较的元素的下一个 ，直到所有元素比较完<br>然后按出栈顺序进行比较，当栈不为空时，将栈顶元素与当前元素进行比较，不相同直接返回，则判断出栈元素不合法，否则将该元素出栈，并指向下一个元素；</p>
@@ -239,6 +240,7 @@
         
       </header>
     
+	
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="栈实现括号匹配"><a href="#栈实现括号匹配" class="headerlink" title="栈实现括号匹配"></a>栈实现括号匹配</h3><p><strong>匹配思想</strong>：从左至右扫描一个字符串(或表达式)，则每个右括号将与最近遇到的那个左括号相匹配。则可以在从左至右扫描过程中把所遇到的左括号存放到堆栈中。每当遇到一个右括号时，就将它与栈顶的左括号(如果存在)相匹配，同时从栈顶删除该左括号。<br><strong>算法思想</strong>：设置一个栈，当读到左括号时，左括号进栈。当读到右括号时，则从栈中弹出一个元素，与读到的左括号进行匹配，若匹配成功，继续读入；否则匹配失败，返回FLASE。另外,在算法的开始和结束时,栈都应该是空的.所以匹配到最后还要判断栈是否为空,若非空,则说明匹配失败.   </p>
@@ -305,6 +307,7 @@
         
       </header>
     
+	
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-下载安装git"><a href="#1-下载安装git" class="headerlink" title="1.下载安装git"></a>1.下载安装git</h2><h3 id="安装依赖库和编译工具"><a href="#安装依赖库和编译工具" class="headerlink" title="安装依赖库和编译工具"></a>安装依赖库和编译工具</h3><p>为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具    </p>
@@ -407,6 +410,7 @@ chmod 755 /data/repositories
         
       </header>
     
+	
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>今晚12点前向我发暑假学习计划及安排，以word形式私发给我，具体学习计划及内容如下，每人至少选择两个课程，如果有其它想法，可以写word一同发给我，暑假期间将进行不定期考察学习成果，开学将进行统一考核评优，希望各位小伙伴在放假期间也不要耽误学习哦，另外需要学习资源的可以私我</strong></p>
@@ -477,6 +481,7 @@ chmod 755 /data/repositories
         
       </header>
     
+	
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -536,12 +541,14 @@ chmod 755 /data/repositories
           </div>
         </div>
       </div>
-      <footer id="footer">
+      <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
     		&copy; 2018 Liuxiaokun
     	</div>
+		<span id="busuanzi_container_site_uv"> 本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
