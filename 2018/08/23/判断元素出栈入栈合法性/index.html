@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Liuxiaokun">
 <meta property="og:description" content="判断元素入栈出栈的合法性一般来说，这种判断性的问题会出现在一些面试题目的选择题中，当然学习了栈之后，我们就要有解决这种问题的能力。思路： 判断元素是否相同，相同就进行下一个元素比较，当栈不为空并且栈顶元素和输出的栈元素相同，则将该元素出栈并指向输出元素的下一个，否则就将该元素进栈，并指向比较的元素的下一个 ，直到所有元素比较完然后按出栈顺序进行比较，当栈不为空时，将栈顶元素与当前元素进行比较，不相">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-23T09:13:56.831Z">
+<meta property="og:updated_time" content="2018-08-24T15:22:31.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断元素出栈入栈合法性">
 <meta name="twitter:description" content="判断元素入栈出栈的合法性一般来说，这种判断性的问题会出现在一些面试题目的选择题中，当然学习了栈之后，我们就要有解决这种问题的能力。思路： 判断元素是否相同，相同就进行下一个元素比较，当栈不为空并且栈顶元素和输出的栈元素相同，则将该元素出栈并指向输出元素的下一个，否则就将该元素进栈，并指向比较的元素的下一个 ，直到所有元素比较完然后按出栈顺序进行比较，当栈不为空时，将栈顶元素与当前元素进行比较，不相">
@@ -179,6 +179,30 @@
 	
 	<!-- 目录内容 -->
 	
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#判断元素入栈出栈的合法性"><span class="toc-number">1.</span> <span class="toc-text">判断元素入栈出栈的合法性</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      
 <!-- 目录内容结束 -->
 
 	
@@ -319,6 +343,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#判断元素入栈出栈的合法性"><span class="toc-number">1.</span> <span class="toc-text">判断元素入栈出栈的合法性</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
