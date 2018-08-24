@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Liuxiaokun">
 <meta property="og:description" content="复制链表的复制在复杂链表中，每个结点除了有一个next指针指向下一个结点之外，还有一个random指向链表中的任意结点或者NULL。 结点定义如下123456typedef struct Link_C&amp;#123;	int data;	struct Link_C *next;    struct Link_C *random;	&amp;#125;Link_C; 思路：（我们分三步骤）     第一步：复制">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-24T00:52:51.865Z">
+<meta property="og:updated_time" content="2018-08-24T15:15:04.611Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="复杂链表的复制">
 <meta name="twitter:description" content="复制链表的复制在复杂链表中，每个结点除了有一个next指针指向下一个结点之外，还有一个random指向链表中的任意结点或者NULL。 结点定义如下123456typedef struct Link_C&amp;#123;	int data;	struct Link_C *next;    struct Link_C *random;	&amp;#125;Link_C; 思路：（我们分三步骤）     第一步：复制">
@@ -179,6 +179,30 @@
 	
 	<!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#复制链表的复制"><span class="toc-number">1.</span> <span class="toc-text">复制链表的复制</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      
 <!-- 目录内容结束 -->
 
 	
@@ -319,6 +343,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#复制链表的复制"><span class="toc-number">1.</span> <span class="toc-text">复制链表的复制</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
