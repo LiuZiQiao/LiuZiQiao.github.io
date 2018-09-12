@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/09/12/AddTwoNumbers/</loc>
+    
+    <lastmod>2018-09-12T04:09:26.770Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/09/12/maxProfit/</loc>
     
     <lastmod>2018-09-12T03:53:50.084Z</lastmod>
