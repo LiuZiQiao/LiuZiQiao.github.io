@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-12T03:01:51.053Z</updated>
+  <updated>2018-09-12T03:53:50.084Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/09/12/maxProfit/"/>
     <id>http://yoursite.com/2018/09/12/maxProfit/</id>
     <published>2018-09-12T02:55:17.000Z</published>
-    <updated>2018-09-12T03:01:51.053Z</updated>
+    <updated>2018-09-12T03:53:50.084Z</updated>
     
     <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p><p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p><p>注意你不能在买入股票前卖出股票。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [7,1,5,3,6,4]</span><br><span class="line">输出: 5</span><br><span class="line">解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。</span><br><span class="line">     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。</span><br></pre></td></tr></table></figure></p><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul><li>C语言实现<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int maxProfit(int* prices, int pricesSize) &#123;</span><br><span class="line">int i = 0;</span><br><span class="line">int j = 0;</span><br><span class="line">int s = 0;</span><br><span class="line">int max = 0;</span><br><span class="line">for (i = 0; i &lt; pricesSize; i++)</span><br><span class="line">&#123;</span><br><span class="line">for (j =i+1; j &lt; pricesSize; j++)&#123;</span><br><span class="line">s = prices[j] - prices[i];</span><br><span class="line">max = (s &gt; max ? s : max);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
@@ -38,7 +38,7 @@
       <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
-      <category term="List" scheme="http://yoursite.com/tags/List/"/>
+      <category term="Array" scheme="http://yoursite.com/tags/Array/"/>
     
   </entry>
   
