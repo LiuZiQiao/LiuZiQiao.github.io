@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-12T13:38:19.640Z</updated>
+  <updated>2018-09-13T15:02:56.864Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>反转整数</title>
+    <link href="http://yoursite.com/2018/09/13/%E5%8F%8D%E8%BD%AC%E6%95%B4%E6%95%B0/"/>
+    <id>http://yoursite.com/2018/09/13/反转整数/</id>
+    <published>2018-09-13T15:01:43.000Z</published>
+    <updated>2018-09-13T15:02:56.864Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>给定一个 32 位有符号整数，将整数中的数字进行反转。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: 123</span><br><span class="line">输出: 321</span><br><span class="line"> 示例 2:</span><br><span class="line"></span><br><span class="line">输入: -123</span><br><span class="line">输出: -321</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: 120</span><br><span class="line">输出: 21</span><br></pre></td></tr></table></figure></p><p><strong>注意:</strong></p><p>假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。根据这个假设，如果反转后的整数溢出，则返回 0。</p><h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p><strong>Java解决方案</strong><br>安照正常的思考，我们的代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  public static int reverse(int x) &#123;</span><br><span class="line">int temp = 0;</span><br><span class="line">while (x!= 0) &#123;</span><br><span class="line">         </span><br><span class="line">temp = temp *10 +x%10;</span><br><span class="line">x /= 10;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (temp &lt;Integer.MIN_VALUE/10||temp&gt;Integer.MAX_VALUE/10) &#123;</span><br><span class="line">return 0;</span><br><span class="line">   &#125;</span><br><span class="line">return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>当输入1245678993<br>输出了-296201875<br>细心的人就会发现，此时栈溢出了；   </p><p>原因是多乘了一次10，解决办法就是，先判断是否已经栈溢出，再进行乘以10<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  public static int reverse(int x) &#123;</span><br><span class="line">int temp = 0;</span><br><span class="line">while (x!= 0) &#123;</span><br><span class="line">           if (temp &lt;Integer.MIN_VALUE/10||temp&gt;Integer.MAX_VALUE/10) &#123;</span><br><span class="line">return 0;</span><br><span class="line">    &#125;</span><br><span class="line">temp = temp *10 +x%10;</span><br><span class="line">x /= 10;</span><br><span class="line">&#125;</span><br><span class="line">return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h4&gt;&lt;p&gt;给定
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>AddTwoNumbers</title>
