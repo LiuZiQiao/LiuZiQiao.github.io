@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="问题给定一个 32 位有符号整数，将整数中的数字进行反转。123456789101112示例 1:输入: 123输出: 321 示例 2:输入: -123输出: -321示例 3:输入: 120输出: 21 注意: 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。根据这个假设，如果反转后的整数溢出，则返回 0。 解决Java解决方案安照正常的思考，我">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-13T15:02:56.864Z">
+<meta property="og:updated_time" content="2018-09-13T15:05:53.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反转整数">
 <meta name="twitter:description" content="问题给定一个 32 位有符号整数，将整数中的数字进行反转。123456789101112示例 1:输入: 123输出: 321 示例 2:输入: -123输出: -321示例 3:输入: 120输出: 21 注意: 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。根据这个假设，如果反转后的整数溢出，则返回 0。 解决Java解决方案安照正常的思考，我">
@@ -384,7 +384,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-13T23:02:56+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-13T23:05:53+08:00">
                 2018-09-13
               </time>
             
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  274
+                  272
                 </span>
               
 
@@ -481,7 +481,7 @@
 <p><strong>注意:</strong></p>
 <p>假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。根据这个假设，如果反转后的整数溢出，则返回 0。</p>
 <h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p><strong>Java解决方案</strong><br>安照正常的思考，我们的代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  	public static int reverse(int x) &#123;</span><br><span class="line">	int temp = 0;</span><br><span class="line">	while (x!= 0) &#123;</span><br><span class="line">         </span><br><span class="line">		temp = temp *10 +x%10;</span><br><span class="line">		x /= 10;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	if (temp &lt;Integer.MIN_VALUE/10||temp&gt;Integer.MAX_VALUE/10) &#123;</span><br><span class="line">		return 0;</span><br><span class="line">   	&#125;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  	public static int reverse(int x) &#123;</span><br><span class="line">	int temp = 0;</span><br><span class="line">	while (x!= 0) &#123;</span><br><span class="line">         </span><br><span class="line">		temp = temp *10 +x%10;</span><br><span class="line">		x /= 10;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	if (temp &lt;Integer.MIN_VALUE||temp&gt;Integer.MAX_VALUE) &#123;</span><br><span class="line">		return 0;</span><br><span class="line">   	&#125;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当输入1245678993<br>输出了-296201875<br>细心的人就会发现，此时栈溢出了；   </p>
 <p>原因是多乘了一次10，解决办法就是，先判断是否已经栈溢出，再进行乘以10<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  	public static int reverse(int x) &#123;</span><br><span class="line">	int temp = 0;</span><br><span class="line">	while (x!= 0) &#123;</span><br><span class="line">           if (temp &lt;Integer.MIN_VALUE/10||temp&gt;Integer.MAX_VALUE/10) &#123;</span><br><span class="line">		return 0;</span><br><span class="line">    	&#125;</span><br><span class="line">		temp = temp *10 +x%10;</span><br><span class="line">		x /= 10;</span><br><span class="line">	&#125;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
