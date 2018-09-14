@@ -136,18 +136,18 @@
 
 
 
-<meta name="description" content="哈希冲突的开散列方式在我的博客哈希表上中详细介绍了哈希的概念以及处理哈希冲突的闭散列方式。在本文章中，主要介绍处理哈希冲突的另一种方式：开散列(链地址)。 开散列的概念开散列：又叫链地址法、开链法。首先对关键码集合用哈希函数计算哈希地址，具有相同哈希地址的关键码归于同一子集合中，每一个子集合称为一个桶，各个桶中的元素通过一个单链表的方式链接起来（可以头插的方式将桶中元素链接起来），链表的第一个节">
+<meta name="description" content="哈希冲突的开散列方式在我的博客哈希表上中详细介绍了哈希的概念以及处理哈希冲突的闭散列方式。在本文章中，主要介绍处理哈希冲突的另一种方式：开散列(链地址)。 开散列的概念开散列：又叫链地址法、开链法。首先对关键码集合用哈希函数计算哈希地址，具有相同哈希地址的关键码归于同一子集合中，每一个子集合称为一个桶，各个桶中的元素通过一个单链表的方式链接起来（可以头插的方式将桶中元素链接起来），链表的第一个">
 <meta name="keywords" content="链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="哈希表(下)">
-<meta property="og:url" content="http://yoursite.com/2018/09/14/哈希表/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/09/14/哈希表(下)/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="哈希冲突的开散列方式在我的博客哈希表上中详细介绍了哈希的概念以及处理哈希冲突的闭散列方式。在本文章中，主要介绍处理哈希冲突的另一种方式：开散列(链地址)。 开散列的概念开散列：又叫链地址法、开链法。首先对关键码集合用哈希函数计算哈希地址，具有相同哈希地址的关键码归于同一子集合中，每一个子集合称为一个桶，各个桶中的元素通过一个单链表的方式链接起来（可以头插的方式将桶中元素链接起来），链表的第一个节">
+<meta property="og:description" content="哈希冲突的开散列方式在我的博客哈希表上中详细介绍了哈希的概念以及处理哈希冲突的闭散列方式。在本文章中，主要介绍处理哈希冲突的另一种方式：开散列(链地址)。 开散列的概念开散列：又叫链地址法、开链法。首先对关键码集合用哈希函数计算哈希地址，具有相同哈希地址的关键码归于同一子集合中，每一个子集合称为一个桶，各个桶中的元素通过一个单链表的方式链接起来（可以头插的方式将桶中元素链接起来），链表的第一个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-14T10:14:22.035Z">
+<meta property="og:updated_time" content="2018-09-14T10:16:02.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="哈希表(下)">
-<meta name="twitter:description" content="哈希冲突的开散列方式在我的博客哈希表上中详细介绍了哈希的概念以及处理哈希冲突的闭散列方式。在本文章中，主要介绍处理哈希冲突的另一种方式：开散列(链地址)。 开散列的概念开散列：又叫链地址法、开链法。首先对关键码集合用哈希函数计算哈希地址，具有相同哈希地址的关键码归于同一子集合中，每一个子集合称为一个桶，各个桶中的元素通过一个单链表的方式链接起来（可以头插的方式将桶中元素链接起来），链表的第一个节">
+<meta name="twitter:description" content="哈希冲突的开散列方式在我的博客哈希表上中详细介绍了哈希的概念以及处理哈希冲突的闭散列方式。在本文章中，主要介绍处理哈希冲突的另一种方式：开散列(链地址)。 开散列的概念开散列：又叫链地址法、开链法。首先对关键码集合用哈希函数计算哈希地址，具有相同哈希地址的关键码归于同一子集合中，每一个子集合称为一个桶，各个桶中的元素通过一个单链表的方式链接起来（可以头插的方式将桶中元素链接起来），链表的第一个">
 
 
 
@@ -177,7 +177,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/14/哈希表/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/14/哈希表(下)/"/>
 
 
 
@@ -339,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/哈希表/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/哈希表(下)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -384,7 +384,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-14T18:14:22+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-14T18:16:02+08:00">
                 2018-09-14
               </time>
             
@@ -476,7 +476,8 @@
       
 
       
-        <script src="\assets\js\APlayer.min.js"> </script><h3 id="哈希冲突的开散列方式"><a href="#哈希冲突的开散列方式" class="headerlink" title="哈希冲突的开散列方式"></a>哈希冲突的开散列方式</h3><p>在我的博客<a href="https://liuziqiao.github.io/2018/09/07/搜索结构之哈希/#more" target="_blank" rel="noopener">哈希表上</a>中详细介绍了哈希的概念以及处理哈希冲突的闭散列方式。在本文章中，主要介绍处理哈希冲突的另一种方式：开散列(链地址)。</p>
+        <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
+<h3 id="哈希冲突的开散列方式"><a href="#哈希冲突的开散列方式" class="headerlink" title="哈希冲突的开散列方式"></a>哈希冲突的开散列方式</h3><p>在我的博客<a href="https://liuziqiao.github.io/2018/09/07/搜索结构之哈希/#more" target="_blank" rel="noopener">哈希表上</a>中详细介绍了哈希的概念以及处理哈希冲突的闭散列方式。在本文章中，主要介绍处理哈希冲突的另一种方式：开散列(链地址)。</p>
 <h4 id="开散列的概念"><a href="#开散列的概念" class="headerlink" title="开散列的概念"></a>开散列的概念</h4><p>开散列：又叫链地址法、开链法。首先对关键码集合用哈希函数计算哈希地址，具有相同哈希地址的关键码归于同一子集合中，每一个子集合称为一个桶，各个桶中的元素通过一个单链表的方式链接起来（可以头插的方式将桶中元素链接起来），链表的第一个节点存放在哈希表中。</p>
 <h4 id="代码实现部分"><a href="#代码实现部分" class="headerlink" title="代码实现部分"></a>代码实现部分</h4><p>关于代码的编程思路，在具体代码中有详细的说明！</p>
 <h5 id="头文件的定义"><a href="#头文件的定义" class="headerlink" title="头文件的定义"></a>头文件的定义</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">typedef int KeyType;</span><br><span class="line"></span><br><span class="line">typedef struct Node</span><br><span class="line">&#123;</span><br><span class="line">	KeyType key;</span><br><span class="line">	struct Node *next;</span><br><span class="line">&#125;Node;</span><br><span class="line"></span><br><span class="line">typedef struct HashBucket</span><br><span class="line">&#123;</span><br><span class="line">	KeyType size;</span><br><span class="line">	KeyType capacity;</span><br><span class="line">	Node ** array;</span><br><span class="line">&#125;HashBucket;</span><br></pre></td></tr></table></figure>
@@ -505,7 +506,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2018/09/14/哈希表/" title="哈希表(下)">http://yoursite.com/2018/09/14/哈希表/</a>
+    <a href="http://yoursite.com/2018/09/14/哈希表(下)/" title="哈希表(下)">http://yoursite.com/2018/09/14/哈希表(下)/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
