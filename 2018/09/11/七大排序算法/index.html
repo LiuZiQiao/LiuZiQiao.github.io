@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="排序分为内部排序和外部排序，内部排序是数据记录在内存中进行排序，而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。我们这里的八大排序就是内部排序。  快速排序：是目前基于比较的内部排序中被认为是最好的方法，当待排序的关键字是随机分布时，快速排序的平均时间最短； 冒泡排序基本思想： 在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-15T14:31:42.622Z">
+<meta property="og:updated_time" content="2018-09-15T14:42:11.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="七大排序算法">
 <meta name="twitter:description" content="排序分为内部排序和外部排序，内部排序是数据记录在内存中进行排序，而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。我们这里的八大排序就是内部排序。  快速排序：是目前基于比较的内部排序中被认为是最好的方法，当待排序的关键字是随机分布时，快速排序的平均时间最短； 冒泡排序基本思想： 在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次">
@@ -384,7 +384,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-15T22:31:42+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-15T22:42:11+08:00">
                 2018-09-15
               </time>
             
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,080
+                  2,096
                 </span>
               
 
@@ -480,7 +480,7 @@
 <p>排序分为内部排序和外部排序，内部排序是数据记录在内存中进行排序，而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。<br>我们这里的八大排序就是内部排序。</p>
 <p> <strong><em>快速排序：是目前基于比较的内部排序中被认为是最好的方法，当待排序的关键字是随机分布时，快速排序的平均时间最短；</em></strong></p>
 <h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p><strong>基本思想：</strong></p>
-<p>在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//冒泡排序</span><br><span class="line">void BubbleSort(int *array,int size)</span><br><span class="line">&#123;</span><br><span class="line">	for (int i = 0; i &lt; size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int j = i+1; j &lt; size; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (array[i]&gt;array[j])</span><br><span class="line">			&#123;</span><br><span class="line">				Swap(&amp;array[i],&amp;array[j]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//冒泡排序</span><br><span class="line">void BubbleSort(int *array,int size)</span><br><span class="line">&#123;</span><br><span class="line">	int flag = 1;</span><br><span class="line">	for (int i = 0; i &lt; size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		flag = 0;</span><br><span class="line">		for (int j = i+1; j &lt; size; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (array[i]&gt;array[j])</span><br><span class="line">			&#123;</span><br><span class="line">				Swap(&amp;array[i],&amp;array[j]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		if (flag == 1)</span><br><span class="line">		&#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><h5 id="单向选择排序"><a href="#单向选择排序" class="headerlink" title="单向选择排序"></a>单向选择排序</h5><p><strong>基本思想：</strong></p>
 <p>在要排序的一组数中，选出最小（或者最大）的一个数与第1个位置的数交换；然后在剩下的数当中再找最小（或者最大）的与第2个位置的数交换，依次类推，直到第n-1个元素（倒数第二个数）和第n个元素（最后一个数）比较为止。<br><strong>操作方法：</strong></p>
 <p>第一趟，从n 个记录中找出关键码最小的记录与第一个记录交换；</p>
