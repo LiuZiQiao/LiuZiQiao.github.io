@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-16T01:38:49.967Z</updated>
+  <updated>2018-09-18T08:47:54.204Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RemoveDuplicates2</title>
+    <link href="http://yoursite.com/2018/09/18/RemoveDuplicates2/"/>
+    <id>http://yoursite.com/2018/09/18/RemoveDuplicates2/</id>
+    <published>2018-09-18T08:46:12.000Z</published>
+    <updated>2018-09-18T08:47:54.204Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>Follow up for “Remove Duplicates”:<br>What if duplicates are allowed at most twice?</p><p>For example,<br>Given sorted array <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn\&apos;t matter what you leave beyond the new length.   </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">### 解决方案</span><br><span class="line">**思路**：这道题是继Remove Duplicates from Sorted Array有序数组中出去重复项，这里运行最多重复次数是二次，因此我们需要定义一个count来记录重复次数，count初始化为1，当出现一次时count减1，下次再重复出现时，快指针直接前进一步，如果这时不是重复的则count恢复为1，该数组是有序的，所以一旦不出现重复的数，后面的数一定比这个数大。</span><br></pre></td></tr></table></figure></p><p>int removeDuplicates(int* nums, int size) {<br>    if (size &lt;= 2) {<br>        return size;<br>    }</p><pre><code>int i = 0;int j = 1;int count = 1;while (j&lt;size){    //当nums[i]== nums[j]，count == 0时，此时这个数是第一次和后面的一个数相等    if (nums[i] == nums[j] &amp;&amp; count == 0) {        ++j;    }    else    {    //此时判断是否与后面的数还能相等，相等时就 --count，        //否则不相等count还是1，说明这个数只出现两次        if (nums[i] == nums[j]) {            --count;        }        else        {            count = 1;        }        //此时我们让第二次出现的这个数后移动一位，并放在这个数后面        nums[++i] = nums[j++];    }}return i+1;</code></pre><p>}<br>```</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Fo
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="Array" scheme="http://yoursite.com/tags/Array/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RemoveDuplicates|</title>
+    <link href="http://yoursite.com/2018/09/18/RemoveDuplicates1/"/>
+    <id>http://yoursite.com/2018/09/18/RemoveDuplicates1/</id>
+    <published>2018-09-18T08:23:27.000Z</published>
+    <updated>2018-09-18T08:48:05.213Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</p><p>Do not allocate extra space for another array, you must do this in place with constant memory.</p><p>For example,<br>Given input array <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn\&apos;t matter what you leave beyond the new length.</span><br><span class="line"></span><br><span class="line">### 解决方案</span><br><span class="line">**思路**：这道题是让我们去掉数组里重复项，我们使用快慢指针来记录遍历的坐标，最开始两个指针指向第一个数，如果相同，快指针走一步，如果不同，都走一步，当快指针走完整个数组时，慢指针当前的坐标加1就是数组中不同数字的个数。</span><br></pre></td></tr></table></figure></p><p>int removeDuplicates(int* nums, int numsSize)<br>{<br>    if (numsSize &lt;= 0)<br>    {<br>        return 0;<br>    }</p><pre><code>int i = 0;for (int j = 0; j &lt; numsSize; j++){    if (nums[i] != nums[j])    {        i++;        nums[i] = nums[j];    }}return i + 1;</code></pre><p>}</p><p>```</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Gi
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="http://yoursite.com/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="Array" scheme="http://yoursite.com/tags/Array/"/>
+    
+  </entry>
   
   <entry>
     <title>mySqrt</title>
@@ -491,53 +543,6 @@
       <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="栈" scheme="http://yoursite.com/tags/%E6%A0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭建git服务器教程</title>
-    <link href="http://yoursite.com/2018/07/25/git%E6%95%99%E7%A8%8B/"/>
-    <id>http://yoursite.com/2018/07/25/git教程/</id>
-    <published>2018-07-25T08:51:38.000Z</published>
-    <updated>2018-09-02T01:23:11.780Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="1-下载安装git"><a href="#1-下载安装git" class="headerlink" title="1.下载安装git"></a>1.下载安装git</h2><h3 id="安装依赖库和编译工具"><a href="#安装依赖库和编译工具" class="headerlink" title="安装依赖库和编译工具"></a>安装依赖库和编译工具</h3><p>为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具    </p><pre><code>yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</code></pre><p>安装编译工具  </p><pre><code>yum install gcc perl-ExtUtils-MakeMaker</code></pre><h3 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h3><p>选一个目录，用来放下载下来的安装包，这里将安装包放在 /usr/local/src 目录里   </p><pre><code>cd /usr/local/src    </code></pre><p>到官网找一个新版稳定的源码包下载到 /usr/local/src 文件夹里    </p><pre><code>wget https://www.kernel.org/pub/software/scm/git/git-2.10.0.tar.gz</code></pre><h3 id="解压和编译"><a href="#解压和编译" class="headerlink" title="解压和编译"></a>解压和编译</h3><p>解压下载的资源包 </p><pre><code>tar -zvxf git-2.10.0.tar.gz</code></pre><p>解压后进入git-2.10.0  </p><pre><code>cd git-2.10.0</code></pre><p>执行编译</p><pre><code>make all prefix=/usr/local/git</code></pre><p>编译完成后, 安装到 /usr/local/git 目录下   </p><pre><code>make install prefix=/usr/local/git</code></pre><h2 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h2><h3 id="将git目录加入PATH"><a href="#将git目录加入PATH" class="headerlink" title="将git目录加入PATH"></a>将git目录加入PATH</h3><p>将原来的PATH指向目录修改为现在的目录   </p><pre><code>echo &apos;export PATH=$PATH:/usr/local/git/bin&apos; &gt;&gt; /etc/bashrc</code></pre><p>生成环境变量   </p><pre><code>source /etc/bashrc</code></pre><p>此时我们查看git版本号，说明我们已经安装成功了。   </p><pre><code>git --version</code></pre><h2 id="3-创建git账号密码"><a href="#3-创建git账号密码" class="headerlink" title="3.创建git账号密码"></a>3.创建git账号密码</h2><h3 id="创建git账号"><a href="#创建git账号" class="headerlink" title="创建git账号"></a>创建git账号</h3><p>为我们刚刚搭建好的 git 创建一个账号   </p><pre><code>useradd -m gituser</code></pre><p>然后为这个账号设置密码[?]   </p><pre><code>passwd gituser</code></pre><h2 id="4-初始化git仓库并配置用户权限"><a href="#4-初始化git仓库并配置用户权限" class="headerlink" title="4.初始化git仓库并配置用户权限"></a>4.初始化git仓库并配置用户权限</h2><h3 id="创建git参考并初始化"><a href="#创建git参考并初始化" class="headerlink" title="创建git参考并初始化"></a>创建git参考并初始化</h3><p>我们创建 /data/repositories 目录用于存放 git 仓库   </p><pre><code>mkdir -p /data/repositories</code></pre><p>创建好后，初始化这个仓库   </p><pre><code>cd /data/repositories/ &amp;&amp; git init --bare test.git</code></pre><h3 id="配置用户权限"><a href="#配置用户权限" class="headerlink" title="配置用户权限"></a>配置用户权限</h3><p>给 git 仓库目录设置用户和用户组并设置权限   </p><pre><code>chown -R gituser:gituser /data/repositorieschmod 755 /data/repositories</code></pre><p>[查找 git-shell 所在目录] , 编辑 /etc/passwd 文件，将最后一行关于 gituser 的登录 shell 配置改为 如下</p><p>示例代码：/etc/passwd</p><pre><code>gituser:x:500:500::/home/gituser:/usr/local/git/bin/git-shell</code></pre><h3 id="使用搭建好的-Git-服务"><a href="#使用搭建好的-Git-服务" class="headerlink" title="使用搭建好的 Git 服务"></a>使用搭建好的 Git 服务</h3><p>克隆test repo 到本地</p><pre><code>cd ~ &amp;&amp; git clone gituser@&lt;您的 CVM IP 地址&gt;:/data/repositories/test.git</code></pre><p>恭喜，Git 服务器搭建完成, 从此以后你可以方便地将你的本地代码提交到 Git 服务器托管了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;1-下载安装git&quot;&gt;&lt;a href=&quot;#1-下载安装git&quot; class=&quot;headerlink&quot; title=&quot;1.下载安装git&quot;&gt;&lt;/a&gt;1.下载安装git
-      
-    
-    </summary>
-    
-      <category term="Git" scheme="http://yoursite.com/categories/Git/"/>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Welcome To MyBlog</title>
-    <link href="http://yoursite.com/2018/07/19/index/"/>
-    <id>http://yoursite.com/2018/07/19/index/</id>
-    <published>2018-07-19T04:23:57.000Z</published>
-    <updated>2018-09-02T01:27:54.243Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p><strong>今晚12点前向我发暑假学习计划及安排，以word形式私发给我，具体学习计划及内容如下，每人至少选择两个课程，如果有其它想法，可以写word一同发给我，暑假期间将进行不定期考察学习成果，开学将进行统一考核评优，希望各位小伙伴在放假期间也不要耽误学习哦，另外需要学习资源的可以私我</strong></p><a id="more"></a><h2 id="大一到大二："><a href="#大一到大二：" class="headerlink" title="大一到大二："></a>大一到大二：</h2><h3 id="主攻方向："><a href="#主攻方向：" class="headerlink" title="主攻方向："></a>主攻方向：</h3><p>大二必修课：数据结构  </p><p>Web前端：HTML+CSS+JavaScript  </p><p>主流语言：Java，PHP，python，</p><h2 id="大二到大三："><a href="#大二到大三：" class="headerlink" title="大二到大三："></a>大二到大三：</h2><p>大三必修课：操作系统，java，  </p><p>Linux操作系统，C++</p><h3 id="其他：hexo-GitHub-node-js个人博客搭建"><a href="#其他：hexo-GitHub-node-js个人博客搭建" class="headerlink" title="其他：hexo+GitHub+node.js个人博客搭建"></a>其他：hexo+GitHub+node.js个人博客搭建</h3><p>（学习过程中最好使用CSDN养成写博客的习惯）</p><p>不忘初心，方得始终。。。。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;今晚12点前向我发暑假学习计划及安排，以word形式私发给我，具体学习计划及内容如下，每人至少选择两个课程，如果有其它想法，可以写word一同发给我，暑假期间将进行不定期考察学习成果，开学将进行统一考核评优，希望各位小伙伴在放假期间也不要耽误学习哦，另外需要学习资源的可以私我&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
