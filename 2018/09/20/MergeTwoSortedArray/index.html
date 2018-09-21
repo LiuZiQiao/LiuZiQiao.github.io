@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Array," />
 
 
 
@@ -136,14 +136,18 @@
 
 
 
+<meta name="description" content="问题给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。示例:12345输入:nums1 = [1,2,3,0,0,0], m = 3nums2 =">
+<meta name="keywords" content="Array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MergeTwoSortedArray">
 <meta property="og:url" content="https://LiuZiQiao.github.io/2018/09/20/MergeTwoSortedArray/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
+<meta property="og:description" content="问题给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。示例:12345输入:nums1 = [1,2,3,0,0,0], m = 3nums2 =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T22:59:05.732Z">
+<meta property="og:updated_time" content="2018-09-21T13:06:20.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MergeTwoSortedArray">
+<meta name="twitter:description" content="问题给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。 说明: 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。示例:12345输入:nums1 = [1,2,3,0,0,0], m = 3nums2 =">
 
 
 
@@ -397,12 +401,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-20T06:59:05+08:00">
-                2018-09-20
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-21T21:06:20+08:00">
+                2018-09-21
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/每日一题/" itemprop="url" rel="index">
+                    <span itemprop="name">每日一题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -440,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  510
                 </span>
               
 
@@ -456,7 +482,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -478,6 +504,12 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。</p>
+<p>说明:</p>
+<p>初始化 nums1 和 nums2 的元素数量分别为 m 和 n。<br>你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。<br>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">nums1 = [1,2,3,0,0,0], m = 3</span><br><span class="line">nums2 = [2,5,6],       n = 3</span><br><span class="line"></span><br><span class="line">输出: [1,2,2,3,5,6]</span><br></pre></td></tr></table></figure></p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>思路：申请一个大小是两个数组的临时空间用了存放排序后的元素，先对两个数组中的元素进行判断，小的放进临时数组中，直到一个数组放完后，把另外一个数组中的元素全部拷贝进去，最后将临时数组中的元素拷贝到原数组中。<br>以下是代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>* nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>* nums2, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> cur1 = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> cur2 = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> *tmp = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*(m+n));</span><br><span class="line">	assert(tmp);</span><br><span class="line">	<span class="built_in">memset</span>(tmp,<span class="number">0</span>, m + n);</span><br><span class="line">	<span class="keyword">while</span> (cur1 &lt; m &amp;&amp; cur2 &lt; n)</span><br><span class="line">	&#123;		</span><br><span class="line">		<span class="keyword">if</span> (nums1[cur1] &lt; nums2[cur2])</span><br><span class="line">		&#123;</span><br><span class="line">			tmp[index] = nums1[cur1];</span><br><span class="line">			index++;</span><br><span class="line">			cur1++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(nums1[cur1] &gt; nums2[cur2])</span><br><span class="line">		&#123;</span><br><span class="line">			tmp[index] = nums2[cur2];</span><br><span class="line">			index++;</span><br><span class="line">			cur2++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (nums1[cur1] == nums2[cur2])</span><br><span class="line">		&#123;</span><br><span class="line">			tmp[index] = nums1[cur1];</span><br><span class="line">			index++;</span><br><span class="line">			tmp[index] = nums2[cur2];</span><br><span class="line">			index++;</span><br><span class="line">			cur1++;</span><br><span class="line">			cur2++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//nums2没有元素，但nums1还有元素时，拷贝到tmp中</span></span><br><span class="line">	<span class="keyword">while</span> (cur1 &lt; m)</span><br><span class="line">	&#123;</span><br><span class="line">		tmp[index++] = nums1[cur1++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//nums1没有元素，但nums2还有元素时，拷贝到tmp中</span></span><br><span class="line">	<span class="keyword">while</span> (cur2 &lt; n)</span><br><span class="line">	&#123;</span><br><span class="line">		tmp[index++] = nums2[cur2++];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将tmp中的元素放回nums1中</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m+n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		nums1[i] = tmp[i];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//释放掉申请的空间</span></span><br><span class="line">	<span class="built_in">free</span>(tmp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>看了上面的代码，发现又长又繁琐，我们对其简化后的代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> *nums1,<span class="keyword">int</span> m,<span class="keyword">int</span> *nums2,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count = m + n - <span class="number">1</span>;</span><br><span class="line">	--m, --n;</span><br><span class="line">	<span class="keyword">while</span> (n&gt;=<span class="number">0</span> &amp;&amp; m&gt;=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		nums1[count--] = nums1[m] &gt; nums2[n] ? nums1[m--] : nums2[n--];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (m &gt;= <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		nums1[count--] = nums1[m--];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -502,7 +534,7 @@
   <p><span>本文标题:</span><a href="/2018/09/20/MergeTwoSortedArray/">MergeTwoSortedArray</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2018年09月20日 - 06:09</p>
-  <p><span>最后更新:</span>2018年09月20日 - 06:09</p>
+  <p><span>最后更新:</span>2018年09月21日 - 21:09</p>
   <p><span>原始链接:</span><a href="/2018/09/20/MergeTwoSortedArray/" title="MergeTwoSortedArray">https://LiuZiQiao.github.io/2018/09/20/MergeTwoSortedArray/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/09/20/MergeTwoSortedArray/"  aria-label="复制成功！"></i></span>
   </p>
@@ -527,6 +559,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Array/" rel="tag"><i class="fa fa-tag"></i> Array</a>
+          
+        </div>
       
 
       
@@ -621,8 +659,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -783,6 +830,22 @@ var ap = new APlayer({
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -810,7 +873,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">22.3k</span>
+    <span title="Site words total count">22.8k</span>
   
 </div>
 
