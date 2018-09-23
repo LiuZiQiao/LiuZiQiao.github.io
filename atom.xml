@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2018-09-21T13:06:20.277Z</updated>
+  <updated>2018-09-23T14:52:35.593Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vim使用命令大全</title>
+    <link href="https://LiuZiQiao.github.io/2018/09/23/vim%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
+    <id>https://LiuZiQiao.github.io/2018/09/23/vim使用命令大全/</id>
+    <published>2018-09-23T14:51:17.000Z</published>
+    <updated>2018-09-23T14:52:35.593Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>不知不觉，vim已经使用快一年了，虽然不是经常使用，这就导致每次使用时一些命令还是模糊，需要查查文档才能正确使用，因此就这篇博客分享给学习Linux的小伙伴们。</p><h3 id="vim介绍"><a href="#vim介绍" class="headerlink" title="vim介绍"></a>vim介绍</h3><p>vim是程序员最喜欢的编辑器，也是Linux下第二强大的编辑器，虽然emacs是公认的世界第一，但我认为emacs并没有vim用起来高效。</p><h4 id="vim的几种模式"><a href="#vim的几种模式" class="headerlink" title="vim的几种模式"></a>vim的几种模式</h4><ul><li>正常模式：可以使用快捷键命令，或按输入命令</li><li>插入模式：可以输入文本，在正常模式下，按i，a，o等都可以进入插入模式</li><li>可视模式：正常模式下按v可进入可视模式，在可视模式下，移动光标可以选择文本，按v进入可视模式后，总是整行整行的选中。Ctrl+v进入可视块模式。<h3 id="启动vim"><a href="#启动vim" class="headerlink" title="启动vim"></a>启动vim</h3></li><li>vim -c cmd file：在打开文件前，先执行指定的命令</li><li>vim -r file：恢复上次异常退出的文件</li><li>vim -R file：以只读的方式打开文件，但可以强制保存</li><li>vim -M file：以只读方式打开文件，不可以强制保存</li><li>vim -y num file：将编辑窗口的大小设为num行</li><li>vim+file：从文件的末尾开始</li><li>vim+num file：从第num行开始</li><li>vim+/string file：打开file，并将光标停留在第一个找到的string上</li><li>vim -remote file：用已有的vim进程打开指定的文件。如果你不想启用多个vim会话，这个很有用。但要注意， 如果你用vim，会寻找名叫VIM的服务器；如果你已经有一个gvim在运行了， 你可以用gvim –remote file在已有的gvim中打开文件。</li></ul><h3 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h3><ul><li>e file -关闭当前编辑的文件，并开启新的文件。如果当前文件的修改未保存，vi会警告</li><li>e! file -放弃当前文件的修改，编辑新的文件</li><li>e+n file -开始新的文件，并从第n行开始编辑</li><li>enew -编译一个未命名的新文档（Ctrl-W n）</li><li>e – 重新加载当前文档。</li><li>e! – 重新加载当前文档，并丢弃已做的改动。</li><li>e#或ctrl+^ – 回到刚才编辑的文件，很实用。</li><li>f或ctrl+g –显示文档名，是否修改，和光标位置。</li><li>f filename – 改变编辑的文件名，这时再保存相当于另存为。</li><li>gf – 打开以光标所在字符串为文件名的文件。</li><li>w – 保存修改。</li><li>n1,n2w filename – 选择性保存从某n1行到另n2行的内容。</li><li>wq – 保存并退出。</li><li>ZZ – 保存并退出。</li><li>x – 保存并退出。</li><li>q[uit] ——退出当前窗口。(CTRL-W q或CTRL-W CTRL-Q)</li><li>saveas newfilename – 另存为</li><li>browse e – 会打开一个文件浏览器让你选择要编辑的文件。 如果是终端中，则会打开netrw的文件浏览窗口； 如果是gvim，则会打开一个图形界面的浏览窗口。 实际上</li><li>browse后可以跟任何编辑文档的命令，如sp等。 用browse打开的起始目录可以由browsedir来设置：</li><li>set browsedir=last – 用上次访问过的目录（默认）；</li><li>set browsedir=buffer – 用当前文件所在目录；</li><li>set browsedir=current – 用当前工作目录；</li><li>Sex – 水平分割一个窗口，浏览文件系统；</li><li>Vex – 垂直分割一个窗口，浏览文件系统；</li></ul><h3 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h3><h4 id="基本移动"><a href="#基本移动" class="headerlink" title="基本移动"></a>基本移动</h4><p><strong>在正常模式下</strong></p><ul><li>h或退格：左移一个字符</li><li>I或空格：右移一个字符</li><li>j：下移一行</li><li>k：上移一行</li><li>gj：移动到一段内的下一行</li><li>gk：移动到一段内的上一行</li><li>+或者enter：把光标移至下一行第一个非空白字符</li><li>-：把光标移至上一行第一个非空白字符</li><li>w：移动一个单词，可忽略一些标点</li><li>e：前移一个单词，光标停在下一个单词末尾</li><li>E：移动到下一个单词末尾，如果词末尾有标点，则移动到标点</li><li>b：后移一个单词，光标停在上一个单词开头</li><li>B：移动到上一个单词开头，忽略一些标点</li><li>ge：后移一个单词，光标停在上一个单词末尾</li><li>gE：同ge，不过单词包含单词相邻的标点</li><li>(: 前移1句。</li><li>): 后移1句。</li><li>{: 前移1段。</li><li>}: 后移1段。</li><li>fc: 把光标移到同一行的下一个c字符处</li><li>Fc: 把光标移到同一行的上一个c字符处</li><li>tc: 把光标移到同一行的下一个c字符前</li><li>Tc: 把光标移到同一行的上一个c字符后</li><li>;: 配合f &amp; t使用，重复一次</li><li>,: 配合f &amp; t使用，反向重复一次</li><li>0：移到首行</li><li>g0：移到光标所在行行首</li><li>^：移到本行第一个非空白字符</li><li>g^：同^，但是移到到当前第一个非空字符处</li><li>n|：光标移动到第n行</li><li>:n<cr> :移动到第n行</cr></li><li>:$<cr> :移动到最后一行</cr></li><li>H：把光标移动到最顶端一行</li><li>M：把光标移动到最中间一行</li><li>L：把光标移动到最底端一行</li><li>gg：到文件头部</li><li>G：到文件尾部</li></ul><h4 id="翻屏"><a href="#翻屏" class="headerlink" title="翻屏"></a>翻屏</h4><ul><li>Ctrl+f： 下翻一屏。</li><li>Ctrl+b: 上翻一屏。</li><li>Ctrl+d: 下翻半屏。</li><li>Ctrl+u: 上翻半屏。</li><li>Ctrl+e: 向下滚动一行。</li><li>Ctrl+y: 向上滚动一行。</li><li>n%: 到文件n%的位置。</li><li>zz: 将当前行移动到屏幕中央。</li><li>zt: 将当前行移动到屏幕顶端。</li><li>zb: 将当前行移动到屏幕底端。</li></ul><h4 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h4><p>使用标记可以快速移动。到达标记后，可以用Ctrl+o返回原来的位置Ctrl+o和Ctrl+i很像浏览器上的 后退 和 前进 。</p><ul><li>m{a-z}: 标记光标所在位置，局部标记，只用于当前文件。</li><li>m{A-Z}: 标记光标所在位置，全局标记。标记之后，退出Vim， 重新启动，标记仍然有效。</li><li>`{a-z}: 移动到标记位置。</li><li>‘{a-z}: 移动到标记行的行首。</li><li>`{0-9}：回到上[2-10]次关闭vim时最后离开的位置。</li><li>“: 移动到上次编辑的位置。”也可以，不过“精确到列，而”精确到行 。如果想跳转到更老的位置，可以按C-o，跳转到更新的位置用C-i。</li><li>`”: 移动到上次离开的地方。</li><li>`.: 移动到最后改动的地方。</li><li>:marks 显示所有标记。</li><li>:delmarks a b – 删除标记a和b。</li><li>:delmarks a-c – 删除标记a、b和c。</li><li>:delmarks a c-f – 删除标记a、c、d、e、f。</li><li>:delmarks! – 删除当前缓冲区的所有标记。</li><li>:help mark-motions 查看更多关于mark的知识。</li></ul><h3 id="插入文本"><a href="#插入文本" class="headerlink" title="插入文本"></a>插入文本</h3><h4 id="基本插入"><a href="#基本插入" class="headerlink" title="基本插入"></a>基本插入</h4><ul><li>i: 在光标前插入；一个小技巧：按8，再按i，进入插入模式，输入=， 按esc进入命令模式，就会出现8个=。 这在插入分割线时非常有用，如30i+<esc>就插入了36个+组成的分割线。</esc></li><li>I: 在当前行第一个非空字符前插入；</li><li>gI: 在当前行第一列插入；</li><li>a: 在光标后插入；</li><li>A: 在当前行最后插入；</li><li>o: 在下面新建一行插入；</li><li>O: 在上面新建一行插入；</li><li>:r filename在当前位置插入另一个文件的内容。</li><li>:[n]r filename在第n行插入另一个文件的内容。</li><li>:r !date 在光标处插入当前日期与时间。同理，:r !command可以将其它shell命令的输出插入当前文档。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;不知不觉，vim已经使用快一年了，虽然不是经常使用，这就导致每次使用时一些命令还是模糊，需要查查文档才能正确使用，因此就这篇博客分享给学习
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://LiuZiQiao.github.io/categories/Linux/"/>
+    
+    
+      <category term="vim" scheme="https://LiuZiQiao.github.io/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>MergeTwoSortedArray</title>
@@ -515,33 +541,6 @@
       <category term="数据结构" scheme="https://LiuZiQiao.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="链表" scheme="https://LiuZiQiao.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>判断元素出栈入栈合法性</title>
-    <link href="https://LiuZiQiao.github.io/2018/08/23/%E5%88%A4%E6%96%AD%E5%85%83%E7%B4%A0%E5%87%BA%E6%A0%88%E5%85%A5%E6%A0%88%E5%90%88%E6%B3%95%E6%80%A7/"/>
-    <id>https://LiuZiQiao.github.io/2018/08/23/判断元素出栈入栈合法性/</id>
-    <published>2018-08-23T08:27:33.000Z</published>
-    <updated>2018-09-19T00:53:34.866Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h3 id="判断元素入栈出栈的合法性"><a href="#判断元素入栈出栈的合法性" class="headerlink" title="判断元素入栈出栈的合法性"></a>判断元素入栈出栈的合法性</h3><p>一般来说，这种判断性的问题会出现在一些面试题目的选择题中，当然学习了栈之后，我们就要有解决这种问题的能力。<br><strong>思路：</strong> 判断元素是否相同，相同就进行下一个元素比较，当栈不为空并且栈顶元素和输出的栈元素相同，则将该元素出栈并指向输出元素的下一个，否则就将该元素进栈，并指向比较的元素的下一个 ，直到所有元素比较完<br>然后按出栈顺序进行比较，当栈不为空时，将栈顶元素与当前元素进行比较，不相同直接返回，则判断出栈元素不合法，否则将该元素出栈，并指向下一个元素；</p><p><strong>创建一个Valid.h的文件，在这里我们引入了stack.h文件</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Stack.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Valid</span><span class="params">(<span class="keyword">char</span> in[], <span class="keyword">char</span> out[],<span class="keyword">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> ii = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> io = <span class="number">0</span>;</span><br><span class="line">Stack <span class="built_in">stack</span>;</span><br><span class="line">StackInit(&amp;<span class="built_in">stack</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (ii &lt; size)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (in[ii] == out[io])</span><br><span class="line">&#123;</span><br><span class="line">ii++;</span><br><span class="line">io++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (!StackEmpty(&amp;<span class="built_in">stack</span>) &amp;&amp; StackTop(&amp;<span class="built_in">stack</span>) == out[io])</span><br><span class="line">&#123;</span><br><span class="line">StackPop(&amp;<span class="built_in">stack</span>);</span><br><span class="line">io++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">&#123;</span><br><span class="line">StackPush(&amp;<span class="built_in">stack</span>,in[ii]);</span><br><span class="line">ii++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (!StackEmpty(&amp;<span class="built_in">stack</span>))</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (StackTop(&amp;<span class="built_in">stack</span>) == out[io])</span><br><span class="line">&#123;</span><br><span class="line">StackPop(&amp;<span class="built_in">stack</span>);</span><br><span class="line">io++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>接下来我们进行测试</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TestValid</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">char</span> *in = <span class="string">"abcdefg"</span>;</span><br><span class="line"><span class="keyword">char</span> *out1 = <span class="string">"decfbga"</span>;</span><br><span class="line"><span class="keyword">char</span> *out2 = <span class="string">"fegdacb"</span>;</span><br><span class="line"><span class="keyword">char</span> *out3 = <span class="string">"efdgbca"</span>;</span><br><span class="line"><span class="keyword">char</span> *out4 = <span class="string">"cdbefag"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s\n"</span>,Valid(in,out1,<span class="built_in">strlen</span>(in)) ? <span class="string">"合法顺序"</span>:<span class="string">"非法顺序"</span> );</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s\n"</span>,Valid(in,out2,<span class="built_in">strlen</span>(in)) ? <span class="string">"合法顺序"</span>:<span class="string">"非法顺序"</span> );</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s\n"</span>,Valid(in,out3,<span class="built_in">strlen</span>(in)) ? <span class="string">"合法顺序"</span>:<span class="string">"非法顺序"</span> );</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s\n"</span>,Valid(in,out4,<span class="built_in">strlen</span>(in)) ? <span class="string">"合法顺序"</span>:<span class="string">"非法顺序"</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输出结果：</span><br><span class="line">合法顺序</span><br><span class="line">非法顺序</span><br><span class="line">非法顺序</span><br><span class="line">合法顺序</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h3 id=&quot;判断元素入栈出栈的合法性&quot;&gt;&lt;a href=&quot;#判断元素入栈出栈的合法性&quot; class=&quot;headerlink&quot; title=&quot;判断元素入栈出栈的合法性&quot;&gt;&lt;/a&gt;
-      
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://LiuZiQiao.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="数据结构" scheme="https://LiuZiQiao.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="栈" scheme="https://LiuZiQiao.github.io/tags/%E6%A0%88/"/>
     
   </entry>
   
