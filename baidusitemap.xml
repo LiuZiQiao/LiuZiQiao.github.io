@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://LiuZiQiao.github.io/2018/09/10/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%8A/</loc>
+    <lastmod>2018-09-23T15:02:53.611Z</lastmod>
+    <data>
+        <display>
+        <title>Linux基本操作上</title>
+        <pubTime>2018-09-10T12:07:27.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://LiuZiQiao.github.io/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://LiuZiQiao.github.io/2018/09/23/vim%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</loc>
     <lastmod>2018-09-23T15:00:06.905Z</lastmod>
     <data>
@@ -436,26 +456,6 @@
            
              
               <breadCrumb title="java" url="https://LiuZiQiao.github.io/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://LiuZiQiao.github.io/2018/09/10/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%8A/</loc>
-    <lastmod>2018-09-19T00:21:43.710Z</lastmod>
-    <data>
-        <display>
-        <title>Linux基本操作上</title>
-        <pubTime>2018-09-10T12:07:27.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://LiuZiQiao.github.io/categories/Linux/"/>
           
         </display>
     </data>
