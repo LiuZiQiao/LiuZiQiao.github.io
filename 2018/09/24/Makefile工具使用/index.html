@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。 没有Makefile工具时如何进行编译首先我们看一个例子：当前我们">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-24T08:33:04.576Z">
+<meta property="og:updated_time" content="2018-09-24T08:36:09.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Makefile工具使用">
 <meta name="twitter:description" content="Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。 没有Makefile工具时如何进行编译首先我们看一个例子：当前我们">
@@ -401,7 +401,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-24T16:33:04+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-24T16:36:09+08:00">
                 2018-09-24
               </time>
             
@@ -514,8 +514,7 @@
 <h3 id="makefile简单示例"><a href="#makefile简单示例" class="headerlink" title="makefile简单示例"></a>makefile简单示例</h3><p>就如上面的三个文件<br>我们vim 一个名为Makefile的文件<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main.o:test.o main.c</span><br><span class="line">    gcc test.o main.c</span><br><span class="line">test.o:test.c</span><br><span class="line">    gcc -c test.c</span><br></pre></td></tr></table></figure></p>
 <p>编辑好Makefile文件后，我们返回，执行make后，将会输出<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -c test.c   </span><br><span class="line">gcc test.o main.c</span><br></pre></td></tr></table></figure></p>
 <p>这样是不是比原始的编译方便很多呢。其实也不是罪方便的，既然发明了make工具，那么肯定会让make工具更加方便开发人员使用的。</p>
-<h3 id="Makefile具体使用"><a href="#Makefile具体使用" class="headerlink" title="Makefile具体使用"></a>Makefile具体使用</h3><h4 id="伪目标"><a href="#伪目标" class="headerlink" title="伪目标"></a>伪目标</h4><pre><code>伪目标：不管是不是最新的，都需要重新生成；使用.PHONY来声明一个目标是伪目标；执行伪目标的效果等于执行了某一个动作，并不产生目标文件。例如添加一个伪目标：
-</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">main.o:test.o main.c</span><br><span class="line">    gcc test.o main.c</span><br><span class="line">test.o:test.c</span><br><span class="line">    gcc -c test.c</span><br><span class="line">clean :                                        【这是一个伪目标】</span><br><span class="line">        rm -f $(OBJECTS) main</span><br></pre></td></tr></table></figure>
+<h3 id="Makefile具体使用"><a href="#Makefile具体使用" class="headerlink" title="Makefile具体使用"></a>Makefile具体使用</h3><h4 id="伪目标"><a href="#伪目标" class="headerlink" title="伪目标"></a>伪目标</h4><p>伪目标：不管是不是最新的，都需要重新生成；使用.PHONY来声明一个目标是伪目标；执行伪目标的效果等于执行了某一个动作，并不产生目标文件。例如添加一个伪目标：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">main.o:test.o main.c</span><br><span class="line">    gcc test.o main.c</span><br><span class="line">test.o:test.c</span><br><span class="line">    gcc -c test.c</span><br><span class="line">clean :                                        【这是一个伪目标】</span><br><span class="line">        rm -f $(OBJECTS) main</span><br></pre></td></tr></table></figure></p>
 <p>使用make来执行伪目标<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ make clean</span><br><span class="line">rm -f test.o main.c main.o</span><br></pre></td></tr></table></figure></p>
 <h4 id="Makefile自动变量"><a href="#Makefile自动变量" class="headerlink" title="Makefile自动变量"></a>Makefile自动变量</h4>
       
