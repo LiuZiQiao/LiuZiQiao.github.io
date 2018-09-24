@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="不知不觉，vim已经使用快一年了，虽然不是经常使用，这就导致每次使用时一些命令还是模糊，需要查查文档才能正确使用，因此就这篇博客分享给学习Linux的小伙伴们。 vim介绍vim是程序员最喜欢的编辑器，也是Linux下第二强大的编辑器，虽然emacs是公认的世界第一，但我认为emacs并没有vim用起来高效。 vim的几种模式 正常模式：可以使用快捷键命令，或按输入命令 插入模式：可以输入文本">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-24T05:22:41.437Z">
+<meta property="og:updated_time" content="2018-09-24T06:08:40.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim使用命令大全">
 <meta name="twitter:description" content="不知不觉，vim已经使用快一年了，虽然不是经常使用，这就导致每次使用时一些命令还是模糊，需要查查文档才能正确使用，因此就这篇博客分享给学习Linux的小伙伴们。 vim介绍vim是程序员最喜欢的编辑器，也是Linux下第二强大的编辑器，虽然emacs是公认的世界第一，但我认为emacs并没有vim用起来高效。 vim的几种模式 正常模式：可以使用快捷键命令，或按输入命令 插入模式：可以输入文本">
@@ -401,7 +401,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-24T13:22:41+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-24T14:08:40+08:00">
                 2018-09-24
               </time>
             
@@ -466,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,862
+                  3,639
                 </span>
               
 
@@ -482,7 +482,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  14
                 </span>
               
             </div>
@@ -627,6 +627,130 @@
 <li>:[n]r filename在第n行插入另一个文件的内容。</li>
 <li>:r !date 在光标处插入当前日期与时间。同理，:r !command可以将其它shell命令的输出插入当前文档。</li>
 </ul>
+<h4 id="改写插入"><a href="#改写插入" class="headerlink" title="改写插入"></a>改写插入</h4><ul>
+<li>c[n]w：改写光标后第n个次</li>
+<li>c[n]I：改写光标后的n个字母</li>
+<li>c[n]h：改写光标前的n个字母</li>
+<li>[n]cc：修改当前[n]行</li>
+<li>[n]s：以输入的文本替代光标之后1(n)个字符</li>
+<li>[n]S：删除指定数目的行，并以所输入文本代替</li>
+</ul>
+<h3 id="剪切复制和寄存器"><a href="#剪切复制和寄存器" class="headerlink" title="剪切复制和寄存器"></a>剪切复制和寄存器</h3><h4 id="剪切和复制、粘贴"><a href="#剪切和复制、粘贴" class="headerlink" title="剪切和复制、粘贴"></a>剪切和复制、粘贴</h4><ul>
+<li>[n]x: 剪切光标右边n个字符，相当于d[n]l。</li>
+<li>[n]X: 剪切光标左边n个字符，相当于d[n]h。</li>
+<li>y: 复制在可视模式下选中的文本。</li>
+<li>yy or Y: 复制整行文本。</li>
+<li>y[n]w: 复制一(n)个词。</li>
+<li>y[n]l: 复制光标右边1(n)个字符。</li>
+<li>y[n]h: 复制光标左边1(n)个字符。</li>
+<li>yor D: 删除（剪切）当前位置到行尾的内容。</li>
+<li>d[n]w: 删除（剪切）1(n)个单词</li>
+<li>d[n]l: 删除（剪切）光标右边1(n)个字符。</li>
+<li>d[n]h: 删除（剪切）光标左边1(n)个字符。</li>
+<li>d0: 删除（剪切）当前位置到行首的内容</li>
+<li>[n] dd: 删除（剪切）1(n)行。</li>
+<li>:m,nd<cr> 剪切m行到n行的内容。</cr></li>
+<li>d1G或dgg: 剪切光标以上的所有行。</li>
+<li>dG: 剪切光标以下的所有行。</li>
+<li>daw和das：剪切一个词和剪切一个句子，即使光标不在词首和句首也没关系。</li>
+<li>d/f<cr>：这是一个比较高级的组合命令，它将删除当前位置 到下一个f之间的内容。</cr></li>
+<li>p: 在光标之后粘贴。</li>
+<li>P: 在光标之前粘贴。</li>
+</ul>
+<p><strong><em>当然，我们也可以在视图模式下进行选择，然后进行复制剪切粘贴操作</em></strong></p>
+<h4 id="文本对象"><a href="#文本对象" class="headerlink" title="文本对象"></a>文本对象</h4><ul>
+<li>aw：一个词</li>
+<li>as：一句</li>
+<li>ap：一段</li>
+<li>ab：一块<h4 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h4></li>
+<li>a-z：都可以用作寄存器的名。“ayy把当前行的内容放入a寄存器。</li>
+<li>A-Z：用大写字母索引寄存器，可以在寄存器中追加内容。</li>
+<li>:reg：显示所有寄存器的内容</li>
+<li>“”：不加寄存器索引时，默认使用的寄存器</li>
+<li>“<em>：当前选择缓冲区，”</em>yy吧当前行的内容放入当前缓冲区。</li>
+<li>“+：系统剪贴板。”+yy把当前行的内容放入系统剪贴板。</li>
+</ul>
+<h3 id="编辑多个文件"><a href="#编辑多个文件" class="headerlink" title="编辑多个文件"></a>编辑多个文件</h3><h4 id="一次编辑多个文件"><a href="#一次编辑多个文件" class="headerlink" title="一次编辑多个文件"></a>一次编辑多个文件</h4><pre><code>打开文件时：vi a.txt b.txt c.txt
+</code></pre><ul>
+<li>使用：next(:n)编辑下一个文件</li>
+<li>:2n编辑下2个文件</li>
+<li>使用:previous或:N编辑上一个文件</li>
+<li>使用:wnext，保存当前文件，并编辑下一个文件</li>
+<li>使用:wprevious，保存当前文件，并编辑上一个文件</li>
+<li>使用:args显示文件列表</li>
+<li>:n filename或:args filename 指定新的文件列表</li>
+<li>vi -o filename 在水平分割线的多个窗口编辑多个文件</li>
+<li>vi -o filename 在垂直分割的多个窗口中编辑多个文件</li>
+<li>vnew 在当前编辑文件时新增加一个编辑文件，:w filename 保存为filename的文件<h3 id="分屏编辑"><a href="#分屏编辑" class="headerlink" title="分屏编辑"></a>分屏编辑</h3></li>
+<li>vim -o file1 file2 ：水平分割窗口，同时打开file1和file2</li>
+<li>vim -O file1 file2 ：垂直分割窗口，同时打开file1和file2<h4 id="水平分割"><a href="#水平分割" class="headerlink" title="水平分割"></a>水平分割</h4></li>
+<li>split(:sp) 把当前窗水平分割成两个窗口。(Ctrl-W s 或Ctrl-W ctrl-S)如果是在终端下，Ctrl-S可能会冻结终端，Ctrl-Q继续</li>
+<li>split filename  水平分割窗口，并在新窗口中显示另外一个文件</li>
+<li>nsplit(:nsp) 水平分割出一个n行高的窗口</li>
+<li>C-W C-^ 水平分割一个窗口，打开刚才编辑的文件<h4 id="垂直分割"><a href="#垂直分割" class="headerlink" title="垂直分割"></a>垂直分割</h4></li>
+<li>:vsplit(:vsp) 把当前窗口分割成水平分布的两个窗口</li>
+<li>:[N]vne[W] 垂直分割出一各新窗口</li>
+<li>:vertical 水平分割的命令，相应的垂直分割<h4 id="关闭子窗口"><a href="#关闭子窗口" class="headerlink" title="关闭子窗口"></a>关闭子窗口</h4></li>
+<li>:qall  关闭所有窗口，退出vim</li>
+<li>:wall 保存所有修改过的窗口</li>
+<li>:only 只保留当前窗口，关闭其它窗口</li>
+<li>:close 关闭当前窗口，Ctrl-W c能实现同样的功能<h4 id="调整窗口大小"><a href="#调整窗口大小" class="headerlink" title="调整窗口大小"></a>调整窗口大小</h4></li>
+<li>Ctrl+w+  当前窗口增高一行。也可用n增高n行</li>
+<li>Ctrl+w-  当前窗口减少一行。也可用n减少n行</li>
+<li>Ctrl+w_  当前窗口扩展到尽可能的大。也可用n设定行数</li>
+<li>resize n 当前窗口n行高</li>
+<li>Ctrl+w&lt; 当前窗口减少一列。也可用n减少n列</li>
+<li>Ctrl+w&gt; 当前窗口增加一列。也可用n增加n列<h4 id="切换和移动窗口"><a href="#切换和移动窗口" class="headerlink" title="切换和移动窗口"></a>切换和移动窗口</h4></li>
+<li>Ctrl+w Ctrl+w 切换到下一个窗口(Ctrl+w w)</li>
+<li>Ctrl+w p 切换到前一个窗口</li>
+<li>Ctrl+w h(l,j,k) 切换到左（右，下，上）面</li>
+<li>Ctrl+w r 旋转窗口位置</li>
+<li>Ctrl+w T 将当前的窗口移动到新的标签页上</li>
+</ul>
+<h3 id="快速编辑"><a href="#快速编辑" class="headerlink" title="快速编辑"></a>快速编辑</h3><h4 id="改变大小写"><a href="#改变大小写" class="headerlink" title="改变大小写"></a>改变大小写</h4><ul>
+<li>~: 反转光标所在字符的大小写</li>
+<li>可视模式下的U或u：把选中的文本变为大写或小写</li>
+<li>gu(U)接范围（如$，或G），可以把从光标当前位置到指定位置之间字母全部 转换成小写或大写。如ggguG，就是把开头到最后一行之间的字母全部变为小 写。再如gu5j，把当前行和下面四行全部变成小写。<h4 id="替换（正常模式）"><a href="#替换（正常模式）" class="headerlink" title="替换（正常模式）"></a>替换（正常模式）</h4></li>
+<li>r: 替换光标处的字符，同样支持汉字。</li>
+<li>R: 进入替换模式，按esc回到正常模式。</li>
+</ul>
+<h4 id="撤销与重做（正常模式）"><a href="#撤销与重做（正常模式）" class="headerlink" title="撤销与重做（正常模式）"></a>撤销与重做（正常模式）</h4><ul>
+<li>[n] u: 取消一(n)个改动。</li>
+<li>:undo 5 – 撤销5个改变。</li>
+<li>:undolist – 你的撤销历史。</li>
+<li>ctrl + r: 重做最后的改动。</li>
+<li>U: 取消当前行中所有的改动。</li>
+<li>:earlier 4m – 回到4分钟前</li>
+<li>:later 55s – 前进55秒<h4 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h4></li>
+<li>–重复上一个编辑动作</li>
+<li>qa：开始录制宏a（键盘操作记录）</li>
+<li>q：停止录制</li>
+<li>@a：播放宏a</li>
+</ul>
+<h3 id="编辑特殊文件"><a href="#编辑特殊文件" class="headerlink" title="编辑特殊文件"></a>编辑特殊文件</h3><h4 id="文件加解密"><a href="#文件加解密" class="headerlink" title="文件加解密"></a>文件加解密</h4><ul>
+<li>vim -x file 开始编辑一个加密文件</li>
+<li>:X 为当前文件设置加密</li>
+<li>:set key= 去除文件的密码<h4 id="文件的编码"><a href="#文件的编码" class="headerlink" title="文件的编码"></a>文件的编码</h4></li>
+<li>:e ++enc=utf8 filename, 让vim用utf-8的编码打开这个文件。</li>
+<li>:w ++enc=gbk，不管当前文件什么编码，把它转存成gbk编码。</li>
+<li>:set fenc或:setfileencoding，查看当前文件的编码。</li>
+<li>在vimrc中添加set fileencoding=ucs-bom,utf-8,cp936，vim会根据要打开的文件选择合适的编码。 注意：编码之间不要留空格。 cp936对应于gbk编码。 ucs-bom对应于windows下的文件格式。</li>
+</ul>
+<h3 id="编程辅助"><a href="#编程辅助" class="headerlink" title="编程辅助"></a>编程辅助</h3><ul>
+<li>gd: 跳转到局部变量的定义处；</li>
+<li>gD: 跳转到全局变量的定义处，从当前文件开头开始搜索；</li>
+<li>g;: 上一个修改过的地方；</li>
+<li>g,: 下一个修改过的地方；</li>
+<li>[[: 跳转到上一个函数块开始，需要有单独一行的{。</li>
+<li>]]: 跳转到下一个函数块开始，需要有单独一行的{。</li>
+<li>[]: 跳转到上一个函数块结束，需要有单独一行的}。</li>
+<li>][: 跳转到下一个函数块结束，需要有单独一行的}。</li>
+<li>[{: 跳转到当前块开始处；</li>
+<li>]}: 跳转到当前块结束处；</li>
+<li>[/: 跳转到当前注释块开始处；</li>
+<li>]/: 跳转到当前注释块结束处；</li>
+<li>%: 不仅能移动到匹配的(),{}或[]上，而且能在#if，#else， #endif之间跳跃。</li>
+</ul>
 
       
     </div>
@@ -652,7 +776,7 @@
   <p><span>本文标题:</span><a href="/2018/09/23/vim使用命令大全/">vim使用命令大全</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2018年09月23日 - 22:09</p>
-  <p><span>最后更新:</span>2018年09月24日 - 13:09</p>
+  <p><span>最后更新:</span>2018年09月24日 - 14:09</p>
   <p><span>原始链接:</span><a href="/2018/09/23/vim使用命令大全/" title="vim使用命令大全">https://LiuZiQiao.github.io/2018/09/23/vim使用命令大全/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/09/23/vim使用命令大全/"  aria-label="复制成功！"></i></span>
   </p>
@@ -957,7 +1081,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim介绍"><span class="nav-number">1.</span> <span class="nav-text">vim介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vim的几种模式"><span class="nav-number">1.1.</span> <span class="nav-text">vim的几种模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动vim"><span class="nav-number">2.</span> <span class="nav-text">启动vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档操作"><span class="nav-number">3.</span> <span class="nav-text">文档操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动"><span class="nav-number">4.</span> <span class="nav-text">光标移动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本移动"><span class="nav-number">4.1.</span> <span class="nav-text">基本移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#翻屏"><span class="nav-number">4.2.</span> <span class="nav-text">翻屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标记"><span class="nav-number">4.3.</span> <span class="nav-text">标记</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入文本"><span class="nav-number">5.</span> <span class="nav-text">插入文本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本插入"><span class="nav-number">5.1.</span> <span class="nav-text">基本插入</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim介绍"><span class="nav-number">1.</span> <span class="nav-text">vim介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vim的几种模式"><span class="nav-number">1.1.</span> <span class="nav-text">vim的几种模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动vim"><span class="nav-number">2.</span> <span class="nav-text">启动vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档操作"><span class="nav-number">3.</span> <span class="nav-text">文档操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动"><span class="nav-number">4.</span> <span class="nav-text">光标移动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本移动"><span class="nav-number">4.1.</span> <span class="nav-text">基本移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#翻屏"><span class="nav-number">4.2.</span> <span class="nav-text">翻屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标记"><span class="nav-number">4.3.</span> <span class="nav-text">标记</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入文本"><span class="nav-number">5.</span> <span class="nav-text">插入文本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本插入"><span class="nav-number">5.1.</span> <span class="nav-text">基本插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改写插入"><span class="nav-number">5.2.</span> <span class="nav-text">改写插入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#剪切复制和寄存器"><span class="nav-number">6.</span> <span class="nav-text">剪切复制和寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#剪切和复制、粘贴"><span class="nav-number">6.1.</span> <span class="nav-text">剪切和复制、粘贴</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本对象"><span class="nav-number">6.2.</span> <span class="nav-text">文本对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#寄存器"><span class="nav-number">6.3.</span> <span class="nav-text">寄存器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑多个文件"><span class="nav-number">7.</span> <span class="nav-text">编辑多个文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一次编辑多个文件"><span class="nav-number">7.1.</span> <span class="nav-text">一次编辑多个文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分屏编辑"><span class="nav-number">8.</span> <span class="nav-text">分屏编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#水平分割"><span class="nav-number">8.1.</span> <span class="nav-text">水平分割</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#垂直分割"><span class="nav-number">8.2.</span> <span class="nav-text">垂直分割</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭子窗口"><span class="nav-number">8.3.</span> <span class="nav-text">关闭子窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整窗口大小"><span class="nav-number">8.4.</span> <span class="nav-text">调整窗口大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换和移动窗口"><span class="nav-number">8.5.</span> <span class="nav-text">切换和移动窗口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速编辑"><span class="nav-number">9.</span> <span class="nav-text">快速编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#改变大小写"><span class="nav-number">9.1.</span> <span class="nav-text">改变大小写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换（正常模式）"><span class="nav-number">9.2.</span> <span class="nav-text">替换（正常模式）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销与重做（正常模式）"><span class="nav-number">9.3.</span> <span class="nav-text">撤销与重做（正常模式）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#宏"><span class="nav-number">9.4.</span> <span class="nav-text">宏</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑特殊文件"><span class="nav-number">10.</span> <span class="nav-text">编辑特殊文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文件加解密"><span class="nav-number">10.1.</span> <span class="nav-text">文件加解密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件的编码"><span class="nav-number">10.2.</span> <span class="nav-text">文件的编码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编程辅助"><span class="nav-number">11.</span> <span class="nav-text">编程辅助</span></a></li></ol></div>
             
 
           </div>
@@ -991,7 +1115,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.7k</span>
+    <span title="Site words total count">26.5k</span>
   
 </div>
 
