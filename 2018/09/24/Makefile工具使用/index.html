@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。 没有Makefile工具时如何进行编译首先我们看一个例子：当前我们">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-24T12:26:58.792Z">
+<meta property="og:updated_time" content="2018-09-24T12:33:06.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Makefile工具使用">
 <meta name="twitter:description" content="Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。 没有Makefile工具时如何进行编译首先我们看一个例子：当前我们">
@@ -401,7 +401,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-24T20:26:58+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-24T20:33:06+08:00">
                 2018-09-24
               </time>
             
@@ -466,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,252
+                  1,261
                 </span>
               
 
@@ -525,12 +525,16 @@
 </thead>
 <tbody>
 <tr>
-<td>@规定的目标文件名</td>
-<td>规定的第一个依赖文件名</td>
+<td>$@</td>
+<td>编写规则中啊哟生成的目标对象</td>
 </tr>
 <tr>
 <td>$^</td>
-<td>规定的所有依赖文件列表</td>
+<td>编写规则中所有依赖文件列表</td>
+</tr>
+<tr>
+<td>$&lt;</td>
+<td>编写规定中第一个依赖对象</td>
 </tr>
 </tbody>
 </table>
