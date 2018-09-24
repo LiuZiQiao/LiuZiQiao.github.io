@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。 没有Makefile工具时如何进行编译首先我们看一个例子：当前我们">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-24T08:36:09.615Z">
+<meta property="og:updated_time" content="2018-09-24T12:21:50.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Makefile工具使用">
 <meta name="twitter:description" content="Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。 没有Makefile工具时如何进行编译首先我们看一个例子：当前我们">
@@ -401,7 +401,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-24T16:36:09+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-24T20:21:50+08:00">
                 2018-09-24
               </time>
             
@@ -466,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  560
+                  1,252
                 </span>
               
 
@@ -482,7 +482,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  5
                 </span>
               
             </div>
@@ -516,7 +516,45 @@
 <p>这样是不是比原始的编译方便很多呢。其实也不是罪方便的，既然发明了make工具，那么肯定会让make工具更加方便开发人员使用的。</p>
 <h3 id="Makefile具体使用"><a href="#Makefile具体使用" class="headerlink" title="Makefile具体使用"></a>Makefile具体使用</h3><h4 id="伪目标"><a href="#伪目标" class="headerlink" title="伪目标"></a>伪目标</h4><p>伪目标：不管是不是最新的，都需要重新生成；使用.PHONY来声明一个目标是伪目标；执行伪目标的效果等于执行了某一个动作，并不产生目标文件。例如添加一个伪目标：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">main.o:test.o main.c</span><br><span class="line">    gcc test.o main.c</span><br><span class="line">test.o:test.c</span><br><span class="line">    gcc -c test.c</span><br><span class="line">clean :                                        【这是一个伪目标】</span><br><span class="line">        rm -f $(OBJECTS) main</span><br></pre></td></tr></table></figure></p>
 <p>使用make来执行伪目标<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ make clean</span><br><span class="line">rm -f test.o main.c main.o</span><br></pre></td></tr></table></figure></p>
-<h4 id="Makefile自动变量"><a href="#Makefile自动变量" class="headerlink" title="Makefile自动变量"></a>Makefile自动变量</h4>
+<h4 id="Makefile自动变量"><a href="#Makefile自动变量" class="headerlink" title="Makefile自动变量"></a>Makefile自动变量</h4><table>
+<thead>
+<tr>
+<th>选项名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@\</td>
+<td>规定的目标文件名\</td>
+<td></td>
+<td>规定的第一个依赖文件名</td>
+</tr>
+<tr>
+<td>$^</td>
+<td>规定的所有依赖文件列表</td>
+</tr>
+</tbody>
+</table>
+<p>因此，上面的Makefile文件我们可以改下如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main.o:test.o main.c</span><br><span class="line">    gcc -g $^ -o $@</span><br><span class="line">test.o:test.c</span><br><span class="line">    gcc -g -c  $&lt; -o $@</span><br></pre></td></tr></table></figure></p>
+<p>执行make，可以看到效果还是一样的：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -c test.c   </span><br><span class="line">gcc test.o main.c</span><br></pre></td></tr></table></figure></p>
+<h4 id="编译生成多个可执行文件"><a href="#编译生成多个可执行文件" class="headerlink" title="编译生成多个可执行文件"></a>编译生成多个可执行文件</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">bin=main main2   <span class="comment">//自定义变量bin</span></span><br><span class="line">src=main.o test.o</span><br><span class="line">all:$(bin)    <span class="comment">//重点</span></span><br><span class="line">main: $(src)</span><br><span class="line">    gcc -g $^ -o $@</span><br><span class="line">main2:$(bin)</span><br><span class="line">    gcc -g $&lt; -o $@</span><br><span class="line">main.o :main.c</span><br><span class="line">    gcc -g -c $&lt; -o $@</span><br><span class="line">main2.o :main2.c</span><br><span class="line">    gcc -g -c $&lt; -o $@</span><br><span class="line">clean :</span><br><span class="line">    rm -f $(src) $(bin)</span><br></pre></td></tr></table></figure>
+<p>为了生成目标文件all，需要生成bin，也就是main main2.这样就生成了两个可执行文件，利用自定义变量可以简化这段Makefile，但是这样写看起来内容其实还是很多的，因此下面我将介绍make的内嵌函数</p>
+<h4 id="make常用内嵌函数"><a href="#make常用内嵌函数" class="headerlink" title="make常用内嵌函数"></a>make常用内嵌函数</h4><p>首先看到make中函数的调用形式<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(function arguments)   <span class="comment">//functions是函数名称，arguments是参数，使用$来调用</span></span><br></pre></td></tr></table></figure></p>
+<p><strong><em>函数名与参数之间是空格</em></strong><br>以下三个重要的内嵌函数</p>
+<ul>
+<li><p>$(wildcard path)<br>  当前目录下匹配模式的文件</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">src=$(wildcard *.c)  <span class="comment">// 在当前目录下搜索所以.c文件，文件名称保存到src中</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>$(patsubst pattern,replacement,text)模式替换函数，就是把text中文件列表从模式pattern替换为replacement模式</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(patsubst %.c,%.o,$src)  <span class="comment">// 把src中的.c文件列表中的文件从.c替换为.o</span></span><br><span class="line">等价于：$(src:.c=.o)  <span class="comment">//这种方式更为常用</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>shell函数<br>shell函数可以执行shell下的命令，同样是使用$来引用的，例如</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(shell ls -d */)  <span class="comment">//将当前目录下的所有文件列出来</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下面我们通过一个例子来使用上面三个函数。假设当前目录下有main.c文件，同时还有若干个目录，每个目录中都有各自的.c文件，利用所有的.c文件编译生成最后的main文件：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">CC      = gcc</span><br><span class="line">CFLAGS  = -g</span><br><span class="line">BIN     = main</span><br><span class="line">SUBDIR  = $(shell ls -d */)     <span class="comment">// SUBDIR变量保存了子目录的列表</span></span><br><span class="line">ROOTSRC = $(wildcard *.c)       <span class="comment">//ROOTSRC保存了当前目录下的.c文件列表</span></span><br><span class="line">ROOTOBJ = $(ROOTSRC:%.c = %.o)  <span class="comment">//ROOTBOJ 保存了当前目录下.c文件同名的.o列表</span></span><br><span class="line">SUBSRC  = $(shell find $(SUBDIR) -name '*.c')       //SUBSRC 保存了所有子目录下的的.c文件</span><br><span class="line">SUBOBJ  = $(SUBSRC:%.c = %.o)       <span class="comment">//SUBOBJ保存了所有子目录下的.c文件同名的.o文件列表</span></span><br><span class="line">$(BIN):$(ROOTOBJ) $(SUBOBJ)         <span class="comment">//main的生成依赖与当前目录及所有子目录下的.o文件</span></span><br><span class="line">    $(CC) $(CFLAGS) -o $(BIN) $(ROOTOBJ) $(SUBOBJ)</span><br><span class="line">.o .c:</span><br><span class="line">    $(CC) $(CFLAGS) -c %&lt; -o $@</span><br><span class="line">clean:</span><br><span class="line">    rm -f $(BIN) $(ROOTOBJ) $(SUBOBJ)</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -541,7 +579,7 @@
   <p><span>本文标题:</span><a href="/2018/09/24/Makefile工具使用/">Makefile工具使用</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2018年09月24日 - 16:09</p>
-  <p><span>最后更新:</span>2018年09月24日 - 16:09</p>
+  <p><span>最后更新:</span>2018年09月24日 - 20:09</p>
   <p><span>原始链接:</span><a href="/2018/09/24/Makefile工具使用/" title="Makefile工具使用">https://LiuZiQiao.github.io/2018/09/24/Makefile工具使用/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/09/24/Makefile工具使用/"  aria-label="复制成功！"></i></span>
   </p>
@@ -846,7 +884,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#没有Makefile工具时如何进行编译"><span class="nav-number">1.</span> <span class="nav-text">没有Makefile工具时如何进行编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#makefile简单示例"><span class="nav-number">2.</span> <span class="nav-text">makefile简单示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Makefile具体使用"><span class="nav-number">3.</span> <span class="nav-text">Makefile具体使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伪目标"><span class="nav-number">3.1.</span> <span class="nav-text">伪目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Makefile自动变量"><span class="nav-number">3.2.</span> <span class="nav-text">Makefile自动变量</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#没有Makefile工具时如何进行编译"><span class="nav-number">1.</span> <span class="nav-text">没有Makefile工具时如何进行编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#makefile简单示例"><span class="nav-number">2.</span> <span class="nav-text">makefile简单示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Makefile具体使用"><span class="nav-number">3.</span> <span class="nav-text">Makefile具体使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伪目标"><span class="nav-number">3.1.</span> <span class="nav-text">伪目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Makefile自动变量"><span class="nav-number">3.2.</span> <span class="nav-text">Makefile自动变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译生成多个可执行文件"><span class="nav-number">3.3.</span> <span class="nav-text">编译生成多个可执行文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#make常用内嵌函数"><span class="nav-number">3.4.</span> <span class="nav-text">make常用内嵌函数</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -880,7 +918,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">27.0k</span>
+    <span title="Site words total count">27.7k</span>
   
 </div>
 
