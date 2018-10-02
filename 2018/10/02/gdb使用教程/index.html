@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="GDB介绍 GDB是GNU开源组织发布的一个强大的UNIX下的程序调试工具。或许，各位比较喜欢那种图形界面方式的，像VS等IDE的调试，但如果你是在UNIX平台下做软件，你会发现GDB这个调试工具有比VS的图形化调试器更强大的功能。所谓“寸有所长，尺有所短”就是这个道理。一般来说，GDB主要帮忙你完成下面四个方面的功能：  1、启动程序，按用户要求影响程序的运行行为 2、使运行程序在指定条件处">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-02T03:00:57.448Z">
+<meta property="og:updated_time" content="2018-10-02T03:02:31.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gdb使用教程">
 <meta name="twitter:description" content="GDB介绍 GDB是GNU开源组织发布的一个强大的UNIX下的程序调试工具。或许，各位比较喜欢那种图形界面方式的，像VS等IDE的调试，但如果你是在UNIX平台下做软件，你会发现GDB这个调试工具有比VS的图形化调试器更强大的功能。所谓“寸有所长，尺有所短”就是这个道理。一般来说，GDB主要帮忙你完成下面四个方面的功能：  1、启动程序，按用户要求影响程序的运行行为 2、使运行程序在指定条件处">
@@ -401,7 +401,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-02T11:00:57+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-02T11:02:31+08:00">
                 2018-10-02
               </time>
             
@@ -519,8 +519,8 @@
 <p>==如果没有-g，你将看不见程序的函数名、变量名，所代替的全是运行时的内存地址。当你用-g把调试信息加入之后，并成功编译目标代码以后，让我们来看看如何用gdb来调试他。==</p>
 <p><strong>启动gdb的方法有以下几种：</strong></p>
 <ol>
-<li>gdb  <program>  program<br>  就是可执行文件，一般就在当前目录下</program></li>
-<li>gdb  <program>  core<br> 用gdb同时调试一个运行程序和core文件，core==是非法执行后==core dump 后产生的文件</program></li>
+<li>gdb <program><br>program<br>  就是可执行文件，一般就在当前目录下</program></li>
+<li>gdb <program>  core<br> 用gdb同时调试一个运行程序和core文件，core==是非法执行后==core dump 后产生的文件</program></li>
 <li>gdb <program> <pid><br> 如果是一个服务程序，就可以指定服务程序运行时的进程ID，gdb会自动的attach上去，并调试他，program应该在path环境变量中搜索得到   </pid></program></li>
 </ol>
 <p><strong>当然，gdb启动时我们可以加一些参数，详细的参数可以用gdb -help查看</strong></p>
