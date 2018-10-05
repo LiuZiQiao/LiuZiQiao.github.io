@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://LiuZiQiao.github.io/2018/09/24/Makefile%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-10-05T06:08:30.862Z</lastmod>
+    <data>
+        <display>
+        <title>Makefile工具使用</title>
+        <pubTime>2018-09-24T08:31:48.000Z</pubTime>
+        
+        <tag>vim</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://LiuZiQiao.github.io/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://LiuZiQiao.github.io/2018/10/05/%E9%93%BE%E8%A1%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2018-10-05T05:56:19.176Z</lastmod>
     <data>
@@ -159,26 +179,6 @@
            
              
               <breadCrumb title="每日一题" url="https://LiuZiQiao.github.io/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://LiuZiQiao.github.io/2018/09/24/Makefile%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-09-24T12:33:06.722Z</lastmod>
-    <data>
-        <display>
-        <title>Makefile工具使用</title>
-        <pubTime>2018-09-24T08:31:48.000Z</pubTime>
-        
-        <tag>vim</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://LiuZiQiao.github.io/categories/Linux/"/>
           
         </display>
     </data>
