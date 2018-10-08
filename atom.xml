@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2018-10-07T15:39:46.749Z</updated>
+  <updated>2018-10-08T23:33:59.032Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -18,22 +18,27 @@
   
   <entry>
     <title>TwoArrayIntesection</title>
-    <link href="https://LiuZiQiao.github.io/2018/10/07/TwoArrayIntesection/"/>
-    <id>https://LiuZiQiao.github.io/2018/10/07/TwoArrayIntesection/</id>
+    <link href="https://LiuZiQiao.github.io/2018/10/07/%20IntersectionofTwoArrays/"/>
+    <id>https://LiuZiQiao.github.io/2018/10/07/ IntersectionofTwoArrays/</id>
     <published>2018-10-07T15:39:46.000Z</published>
-    <updated>2018-10-07T15:39:46.749Z</updated>
+    <updated>2018-10-08T23:33:59.032Z</updated>
     
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>Given two arrays, write a function to compute their intersection.</p><p>Example 1:</p><p>Input: nums1 = [1,2,2,1], nums2 = [2,2]<br>Output: [2]<br>Example 2:</p><p>Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]<br>Output: [9,4]<br>Note:</p><p>Each element in the result must be unique.<br>The result can be in any order.</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] intersection(int[] nums1, int[] nums2) &#123;</span><br><span class="line">    Set&lt;Integer&gt; set1 = new HashSet();</span><br><span class="line">Set&lt;Integer&gt; set2 = new HashSet();</span><br><span class="line">for (int i = 0; i &lt; nums1.length; i++) &#123;</span><br><span class="line">set1.add(nums1[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (int j = 0; j &lt; nums2.length; j++) &#123;</span><br><span class="line">if (set1.contains(nums2[j])) &#123;</span><br><span class="line">set2.add(nums2[j]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">int[] num = new int[set2.size()];</span><br><span class="line">int i = 0;</span><br><span class="line">for (Integer n : set2) &#123;</span><br><span class="line">num[i] = n;</span><br><span class="line">i++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">return num;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
         &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Gi
       
     
     </summary>
     
+      <category term="每日一题" scheme="https://LiuZiQiao.github.io/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="Set" scheme="https://LiuZiQiao.github.io/tags/Set/"/>
     
   </entry>
   
