@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Queue," />
 
 
 
@@ -136,17 +136,18 @@
 
 
 
-<meta name="description" content="问题For 1 + 2 + 3 +… +n, you cannot use the multiplication/division, for, while, if, else, switch, case and other keywords and conditional judgment statement (A? B, C). 该题翻译过来就是求1+2+3+…+n，要求不能使用乘除法、fo">
+<meta name="description" content="利用两个队列实现一个栈要求：Push：往非空队列里插入（如果两个队列都是空，选第一个插入） Pop：从非空队列中 move  size - 1 个元素到 空队列中，pop 剩下的一个 Top: 从非空队列中 move  size - 1 个元素到 空队列中，返回剩下的一个的值，     把剩下的一个也放入另一个队列中 实现部分结构体定义以下代码基于队列的基本操作Queue.h，关于Queue.">
+<meta name="keywords" content="Queue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sum of the first n consecutive integers">
-<meta property="og:url" content="https://LiuZiQiao.github.io/2018/10/06/求前n个数的和/index.html">
+<meta property="og:title" content="队列实现栈">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2018/10/14/队列实现栈/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="问题For 1 + 2 + 3 +… +n, you cannot use the multiplication/division, for, while, if, else, switch, case and other keywords and conditional judgment statement (A? B, C). 该题翻译过来就是求1+2+3+…+n，要求不能使用乘除法、fo">
+<meta property="og:description" content="利用两个队列实现一个栈要求：Push：往非空队列里插入（如果两个队列都是空，选第一个插入） Pop：从非空队列中 move  size - 1 个元素到 空队列中，pop 剩下的一个 Top: 从非空队列中 move  size - 1 个元素到 空队列中，返回剩下的一个的值，     把剩下的一个也放入另一个队列中 实现部分结构体定义以下代码基于队列的基本操作Queue.h，关于Queue.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-06T07:58:35.173Z">
+<meta property="og:updated_time" content="2018-10-14T12:39:30.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sum of the first n consecutive integers">
-<meta name="twitter:description" content="问题For 1 + 2 + 3 +… +n, you cannot use the multiplication/division, for, while, if, else, switch, case and other keywords and conditional judgment statement (A? B, C). 该题翻译过来就是求1+2+3+…+n，要求不能使用乘除法、fo">
+<meta name="twitter:title" content="队列实现栈">
+<meta name="twitter:description" content="利用两个队列实现一个栈要求：Push：往非空队列里插入（如果两个队列都是空，选第一个插入） Pop：从非空队列中 move  size - 1 个元素到 空队列中，pop 剩下的一个 Top: 从非空队列中 move  size - 1 个元素到 空队列中，返回剩下的一个的值，     把剩下的一个也放入另一个队列中 实现部分结构体定义以下代码基于队列的基本操作Queue.h，关于Queue.">
 
 
 
@@ -176,7 +177,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/10/06/求前n个数的和/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/10/14/队列实现栈/"/>
 
 
 
@@ -199,7 +200,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>Sum of the first n consecutive integers | LiuxiaoKun</title>
+  <title>队列实现栈 | LiuxiaoKun</title>
   
 
 
@@ -355,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/10/06/求前n个数的和/">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/10/14/队列实现栈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -372,7 +373,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Sum of the first n consecutive integers</h2>
+          <h2 class="post-title" itemprop="name headline">队列实现栈</h2>
         
 
         <div class="post-meta">
@@ -384,8 +385,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-06T15:52:03+08:00">
-                2018-10-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-14T20:20:34+08:00">
+                2018-10-14
               </time>
             
 
@@ -400,8 +401,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-06T15:58:35+08:00">
-                2018-10-06
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-14T20:39:30+08:00">
+                2018-10-14
               </time>
             
           </span>
@@ -419,8 +420,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -437,8 +438,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/06/求前n个数的和/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/10/06/求前n个数的和/" itemprop="commentsCount"></span>
+                <a href="/2018/10/14/队列实现栈/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/10/14/队列实现栈/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -465,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  165
+                  519
                 </span>
               
 
@@ -481,7 +482,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -503,9 +504,14 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>For 1 + 2 + 3 +… +n, you cannot use the multiplication/division, for, while, if, else, switch, case and other keywords and conditional judgment statement (A? B, C).</p>
-<p>该题翻译过来就是求1+2+3+…+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。以下是给出的C解决方案</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>**思路：让其从最后一个数开始相加，直到n为0，则加完<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//辅助函数求和保存在i中</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Sum</span><span class="params">(<span class="keyword">int</span> n )</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		i = i + n;</span><br><span class="line">		n--;</span><br><span class="line">	<span class="keyword">return</span> 	Sum_Solution(n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//函数入口</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Sum_Solution</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> n==<span class="number">0</span> ? i : Sum(n);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="利用两个队列实现一个栈"><a href="#利用两个队列实现一个栈" class="headerlink" title="利用两个队列实现一个栈"></a>利用两个队列实现一个栈</h3><p><strong>要求：</strong><br>Push：往非空队列里插入（如果两个队列都是空，选第一个插入）</p>
+<p>Pop：从非空队列中 move  size - 1 个元素到 空队列中，pop 剩下的一个</p>
+<p>Top: 从非空队列中 move  size - 1 个元素到 空队列中，返回剩下的一个的值，<br>     把剩下的一个也放入另一个队列中</p>
+<h3 id="实现部分"><a href="#实现部分" class="headerlink" title="实现部分"></a>实现部分</h3><h4 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a>结构体定义</h4><p>以下代码基于队列的基本操作Queue.h，关于Queue.h请自行在本博客中查找<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Queue.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QStack</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	Queue queue1;</span><br><span class="line">	Queue queue2;</span><br><span class="line">&#125;QStack;</span><br></pre></td></tr></table></figure></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QStackInit</span><span class="params">(QStack *pQS)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	QueueInit(&amp;(pQS-&gt;queue1));</span><br><span class="line">	QueueInit(&amp;(pQS-&gt;queue2));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QStackDestory</span><span class="params">(QStack *pQS)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	QueueDestroy(&amp;(pQS-&gt;queue1));</span><br><span class="line">	QueueDestroy(&amp;(pQS-&gt;queue2));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#### 插入</span><br><span class="line">```cpp</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QStackPush</span><span class="params">(QStack *pQS,QDataType data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Queue *pNotEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (QueueEmpty(pNotEmpty))		    <span class="comment">// 如果队列二为空，则不为空的就假设为队列一，就将队列一中的插入队列二</span></span><br><span class="line">	&#123;</span><br><span class="line">		pNotEmpty = &amp;(pQS-&gt;queue1);		<span class="comment">//如果队列二不为空，则直接将队列一中的插入队列二</span></span><br><span class="line">	&#125;</span><br><span class="line">	QueuePush(pNotEmpty,data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QStackPop</span><span class="params">(QStack *pQS)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Queue *pEmpty = &amp;(pQS-&gt;queue1);</span><br><span class="line">	Queue *pNotEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line">	<span class="keyword">if</span> (QueueEmpty(pNotEmpty))		 <span class="comment">//假设队列二是空，如果队列二空，则不空的就是队列一</span></span><br><span class="line">	&#123;</span><br><span class="line">		pEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line">		pNotEmpty = &amp;(pQS-&gt;queue1);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> (QueueSize(pNotEmpty) &gt; <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		QDataType data = QueueFront(pNotEmpty);</span><br><span class="line">		QueuePop(pNotEmpty);</span><br><span class="line">		QueuePush(pEmpty,data);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	QueuePop(pNotEmpty);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="获取压入的元素"><a href="#获取压入的元素" class="headerlink" title="获取压入的元素"></a>获取压入的元素</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">QDataType <span class="title">QStackTop</span><span class="params">(QStack *pQS)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	QDataType data;</span><br><span class="line">	QDataType r;</span><br><span class="line">	Queue *pEmpty = &amp;(pQS-&gt;queue1);</span><br><span class="line">	Queue *pNotEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line">	<span class="keyword">if</span> (QueueEmpty(pNotEmpty))		 <span class="comment">//假设队列二是空，如果队列二空，则不空的就是队列一</span></span><br><span class="line">	&#123;</span><br><span class="line">		pEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line">		pNotEmpty = &amp;(pQS-&gt;queue1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (QueueSize(pNotEmpty) &gt; <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		data = QueueFront(pNotEmpty);</span><br><span class="line">		QueuePop(pNotEmpty);</span><br><span class="line">		QueuePush(pEmpty,data);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	r = QueueFront(pNotEmpty);</span><br><span class="line">	QueuePop(pNotEmpty);</span><br><span class="line">	QueuePush(pEmpty,r);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TestQStack</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	QStack qstack;</span><br><span class="line">	QStackInit(&amp;qstack);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">9</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		QStackPush(&amp;qstack,i);</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"压入第%d ,压入 %d\n"</span>,i+<span class="number">1</span>,QStackTop(&amp;qstack));</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Top = %d "</span>,QStackTop(&amp;qstack));</span><br><span class="line">		<span class="comment">//QStackPop(&amp;qstack);</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -528,12 +534,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/10/06/求前n个数的和/">Sum of the first n consecutive integers</a></p>
+  <p><span>本文标题:</span><a href="/2018/10/14/队列实现栈/">队列实现栈</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
-  <p><span>发布时间:</span>2018年10月06日 - 15:10</p>
-  <p><span>最后更新:</span>2018年10月06日 - 15:10</p>
-  <p><span>原始链接:</span><a href="/2018/10/06/求前n个数的和/" title="Sum of the first n consecutive integers">https://LiuZiQiao.github.io/2018/10/06/求前n个数的和/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/10/06/求前n个数的和/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年10月14日 - 20:10</p>
+  <p><span>最后更新:</span>2018年10月14日 - 20:10</p>
+  <p><span>原始链接:</span><a href="/2018/10/14/队列实现栈/" title="队列实现栈">https://LiuZiQiao.github.io/2018/10/14/队列实现栈/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/10/14/队列实现栈/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -556,6 +562,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Queue/" rel="tag"><i class="fa fa-tag"></i> Queue</a>
+          
+        </div>
       
 
       
@@ -581,8 +593,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/05/链表面试题/" rel="next" title="链表面试题">
-                <i class="fa fa-chevron-left"></i> 链表面试题
+              <a href="/2018/10/14/栈实现队列/" rel="next" title="栈实现队列">
+                <i class="fa fa-chevron-left"></i> 栈实现队列
               </a>
             
           </div>
@@ -590,10 +602,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/07/ IntersectionofTwoArrays/" rel="prev" title="TwoArrayIntesection">
-                TwoArrayIntesection <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -838,7 +846,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用两个队列实现一个栈"><span class="nav-number">1.</span> <span class="nav-text">利用两个队列实现一个栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现部分"><span class="nav-number">2.</span> <span class="nav-text">实现部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结构体定义"><span class="nav-number">2.1.</span> <span class="nav-text">结构体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">2.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#销毁"><span class="nav-number">2.3.</span> <span class="nav-text">销毁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">2.4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取压入的元素"><span class="nav-number">2.5.</span> <span class="nav-text">获取压入的元素</span></a></li></ol></li></ol></div>
             
 
           </div>
