@@ -143,7 +143,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="在上一篇关于进程的博客中阐述了进程的概念，总结了进程的状态以及进程如何描述，这篇博客就总结下进程的创建、等待、终止以及进程等待的作用。 进程的创建上一篇博客中讲了关于fork函数的使用，其实fork函数就是进程创建的一个重要手段，下面演示进程的创建直接上代码1234567891011121314151617181920212223// create.c#include &amp;lt;stdio.h&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-30T08:46:04.615Z">
+<meta property="og:updated_time" content="2018-10-30T09:10:55.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux编程之进程(二)">
 <meta name="twitter:description" content="在上一篇关于进程的博客中阐述了进程的概念，总结了进程的状态以及进程如何描述，这篇博客就总结下进程的创建、等待、终止以及进程等待的作用。 进程的创建上一篇博客中讲了关于fork函数的使用，其实fork函数就是进程创建的一个重要手段，下面演示进程的创建直接上代码1234567891011121314151617181920212223// create.c#include &amp;lt;stdio.h&amp;">
@@ -400,7 +400,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-30T16:46:04+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-30T17:10:55+08:00">
                 2018-10-30
               </time>
             
@@ -517,7 +517,7 @@
 <ul>
 <li>运行完毕，结果正确</li>
 <li>运行完毕，结果不正确</li>
-<li>代码异常终止<br>常见退出方法<br>正常退出：<br>1）main函数中return<br>2）exit是温和退出，退出前温和的释放资源，刷新缓冲区<br>3）_exit是暴力退出，直接释放资源，不会刷新缓冲区<br>上面的代码中我们看到exit这样的函数，接下来就说说exit函数和_exit<br>==_exit==函数：void _exit(int status);<br>参数：status定义了进程的终止状态，父进程通过wait来获取该值<br>==exit==函数：void exit(int status)；<br>该函数在调用exit之前还做了一些事：<br>1.执行用户通过atexit或on_exit定义的清理函数<br>2.关闭所有打开的流，所有的缓存数据均被写入<br>3.调用_exit<br>总结来说：exit会释放资源退出，_exit立即退出。</li>
+<li>代码异常终止<br>常见退出方法<br>正常退出：<br>1）main函数中return<br>2）exit是温和退出，退出前温和的释放资源，刷新缓冲区<br>3）_exit是暴力退出，直接释放资源，不会刷新缓冲区<br>上面的代码中我们看到exit这样的函数，接下来就说说exit函数和_exit<br><code>_exit</code>函数：void _exit(int status);<br>参数：status定义了进程的终止状态，父进程通过wait来获取该值<br><code>exit</code>函数：void exit(int status)；<br>该函数在调用exit之前还做了一些事：<br>1.执行用户通过atexit或on_exit定义的清理函数<br>2.关闭所有打开的流，所有的缓存数据均被写入<br>3.调用_exit<br>总结来说：exit会释放资源退出，_exit立即退出。</li>
 </ul>
 <p>还有一种我们常用的return n 退出，它就和exit(n)等同，因为调用main函数的运行时函数会将main的返回值当做exit的参数</p>
 <h3 id="进程程序替换"><a href="#进程程序替换" class="headerlink" title="进程程序替换"></a>进程程序替换</h3><p>程序替换的是代码段所指向的物理内存区域，相当于让虚拟地址空间中的代码地址指向了物理内存的另一端代码位置，这样的话虚拟地址空间中原先的数据区域以及堆栈都会重新初始化，因为现在的代码运行的根本不是复制的那些数据<br>但是这个进程pcb还是原来的pcb<br>execl函数族：   </p>
@@ -587,7 +587,7 @@
   <p><span>本文标题:</span><a href="/2018/10/30/Linux编程之进程二/">Linux编程之进程(二)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2018年10月30日 - 16:10</p>
-  <p><span>最后更新:</span>2018年10月30日 - 16:10</p>
+  <p><span>最后更新:</span>2018年10月30日 - 17:10</p>
   <p><span>原始链接:</span><a href="/2018/10/30/Linux编程之进程二/" title="Linux编程之进程(二)">https://LiuZiQiao.github.io/2018/10/30/Linux编程之进程二/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/10/30/Linux编程之进程二/"  aria-label="复制成功！"></i></span>
   </p>
