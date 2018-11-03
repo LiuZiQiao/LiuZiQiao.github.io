@@ -145,7 +145,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20181103234743957.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20181103234803139.png">
-<meta property="og:updated_time" content="2018-11-03T15:49:33.131Z">
+<meta property="og:updated_time" content="2018-11-03T15:57:28.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BitMap算法">
 <meta name="twitter:description" content="问题引出我们先来看个简单的问题。 假如给你20亿个非负数的int型整数，然后再给你一个非负数的int型整数 t ，让你判断t是否存在于这20亿数中，你会怎么做呢？ 有人可能会用一个int数组，然后把20亿个数给存进去，然后再循环遍历一下就可以了。 想一下，这样的话，时间复杂度是O(n)，所需要的内存空间 4byte * 20亿，一共需要80亿个字节， 大概需要8GB的内存空间，显然有些计算机的">
@@ -403,7 +403,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-03T23:49:33+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-03T23:57:28+08:00">
                 2018-11-03
               </time>
             
@@ -468,7 +468,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,479
+                  1,483
                 </span>
               
 
@@ -512,7 +512,7 @@
 <p>想一下，这样的话，时间复杂度是O(n)，所需要的内存空间</p>
 <p>4byte * 20亿，一共需要80亿个字节，</p>
 <p>大概需要8GB的内存空间，显然有些计算机的内存一次是加载不了这么这么多的数据的。</p>
-<h4 id="初步优化"><a href="#初步优化" class="headerlink" title="初步优化"></a>初步优化</h4><p>按照上面的做法，时间复杂度是O(n)，内存是8GB，实际上我们是可以把时间复杂度降低到O(1)的。</p>
+<h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><h4 id="初步优化"><a href="#初步优化" class="headerlink" title="初步优化"></a>初步优化</h4><p>按照上面的做法，时间复杂度是O(n)，内存是8GB，实际上我们是可以把时间复杂度降低到O(1)的。</p>
 <p>例如我们可以这样来存数据，把一个int非负整数n作为数组下标，如果n存在，则对应的值为1，如果不存在，对应的值为0。例如数组arr[n] = 1，表示n存在，arr[n] = 0表示n不存在。</p>
 <p>那么，我们就可以把20亿个数作为下标来存，之后直接判断arr[t]的值，如果arr[t] = 1，则代表存在，如果arr[t] = 0，则代表不存在。这样，我们就可以把时间复杂度降低到O(1)。不过空间复杂度我们并没有降低。还稍微大了点。</p>
 <p>由于int非负整数一共有 2^31 个，所以数组的大小需要 2^31 这么大。</p>
@@ -868,7 +868,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题引出"><span class="nav-number">1.</span> <span class="nav-text">问题引出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初步优化"><span class="nav-number">1.1.</span> <span class="nav-text">初步优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#再次优化"><span class="nav-number">1.2.</span> <span class="nav-text">再次优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最终优化：bitmap"><span class="nav-number">1.3.</span> <span class="nav-text">最终优化：bitmap</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题引出"><span class="nav-number">1.</span> <span class="nav-text">问题引出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化方案"><span class="nav-number">2.</span> <span class="nav-text">优化方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初步优化"><span class="nav-number">2.1.</span> <span class="nav-text">初步优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#再次优化"><span class="nav-number">2.2.</span> <span class="nav-text">再次优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最终优化：bitmap"><span class="nav-number">2.3.</span> <span class="nav-text">最终优化：bitmap</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -905,7 +905,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45.4k</span>
+    <span title="Site words total count">45.5k</span>
   
 </div>
 
