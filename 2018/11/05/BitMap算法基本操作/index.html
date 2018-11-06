@@ -136,15 +136,21 @@
 
 
 
+<meta name="description" content="上篇我们讲了BitMap是如何对数据进行存储的，没看过的可以看一下【BitMap算法介绍】 这篇我们来讲一下BitMap这个数据结构的代码实现。 回顾下数据的存储原理一个二进制位对应一个非负数n，如果n存在，则对应的二进制位的值为1，否则为0。 这个时候，我们的第一个问题： 我们在使用byte,int,short,long等这些数据类型在存储数据的时候，他们最小的都要占用一个字节的内存，也就是">
 <meta name="keywords" content="BitMap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BitMap算法基本操作">
 <meta property="og:url" content="https://LiuZiQiao.github.io/2018/11/05/BitMap算法基本操作/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
+<meta property="og:description" content="上篇我们讲了BitMap是如何对数据进行存储的，没看过的可以看一下【BitMap算法介绍】 这篇我们来讲一下BitMap这个数据结构的代码实现。 回顾下数据的存储原理一个二进制位对应一个非负数n，如果n存在，则对应的二进制位的值为1，否则为0。 这个时候，我们的第一个问题： 我们在使用byte,int,short,long等这些数据类型在存储数据的时候，他们最小的都要占用一个字节的内存，也就是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-05T15:38:23.170Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181106164623290.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181106164653491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2018-11-06T08:50:39.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BitMap算法基本操作">
+<meta name="twitter:description" content="上篇我们讲了BitMap是如何对数据进行存储的，没看过的可以看一下【BitMap算法介绍】 这篇我们来讲一下BitMap这个数据结构的代码实现。 回顾下数据的存储原理一个二进制位对应一个非负数n，如果n存在，则对应的二进制位的值为1，否则为0。 这个时候，我们的第一个问题： 我们在使用byte,int,short,long等这些数据类型在存储数据的时候，他们最小的都要占用一个字节的内存，也就是">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20181106164623290.png">
 
 
 
@@ -398,8 +404,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-05T23:38:23+08:00">
-                2018-11-05
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-06T16:50:39+08:00">
+                2018-11-06
               </time>
             
           </span>
@@ -463,7 +469,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1,373
                 </span>
               
 
@@ -479,7 +485,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -501,6 +507,34 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
+<p>上篇我们讲了BitMap是如何对数据进行存储的，没看过的可以看一下<br><a href="https://LiuZiQiao.github.io/2018/11/03/BitMap算法/">【BitMap算法介绍】</a></p>
+<p>这篇我们来讲一下BitMap这个数据结构的代码实现。</p>
+<h3 id="回顾下数据的存储原理"><a href="#回顾下数据的存储原理" class="headerlink" title="回顾下数据的存储原理"></a>回顾下数据的存储原理</h3><p>一个二进制位对应一个非负数n，如果n存在，则对应的二进制位的值为1，否则为0。</p>
+<p>这个时候，我们的第一个问题：</p>
+<p>我们在使用byte,int,short,long等这些数据类型在存储数据的时候，他们最小的都要占用一个字节的内存，也就是8个bit，也就是说，最小的操作单位是8个bit。根本就没有可以一个一个bit位操作的数据类型啊。</p>
+<p>在Java的bitMaP实现中，它采用的是用一个long数据来进行存储的。一个long占用8个字节，即64bit，所以一个long可以存储64个数。例如 arr 是一个long 类型的数组，则 arr[0]可以存 0 ~ 63，arr[1]可以存64 ~127，以此类推。</p>
+<p>不过，我们就采用byte数组的来存吧。一个byte占用一个字节，即8bit，可以存8个数字。</p>
+<p>当然，你要采用long数组来存也可以。在实现上可以说是一样的。</p>
+<p>例如我们要存储(1,3,5,7,8,10)时，他们的内存如下所示。<br><img src="https://img-blog.csdnimg.cn/20181106164623290.png" alt="1"><br>下面我们就来讲讲如何对一个一个位进行操作的。</p>
+<h3 id="如何向bitmap中添加一个数值"><a href="#如何向bitmap中添加一个数值" class="headerlink" title="如何向bitmap中添加一个数值"></a>如何向bitmap中添加一个数值</h3><p>我们先来说说如何在bitmap中如何添加一个数值的问题，例如我们我们要添加n=14。</p>
+<p>这个其实很简单，我们先找到n在arr数组中的下标index，显然index = 1。然后再找到n在arr[index]中的位置position，显然这里position = 6。</p>
+<p>这里还是可以很容易找出index和position的公式的。即</p>
+<p>index = n / 8 = n &gt;&gt; 3。</p>
+<p>position = n % 8 = n &amp; 0x07。</p>
+<p>接下来我们把1向右移动position个二进制位，然后把所得的结果和arr[index]做“或(or)”操作就可以了。如下图<br><img src="https://img-blog.csdnimg.cn/20181106164653491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="2">    </p>
+<p>这里有个需要注意的地方，在画图的时候，为了方便，我们是把左边的位当作低位，右边的位当作高位来算了。不过在实际的存储中，左边的才是存高位，而右边的存的是低位。所以在我们的代码实现中，我们所说的右移对应代码的左移。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加数据的操作</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//用&gt;&gt;的操作是，运算会比较快</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> index = n &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> position = n &amp; <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//把1右移和做or操作两步一起</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">//即 &lt;&lt; 对应上图的右移，实际上&lt;&lt;是左移符。</span></span><br><span class="line"></span><br><span class="line">   arr[index] |= <span class="number">1</span> &lt;&lt; position;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>知道了add操作，其他的操作差不多类似。</p>
+<p>当然，我们实现的add操作只是简单的实现一下，假如你要严谨地实现的话，还是需要很多异常的判断的。例如判断这个数是否是非负数，判断arr数组是否下标越界，进行容量的扩充等等。有兴趣的可以严谨去实现一下。</p>
+<h4 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h4><p>我们只需要把对应的二进制的1变成0就可以了。</p>
+<p>我们可以把1右移(代码中对应左移)后的结果取反，然后与arr[index]做“与”操作就可以了。代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> index = n &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> position = n &amp; <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">   arr[index] &amp;= ~(<span class="number">1</span> &lt;&lt; position);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="判断是否存在操作"><a href="#判断是否存在操作" class="headerlink" title="判断是否存在操作"></a>判断是否存在操作</h4><p>我们把1右移之后，把结果和arr[index]做“与”操作，如何结果不为0，则证明存在，否则就不存在。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contain</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> index = n &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> position = n &amp; <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> (arr[index] &amp; (<span class="number">1</span> &lt;&lt; position)) != <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>三个最基本的操作代码基本实现了。</p>
+<h4 id="全部代码"><a href="#全部代码" class="headerlink" title="全部代码"></a>全部代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BitMap</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">byte</span>[] arr;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//容量，即最多能够存多少个数据</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">BitMap</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">this</span>.capacity = capacity;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//一个byte可以存8个数据，capacity实际上指的是多少个bit</span></span><br><span class="line"></span><br><span class="line">       arr = <span class="keyword">new</span> <span class="keyword">byte</span>[(capacity / <span class="number">8</span> + <span class="number">1</span>)];</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//添加数据的操作</span></span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//用&gt;&gt;的操作是，运算会比较快</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> index = n &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> position = n &amp; <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//把1右移和做or操作两步一起</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">//即 &lt;&lt; 对应上图的右移，实际上&lt;&lt;是左移符。</span></span><br><span class="line"></span><br><span class="line">       arr[index] |= <span class="number">1</span> &lt;&lt; position;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> index = n &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> position = n &amp; <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">       arr[index] &amp;= ~(<span class="number">1</span> &lt;&lt; position);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contain</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> index = n &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> position = n &amp; <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> (arr[index] &amp; (<span class="number">1</span> &lt;&lt; position)) != <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>大家看了以上的代码，有没发现一些问题呢？</p>
+<p>例如我们只在bitmap存储1个数，并且存的数值是2000000000，我们就会在第2000000000个二进制把0改为1。也就是说arr数组的大小至少为2000000000/8+1。可是这时候前面的二进制位并没有存数据，那不是超级超级浪费资源？</p>
+<p>所以说，像我们上面的那种写法可以说是暴力写法，没有经过任何优化，实际上，在Java自带的bitMap中是有很多优化的，并不会像我们上面实现的代码一样那么浪费空间资源。有兴趣的可以研究下我的上一篇中的java写法。</p>
+
       
     </div>
     
@@ -525,7 +559,7 @@
   <p><span>本文标题:</span><a href="/2018/11/05/BitMap算法基本操作/">BitMap算法基本操作</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2018年11月05日 - 22:11</p>
-  <p><span>最后更新:</span>2018年11月05日 - 23:11</p>
+  <p><span>最后更新:</span>2018年11月06日 - 16:11</p>
   <p><span>原始链接:</span><a href="/2018/11/05/BitMap算法基本操作/" title="BitMap算法基本操作">https://LiuZiQiao.github.io/2018/11/05/BitMap算法基本操作/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/11/05/BitMap算法基本操作/"  aria-label="复制成功！"></i></span>
   </p>
@@ -650,8 +684,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -816,6 +859,22 @@ var ap = new APlayer({
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#回顾下数据的存储原理"><span class="nav-number">1.</span> <span class="nav-text">回顾下数据的存储原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何向bitmap中添加一个数值"><span class="nav-number">2.</span> <span class="nav-text">如何向bitmap中添加一个数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除操作"><span class="nav-number">3.1.</span> <span class="nav-text">删除操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断是否存在操作"><span class="nav-number">3.2.</span> <span class="nav-text">判断是否存在操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全部代码"><span class="nav-number">3.3.</span> <span class="nav-text">全部代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -846,7 +905,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45.4k</span>
+    <span title="Site words total count">46.8k</span>
   
 </div>
 
