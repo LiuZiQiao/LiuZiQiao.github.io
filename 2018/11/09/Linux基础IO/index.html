@@ -136,17 +136,17 @@
 
 
 
-<meta name="description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IOFILE *fopen(const char *path, const char *mode); size_t fread(void *ptr, siz">
+<meta name="description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IO    FILE fopen(const char path, const char mode);    size_t fread(void ptr,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux系统之基础IO">
 <meta property="og:url" content="https://LiuZiQiao.github.io/2018/11/09/Linux基础IO/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IOFILE *fopen(const char *path, const char *mode); size_t fread(void *ptr, siz">
+<meta property="og:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IO    FILE fopen(const char path, const char mode);    size_t fread(void ptr,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-10T03:11:18.646Z">
+<meta property="og:updated_time" content="2018-11-10T03:19:00.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统之基础IO">
-<meta name="twitter:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IOFILE *fopen(const char *path, const char *mode); size_t fread(void *ptr, siz">
+<meta name="twitter:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IO    FILE fopen(const char path, const char mode);    size_t fread(void ptr,">
 
 
 
@@ -400,7 +400,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-10T11:11:18+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-10T11:19:00+08:00">
                 2018-11-10
               </time>
             
@@ -504,10 +504,10 @@
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
 <p>学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用<br><a href="2112313">1</a><br>先回顾下这些标准c库中文件I/O的接口的使用</p>
-<h3 id="回顾C库中的IO"><a href="#回顾C库中的IO" class="headerlink" title="回顾C库中的IO"></a>回顾C库中的IO</h3><pre><code>FILE *fopen(const char *path, const char *mode);
-size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
-size_t fwrite(const void *ptr, size_t size, size_t nmemb,
-</code></pre><p>它的返回值：文件流指针，这个文件流指针指向的是</p>
+<h3 id="回顾C库中的IO"><a href="#回顾C库中的IO" class="headerlink" title="回顾C库中的IO"></a>回顾C库中的IO</h3><blockquote>
+<p>   FILE <em>fopen(const char </em>path, const char <em>mode);<br>    size_t fread(void </em>ptr, size_t size, size_t nmemb, FILE <em>stream);<br>    size_t fwrite(const void </em>ptr, size_t size, size_t nmemb,</p>
+</blockquote>
+<p>它的返回值：文件流指针，这个文件流指针指向的是</p>
 <p><a href="">2</a> </p>
 <table>
 <thead>
