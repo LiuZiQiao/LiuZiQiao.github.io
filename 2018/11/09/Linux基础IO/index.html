@@ -136,17 +136,20 @@
 
 
 
-<meta name="description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IO    FILE fopen(const char path, const char mode);    size_t fread(void ptr,">
+<meta name="description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IO    FILE fopen(const char path, const char mode);    size_t fread(void ptr, s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux系统之基础IO">
 <meta property="og:url" content="https://LiuZiQiao.github.io/2018/11/09/Linux基础IO/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IO    FILE fopen(const char path, const char mode);    size_t fread(void ptr,">
+<meta property="og:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IO    FILE fopen(const char path, const char mode);    size_t fread(void ptr, s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-10T03:19:00.472Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181110112204660.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181110112624493.png">
+<meta property="og:updated_time" content="2018-11-10T03:33:56.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统之基础IO">
-<meta name="twitter:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IO    FILE fopen(const char path, const char mode);    size_t fread(void ptr,">
+<meta name="twitter:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IO    FILE fopen(const char path, const char mode);    size_t fread(void ptr, s">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20181110112204660.png">
 
 
 
@@ -400,7 +403,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-10T11:19:00+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-10T11:33:56+08:00">
                 2018-11-10
               </time>
             
@@ -465,7 +468,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,875
+                  1,874
                 </span>
               
 
@@ -503,7 +506,7 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<p>学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用<br><a href="2112313">1</a><br>先回顾下这些标准c库中文件I/O的接口的使用</p>
+<p>学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用<br><img src="https://img-blog.csdnimg.cn/20181110112204660.png" alt="1"><br>先回顾下这些标准c库中文件I/O的接口的使用</p>
 <h3 id="回顾C库中的IO"><a href="#回顾C库中的IO" class="headerlink" title="回顾C库中的IO"></a>回顾C库中的IO</h3><blockquote>
 <p>   FILE <em>fopen(const char </em>path, const char <em>mode);<br>    size_t fread(void </em>ptr, size_t size, size_t nmemb, FILE <em>stream);<br>    size_t fwrite(const void </em>ptr, size_t size, size_t nmemb,</p>
 </blockquote>
@@ -560,6 +563,7 @@ fdopen 将文件描述符转换成文件流指针
 <h3 id="Linux下的文件系统"><a href="#Linux下的文件系统" class="headerlink" title="Linux下的文件系统"></a>Linux下的文件系统</h3><p>linux文件系统是由两层结构构建：第一层是虚拟文件系统（VFS），第二层是各种不同的具体文件系统。</p>
 <p>VFS是把各种具体的文件系统的公共部分抽取出来，形成一个抽象层，是系统内核的一部分。它位于用户程序和具体的文件系统中间。它对用户</p>
 <p>程序提供了标准的文件系统的调用接口，对具体的文件系统，它通过一系列的对不同文件系统公用的函数指针来实际调用具体的文件系统函数，完成实际<br>的各有的操作。任何使用文件系统的程序必须经过这层接口来使用它。通过这种方式，VFS就对用于屏蔽了底层文件系统的实现细节和差异。</p>
+<p>  <img src="https://img-blog.csdnimg.cn/20181110112624493.png" alt="2"></p>
 <p>通过 cat /proc/filesystems命令可以查看系统支持哪些文件系统。</p>
 <p>open是系统调用级别的操作，调用VFS_open  -&gt; 底层的open（包括驱动的open，比如字符设备驱动里面的</p>
 <p>file_opreations里面的open等。联想一下）</p>
