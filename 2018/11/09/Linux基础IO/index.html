@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -136,18 +136,17 @@
 
 
 
-<meta name="description" content="1.下载安装git安装依赖库和编译工具为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具     yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 安装编译工具   yum install gcc perl-ExtUtils-MakeMaker 下载git选一个目录，用来放下载下来的安装包">
-<meta name="keywords" content="git">
+<meta name="description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IOFILE *fopen(const char *path, const char *mode); size_t fread(void *ptr, siz">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建git服务器教程">
-<meta property="og:url" content="https://LiuZiQiao.github.io/2018/07/25/git教程/index.html">
+<meta property="og:title" content="Linux系统之基础IO">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2018/11/09/Linux基础IO/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="1.下载安装git安装依赖库和编译工具为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具     yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 安装编译工具   yum install gcc perl-ExtUtils-MakeMaker 下载git选一个目录，用来放下载下来的安装包">
+<meta property="og:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IOFILE *fopen(const char *path, const char *mode); size_t fread(void *ptr, siz">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T00:20:11.549Z">
+<meta property="og:updated_time" content="2018-11-10T03:11:18.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建git服务器教程">
-<meta name="twitter:description" content="1.下载安装git安装依赖库和编译工具为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具     yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 安装编译工具   yum install gcc perl-ExtUtils-MakeMaker 下载git选一个目录，用来放下载下来的安装包">
+<meta name="twitter:title" content="Linux系统之基础IO">
+<meta name="twitter:description" content="学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用1先回顾下这些标准c库中文件I/O的接口的使用 回顾C库中的IOFILE *fopen(const char *path, const char *mode); size_t fread(void *ptr, siz">
 
 
 
@@ -177,7 +176,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/07/25/git教程/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/11/09/Linux基础IO/"/>
 
 
 
@@ -200,7 +199,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>搭建git服务器教程 | LiuxiaoKun</title>
+  <title>Linux系统之基础IO | LiuxiaoKun</title>
   
 
 
@@ -356,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/07/25/git教程/">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/11/09/Linux基础IO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -373,7 +372,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">搭建git服务器教程</h2>
+          <h2 class="post-title" itemprop="name headline">Linux系统之基础IO</h2>
         
 
         <div class="post-meta">
@@ -385,8 +384,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T16:51:38+08:00">
-                2018-07-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-09T11:11:11+08:00">
+                2018-11-09
               </time>
             
 
@@ -401,8 +400,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-19T08:20:11+08:00">
-                2018-09-19
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-10T11:11:18+08:00">
+                2018-11-10
               </time>
             
           </span>
@@ -420,8 +419,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -438,8 +437,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/25/git教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/07/25/git教程/" itemprop="commentsCount"></span>
+                <a href="/2018/11/09/Linux基础IO/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/11/09/Linux基础IO/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -466,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  540
+                  1,875
                 </span>
               
 
@@ -482,7 +481,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  8
                 </span>
               
             </div>
@@ -503,46 +502,97 @@
       
 
       
-        <script src="\assets\js\APlayer.min.js"> </script><h2 id="1-下载安装git"><a href="#1-下载安装git" class="headerlink" title="1.下载安装git"></a>1.下载安装git</h2><h3 id="安装依赖库和编译工具"><a href="#安装依赖库和编译工具" class="headerlink" title="安装依赖库和编译工具"></a>安装依赖库和编译工具</h3><p>为了后续安装能正常进行，我们先来安装一些相关依赖库和编译工具    </p>
-<pre><code>yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
-</code></pre><p>安装编译工具  </p>
-<pre><code>yum install gcc perl-ExtUtils-MakeMaker
-</code></pre><h3 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h3><p>选一个目录，用来放下载下来的安装包，这里将安装包放在 /usr/local/src 目录里   </p>
-<pre><code>cd /usr/local/src    
-</code></pre><p>到官网找一个新版稳定的源码包下载到 /usr/local/src 文件夹里    </p>
-<pre><code>wget https://www.kernel.org/pub/software/scm/git/git-2.10.0.tar.gz
-</code></pre><h3 id="解压和编译"><a href="#解压和编译" class="headerlink" title="解压和编译"></a>解压和编译</h3><p>解压下载的资源包 </p>
-<pre><code>tar -zvxf git-2.10.0.tar.gz
-</code></pre><p>解压后进入git-2.10.0  </p>
-<pre><code>cd git-2.10.0
-</code></pre><p>执行编译</p>
-<pre><code>make all prefix=/usr/local/git
-</code></pre><p>编译完成后, 安装到 /usr/local/git 目录下   </p>
-<pre><code>make install prefix=/usr/local/git
-</code></pre><h2 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h2><h3 id="将git目录加入PATH"><a href="#将git目录加入PATH" class="headerlink" title="将git目录加入PATH"></a>将git目录加入PATH</h3><p>将原来的PATH指向目录修改为现在的目录   </p>
-<pre><code>echo &apos;export PATH=$PATH:/usr/local/git/bin&apos; &gt;&gt; /etc/bashrc
-</code></pre><p>生成环境变量   </p>
-<pre><code>source /etc/bashrc
-</code></pre><p>此时我们查看git版本号，说明我们已经安装成功了。   </p>
-<pre><code>git --version
-</code></pre><h2 id="3-创建git账号密码"><a href="#3-创建git账号密码" class="headerlink" title="3.创建git账号密码"></a>3.创建git账号密码</h2><h3 id="创建git账号"><a href="#创建git账号" class="headerlink" title="创建git账号"></a>创建git账号</h3><p>为我们刚刚搭建好的 git 创建一个账号   </p>
-<pre><code>useradd -m gituser
-</code></pre><p>然后为这个账号设置密码[?]   </p>
-<pre><code>passwd gituser
-</code></pre><h2 id="4-初始化git仓库并配置用户权限"><a href="#4-初始化git仓库并配置用户权限" class="headerlink" title="4.初始化git仓库并配置用户权限"></a>4.初始化git仓库并配置用户权限</h2><h3 id="创建git参考并初始化"><a href="#创建git参考并初始化" class="headerlink" title="创建git参考并初始化"></a>创建git参考并初始化</h3><p>我们创建 /data/repositories 目录用于存放 git 仓库   </p>
-<pre><code>mkdir -p /data/repositories
-</code></pre><p>创建好后，初始化这个仓库   </p>
-<pre><code>cd /data/repositories/ &amp;&amp; git init --bare test.git
-</code></pre><h3 id="配置用户权限"><a href="#配置用户权限" class="headerlink" title="配置用户权限"></a>配置用户权限</h3><p>给 git 仓库目录设置用户和用户组并设置权限   </p>
-<pre><code>chown -R gituser:gituser /data/repositories
+        <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
+<p>学过C语言的都知道，在C语言中IO其实就是文件操作，像fopen，fwrite，fread，fseek，fprintf，fclose等都是C语言库函数中的系统调用接口，如下图是常用<br><a href="2112313">1</a><br>先回顾下这些标准c库中文件I/O的接口的使用</p>
+<h3 id="回顾C库中的IO"><a href="#回顾C库中的IO" class="headerlink" title="回顾C库中的IO"></a>回顾C库中的IO</h3><pre><code>FILE *fopen(const char *path, const char *mode);
+size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+size_t fwrite(const void *ptr, size_t size, size_t nmemb,
+</code></pre><p>它的返回值：文件流指针，这个文件流指针指向的是</p>
+<p><a href="">2</a> </p>
+<table>
+<thead>
+<tr>
+<th>文件流指针</th>
+<th>stdin</th>
+<th>stdout</th>
+<th>stderr</th>
+<th>FILE*</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件描述符</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>一个进程运行起来之后默认打开了三个文件，关于文件描述符我在后面有介绍<br>下面演示一个C语言库中函数的使用<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fp = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    fp = fopen(<span class="string">"./test.txt"</span>, <span class="string">"w"</span>);</span><br><span class="line">    <span class="keyword">if</span>  (fp == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"fopen error!!\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">char</span> *ptr = <span class="string">"apple!!"</span>;</span><br><span class="line">    fwrite(ptr, <span class="built_in">strlen</span>(ptr), <span class="number">1</span>, fp);</span><br><span class="line">    fseek(fp, <span class="number">10</span>, SEEK_END);</span><br><span class="line">    fwrite(ptr, <span class="built_in">strlen</span>(ptr), <span class="number">1</span>, fp);</span><br><span class="line">    </span><br><span class="line">    fseek(fp, <span class="number">0</span>, SEEK_SET);</span><br><span class="line">    <span class="keyword">char</span> buff[<span class="number">1024</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    fread(buff, <span class="number">1024</span>, <span class="number">1</span>, fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"buff:[%s]\n"</span>, buff);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">fprintf</span>(fp, <span class="string">"\n%s-%d-%s\n"</span>, <span class="string">"apple"</span>, <span class="number">3</span>, <span class="string">"i love to eat!!"</span>);</span><br><span class="line"></span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="系统IO"><a href="#系统IO" class="headerlink" title="系统IO"></a>系统IO</h3><p>以下是一些系统调用IO接口</p>
+<pre><code>int open(const char *pathname, int flags);
+int open(const char *pathname, int flags, mode_t mode);
+ssize_t write(int fd, const void *buf, size_t count);
+int creat(const char *pathname, mode_t mode);
+off_t lseek(int fd, off_t offset, int whence);
 
-chmod 755 /data/repositories
-</code></pre><p>[查找 git-shell 所在目录] , 编辑 /etc/passwd 文件，将最后一行关于 gituser 的登录 shell 配置改为 如下</p>
-<p>示例代码：/etc/passwd</p>
-<pre><code>gituser:x:500:500::/home/gituser:/usr/local/git/bin/git-shell
-</code></pre><h3 id="使用搭建好的-Git-服务"><a href="#使用搭建好的-Git-服务" class="headerlink" title="使用搭建好的 Git 服务"></a>使用搭建好的 Git 服务</h3><p>克隆test repo 到本地</p>
-<pre><code>cd ~ &amp;&amp; git clone gituser@&lt;您的 CVM IP 地址&gt;:/data/repositories/test.git
-</code></pre><p>恭喜，Git 服务器搭建完成, 从此以后你可以方便地将你的本地代码提交到 Git 服务器托管了。</p>
+//off_t lseek(int fd, off_t offset, int whence);
+//  fd: 文件描述符
+//  offset：偏移值
+//  whence：偏移起始位置
+//      SEEK_SET    文件起始位置
+//      SEEK_CUR    当前读写位置
+//      SEEK_END    文件末尾位置
+
+fileno将文件流指针转换成文件描述符
+fdopen 将文件描述符转换成文件流指针
+</code></pre><h4 id="文件描述符"><a href="#文件描述符" class="headerlink" title="文件描述符"></a>文件描述符</h4><p><strong>文件描述符是一个数字，那么一个数字是如何描述文件的呢？</strong><br>一个进程要对所有打开的文件进行管理，先将文件描述起来，然后组织管理<br>进程中对文件进程描述的 结构体叫file(struct file)<br>进程使用了一个结构体数组来组织这些描述，而文件的描述符就是这个结构体数组的下标<br>pcb中对文件的描述的一个机构图（file)数组的下标<br>系统调用open返回的是文件描述符：int<br>而c库中fopen返回的是一个文件流指针：FILE*</p>
+<p>文件描述分配符规则：<br>寻找最小下未使用的下标</p>
+<p>==文件描述符fd返回值：正确：非负值（文件描述符） 错误：-1==</p>
+<h4 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h4><p>我们所说的缓冲区（print),用户态的一个缓冲区，是文件流指针自带的fprint，fwrite这些库函数<br>都是先把数据写入到缓冲区中，等缓冲区写满或者一些其他条件满足后才真正写入到文件中，<br>而系统调用没有这个用户态的缓冲区，（是直接写入到文件中）  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *      open    close   read    write   lseek</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;   // 文件控制头文件</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//int open(const char *pathname, int flags, mode_t mode);</span></span><br><span class="line">    <span class="comment">//  pathname:   要打开的文件名</span></span><br><span class="line">    <span class="comment">//  flags：选项标志</span></span><br><span class="line">    <span class="comment">//      O_RDONLY    只读 </span></span><br><span class="line">    <span class="comment">//      O_WRONLY    只写</span></span><br><span class="line">    <span class="comment">//      O_RDWR      读写</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">//      O_CREAT     文件不存在则创建，存在则打开</span></span><br><span class="line">    <span class="comment">//      O_EXCL      与O_CREAT同用，若文件存在则报错</span></span><br><span class="line">    <span class="comment">//      O_TRUNC     打开文件的同时，清空文件原有内容</span></span><br><span class="line">    <span class="comment">//      O_APPEND    追加</span></span><br><span class="line">    <span class="comment">//  mode:文件权限，用于创建文件的时候</span></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">int</span> fd = <span class="number">-1</span>;</span><br><span class="line">    fd = open(<span class="string">"./tmp.txt"</span>, O_RDWR | O_CREAT, <span class="number">0777</span>);</span><br><span class="line">    <span class="keyword">if</span> (fd &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        perror(<span class="string">"open error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//ssize_t write(int fd, const void *buf, size_t count);</span></span><br><span class="line">    <span class="comment">//  fd: 文件描述符</span></span><br><span class="line">    <span class="comment">//  buf：要写入的数据</span></span><br><span class="line">    <span class="comment">//  count：要写入的数据长度</span></span><br><span class="line">    <span class="comment">//  返回值：实际的写入数据长度</span></span><br><span class="line">    <span class="keyword">char</span> *ptr = <span class="string">"apple!!\n"</span>;</span><br><span class="line">    <span class="keyword">ssize_t</span> wlen = write(fd, ptr, <span class="built_in">strlen</span>(ptr));</span><br><span class="line">    <span class="keyword">if</span> (wlen &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        perror(<span class="string">"write error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    lseek(fd, <span class="number">0</span>, SEEK_SET);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//read：返回实际读取到的数据长度</span></span><br><span class="line">    <span class="keyword">char</span> buff[<span class="number">1024</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">ssize_t</span> rlen = read(fd, buff, <span class="number">1024</span> - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (rlen &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        perror(<span class="string">"read error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"buf:[%s]\n"</span>, buff);</span><br><span class="line"></span><br><span class="line">    close(fd);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="文件重定向"><a href="#文件重定向" class="headerlink" title="文件重定向"></a>文件重定向</h4><p>原理：将原本描述符所对应的下标的文件修改成另外一个文件，描述符没有变，但是真正通过描述符操作的这个文件已经改变了   </p>
+<blockquote>
+<p>int dup2(int oldfd, int newfd);</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  演示文件描述符分配规则的demo</span></span><br><span class="line"><span class="comment"> *      1. 文件描述符是一个数字，并且这个数字是一个结构体数组的下标</span></span><br><span class="line"><span class="comment"> *  分配规则：</span></span><br><span class="line"><span class="comment"> *      寻找最小的未使用的下标</span></span><br><span class="line"><span class="comment"> *  一个进程运行起来之后，默认打开的三个文件：</span></span><br><span class="line"><span class="comment"> *      标准输入    标准输出    标准错误</span></span><br><span class="line"><span class="comment"> *      stdin       stdout      stderr</span></span><br><span class="line"><span class="comment"> *      0           1           2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> fd = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    fd = open(<span class="string">"./tmp.txt"</span>, O_RDWR | O_CREAT);</span><br><span class="line">    <span class="keyword">if</span> (fd &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        perror(<span class="string">"open error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    dup2(fd, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"fd:%d\n"</span>, fd);</span><br><span class="line">    fflush(<span class="built_in">stdout</span>);</span><br><span class="line">    close(fd);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Linux下的文件系统"><a href="#Linux下的文件系统" class="headerlink" title="Linux下的文件系统"></a>Linux下的文件系统</h3><p>linux文件系统是由两层结构构建：第一层是虚拟文件系统（VFS），第二层是各种不同的具体文件系统。</p>
+<p>VFS是把各种具体的文件系统的公共部分抽取出来，形成一个抽象层，是系统内核的一部分。它位于用户程序和具体的文件系统中间。它对用户</p>
+<p>程序提供了标准的文件系统的调用接口，对具体的文件系统，它通过一系列的对不同文件系统公用的函数指针来实际调用具体的文件系统函数，完成实际<br>的各有的操作。任何使用文件系统的程序必须经过这层接口来使用它。通过这种方式，VFS就对用于屏蔽了底层文件系统的实现细节和差异。</p>
+<p>通过 cat /proc/filesystems命令可以查看系统支持哪些文件系统。</p>
+<p>open是系统调用级别的操作，调用VFS_open  -&gt; 底层的open（包括驱动的open，比如字符设备驱动里面的</p>
+<p>file_opreations里面的open等。联想一下）</p>
+<h4 id="软硬链接"><a href="#软硬链接" class="headerlink" title="软硬链接"></a>软硬链接</h4><p>软硬链接区别：   </p>
+<ul>
+<li>1、可以针对目录创建，硬链接不可</li>
+<li>2、软链接是一个新的文件，而硬链接是源文件的一个别名（跟源文件使用相同的结点inode结点）</li>
+<li>3、软链接可以划分区建立，但是硬链接可以</li>
+<li>4、源文件删除后，软链接找不到，但是硬链接没有影响，仅仅是链接数减一</li>
+<li></li>
+</ul>
+<h4 id="动态库-静态库"><a href="#动态库-静态库" class="headerlink" title="动态库/静态库"></a>动态库/静态库</h4><blockquote>
+<pre><code>  动静态库链接：
+gcc默认链接方式：动态链接 ---- 链接是动态库
+静态链接需要加 -static 的gcc链接选项 ---- 链接是静态库
+如何自己生成一个动态库
+程序的编译过程：
+预处理--》编译--》汇编--》链接
+生成一个库其实就是将所有代码打包起来，最终得到一个库文件
+</code></pre><p>区别：</p>
+<ul>
+<li>使用静态库时将静态库中代码全部拿过来   </li>
+<li>动态库使用时记录地址信息<pre><code>生成动态库：gcc  -- share test.c -o libtest.so
+生成静态库：ar cr libtest.a test.c
+编译选项：-fPIC   ：产生位置无关代码
+</code></pre></li>
+</ul>
+</blockquote>
+<p>如何链接一个可执行程序：<br>gcc main.c -o main -L./  -ltest   </p>
+<ul>
+<li>-L 用于指定库的查找路径   </li>
+<li>-l 用于指定链接库的名称   </li>
+</ul>
 
       
     </div>
@@ -565,12 +615,12 @@ chmod 755 /data/repositories
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/07/25/git教程/">搭建git服务器教程</a></p>
+  <p><span>本文标题:</span><a href="/2018/11/09/Linux基础IO/">Linux系统之基础IO</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
-  <p><span>发布时间:</span>2018年07月25日 - 16:07</p>
-  <p><span>最后更新:</span>2018年09月19日 - 08:09</p>
-  <p><span>原始链接:</span><a href="/2018/07/25/git教程/" title="搭建git服务器教程">https://LiuZiQiao.github.io/2018/07/25/git教程/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/07/25/git教程/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年11月09日 - 11:11</p>
+  <p><span>最后更新:</span>2018年11月10日 - 11:11</p>
+  <p><span>原始链接:</span><a href="/2018/11/09/Linux基础IO/" title="Linux系统之基础IO">https://LiuZiQiao.github.io/2018/11/09/Linux基础IO/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/11/09/Linux基础IO/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -593,12 +643,6 @@ chmod 755 /data/repositories
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
-          
-        </div>
       
 
       
@@ -624,8 +668,8 @@ chmod 755 /data/repositories
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/19/index/" rel="next" title="Welcome To MyBlog">
-                <i class="fa fa-chevron-left"></i> Welcome To MyBlog
+              <a href="/2018/11/07/Linux信号/" rel="next" title="Linux信号">
+                <i class="fa fa-chevron-left"></i> Linux信号
               </a>
             
           </div>
@@ -633,10 +677,6 @@ chmod 755 /data/repositories
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/23/栈实现括号匹配/" rel="prev" title="栈实现括号匹配">
-                栈实现括号匹配 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -881,7 +921,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-下载安装git"><span class="nav-number">1.</span> <span class="nav-text">1.下载安装git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖库和编译工具"><span class="nav-number">1.1.</span> <span class="nav-text">安装依赖库和编译工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载git"><span class="nav-number">1.2.</span> <span class="nav-text">下载git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解压和编译"><span class="nav-number">1.3.</span> <span class="nav-text">解压和编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置环境变量"><span class="nav-number">2.</span> <span class="nav-text">2.配置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将git目录加入PATH"><span class="nav-number">2.1.</span> <span class="nav-text">将git目录加入PATH</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-创建git账号密码"><span class="nav-number">3.</span> <span class="nav-text">3.创建git账号密码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建git账号"><span class="nav-number">3.1.</span> <span class="nav-text">创建git账号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-初始化git仓库并配置用户权限"><span class="nav-number">4.</span> <span class="nav-text">4.初始化git仓库并配置用户权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建git参考并初始化"><span class="nav-number">4.1.</span> <span class="nav-text">创建git参考并初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置用户权限"><span class="nav-number">4.2.</span> <span class="nav-text">配置用户权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用搭建好的-Git-服务"><span class="nav-number">4.3.</span> <span class="nav-text">使用搭建好的 Git 服务</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#回顾C库中的IO"><span class="nav-number">1.</span> <span class="nav-text">回顾C库中的IO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统IO"><span class="nav-number">2.</span> <span class="nav-text">系统IO</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文件描述符"><span class="nav-number">2.1.</span> <span class="nav-text">文件描述符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓冲区"><span class="nav-number">2.2.</span> <span class="nav-text">缓冲区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件重定向"><span class="nav-number">2.3.</span> <span class="nav-text">文件重定向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux下的文件系统"><span class="nav-number">3.</span> <span class="nav-text">Linux下的文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#软硬链接"><span class="nav-number">3.1.</span> <span class="nav-text">软硬链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态库-静态库"><span class="nav-number">3.2.</span> <span class="nav-text">动态库/静态库</span></a></li></ol></li></ol></div>
             
 
           </div>
