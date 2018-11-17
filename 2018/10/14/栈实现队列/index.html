@@ -503,7 +503,7 @@
       
 
       
-        <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
+        <script src="/assets/js/APlayer.min.js"> </script><a id="more"></a>
 <h3 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a>结构体定义</h3><p>首先我们需要引入栈文件Stack.h<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Stack.h"</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*两个栈实现一个队列</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Queues</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	Stack stack1;</span><br><span class="line">	Stack stack2;</span><br><span class="line">&#125;Queues;</span><br></pre></td></tr></table></figure></p>
 <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QueuesInit</span><span class="params">(Queues *pQs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	StackInit(&amp;(pQs-&gt;stack1));</span><br><span class="line">	StackInit(&amp;(pQs-&gt;stack2));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QueuesPush</span><span class="params">(Queues *pQs,DataType data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	StackPush(&amp;(pQs-&gt;stack1),data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -883,7 +883,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">48.9k</span>
+    <span title="Site words total count">49.6k</span>
   
 </div>
 

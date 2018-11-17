@@ -136,14 +136,17 @@
 
 
 
+<meta name="description" content="在C语言的学习中，我用知道动态内存开辟是使用malloc函数来进行开辟一段连续的空间，释放则是用free来进行释放，而学习了C++我们知道，在C++中开辟内存是使用new，释放则也与之对应的delete，下面我们就来说说malloc/free与new/delete之间的区别以及底层实现原理 回顾在C语言库中函数原型如下123#include &amp;lt;stdlib.h&amp;gt;void *mall">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++浅谈new delete">
 <meta property="og:url" content="https://LiuZiQiao.github.io/2018/11/11/C++浅谈new、delete/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
+<meta property="og:description" content="在C语言的学习中，我用知道动态内存开辟是使用malloc函数来进行开辟一段连续的空间，释放则是用free来进行释放，而学习了C++我们知道，在C++中开辟内存是使用new，释放则也与之对应的delete，下面我们就来说说malloc/free与new/delete之间的区别以及底层实现原理 回顾在C语言库中函数原型如下123#include &amp;lt;stdlib.h&amp;gt;void *mall">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-14T16:07:31.650Z">
+<meta property="og:updated_time" content="2018-11-17T03:24:34.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++浅谈new delete">
+<meta name="twitter:description" content="在C语言的学习中，我用知道动态内存开辟是使用malloc函数来进行开辟一段连续的空间，释放则是用free来进行释放，而学习了C++我们知道，在C++中开辟内存是使用new，释放则也与之对应的delete，下面我们就来说说malloc/free与new/delete之间的区别以及底层实现原理 回顾在C语言库中函数原型如下123#include &amp;lt;stdlib.h&amp;gt;void *mall">
 
 
 
@@ -397,8 +400,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-15T00:07:31+08:00">
-                2018-11-15
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-17T11:24:34+08:00">
+                2018-11-17
               </time>
             
           </span>
@@ -462,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  715
                 </span>
               
 
@@ -478,7 +481,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -499,7 +502,18 @@
       
 
       
-        <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
+        <script src="/assets/js/APlayer.min.js"> </script><a id="more"></a>
+<p>在C语言的学习中，我用知道动态内存开辟是使用malloc函数来进行开辟一段连续的空间，释放则是用free来进行释放，而学习了C++我们知道，在C++中开辟内存是使用new，释放则也与之对应的delete，下面我们就来说说malloc/free与new/delete之间的区别以及底层实现原理</p>
+<h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>在C语言库中函数原型如下<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">malloc</span><span class="params">(<span class="keyword">size_t</span> size)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">free</span><span class="params">(<span class="keyword">void</span> *ptr)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<h4 id="malloc-free使用"><a href="#malloc-free使用" class="headerlink" title="malloc/free使用"></a>malloc/free使用</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>));     <span class="comment">//指向整型的指针p指向一个大小为100字节的内存的地址</span></span><br><span class="line"><span class="keyword">if</span>(p == <span class="literal">NULL</span>)                           <span class="comment">//使用之前一定要判断释放申请成功</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"application memory error"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">free</span>(p);    <span class="comment">//释放</span></span><br></pre></td></tr></table></figure>
+<p>与之还以两个函数<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">calloc</span><span class="params">(<span class="keyword">size_t</span> nmemb, <span class="keyword">size_t</span> size)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">realloc</span><span class="params">(<span class="keyword">void</span> *ptr, <span class="keyword">size_t</span> size)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">reallocarray</span><span class="params">(<span class="keyword">void</span> *ptr, <span class="keyword">size_t</span> nmemb, <span class="keyword">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>calloc 函数和malloc的区别就是申请好空间会初始化成0，另外calloc函数在使用时需要传入元素个数和元素字节大小</p>
+<p>recalloc函数用于修改一个原先已经分配好的内存块的大小，可以使一块内存扩大或缩小，如果扩大内存，则原来的内存块保持不变，在内存尾部增加新的内存块，且不进行初始化。如果缩小内存，则原来内存块从尾部进行删减。如果原先的内存块无法扩充，则新开辟一块内存，并复制原先的内存的内容，原先内存块失效无法再进行访问。</p>
+<h3 id="new-delete使用"><a href="#new-delete使用" class="headerlink" title="new/delete使用"></a>new/delete使用</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>;   <span class="comment">//在自由存储区中分配创建了一个整形对象，并返回一个指向该对象的地址来初始化指针p</span></span><br><span class="line"><span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>(); <span class="comment">//对指针p指向的地址的值进行了初始化为0</span></span><br><span class="line"><span class="keyword">int</span> *P = <span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">1024</span>);<span class="comment">//初始化为1024</span></span><br></pre></td></tr></table></figure>
+<p>　　当动态创建的对象用完后必须释放内存，避免造成内存泄漏，可以用delete来完成，new和delete是成对使用的，如下命令释放p指向的int型对象所占用的内存空间：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> p</span><br><span class="line">p = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure></p>
+<p>C++中允许动态创建const对象<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>  *p=<span class="keyword">new</span> <span class="keyword">const</span> <span class="keyword">int</span>(<span class="number">1024</span>);  <span class="comment">//动态创建的const对象必须进行初始化，并且进行初始化后的值不能再改变。</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="new-delete-使用"><a href="#new-delete-使用" class="headerlink" title="new[]/delete[]使用"></a>new[]/delete[]使用</h4><p>当创建一个动态数组对象和进行内存释放时，执行以下语句：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p=<span class="keyword">new</span> <span class="keyword">int</span>[];               <span class="comment">//指针p所指向的数组未初始化</span></span><br><span class="line"><span class="keyword">int</span> *p=<span class="keyword">new</span> <span class="keyword">int</span>[n];             <span class="comment">//指针p指向长度为n的数组，未初始化</span></span><br><span class="line"><span class="keyword">int</span> *p=<span class="keyword">new</span> <span class="keyword">int</span>[]();            <span class="comment">//指针p所指向的地址初始化为0</span></span><br><span class="line"><span class="keyword">delete</span> [] p;                   <span class="comment">//回收p所指向的数组</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="它们之间的区别"><a href="#它们之间的区别" class="headerlink" title="它们之间的区别"></a>它们之间的区别</h3><h4 id="new-delete原理"><a href="#new-delete原理" class="headerlink" title="new/delete原理"></a>new/delete原理</h4><h4 id="new-delete-原理"><a href="#new-delete-原理" class="headerlink" title="new[]/delete[]原理"></a>new[]/delete[]原理</h4>
       
     </div>
     
@@ -524,7 +538,7 @@
   <p><span>本文标题:</span><a href="/2018/11/11/C++浅谈new、delete/">C++浅谈new delete</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2018年11月11日 - 21:11</p>
-  <p><span>最后更新:</span>2018年11月15日 - 00:11</p>
+  <p><span>最后更新:</span>2018年11月17日 - 11:11</p>
   <p><span>原始链接:</span><a href="/2018/11/11/C++浅谈new、delete/" title="C++浅谈new delete">https://LiuZiQiao.github.io/2018/11/11/C++浅谈new、delete/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/11/11/C++浅谈new、delete/"  aria-label="复制成功！"></i></span>
   </p>
@@ -647,8 +661,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -813,6 +836,22 @@ var ap = new APlayer({
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#回顾"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#malloc-free使用"><span class="nav-number">1.1.</span> <span class="nav-text">malloc/free使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new-delete使用"><span class="nav-number">2.</span> <span class="nav-text">new/delete使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#new-delete-使用"><span class="nav-number">2.1.</span> <span class="nav-text">new[]/delete[]使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#它们之间的区别"><span class="nav-number">3.</span> <span class="nav-text">它们之间的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#new-delete原理"><span class="nav-number">3.1.</span> <span class="nav-text">new/delete原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new-delete-原理"><span class="nav-number">3.2.</span> <span class="nav-text">new[]/delete[]原理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -843,7 +882,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">48.9k</span>
+    <span title="Site words total count">49.6k</span>
   
 </div>
 
