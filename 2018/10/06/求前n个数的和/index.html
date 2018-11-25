@@ -502,7 +502,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><a id="more"></a>
+        <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>For 1 + 2 + 3 +… +n, you cannot use the multiplication/division, for, while, if, else, switch, case and other keywords and conditional judgment statement (A? B, C).</p>
 <p>该题翻译过来就是求1+2+3+…+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。以下是给出的C解决方案</p>
 <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>**思路：让其从最后一个数开始相加，直到n为0，则加完<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//辅助函数求和保存在i中</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Sum</span><span class="params">(<span class="keyword">int</span> n )</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		i = i + n;</span><br><span class="line">		n--;</span><br><span class="line">	<span class="keyword">return</span> 	Sum_Solution(n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//函数入口</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Sum_Solution</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> n==<span class="number">0</span> ? i : Sum(n);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
@@ -696,7 +696,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -707,7 +707,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

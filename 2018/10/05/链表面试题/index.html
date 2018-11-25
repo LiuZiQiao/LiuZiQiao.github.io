@@ -503,7 +503,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><a id="more"></a>
+        <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
 <p>关于链表已经学了有一段时间了，今天抽空进行了整理，列出来常见的有关链表的面试题，以下想法如有瑕疵望批评指出，希望能给初学者带来一点参考和价值</p>
 <h3 id="从尾到头打印单链表"><a href="#从尾到头打印单链表" class="headerlink" title="从尾到头打印单链表"></a>从尾到头打印单链表</h3><h4 id="递归打印"><a href="#递归打印" class="headerlink" title="递归打印"></a>递归打印</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、从尾到头打印单链表 递归</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ListReversePrint</span><span class="params">(ListNode *Node)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (Node == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ListReversePrint(Node-&gt;next);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d--&gt;"</span>,Node-&gt;data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="非递归打印"><a href="#非递归打印" class="headerlink" title="非递归打印"></a>非递归打印</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ListReveresePrint2</span><span class="params">(ListNode *Node)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ListNode *end = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">while</span> (end != Node)</span><br><span class="line">	&#123;</span><br><span class="line">		ListNode *cur = Node;</span><br><span class="line">		<span class="keyword">while</span> (cur-&gt;next != end)</span><br><span class="line">		&#123;</span><br><span class="line">			cur = cur-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d--&gt;"</span>,cur-&gt;data);</span><br><span class="line">		end = cur;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -724,7 +724,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -735,7 +735,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
