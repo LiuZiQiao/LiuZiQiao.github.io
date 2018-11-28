@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -136,18 +136,19 @@
 
 
 
-<meta name="description" content="问题给定一个 32 位有符号整数，将整数中的数字进行反转。123456789101112示例 1:输入: 123输出: 321 示例 2:输入: -123输出: -321示例 3:输入: 120输出: 21 注意: 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。根据这个假设，如果反转后的整数溢出，则返回 0。 解决Java解决方案安照正常的思考，我">
-<meta name="keywords" content="java">
+<meta name="description" content="死锁的定义所谓死锁就是指在多道程序系统中，一组进程中的每个进程都无期限的等待被该组进程中的另一个进程所占有且永远不会被释放的资源，这种现象称系统处于死锁状态，简称死锁。处于死锁状态的进程成为死锁进程。 如上面的图。     　　系统发生死锁会大量浪费系统资源甚至会导致整个系统崩溃 死锁的产生的原因产生死锁的原因主要有两个：一是竞争资源，系统提供的资源有限，不能满足每个进程的需求；二是多道程序运">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ReverseNum">
-<meta property="og:url" content="https://LiuZiQiao.github.io/2018/09/13/反转整数/index.html">
+<meta property="og:title" content="Linux下的死锁">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2018/11/28/Linux下的死锁/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="问题给定一个 32 位有符号整数，将整数中的数字进行反转。123456789101112示例 1:输入: 123输出: 321 示例 2:输入: -123输出: -321示例 3:输入: 120输出: 21 注意: 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。根据这个假设，如果反转后的整数溢出，则返回 0。 解决Java解决方案安照正常的思考，我">
+<meta property="og:description" content="死锁的定义所谓死锁就是指在多道程序系统中，一组进程中的每个进程都无期限的等待被该组进程中的另一个进程所占有且永远不会被释放的资源，这种现象称系统处于死锁状态，简称死锁。处于死锁状态的进程成为死锁进程。 如上面的图。     　　系统发生死锁会大量浪费系统资源甚至会导致整个系统崩溃 死锁的产生的原因产生死锁的原因主要有两个：一是竞争资源，系统提供的资源有限，不能满足每个进程的需求；二是多道程序运">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-26T15:42:09.235Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2018112821520271.png">
+<meta property="og:updated_time" content="2018-11-28T13:54:56.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ReverseNum">
-<meta name="twitter:description" content="问题给定一个 32 位有符号整数，将整数中的数字进行反转。123456789101112示例 1:输入: 123输出: 321 示例 2:输入: -123输出: -321示例 3:输入: 120输出: 21 注意: 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。根据这个假设，如果反转后的整数溢出，则返回 0。 解决Java解决方案安照正常的思考，我">
+<meta name="twitter:title" content="Linux下的死锁">
+<meta name="twitter:description" content="死锁的定义所谓死锁就是指在多道程序系统中，一组进程中的每个进程都无期限的等待被该组进程中的另一个进程所占有且永远不会被释放的资源，这种现象称系统处于死锁状态，简称死锁。处于死锁状态的进程成为死锁进程。 如上面的图。     　　系统发生死锁会大量浪费系统资源甚至会导致整个系统崩溃 死锁的产生的原因产生死锁的原因主要有两个：一是竞争资源，系统提供的资源有限，不能满足每个进程的需求；二是多道程序运">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2018112821520271.png">
 
 
 
@@ -177,7 +178,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/09/13/反转整数/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/11/28/Linux下的死锁/"/>
 
 
 
@@ -200,7 +201,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>ReverseNum | LiuxiaoKun</title>
+  <title>Linux下的死锁 | LiuxiaoKun</title>
   
 
 
@@ -356,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/09/13/反转整数/">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/11/28/Linux下的死锁/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -373,7 +374,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">ReverseNum</h2>
+          <h2 class="post-title" itemprop="name headline">Linux下的死锁</h2>
         
 
         <div class="post-meta">
@@ -385,8 +386,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T23:01:43+08:00">
-                2018-09-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-28T21:54:25+08:00">
+                2018-11-28
               </time>
             
 
@@ -401,8 +402,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-26T23:42:09+08:00">
-                2018-09-26
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-28T21:54:56+08:00">
+                2018-11-28
               </time>
             
           </span>
@@ -420,8 +421,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/每日一题/" itemprop="url" rel="index">
-                    <span itemprop="name">每日一题</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -438,8 +439,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/13/反转整数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/13/反转整数/" itemprop="commentsCount"></span>
+                <a href="/2018/11/28/Linux下的死锁/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/11/28/Linux下的死锁/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -466,7 +467,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  389
+                  3,069
                 </span>
               
 
@@ -482,7 +483,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  10
                 </span>
               
             </div>
@@ -504,14 +505,61 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>给定一个 32 位有符号整数，将整数中的数字进行反转。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: 123</span><br><span class="line">输出: 321</span><br><span class="line"> 示例 2:</span><br><span class="line"></span><br><span class="line">输入: -123</span><br><span class="line">输出: -321</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: 120</span><br><span class="line">输出: 21</span><br></pre></td></tr></table></figure></p>
-<p><strong>注意:</strong></p>
-<p>假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。根据这个假设，如果反转后的整数溢出，则返回 0。</p>
-<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p><strong>Java解决方案</strong><br>安照正常的思考，我们的代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (x!= <span class="number">0</span>) &#123;</span><br><span class="line">         </span><br><span class="line">		temp = temp *<span class="number">10</span> +x%<span class="number">10</span>;</span><br><span class="line">		x /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (temp &lt;Integer.MIN_VALUE||temp&gt;Integer.MAX_VALUE) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">   	&#125;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当输入1245678993<br>输出了-296201875<br>细心的人就会发现，此时栈溢出了；   </p>
-<p>原因是多乘了一次10，解决办法就是，先判断是否已经栈溢出，再进行乘以10<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (x!= <span class="number">0</span>) &#123;</span><br><span class="line">           <span class="keyword">if</span> (temp &lt;Integer.MIN_VALUE/<span class="number">10</span>||temp&gt;Integer.MAX_VALUE/<span class="number">10</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">		temp = temp *<span class="number">10</span> +x%<span class="number">10</span>;</span><br><span class="line">		x /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>C语言解决方案</strong><br>和java一样，先判断是否越界，再进行反转操作，这里我们需要引入头文件”limits.h”<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (x != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//正数是否越界</span></span><br><span class="line">		<span class="keyword">if</span> (temp &gt; <span class="number">0</span> &amp;&amp; ((temp == INT_MAX / <span class="number">10</span> &amp;&amp; x % <span class="number">10</span> &gt; INT_MAX % <span class="number">10</span>) || temp &gt; INT_MAX / <span class="number">10</span>))</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//负数是否越界</span></span><br><span class="line">		<span class="keyword">if</span> (temp &lt; <span class="number">0</span> &amp;&amp; ((temp == INT_MIN / <span class="number">10</span> &amp;&amp; x % <span class="number">10</span> &lt; (<span class="keyword">unsigned</span>)INT_MIN % <span class="number">10</span>) || temp &lt; INT_MIN / <span class="number">10</span>))</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		temp = temp * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">		x /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="死锁的定义"><a href="#死锁的定义" class="headerlink" title="死锁的定义"></a>死锁的定义</h3><p><img src="https://img-blog.csdnimg.cn/2018112821520271.png" alt="1"><br>所谓死锁就是指在多道程序系统中，一组进程中的每个进程都无期限的等待被该组进程中的另一个进程所占有且永远不会被释放的资源，这种现象称系统处于死锁状态，简称死锁。处于死锁状态的进程成为死锁进程。 如上面的图。    </p>
+<p>　　系统发生死锁会大量浪费系统资源甚至会导致整个系统崩溃</p>
+<h4 id="死锁的产生的原因"><a href="#死锁的产生的原因" class="headerlink" title="死锁的产生的原因"></a>死锁的产生的原因</h4><p>产生死锁的原因主要有两个：一是竞争资源，系统提供的资源有限，不能满足每个进程的需求；二是多道程序运行时，进程的推进顺序不合理。<br><strong>这里的资源我们作如下解释</strong><br>系统资源分为两类：<strong>永久性资源</strong>(可重生资源)，是指那些可供进程重复利用，长期存在的资源，如内存，CPU等硬件资源，以及数据集文件，共享程序代码等软件资源。<strong>临时性资源</strong>(消耗性资源)，是指由某个进程产生，只为另一个进程使用一次，或经过短暂时间后便不可再使用资源，如I/O和时钟中断，消息等。<br>    <strong>两种资源都可能导致死锁。</strong></p>
+<h4 id="死锁的产生必要条件"><a href="#死锁的产生必要条件" class="headerlink" title="死锁的产生必要条件"></a>死锁的产生必要条件</h4><p>对于永久性资源，产生死锁有以下四个必要条件：<br>1.互斥条件:进程独占所分配的资源且排斥其他进程使用。进程互斥使用资源，即任意时刻一个进程被进程使用，其他进程申请一个正在被占有的资源时，申请者要等待直至资源被占有者释放。<br>2.不可剥夺条件：进程所获得的资源在未使用完毕之前，不能被其他进程强行剥夺，只能由使用者自愿释放。<br>3.请求与保持：进程已经得到至少一个资源时，又提出新的资源请求，而该资源又被其他进程所占有，此时进程会等待直至得到所需资源，在等待期间会继续占有已经得到的资源。<br>4.循环等待条件：在发生死锁时，必然存在一个进程等待队列p1,p2,p3,…,pn，其中p1等待p2占有的资源，p2等待p3占有的资源，…， pn等待p1占有的资源，形成一个进程等待环路。环路中每个进程已占有的资源同时被另一个进程所申请，即前一个进程占有后一个进程所申请的资源。</p>
+<h3 id="解决死锁的方法"><a href="#解决死锁的方法" class="headerlink" title="解决死锁的方法"></a>解决死锁的方法</h3><p>解决死锁方法可分为两中：一是不让死锁发生；二是等死锁发生后再解决，具体有以下四种方法</p>
+<h4 id="死锁预防"><a href="#死锁预防" class="headerlink" title="死锁预防"></a>死锁预防</h4><p>通过破坏产生死锁的必要条件（除第一个互斥条件外的其他条件）来防止死锁发生。此方法会导致系统资源利用率过低。</p>
+<p>1.破坏“不可剥夺”条件<br>在允许进程动态申请资源的前提下做出如下规定：一个进程在申请新资源的要求不能立即得到满足，该进程进入等待状态。而处于等待状态下的进程的全部资源可以被他人剥夺，被剥夺的资源重新放到资源表中。</p>
+<p>　　该方法适合那些状态是容易保存和恢复的资源，例如，CPU、内存等。但此方法实现起来较为复杂，且代价很大。因为一个资源在使用一段时间后被强制剥夺会造成前阶段工作失效，甚至可能出现某个进程反复申请和释放资源的情况，使得进程执行无限期推迟，还增加了系统开销，延长了进程的周转时间，降低了系统的吞吐量和性能。    </p>
+<p>2.破坏“请求和保持”条件<br>实现这一操作可以用两种方法。<br>方法一：每个进程在执行前必须申请它所需的全部资源，仅当系统能满足进程的资源申请并把资源一次性分配给进程后，进程才能执行。这是静态资源分配策略。这种方法的缺点是会严重浪费系统资源，降低资源利用率。</p>
+<p>方法二：仅当进程没有占有资源时才允许他去申请资源，如果进程已占用了某些资源而又要申请新的资源，那他必须先归还所占有的资源再申请新的资源。   </p>
+<p>3.破坏“循环等待”条件<br>　采用资源有序分配策略，基本思想是将系统中所有的资源顺序编号，一般原则是紧缺、稀有的资源编号较大。进程申请资源时，必须严格按照编号顺序进行，否则不予分配。即一个进程只有得到编号较小的资源后，才能申请编号较大的资源。释放资源时应先释放编号较大的资源。<br>　　此方法硬性规定申请资源，会给用户编程带来限制，增加了资源使用者的不便；此外如何合理的编号也是一件让人头疼的事。如有进程违反了规定也会造成死锁。 </p>
+<h4 id="避免死锁"><a href="#避免死锁" class="headerlink" title="避免死锁"></a>避免死锁</h4><p>上述几种死锁预防策略增加了较强的限制条件，从而实现较为简单，但严重影响了系统性能，所以在实际应用中这几种方法使用少之又少，更好地方法是死锁避免。</p>
+<p>　　死锁避免的基本思想：系统对进程发出的每个系统能满足的资源申请进行动态检测，并根据检查结果决定是否分配资源；如果分配后系统可能发生死锁，则不予分配，反之予以分配。</p>
+<ol>
+<li>安全与不安全状态<br>　　由于避免死锁策略中允许进程动态地申请资源，所以系统要提供某种方法，在分配资源前，先分析资源分配的安全性。当估计到可能有死锁发生时及时设法避免。<br>　　如果操作系统能保证所有进程能在有限时间内获得需要的全部资源，则称系统处于“安全状态”，否则就是不安全的。<br>　　所谓的安全状态是指，如果系统的所有进程构成了一个安全序列，则系统处于安全状态。那么什么又是安全序列呢？如果一个进程序列：p1,p2,…,pnp1,p2,…,pn，对于其中每个进程 pi(1&lt;=i&lt;=n)pi(1&lt;=i&lt;=n)，它以后尚需的资源总量不超过系统当前剩余资源量与所有进程当前占有资源总量之和，那么这个进程序列便称为安全序列。</li>
+</ol>
+<p>2.银行家算法<br>　　银行家算法是最经典的死锁避免算法之一。把系统比作银行家，系统资源比作周转资金，申请资源的进程比作向银行家带款的客户。那么银行家就要保证两件事：一是银行家能贷款给若干客户，满足客户对资金的需求；二是银行家可以安全地收回其全部贷款而不至于破产。为此，银行家做出如下规定：</p>
+<p>当一个客户对资金的最大需求量不超过银行家现有资金总量时才可以接纳该客户。</p>
+<p>客户可以分期贷款，但贷款总量不能超过该客户对资金的最大需求量。</p>
+<p>当银行家现有资金不能满足客户尚需的贷款额度时，对客户的贷款可延迟支付，但必须保证客户在有限的时间内得到贷款。</p>
+<p>当客户得到所需的全部资金后，必须在有限的时间内归还所有资金。</p>
+<h4 id="检测死锁"><a href="#检测死锁" class="headerlink" title="检测死锁"></a>检测死锁</h4><p>上述的死锁避免和死锁预防都是以牺牲系统效率和浪费资源为代价，不符合我国传统勤俭节约的美德，我们要采取更好地方法——系统为进程分配资源时，不采取任何限制措施来保证系统不进入死锁状态，即允许死锁发生，但系统会不断监督进程的进展路径，判断死锁是否真的发生，一旦判断发生死锁，则采取专门的措施解决死锁，并以最小的代价使整个系统恢复正常，这就是死锁检测和解除。</p>
+<p>　　死锁检测的实质是确定是否存在“循环等待”条件，检测算法确定死锁发生并识别出与死锁有关的进程和资源。下面介绍一种检测机制：</p>
+<p>为每个进程和资源指定唯一编号。<br>设置一张资源分配表，表中包含“资源号”和占有该资源的“进程号”两项。资源分配表记录了每个资源正在被那进程占有。<br>设置一张进程等待表，表中包含“进程号”和该进程所等待的“资源号”两项。<br>死锁检测算法：当任一进程申请一个已被其他进程占有的资源时，通过反复查找资源分配表和进程等待表 ，来确定该进程对这个资源的申请是否会导致环路，若是，便确定出现死锁。</p>
+<h4 id="解除死锁"><a href="#解除死锁" class="headerlink" title="解除死锁"></a>解除死锁</h4><p>要解除死锁就要剥夺资源，那就要考虑如下几个问题：</p>
+<p>选择牺牲一个进程，即要剥夺哪个进程的哪些资源？</p>
+<p>被牺牲的进程重新运行或回退到某一点继续运行。</p>
+<p>如何保证不发生“饿死现象”，即如何保证不会总是剥夺同一个进程的资源，从而导致该进程处于“饥饿状态”。</p>
+<p>“最小代价”，即最经济合算的算法，使得进程回退带来的开销最小。要考虑到如下几个因素：</p>
+<ul>
+<li>进程优先级</li>
+<li>进程运行了多久？距离完成任务还要多久？</li>
+<li>该进程使用的资源的种类和数目，这些资源剥夺难度如何？</li>
+<li>为完成该进程还需要多少资源？<br>有多少进程要被撤销？</li>
+<li>该进程被重新启动的次数？</li>
+</ul>
+<p>死锁解除法归为两大类。</p>
+<ul>
+<li>剥夺资源。<br>　　使用挂起/激活机制挂起一些进程，剥夺他们的资源给死锁进程，用来解除死锁，等死锁解除后再激活被挂起的资源。剥夺的顺序以花费最小资源数为依据。每次剥夺后需再次调用死锁检测算法。被重新激活的挂起进程必须重新申请资源。为安全的释放资源，该进程必须返回到分配资源前的某一点。常用方法有：</li>
+</ul>
+<p>还原算法，恢复计算结果和状态。<br>设置检查点，用来恢复分配前的状态。</p>
+<ul>
+<li>撤销进程。（简单粗暴）<br>　　撤销死锁进程，把它们占有的资源分配给死锁进程，直至死锁结束。可以撤销所有死锁进程或逐个撤销死锁进程，每撤销就检测死锁是否存在，若不存在就停止撤销。</li>
+</ul>
+<p>衡量撤销代价的标准： </p>
+<ol>
+<li>被撤销进程的优先数 </li>
+<li>不同类型的进程的撤销代价 </li>
+<li>重启进程并运行到当前撤销点所需的代价</li>
+</ol>
+<p>　　由于衡量标准过多，为了简化，把系统的资源分成四个等级，对于不同级别下出现的死锁，采取不同的方法。</p>
+<p>内部资源：由操作系统使用，PCB表等——利用资源编号预防死锁。</p>
+<p>内存：由用户使用——采用抢占式预防。</p>
+<p>作业资源：可分配的设备和文件——可采用死锁避免措施。</p>
+<p>对换空间：每个用户作业在辅助存储器上的空间——采用预先分配方式。</p>
 
       
     </div>
@@ -534,12 +582,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/09/13/反转整数/">ReverseNum</a></p>
+  <p><span>本文标题:</span><a href="/2018/11/28/Linux下的死锁/">Linux下的死锁</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
-  <p><span>发布时间:</span>2018年09月13日 - 23:09</p>
-  <p><span>最后更新:</span>2018年09月26日 - 23:09</p>
-  <p><span>原始链接:</span><a href="/2018/09/13/反转整数/" title="ReverseNum">https://LiuZiQiao.github.io/2018/09/13/反转整数/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/09/13/反转整数/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年11月28日 - 21:11</p>
+  <p><span>最后更新:</span>2018年11月28日 - 21:11</p>
+  <p><span>原始链接:</span><a href="/2018/11/28/Linux下的死锁/" title="Linux下的死锁">https://LiuZiQiao.github.io/2018/11/28/Linux下的死锁/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/11/28/Linux下的死锁/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -562,12 +610,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
-          
-        </div>
       
 
       
@@ -593,8 +635,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/12/AddTwoNumbers/" rel="next" title="AddTwoNumbers">
-                <i class="fa fa-chevron-left"></i> AddTwoNumbers
+              <a href="/2018/11/25/基于MVC用java实现的通用系统后端/" rel="next" title="基于MVC用java实现的通用系统后端">
+                <i class="fa fa-chevron-left"></i> 基于MVC用java实现的通用系统后端
               </a>
             
           </div>
@@ -602,10 +644,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/14/哈希表(下)/" rel="prev" title="哈希表(下)">
-                哈希表(下) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -854,7 +892,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#死锁的定义"><span class="nav-number">1.</span> <span class="nav-text">死锁的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁的产生的原因"><span class="nav-number">1.1.</span> <span class="nav-text">死锁的产生的原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁的产生必要条件"><span class="nav-number">1.2.</span> <span class="nav-text">死锁的产生必要条件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决死锁的方法"><span class="nav-number">2.</span> <span class="nav-text">解决死锁的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁预防"><span class="nav-number">2.1.</span> <span class="nav-text">死锁预防</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#避免死锁"><span class="nav-number">2.2.</span> <span class="nav-text">避免死锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检测死锁"><span class="nav-number">2.3.</span> <span class="nav-text">检测死锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解除死锁"><span class="nav-number">2.4.</span> <span class="nav-text">解除死锁</span></a></li></ol></li></ol></div>
             
 
           </div>
