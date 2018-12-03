@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2018-12-03T15:50:44.697Z</updated>
+  <updated>2018-12-03T15:55:24.865Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://LiuZiQiao.github.io/2018/12/03/Ctrl-s%E9%97%AE%E9%A2%98/"/>
     <id>https://LiuZiQiao.github.io/2018/12/03/Ctrl-s问题/</id>
     <published>2018-12-03T15:50:20.000Z</published>
-    <updated>2018-12-03T15:50:44.697Z</updated>
+    <updated>2018-12-03T15:55:24.865Z</updated>
     
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p><img src="https://img-blog.csdnimg.cn/20181203234814813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="1"><br>习惯了在IDE环境下写代码而突然换到VIM中的人看过来，这是需要注意的坑，我们习惯在VIM中写完进行CTRL + S进行保存，然后就卡住不动了，你最有可能的操作就是关闭当前打开的VIM，但是关闭后我们的代码就没有了，哈哈，刚写的代码没了你是什么心情，我就是一遍一遍的踩到这个坑才研究了下CTRL + S在VIM中的作用，其实在VIM中CTRL + S是锁住的意思，锁住当前页面，我们用CTRL + q解除就可以了，这下你就不会在傻乎乎的关闭了。</p>]]></content>
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p><img src="https://img-blog.csdnimg.cn/20181203234814813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="1"><br>习惯了在IDE环境下写代码而突然换到VIM中的人看过来，这是需要注意的坑，我们习惯在VIM中写完进行<code>CTRL + S</code>进行保存，然后就卡住不动了，你最有可能的操作就是关闭当前打开的VIM，但是关闭后我们的代码就没有了，哈哈，刚写的代码没了你是什么心情，我就是一遍一遍的踩到这个坑才研究了下<code>CTRL + S</code>在VIM中的作用，其实在VIM中<code>CTRL + S</code>是锁住的意思，锁住当前页面，我们用<code>CTRL + q</code>解除就可以了，这下你就不会在傻乎乎的关闭了。<br>q解除就可以了，这下你就不会在傻乎乎的关闭了。</p>]]></content>
     
     <summary type="html">
     
