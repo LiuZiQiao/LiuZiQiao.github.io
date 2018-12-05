@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="线程的概念回顾进程在介绍线程之前，我们先来回顾下进程，进程的定义就是指一个具有独立功能的程序在某个数据集上的一次动态执行的过程，是系统进程资源分配和调度的基本单元。 一次任务的运行可以并发激活多个进程，这些进程相互合作完成该任务的一个最终目标。 操作系统对进程的描述：PCB（进程控制块）Linux下的进程描述——task_struct。    那么线程是什么呢？     线程是进程中的一条执行">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-05T14:47:00.297Z">
+<meta property="og:updated_time" content="2018-12-05T14:53:35.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统编程之线程">
 <meta name="twitter:description" content="线程的概念回顾进程在介绍线程之前，我们先来回顾下进程，进程的定义就是指一个具有独立功能的程序在某个数据集上的一次动态执行的过程，是系统进程资源分配和调度的基本单元。 一次任务的运行可以并发激活多个进程，这些进程相互合作完成该任务的一个最终目标。 操作系统对进程的描述：PCB（进程控制块）Linux下的进程描述——task_struct。    那么线程是什么呢？     线程是进程中的一条执行">
@@ -401,7 +401,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-05T22:47:00+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-05T22:53:35+08:00">
                 2018-12-05
               </time>
             
@@ -543,7 +543,7 @@
 <li><p>互斥：保证数据同一时间唯一的访问，那么我们就可以用一个锁来锁住当前线程，不让其它线程进行访问，即互斥锁   </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pthread_mutex_init  <span class="comment">//初始化   	</span></span><br><span class="line">pthread_mutex_destroy</span><br><span class="line">pthread_mutex_lock   			</span><br><span class="line">pthread_mutex_trylock</span><br><span class="line">pthread_mutex_unlock 			</span><br><span class="line">pthread_mutex_timedlock <span class="comment">//指定一段时间内获取锁</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>死锁：在使用互斥锁的同时，有可能会发生死锁，在前面有关于<a href="https://blog.csdn.net/qq_39478237/article/details/84593326" target="_blank" rel="noopener">死锁问题</a>的文章,这里就不做赘述了</p>
+<li><p>死锁：在使用互斥锁的同时，有可能会发生死锁，在前面有关于<a href="https://LiuZiQiao.github.io/2018/11/28/Linux下的死锁/">死锁问题</a>的文章,这里就不做赘述了</p>
 </li>
 <li><p>同步：保证对临界资源访问的时序性，即我们需要条件变量通知线程或等待线程，满足操作条件，才可以操作，不满足则需要等待，而条件满足就需要其它线程修改条件，并且通知一下等待的进程    </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pthread_cond_init	<span class="comment">//初始化</span></span><br><span class="line">pthread_cond_destroy		</span><br><span class="line">pthread_cond_broadcast  <span class="comment">//唤醒多个线程，广播唤醒</span></span><br><span class="line">pthread_cond_wait	<span class="comment">//等待		</span></span><br><span class="line">pthread_cond_timedwait		</span><br><span class="line">pthread_cond_signal  <span class="comment">// 唤醒第一个等待的线程，通知一个线</span></span><br></pre></td></tr></table></figure>
