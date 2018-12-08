@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="数据结构,堆," />
+  <meta name="keywords" content="二分," />
 
 
 
@@ -136,18 +136,18 @@
 
 
 
-<meta name="description" content="堆的概念 如果有一个关键码的集合K = {k0，k1， k2，…，kn-1}，把它的所有元素按完全二叉树的顺序存储方式存储在一个一维数组中，并满足：Ki &amp;lt;= K2i+1 且 Ki&amp;lt;= K2i+2 (Ki &amp;gt;= K2i+1 且 Ki &amp;gt;= K2i+2) i = 0，1，2…，则称为小堆(或大堆)。    小堆(大堆)中：任一结点的关键码均小于(大于)等于它的左右孩子的关">
-<meta name="keywords" content="数据结构,堆">
+<meta name="description" content="问题描述把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。 解决方案咋眼一看这题，很简单啊，就一次遍历找到最小值就可以了啊，那答案就很简单。如下给出一般解决方案 1234">
+<meta name="keywords" content="二分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉堆">
-<meta property="og:url" content="https://LiuZiQiao.github.io/2018/08/28/二叉堆/index.html">
+<meta property="og:title" content="旋转数组的最小数字">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2018/12/08/旋转数组的最小数字/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="堆的概念 如果有一个关键码的集合K = {k0，k1， k2，…，kn-1}，把它的所有元素按完全二叉树的顺序存储方式存储在一个一维数组中，并满足：Ki &amp;lt;= K2i+1 且 Ki&amp;lt;= K2i+2 (Ki &amp;gt;= K2i+1 且 Ki &amp;gt;= K2i+2) i = 0，1，2…，则称为小堆(或大堆)。    小堆(大堆)中：任一结点的关键码均小于(大于)等于它的左右孩子的关">
+<meta property="og:description" content="问题描述把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。 解决方案咋眼一看这题，很简单啊，就一次遍历找到最小值就可以了啊，那答案就很简单。如下给出一般解决方案 1234">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T00:55:39.025Z">
+<meta property="og:updated_time" content="2018-12-08T05:41:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二叉堆">
-<meta name="twitter:description" content="堆的概念 如果有一个关键码的集合K = {k0，k1， k2，…，kn-1}，把它的所有元素按完全二叉树的顺序存储方式存储在一个一维数组中，并满足：Ki &amp;lt;= K2i+1 且 Ki&amp;lt;= K2i+2 (Ki &amp;gt;= K2i+1 且 Ki &amp;gt;= K2i+2) i = 0，1，2…，则称为小堆(或大堆)。    小堆(大堆)中：任一结点的关键码均小于(大于)等于它的左右孩子的关">
+<meta name="twitter:title" content="旋转数组的最小数字">
+<meta name="twitter:description" content="问题描述把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。 解决方案咋眼一看这题，很简单啊，就一次遍历找到最小值就可以了啊，那答案就很简单。如下给出一般解决方案 1234">
 
 
 
@@ -177,7 +177,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/08/28/二叉堆/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/12/08/旋转数组的最小数字/"/>
 
 
 
@@ -200,7 +200,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>二叉堆 | LiuxiaoKun</title>
+  <title>旋转数组的最小数字 | LiuxiaoKun</title>
   
 
 
@@ -356,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/08/28/二叉堆/">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/12/08/旋转数组的最小数字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -373,7 +373,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">二叉堆</h2>
+          <h2 class="post-title" itemprop="name headline">旋转数组的最小数字</h2>
         
 
         <div class="post-meta">
@@ -385,8 +385,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T08:44:48+08:00">
-                2018-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-08T13:40:23+08:00">
+                2018-12-08
               </time>
             
 
@@ -401,8 +401,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-19T08:55:39+08:00">
-                2018-09-19
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-08T13:41:02+08:00">
+                2018-12-08
               </time>
             
           </span>
@@ -420,8 +420,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/每日一题/" itemprop="url" rel="index">
+                    <span itemprop="name">每日一题</span>
                   </a>
                 </span>
 
@@ -438,8 +438,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/28/二叉堆/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/28/二叉堆/" itemprop="commentsCount"></span>
+                <a href="/2018/12/08/旋转数组的最小数字/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/12/08/旋转数组的最小数字/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -466,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,095
+                  915
                 </span>
               
 
@@ -482,7 +482,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -504,23 +504,12 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<h4 id="堆的概念"><a href="#堆的概念" class="headerlink" title="堆的概念"></a>堆的概念</h4><ul>
-<li>如果有一个关键码的集合K = {k0，k1， k2，…，kn-1}，把它的所有元<br>素按完全二叉树的顺序存储方式存储在一个一维数组中，并满足：<br>Ki &lt;= K2<em>i+1 且 Ki&lt;= K2</em>i+2 (Ki &gt;= K2<em>i+1 且 Ki &gt;= K2</em>i+2) i = 0，1，2…，则称为小堆(或大堆)。   </li>
-<li><p>小堆(大堆)中：任一结点的关键码均小于(大于)等于它的左右孩子的关键码，位于堆顶结点的关键码最小(最大)，从根节点到每个结点的路径上数组元素组成的序列都是递增(递减)的</p>
-</li>
-<li><p>堆存储在下标为0开始的数组中，因此在堆中给定下标为i的结点时：<br>(1)如果i=0，结点i是根节点，没有双亲节点；否则结点i的双亲结点为结点(i-1)/2<br>(2)如果2 <em> i + 1 &lt;= n - 1，则结点i的左孩子为结点2 </em> i + 1，否则结点i无左孩子<br>(3)如果2 <em> i + 2 &lt;= n - 1，则结点i的右孩子为结点2 </em> i + 2，否则结<br>点i无右孩子</p>
-</li>
-</ul>
-<h4 id="堆的实现"><a href="#堆的实现" class="headerlink" title="堆的实现"></a>堆的实现</h4><p><strong><em>将二叉树调整为最小堆的原理：<br>从最后一个非叶子结点开始调整，一直到根节点为止，将每个结点及其子树调整到满足小堆的性质即可</em></strong></p>
-<h5 id="头文件的定义"><a href="#头文件的定义" class="headerlink" title="头文件的定义"></a>头文件的定义</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_SIZE 100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Heap</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">array</span>[MAX_SIZE];</span><br><span class="line">	<span class="keyword">int</span> size;</span><br><span class="line">&#125;Heap;</span><br></pre></td></tr></table></figure>
-<h5 id="堆的初始化"><a href="#堆的初始化" class="headerlink" title="堆的初始化"></a>堆的初始化</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapInit</span><span class="params">(Heap *pH,<span class="keyword">int</span> arr[],<span class="keyword">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pH-&gt;size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		pH-&gt;<span class="built_in">array</span>[i] = arr[i];</span><br><span class="line">	&#125;</span><br><span class="line">	pH-&gt;size = size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="堆的创建"><a href="#堆的创建" class="headerlink" title="堆的创建"></a>堆的创建</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//向下调整</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeaoAdjustDown</span><span class="params">(Heap *pH,<span class="keyword">int</span> root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> parent = root;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//当左孩子存在时</span></span><br><span class="line">		<span class="keyword">int</span> left = parent * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//判断左孩子是否越界</span></span><br><span class="line">		<span class="keyword">if</span> (left &gt;= pH-&gt;size)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//当一定有右孩子时</span></span><br><span class="line">		<span class="keyword">int</span> MaxChild = left;</span><br><span class="line">		<span class="keyword">if</span> (parent*<span class="number">2</span>+<span class="number">2</span>&lt;pH-&gt;size &amp;&amp; pH-&gt;<span class="built_in">array</span>[parent*<span class="number">2</span>+<span class="number">2</span>]&gt;MaxChild)</span><br><span class="line">		&#123;</span><br><span class="line">			MaxChild = parent * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (pH-&gt;<span class="built_in">array</span>[parent]&gt;pH-&gt;<span class="built_in">array</span>[MaxChild])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> temp = pH-&gt;<span class="built_in">array</span>[parent];</span><br><span class="line">		pH-&gt;<span class="built_in">array</span>[parent] = pH-&gt;<span class="built_in">array</span>[MaxChild];</span><br><span class="line">		pH-&gt;<span class="built_in">array</span>[MaxChild] = temp;</span><br><span class="line"></span><br><span class="line">		parent = MaxChild;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建堆</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapMake</span><span class="params">(Heap *pH)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = (pH-&gt;size<span class="number">-2</span>)/<span class="number">2</span>; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		HeaoAdjustDown(pH,i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="堆的插入操作"><a href="#堆的插入操作" class="headerlink" title="堆的插入操作"></a>堆的插入操作</h5><p><strong><em>堆的插入：在已经建成的最小堆的后面插入新元素，插入之后，当树中结点不满足堆的性质时，就需要对堆进行重新调整</em></strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapPush</span><span class="params">(Heap *pH,<span class="keyword">int</span> data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	assert(pH-&gt;size &lt; MAX_SIZE);</span><br><span class="line">	pH-&gt;<span class="built_in">array</span>[pH-&gt;size++] = data;</span><br><span class="line">	HeapAdjustUp(pH, pH-&gt;size - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="堆的插入操作-1"><a href="#堆的插入操作-1" class="headerlink" title="堆的插入操作"></a>堆的插入操作</h5><p><strong><em>堆的删除：删除时每次删除堆顶元素</em></strong><br>具体方法：将最后一个元素顶替堆顶元素，将堆中元素个数减少一个，相当于将堆中最后一个元素删掉，此时堆结构可能破坏，在向下调整使其满足堆的性质<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapPop</span><span class="params">(Heap *pH)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	pH-&gt;<span class="built_in">array</span>[<span class="number">0</span>] = pH-&gt;<span class="built_in">array</span>[pH-&gt;size - <span class="number">1</span>];</span><br><span class="line">	pH-&gt;size--;</span><br><span class="line"></span><br><span class="line">	HeapAdjustUp(pH, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//升序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapSort</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[],<span class="keyword">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//建立大堆</span></span><br><span class="line">	<span class="keyword">for</span> ( <span class="keyword">int</span> i = (size<span class="number">-2</span>)/<span class="number">2</span>; i &gt; <span class="number">0</span>;  i--)</span><br><span class="line">	&#123;</span><br><span class="line">		ArrayAdjustDown(<span class="built_in">array</span>,size,i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//开始排序</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; size; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> s = size - <span class="number">1</span> - j;</span><br><span class="line">		Swap(<span class="built_in">array</span>, <span class="built_in">array</span> + s);</span><br><span class="line">		ArrayAdjustDown(<span class="built_in">array</span>, size - <span class="number">1</span> - j, <span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="查找最小-大-的前K个数"><a href="#查找最小-大-的前K个数" class="headerlink" title="查找最小(大)的前K个数"></a>查找最小(大)的前K个数</h4><p><strong><em>100亿个数中找出最小的前K个数（海量数据top K问题）</em></strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">TopK</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[],<span class="keyword">int</span> size,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *heapArray = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(k * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">	assert(heapArray);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//搬前K个数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		heapArray[i] = <span class="built_in">array</span>[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//建立堆(大堆)</span></span><br><span class="line">	<span class="keyword">for</span> ( <span class="keyword">int</span> j = (k<span class="number">-2</span>)/<span class="number">2</span>; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">	&#123;</span><br><span class="line">		ArrayAdjustDown(heapArray,k,j);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//将第K个与堆中最大元素比较</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = k; i &lt; size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">array</span>[i] &gt;= heapArray[<span class="number">0</span>])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		heapArray[<span class="number">0</span>] = <span class="built_in">array</span>[i];     <span class="comment">//替换堆中最大元素</span></span><br><span class="line">		ArrayAdjustDown(heapArray,k,<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> heapArray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="测试部分"><a href="#测试部分" class="headerlink" title="测试部分"></a>测试部分</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TestHeap</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">array</span>[] = &#123; <span class="number">53</span>, <span class="number">17</span>, <span class="number">78</span>, <span class="number">9</span>, <span class="number">45</span>, <span class="number">65</span>, <span class="number">87</span>, <span class="number">23</span>, <span class="number">31</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> size = <span class="keyword">sizeof</span>(<span class="built_in">array</span>) / <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"></span><br><span class="line">	Heap	heap;</span><br><span class="line">	HeapInit(&amp;heap, <span class="built_in">array</span>, size);</span><br><span class="line">	HeapMake(&amp;heap);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"建堆完成\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//查找最小的前K个数</span></span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">array</span>[] = &#123; <span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">3</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> sz = <span class="keyword">sizeof</span>(<span class="built_in">array</span>) / <span class="keyword">sizeof</span>(<span class="built_in">array</span>[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> *ret = TopK(<span class="built_in">array</span>, sz, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,ret[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>咋眼一看这题，很简单啊，就一次遍历找到最小值就可以了啊，那答案就很简单。如下给出一般解决方案</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minNumberInRotateArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rotateArray)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(rotateArray.size()==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">size_t</span> i=<span class="number">0</span>;i&lt;rotateArray.size()<span class="number">-1</span>;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(rotateArray[i] &gt; rotateArray[i+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> rotateArray[i+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>做完这个题目时我们应该更加进一步去思考该题，这个题难道就这么简单？其实不然，当我们控制其时间复杂度时，我们可以思考另外一种方式来解决，如下给出思路：   </p>
+<p>我们注意到旋转之后的数组实际上可以划分为两个排序的子数组，而且前面的子数组的元素都大于或者等于后面子数组的元素。我们还可以注意到最小的元素刚好是这两个子数组的分界线。<br> 我们试着用<strong>二分查找法</strong>的思路在寻找这个最小的元素。<br>首先我们用两个指针，分别指向数组的第一个元素和最后一个元素。按照题目旋转的规则，第一个元素应该是大于或者等于最后一个元素的（这其实不完全对，还有特例。后面再讨论特例）。<br>接着我们得到处在数组中间的元素。如果该中间元素位于前面的递增子数组，那么它应该大于或者等于第一个指针指向的元素。此时数组中最小的元素应该位于该中间元素的后面。<br>我们可以把第一指针指向该中间元素，这样可以缩小寻找的范围。同样，如果中间元素位于后面的递增子数组，那么它应该小于或者等于第二个指针指向的元素。此时该数组中最小的元素应该位于该中间元素的前面。<br>我们可以把第二个指针指向该中间元素，这样同样可以缩小寻找的范围。我们接着再用更新之后的两个指针，去得到和比较新的中间元素，循环下去。<br>按照上述的思路，我们的第一个指针总是指向前面递增数组的元素，而第二个指针总是指向后面递增数组的元素。最后第一个指针将指向前面子数组的最后一个元素，而第二个指针会指向后面子数组的第一个元素。<br>也就是它们最终会指向两个相邻的元素，而第二个指针指向的刚好是最小的元素。这就是循环结束的条件。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minNumberInRotateArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rotateArray)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(rotateArray.empty()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = rotateArray.size()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> middle = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(rotateArray[begin]&lt;rotateArray[end])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> rotateArray[begin];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(begin &lt; end)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(end - begin == <span class="number">1</span>)&#123;</span><br><span class="line">                middle = end;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">                </span><br><span class="line">            <span class="keyword">int</span> middle = (begin + end )/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(rotateArray[middle] &gt;= rotateArray[begin])</span><br><span class="line">            &#123;</span><br><span class="line">                begin = middle;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(rotateArray[middle] &lt;= rotateArray[begin])&#123;</span><br><span class="line">                end = middle;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">return</span> rotateArray[middle];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -542,12 +531,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/08/28/二叉堆/">二叉堆</a></p>
+  <p><span>本文标题:</span><a href="/2018/12/08/旋转数组的最小数字/">旋转数组的最小数字</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
-  <p><span>发布时间:</span>2018年08月28日 - 08:08</p>
-  <p><span>最后更新:</span>2018年09月19日 - 08:09</p>
-  <p><span>原始链接:</span><a href="/2018/08/28/二叉堆/" title="二叉堆">https://LiuZiQiao.github.io/2018/08/28/二叉堆/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/08/28/二叉堆/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年12月08日 - 13:12</p>
+  <p><span>最后更新:</span>2018年12月08日 - 13:12</p>
+  <p><span>原始链接:</span><a href="/2018/12/08/旋转数组的最小数字/" title="旋转数组的最小数字">https://LiuZiQiao.github.io/2018/12/08/旋转数组的最小数字/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/12/08/旋转数组的最小数字/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -573,9 +562,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
-          
-            <a href="/tags/堆/" rel="tag"><i class="fa fa-tag"></i> 堆</a>
+            <a href="/tags/二分/" rel="tag"><i class="fa fa-tag"></i> 二分</a>
           
         </div>
       
@@ -603,8 +590,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/28/面向对象之内部类/" rel="next" title="面向对象之类以及内部类">
-                <i class="fa fa-chevron-left"></i> 面向对象之类以及内部类
+              <a href="/2018/12/05/Linux系统编程之线程/" rel="next" title="Linux系统编程之线程">
+                <i class="fa fa-chevron-left"></i> Linux系统编程之线程
               </a>
             
           </div>
@@ -612,10 +599,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/29/面向对象之封装/" rel="prev" title="面向对象之封装">
-                面向对象之封装 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -864,7 +847,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#堆的概念"><span class="nav-number">1.</span> <span class="nav-text">堆的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆的实现"><span class="nav-number">2.</span> <span class="nav-text">堆的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#头文件的定义"><span class="nav-number">2.1.</span> <span class="nav-text">头文件的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆的初始化"><span class="nav-number">2.2.</span> <span class="nav-text">堆的初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆的创建"><span class="nav-number">2.3.</span> <span class="nav-text">堆的创建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆的插入操作"><span class="nav-number">2.4.</span> <span class="nav-text">堆的插入操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆的插入操作-1"><span class="nav-number">2.5.</span> <span class="nav-text">堆的插入操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">3.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找最小-大-的前K个数"><span class="nav-number">4.</span> <span class="nav-text">查找最小(大)的前K个数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#测试部分"><span class="nav-number">4.1.</span> <span class="nav-text">测试部分</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
             
 
           </div>
