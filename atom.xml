@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2018-12-10T15:00:41.932Z</updated>
+  <updated>2018-12-24T13:23:09.574Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>window双系统Deepin安装及正确删除</title>
+    <link href="https://LiuZiQiao.github.io/2018/12/24/window%E5%8F%8C%E7%B3%BB%E7%BB%9FDeepin%E5%AE%89%E8%A3%85%E5%8F%8A%E6%AD%A3%E7%A1%AE%E5%88%A0%E9%99%A4/"/>
+    <id>https://LiuZiQiao.github.io/2018/12/24/window双系统Deepin安装及正确删除/</id>
+    <published>2018-12-24T13:18:34.000Z</published>
+    <updated>2018-12-24T13:23:09.574Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p><a href="https://blog.csdn.net/qq_39478237/article/details/85239249" target="_blank" rel="noopener">原文链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_39478237/article/details/85239249&quot; 
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>滑动窗口的最大值</title>
@@ -478,27 +500,6 @@
     </summary>
     
       <category term="随笔" scheme="https://LiuZiQiao.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://LiuZiQiao.github.io/2018/10/23/%E6%93%8D%E4%BD%9C%E7%AC%A6%E9%87%8D%E8%BD%BD%E4%B8%8Econst/"/>
-    <id>https://LiuZiQiao.github.io/2018/10/23/操作符重载与const/</id>
-    <published>2018-10-23T04:47:47.000Z</published>
-    <updated>2018-10-23T04:47:47.106Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-      
-    
-    </summary>
     
     
   </entry>
