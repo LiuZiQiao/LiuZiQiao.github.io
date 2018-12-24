@@ -146,7 +146,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20160719211251895">
 <meta property="og:image" content="https://img-blog.csdn.net/20160719210756831">
 <meta property="og:image" content="https://img-blog.csdn.net/20160719214131721">
-<meta property="og:updated_time" content="2018-12-24T13:34:23.284Z">
+<meta property="og:updated_time" content="2018-12-24T13:38:51.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下的几款内存泄漏检测工具">
 <meta name="twitter:description" content="原文链接 Linux下编写C或者C++程序，有很多工具，但是主要编译器仍然是gcc和g++。最近用到STL中的List编程，为了检测写的代码是否会发现内存泄漏，了解了一下相关的知识。  所有使用动态内存分配(dynamic memory allocation)的程序都有机会遇上内存泄露(memory leakage)问题，在Linux里有三种常用工具来检测内存泄露的情況，包括：  参见 htt">
@@ -404,7 +404,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-24T21:34:23+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-24T21:38:51+08:00">
                 2018-12-24
               </time>
             
@@ -469,7 +469,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,381
+                  3,373
                 </span>
               
 
@@ -562,15 +562,14 @@
 
 make
 
-sudo make install</code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li></ul></pre>
+sudo make install
 
 <p class="cye-lm-tag">当然也可以使用发行版的自带的源中安装</p>
 
 
+sudo apt install valgrind
 
-<pre class="prettyprint" name="code"><code class="language-c hljs  has-numbering">sudo apt install valgrind</code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre>
-
-<p class="cye-lm-tag">这是一个没有界面的内存检测工具，安装后，输入 valgrind ls -l 验证一下该工具是否工作正常（这是README里面的方法，实际上是验证一下对ls -l命令的内存检测），如果你看到一堆的信息说明你的工具可以使用了。</p>
+这是一个没有界面的内存检测工具，安装后，输入 valgrind ls -l 验证一下该工具是否工作正常（这是README里面的方法，实际上是验证一下对ls -l命令的内存检测），如果你看到一堆的信息说明你的工具可以使用了。
 
 
 
@@ -584,7 +583,42 @@ sudo make install</code><ul class="pre-numbering" style=""><li style="color: rgb
 
 <p class="cye-lm-tag">最常用的工具，用来检测程序中出现的内存问题，所有对内存的读写都会被检测到，一切对malloc()/free()/new/delete的调用都会被捕获。所以，Memcheck 工具主要检查下面的程序错误</p>
 
-<div class="table-box"><table><br><thead><br><tr><br>  <th align="center">内容</th><br>  <th align="center">描述</th><br></tr><br></thead><br><tbody><tr><br>  <td align="center">使用未初始化的内存</td><br>  <td align="center">Use of uninitialised memory</td><br></tr><br><tr><br>  <td align="center">使用已经释放了的内存</td><br>  <td align="center">Reading/writing memory after it has been free’d</td><br></tr><br><tr><br>  <td align="center">使用超过 malloc分配的内存空间</td><br>  <td align="center">Reading/writing off the end of malloc’d blocks</td><br></tr><br><tr><br>  <td align="center">对堆栈的非法访问</td><br>  <td align="center">Reading/writing inappropriate areas on the stack</td><br></tr><br><tr><br>  <td align="center">申请的空间是否有释放</td><br>  <td align="center">Memory leaks – where pointers to malloc’d blocks are lost forever</td><br></tr><br><tr><br>  <td align="center">malloc/free/new/delete申请和释放内存的匹配</td><br>  <td align="center">Mismatched use of malloc/new/new [] vs free/delete/delete []</td><br></tr><br><tr><br>  <td align="center">src和dst的重叠</td><br>  <td align="center">Overlapping src and dst pointers in memcpy() and related functions</td><br></tr><br></tbody></table></div>
+<div class="table-box"><table>
+<thead>
+<tr>
+  <th align="center">内容</th>
+  <th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="center">使用未初始化的内存</td>
+  <td align="center">Use of uninitialised memory</td>
+</tr>
+<tr>
+  <td align="center">使用已经释放了的内存</td>
+  <td align="center">Reading/writing memory after it has been free’d</td>
+</tr>
+<tr>
+  <td align="center">使用超过 malloc分配的内存空间</td>
+  <td align="center">Reading/writing off the end of malloc’d blocks</td>
+</tr>
+<tr>
+  <td align="center">对堆栈的非法访问</td>
+  <td align="center">Reading/writing inappropriate areas on the stack</td>
+</tr>
+<tr>
+  <td align="center">申请的空间是否有释放</td>
+  <td align="center">Memory leaks – where pointers to malloc’d blocks are lost forever</td>
+</tr>
+<tr>
+  <td align="center">malloc/free/new/delete申请和释放内存的匹配</td>
+  <td align="center">Mismatched use of malloc/new/new [] vs free/delete/delete []</td>
+</tr>
+<tr>
+  <td align="center">src和dst的重叠</td>
+  <td align="center">Overlapping src and dst pointers in memcpy() and related functions</td>
+</tr>
+</tbody></table></div>
 
 
 <p class="cye-lm-tag">这些问题往往是C/C++程序员最头疼的问题，Memcheck在这里帮上了大忙。 </p>
@@ -605,7 +639,17 @@ sudo make install</code><ul class="pre-numbering" style=""><li style="color: rgb
 
 <p class="cye-lm-tag">堆栈分析器，它能测量程序在堆栈中使用了多少内存，告诉我们堆块，堆管理块和栈的大小。Massif能帮助我们减少内存的使用，在带有虚拟内存的现代系统中，它还能够加速我们程序的运行，减少程序停留在交换区中的几率。 </p>
 
-<blockquote><br>  <p class="cye-lm-tag">此外，lackey和nulgrind也会提供。Lackey是小型工具，很少用到；Nulgrind只是为开发者展示如何创建一个工具</p><br><br>  <p class="cye-lm-tag"><strong>注意</strong></p><br><br>  <p class="cye-lm-tag">Valgrind不检查静态分配数组的使用情况</p><br><br>  <p class="cye-lm-tag">Valgrind占用了更多的内存–可达两倍于你程序的正常使用量</p><br><br>  <p class="cye-lm-tag">如果你用Valgrind来检测使用大量内存的程序就会遇到问题，它可能会用很长的时间来运行测试</p><br></blockquote>
+<blockquote>
+  <p class="cye-lm-tag">此外，lackey和nulgrind也会提供。Lackey是小型工具，很少用到；Nulgrind只是为开发者展示如何创建一个工具</p>
+
+  <p class="cye-lm-tag"><strong>注意</strong></p>
+
+  <p class="cye-lm-tag">Valgrind不检查静态分配数组的使用情况</p>
+
+  <p class="cye-lm-tag">Valgrind占用了更多的内存–可达两倍于你程序的正常使用量</p>
+
+  <p class="cye-lm-tag">如果你用Valgrind来检测使用大量内存的程序就会遇到问题，它可能会用很长的时间来运行测试</p>
+</blockquote>
 
 
 
@@ -614,20 +658,16 @@ sudo make install</code><ul class="pre-numbering" style=""><li style="color: rgb
 <hr>
 
 <p class="cye-lm-tag">编译程序</p>
-
-
-
-<pre class="prettyprint" name="code"><code class="language-c hljs  has-numbering">g++ -g -o leak leak.c </code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre>
+g++ -g -o leak leak.c 
 
 <p class="cye-lm-tag">被检测程序加入 –g   -fno-inline 编译选项保留调试信息, 否则后面的valgrind不能显示到出错行号。</p>
 
-<p class="cye-lm-tag">valgrind被设计成非侵入式的，它直接工作于可执行文件上，因此在检查前不需要重新编译、连接和修改你的程序。要检查一个程序很简单，只需要执行下面的命令就可以了。</p>
+valgrind被设计成非侵入式的，它直接工作于可执行文件上，因此在检查前不需要重新编译、连接和修改你的程序。要检查一个程序很简单，只需要执行下面的命令就可以了。
 
 
+valgrind --tool=tool_name program_name
 
-<pre class="prettyprint" name="code"><code class="language-c hljs  has-numbering">valgrind --tool=tool_name program_name</code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre>
-
-<p class="cye-lm-tag">比如我们要对ls -l命令做内存检查，只需要执行下面的命令就可以了</p>
+比如我们要对ls -l命令做内存检查，只需要执行下面的命令就可以了
 
 
 
@@ -785,7 +825,7 @@ dump=&lt;addr&gt; 转存信息对象在&lt;addr&gt;</code><ul class="pre-numberi
 
 <p class="cye-lm-tag">从kernel源代码中的目录<code>include /linux/kmemleak.h</code>中可查看函数原型的头</p>
 
-<div class="table-box"><table><br><thead><br><tr><br>  <th align="center">函数</th><br>  <th align="center">功能</th><br></tr><br></thead><br><tbody><tr><br>  <td align="center">kmemleak_init</td><br>  <td align="center">初始化kmemleak</td><br></tr><br><tr><br>  <td align="center">kmemleak_alloc</td><br>  <td align="center">一个内存块分配的通知</td><br></tr><br><tr><br>  <td align="center">kmemleak_alloc_percpu</td><br>  <td align="center">通知的一个percpu的内存块分配</td><br></tr><br><tr><br>  <td align="center">kmemleak_free</td><br>  <td align="center">通知的内存块释放</td><br></tr><br><tr><br>  <td align="center">kmemleak_free_part</td><br>  <td align="center">通知释放部分内存块</td><br></tr><br><tr><br>  <td align="center">kmemleak_free_percpu</td><br>  <td align="center">一个percpu内存块释放的通知</td><br></tr><br><tr><br>  <td align="center">kmemleak_not_leak</td><br>  <td align="center">当不是泄露时，标记对象</td><br></tr><br><tr><br>  <td align="center">kmemleak_ignore</td><br>  <td align="center">当泄漏时不扫描或报告对象</td><br></tr><br><tr><br>  <td align="center">kmemleak_scan_area</td><br>  <td align="center">添加扫描区域内的内存块</td><br></tr><br><tr><br>  <td align="center">kmemleak_no_scan</td><br>  <td align="center">不扫描的内存块</td><br></tr><br><tr><br>  <td align="center">kmemleak_erase</td><br>  <td align="center">删除一个指针变量的旧值</td><br></tr><br><tr><br>  <td align="center">kmemleak_alloc_recursive</td><br>  <td align="center">为kmemleak_alloc，只检查递归</td><br></tr><br><tr><br>  <td align="center">kmemleak_free_recursive</td><br>  <td align="center">为kmemleak_free，只检查递归</td><br></tr><br></tbody></table></div>            <br>                        <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-2b43bc2447.css" rel="stylesheet"><br>                
+<div class="table-box"><table><br><thead><br><tr><br>  <th align="center">函数</th><br>  <th align="center">功能</th><br></tr><br></thead><br><tbody><tr><br>  <td align="center">kmemleak_init</td><br>  <td align="center">初始化kmemleak</td><br></tr><br><tr><br>  <td align="center">kmemleak_alloc</td><br>  <td align="center">一个内存块分配的通知</td><br></tr><br><tr><br>  <td align="center">kmemleak_alloc_percpu</td><br>  <td align="center">通知的一个percpu的内存块分配</td><br></tr><br><tr><br>  <td align="center">kmemleak_free</td><br>  <td align="center">通知的内存块释放</td><br></tr><br><tr><br>  <td align="center">kmemleak_free_part</td><br>  <td align="center">通知释放部分内存块</td><br></tr><br><tr><br>  <td align="center">kmemleak_free_percpu</td><br>  <td align="center">一个percpu内存块释放的通知</td><br></tr><br><tr><br>  <td align="center">kmemleak_not_leak</td><br>  <td align="center">当不是泄露时，标记对象</td><br></tr><br><tr><br>  <td align="center">kmemleak_ignore</td><br>  <td align="center">当泄漏时不扫描或报告对象</td><br></tr><br><tr><br>  <td align="center">kmemleak_scan_area</td><br>  <td align="center">添加扫描区域内的内存块</td><br></tr><br><tr><br>  <td align="center">kmemleak_no_scan</td><br>  <td align="center">不扫描的内存块</td><br></tr><br><tr><br>  <td align="center">kmemleak_erase</td><br>  <td align="center">删除一个指针变量的旧值</td><br></tr><br><tr><br>  <td align="center">kmemleak_alloc_recursive</td><br>  <td align="center">为kmemleak_alloc，只检查递归</td><br></tr><br><tr><br>  <td align="center">kmemleak_free_recursive</td><br>  <td align="center">为kmemleak_free，只检查递归</td><br></tr><br></tbody></table></div>            <br>                        <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-2b43bc2447.css" rel="stylesheet"><br>                </code></pre>
       
     </div>
     
