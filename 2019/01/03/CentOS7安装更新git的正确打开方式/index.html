@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="git centos," />
 
 
 
@@ -136,16 +136,18 @@
 
 
 
-<meta name="description" content="一只热爱技术的文艺青年">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiuxiaoKun">
-<meta property="og:url" content="https://LiuZiQiao.github.io/archives/2018/08/index.html">
+<meta name="description" content="1 安装centos7 之后一直用自带的git，在提交的时候总是出现下面这种情况，原因是git版本太低导致的，于是就想了办法去更新git，百度看了很多教程，都是什么先卸载再重新安装，卸载之前还需要备份一份配置文件，看了很多感觉非常麻烦，于是就在Linux网站中看到了一个最正确的更新及安装方式。以下是记录我更新安装过程。 配置存储库在这之前，我们需要在root权限下才可以进一步操作。1.启用Wa">
+<meta name="keywords" content="git centos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7安装更新git的正确打开方式">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2019/01/03/CentOS7安装更新git的正确打开方式/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="一只热爱技术的文艺青年">
+<meta property="og:description" content="1 安装centos7 之后一直用自带的git，在提交的时候总是出现下面这种情况，原因是git版本太低导致的，于是就想了办法去更新git，百度看了很多教程，都是什么先卸载再重新安装，卸载之前还需要备份一份配置文件，看了很多感觉非常麻烦，于是就在Linux网站中看到了一个最正确的更新及安装方式。以下是记录我更新安装过程。 配置存储库在这之前，我们需要在root权限下才可以进一步操作。1.启用Wa">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-03T08:54:13.402Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiuxiaoKun">
-<meta name="twitter:description" content="一只热爱技术的文艺青年">
+<meta name="twitter:title" content="CentOS7安装更新git的正确打开方式">
+<meta name="twitter:description" content="1 安装centos7 之后一直用自带的git，在提交的时候总是出现下面这种情况，原因是git版本太低导致的，于是就想了办法去更新git，百度看了很多教程，都是什么先卸载再重新安装，卸载之前还需要备份一份配置文件，看了很多感觉非常麻烦，于是就在Linux网站中看到了一个最正确的更新及安装方式。以下是记录我更新安装过程。 配置存储库在这之前，我们需要在root权限下才可以进一步操作。1.启用Wa">
 
 
 
@@ -175,7 +177,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/archives/2018/08/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2019/01/03/CentOS7安装更新git的正确打开方式/"/>
 
 
 
@@ -198,7 +200,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>归档 | LiuxiaoKun</title>
+  <title>CentOS7安装更新git的正确打开方式 | LiuxiaoKun</title>
   
 
 
@@ -226,7 +228,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/LiuZiQiao"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -340,369 +342,291 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2019/01/03/CentOS7安装更新git的正确打开方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiuXiaoKun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiuxiaoKun">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h2 class="post-title" itemprop="name headline">CentOS7安装更新git的正确打开方式</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T16:52:12+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-03T16:54:13+08:00">
+                2019-01-03
+              </time>
+            
+          </span>
+
           
-        好! 目前共计 65 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/03/CentOS7安装更新git的正确打开方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/03/CentOS7安装更新git的正确打开方式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  375
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
+<p><a href="https://img-blog.csdnimg.cn/20190103165013557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener">1</a></p>
+<p>安装centos7 之后一直用自带的git，在提交的时候总是出现下面这种情况，原因是git版本太低导致的，于是就想了办法去更新git，<br>百度看了很多教程，都是什么先卸载再重新安装，卸载之前还需要备份一份配置文件，看了很多感觉非常麻烦，于是就在Linux网站中看到了一个最正确的更新及安装方式。以下是记录我更新安装过程。</p>
+<h3 id="配置存储库"><a href="#配置存储库" class="headerlink" title="配置存储库"></a>配置存储库</h3><p>在这之前，我们需要在root权限下才可以进一步操作。<br>1.启用Wandisco GIT存储库<br>启用存储库需要在/etc/yum.repos.d/目录中命名的新yum存储库配置文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.repos.d/wandisco-git.repo</span><br></pre></td></tr></table></figure></p>
+<p>添加以下字段，ESC，然后:输入wq保存退出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[wandisco-git]</span><br><span class="line">name=Wandisco GIT Repository</span><br><span class="line">baseurl=http://opensource.wandisco.com/centos/7/git/$basearch/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://opensource.wandisco.com/RPM-GPG-KEY-WANdisco</span><br></pre></td></tr></table></figure></p>
+<p>使用以下命名了导入存储库GPG密钥<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import http://opensource.wandisco.com/RPM-GPG-KEY-WANdisco</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure>
+<p>完成之后验证一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure></p>
+<p>输出<code>git version 2.18.0</code></p>
+<h3 id="验证配置文件更改"><a href="#验证配置文件更改" class="headerlink" title="验证配置文件更改"></a>验证配置文件更改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user.name=Your Name</span><br><span class="line">user.email=youremail@yourdomain.com</span><br></pre></td></tr></table></figure></p>
+<p>配置设置存储在~/.gitconfig文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">    name = Your Name</span><br><span class="line">    email = youremail@yourdomain.com</span><br></pre></td></tr></table></figure>
+<p>要进一步更改Git配置，可以使用git config命令或~/.gitconfig手动编辑文件。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
         
+
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+ 
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2019/01/03/CentOS7安装更新git的正确打开方式/">CentOS7安装更新git的正确打开方式</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
+  <p><span>发布时间:</span>2019年01月03日 - 16:01</p>
+  <p><span>最后更新:</span>2019年01月03日 - 16:01</p>
+  <p><span>原始链接:</span><a href="/2019/01/03/CentOS7安装更新git的正确打开方式/" title="CentOS7安装更新git的正确打开方式">https://LiuZiQiao.github.io/2019/01/03/CentOS7安装更新git的正确打开方式/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/01/03/CentOS7安装更新git的正确打开方式/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git-centos/" rel="tag"><i class="fa fa-tag"></i> git centos</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
+
         
 
         
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2018">2018</h2>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/31/二叉搜索树/" itemprop="url">
-              
-                <span itemprop="name">二叉搜索树</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-31T22:29:32+08:00"
-              content="2018-08-31" >
-          08-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/03/CentOS7环境下安装vscode/" rel="next" title="CentOS7环境下安装vscode">
+                <i class="fa fa-chevron-left"></i> CentOS7环境下安装vscode
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/29/面向对象之封装/" itemprop="url">
-              
-                <span itemprop="name">面向对象之封装</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-29T00:03:09+08:00"
-              content="2018-08-29" >
-          08-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/28/二叉堆/" itemprop="url">
-              
-                <span itemprop="name">二叉堆</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-28T08:44:48+08:00"
-              content="2018-08-28" >
-          08-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/28/面向对象之内部类/" itemprop="url">
-              
-                <span itemprop="name">面向对象之类以及内部类</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-28T08:40:24+08:00"
-              content="2018-08-28" >
-          08-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/26/二叉树基本操作下/" itemprop="url">
-              
-                <span itemprop="name">二叉树基本操作下</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-26T21:43:52+08:00"
-              content="2018-08-26" >
-          08-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/25/二叉树基本操作上/" itemprop="url">
-              
-                <span itemprop="name">二叉树基本操作上</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-25T08:26:19+08:00"
-              content="2018-08-25" >
-          08-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/24/复杂链表的复制/" itemprop="url">
-              
-                <span itemprop="name">复杂链表的复制</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-24T08:46:06+08:00"
-              content="2018-08-24" >
-          08-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/23/判断元素出栈入栈合法性/" itemprop="url">
-              
-                <span itemprop="name">判断元素出栈入栈合法性</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-23T16:27:33+08:00"
-              content="2018-08-23" >
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/23/栈实现括号匹配/" itemprop="url">
-              
-                <span itemprop="name">栈实现括号匹配</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-23T08:57:33+08:00"
-              content="2018-08-23" >
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+	
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -710,6 +634,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -732,8 +667,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -901,6 +845,22 @@ var ap = new APlayer({
 		<!--my custom code end-->
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置存储库"><span class="nav-number">1.</span> <span class="nav-text">配置存储库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证配置文件更改"><span class="nav-number">3.</span> <span class="nav-text">验证配置文件更改</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1071,6 +1031,10 @@ var ap = new APlayer({
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -1118,6 +1082,30 @@ var ap = new APlayer({
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'liuziqiao',
+            repo: 'https://liuziqiao.github.io/',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '3e1215990096715396423947972d1e4c5e3b67a2',
+            
+                client_id: '5282da395b85f22364f8'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
@@ -1182,26 +1170,6 @@ var ap = new APlayer({
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   
 
 
