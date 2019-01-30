@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="NET," />
 
 
 
@@ -136,26 +136,28 @@
 
 
 
-<meta name="description" content="Github Pages介绍本来用于介绍托管在Github上的项目，由于它的空间免费稳定，因此适合用来搭建博客。 每个帐号只能有一个仓库来存放个人主页，且仓库的名字必须是username/username.github.io。你可以通过http://username.github.io来访问你的个人主页 个人主页的网站内容是在master分支下 Hexo介绍Hexo是一个快速、简洁高效的博客框">
+<meta name="description" content="上一篇中是有关网络的设计模式和分层模型，这篇就来说说网络里面用到的几个重要协议的格式，用程序员来的话来说就是报头格式。当然，在进入主题之前，先了解下通信的过程。 通信过程两台计算机通过TCP/IP协议通讯的过程如下所示： 上图对应两台计算机在同一网段中的情况，如果两台计算机在不同的网段中，那么数据从一台计算机到另一台计算机传输过程中要经过一个或多个路由器，如下图所示：  链路层有以太网、令牌环">
+<meta name="keywords" content="NET">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github+hexo搭建博客教程">
-<meta property="og:url" content="https://LiuZiQiao.github.io/2018/10/19/github-hexo搭建博客教程/index.html">
+<meta property="og:title" content="再谈网络之“协议格式”">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2019/01/30/再谈网络之“协议格式”/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="Github Pages介绍本来用于介绍托管在Github上的项目，由于它的空间免费稳定，因此适合用来搭建博客。 每个帐号只能有一个仓库来存放个人主页，且仓库的名字必须是username/username.github.io。你可以通过http://username.github.io来访问你的个人主页 个人主页的网站内容是在master分支下 Hexo介绍Hexo是一个快速、简洁高效的博客框">
+<meta property="og:description" content="上一篇中是有关网络的设计模式和分层模型，这篇就来说说网络里面用到的几个重要协议的格式，用程序员来的话来说就是报头格式。当然，在进入主题之前，先了解下通信的过程。 通信过程两台计算机通过TCP/IP协议通讯的过程如下所示： 上图对应两台计算机在同一网段中的情况，如果两台计算机在不同的网段中，那么数据从一台计算机到另一台计算机传输过程中要经过一个或多个路由器，如下图所示：  链路层有以太网、令牌环">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p15qizl76.bkt.clouddn.com/blog/171220/Fg6728KdiK.jpg?imageslim">
-<meta property="og:image" content="http://p15qizl76.bkt.clouddn.com/blog/171220/B7lkme9mkb.jpg?imageslim">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/695365-65754452ea96e1cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/695365-e4fb878d83a8a2e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
-<meta property="og:image" content="https://img-blog.csdn.net/2018102423354921?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="http://p15qizl76.bkt.clouddn.com/blog/171220/8HbiiJFCgB.jpg?imageslim">
-<meta property="og:image" content="http://p15qizl76.bkt.clouddn.com/blog/171220/CgdkDEDim9.jpg?imageslim">
-<meta property="og:image" content="http://p15qizl76.bkt.clouddn.com/blog/171220/dLaLgf5B36.jpg?imageslim">
-<meta property="og:updated_time" content="2018-10-24T15:46:52.831Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019013021170727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130211750435.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130211851391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130211956396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130212040538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130212121578.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130212157821.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130212215315.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130212243418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-01-30T13:28:02.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github+hexo搭建博客教程">
-<meta name="twitter:description" content="Github Pages介绍本来用于介绍托管在Github上的项目，由于它的空间免费稳定，因此适合用来搭建博客。 每个帐号只能有一个仓库来存放个人主页，且仓库的名字必须是username/username.github.io。你可以通过http://username.github.io来访问你的个人主页 个人主页的网站内容是在master分支下 Hexo介绍Hexo是一个快速、简洁高效的博客框">
-<meta name="twitter:image" content="http://p15qizl76.bkt.clouddn.com/blog/171220/Fg6728KdiK.jpg?imageslim">
+<meta name="twitter:title" content="再谈网络之“协议格式”">
+<meta name="twitter:description" content="上一篇中是有关网络的设计模式和分层模型，这篇就来说说网络里面用到的几个重要协议的格式，用程序员来的话来说就是报头格式。当然，在进入主题之前，先了解下通信的过程。 通信过程两台计算机通过TCP/IP协议通讯的过程如下所示： 上图对应两台计算机在同一网段中的情况，如果两台计算机在不同的网段中，那么数据从一台计算机到另一台计算机传输过程中要经过一个或多个路由器，如下图所示：  链路层有以太网、令牌环">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2019013021170727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
 
 
 
@@ -185,7 +187,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/10/19/github-hexo搭建博客教程/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2019/01/30/再谈网络之“协议格式”/"/>
 
 
 
@@ -208,7 +210,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>github+hexo搭建博客教程 | LiuxiaoKun</title>
+  <title>再谈网络之“协议格式” | LiuxiaoKun</title>
   
 
 
@@ -364,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/10/19/github-hexo搭建博客教程/">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2019/01/30/再谈网络之“协议格式”/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -381,7 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">github+hexo搭建博客教程</h2>
+          <h2 class="post-title" itemprop="name headline">再谈网络之“协议格式”</h2>
         
 
         <div class="post-meta">
@@ -393,8 +395,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-19T23:21:20+08:00">
-                2018-10-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-30T21:27:30+08:00">
+                2019-01-30
               </time>
             
 
@@ -409,8 +411,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-24T23:46:52+08:00">
-                2018-10-24
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-30T21:28:02+08:00">
+                2019-01-30
               </time>
             
           </span>
@@ -428,8 +430,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -446,8 +448,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/19/github-hexo搭建博客教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/10/19/github-hexo搭建博客教程/" itemprop="commentsCount"></span>
+                <a href="/2019/01/30/再谈网络之“协议格式”/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/30/再谈网络之“协议格式”/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -474,7 +476,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,265
+                  2,953
                 </span>
               
 
@@ -490,7 +492,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  10
                 </span>
               
             </div>
@@ -512,107 +514,33 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<h3 id="Github-Pages介绍"><a href="#Github-Pages介绍" class="headerlink" title="Github Pages介绍"></a>Github Pages介绍</h3><p>本来用于介绍托管在Github上的项目，由于它的空间免费稳定，因此适合用来搭建博客。</p>
-<p>每个帐号只能有一个仓库来存放个人主页，且仓库的名字必须是username/username.github.io。你可以通过<a href="http://username.github.io来访问你的个人主页" target="_blank" rel="noopener">http://username.github.io来访问你的个人主页</a></p>
-<p>个人主页的网站内容是在master分支下</p>
-<h3 id="Hexo介绍"><a href="#Hexo介绍" class="headerlink" title="Hexo介绍"></a>Hexo介绍</h3><p>Hexo是一个快速、简洁高效的博客框架，具有如下特点：   </p>
+<p>上一篇中是有关网络的设计模式和分层模型，这篇就来说说网络里面用到的几个重要协议的格式，用程序员来的话来说就是报头格式。当然，在进入主题之前，先了解下通信的过程。</p>
+<h3 id="通信过程"><a href="#通信过程" class="headerlink" title="通信过程"></a>通信过程</h3><p><strong>两台计算机通过TCP/IP协议通讯的过程如下所示：</strong><br><img src="https://img-blog.csdnimg.cn/2019013021170727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="1"></p>
+<p><strong>上图对应两台计算机在同一网段中的情况，如果两台计算机在不同的网段中，那么数据从一台计算机到另一台计算机传输过程中要经过一个或多个路由器，如下图所示：</strong><br><img src="https://img-blog.csdnimg.cn/20190130211750435.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="2"></p>
 <ul>
-<li>生成静态网页</li>
-<li>支持Markdown</li>
-<li>一键部署博客到Github Pages</li>
-<li>丰富插件</li>
+<li>链路层有以太网、令牌环网等标准，链路层负责网卡设备的驱动、帧同步（即从网线上检测到什么信号算作新帧的开始）、冲突检测（如果检测到冲突就自动重发）、数据差错校验等工作。交换机是工作在链路层的网络设备，可以在不同的链路层网络之间转发数据帧（比如十兆以太网和百兆以太网之间、以太网和令牌环网之间），由于不同链路层的帧格式不同，交换机要将进来的数据包拆掉链路层首部重新封装之后再转发。   </li>
+<li>网络层的IP协议是构成Internet的基础。Internet上的主机通过IP地址来标识，Inter-net上有大量路由器负责根据IP地址选择合适的路径转发数据包，数据包从Internet上的源主机到目的主机往往要经过十多个路由器。路由器是工作在第三层的网络设备，同时兼有交换机的功能，可以在不同的链路层接口之间转发数据包，因此路由器需要将进来的数据包拆掉网络层和链路层两层首部并重新封装。IP协议不保证传输的可靠性，数据包在传输过程中可能丢失，可靠性可以在上层协议或应用程序中提供支持。   </li>
+<li>网络层负责点到点（ptop，point-to-point）的传输（这里的“点”指主机或路由器），而传输层负责端到端（etoe，end-to-end）的传输（这里的“端”指源主机和目的主机）。传输层可选择TCP或UDP协议。   </li>
+<li>TCP是一种面向连接的、可靠的协议，有点像打电话，双方拿起电话互通身份之后就建立了连接，然后说话就行了，这边说 的话那边保证听得到，并且是按说话的顺序听到的，说完话挂机断开连接。也就是说TCP传输的双方需要首先建立连接，之后由TCP协议保证数据收发的可靠性，丢失的数据包自动重发，上层应用程序收到的总是可靠的数据流，通讯之后关闭连接。   </li>
+<li>UDP是无连接的传输协议，不保证可靠性，有点像寄信，信写好放到邮筒里，既不能保证信件在邮递过程中不会丢失，也不能保证信件寄送顺序。使用UDP协议的应用程序需要自己完成丢包重发、消息排序等工作。   </li>
+<li>那么目的主机收到数据包后，如何经过各层协议栈最后到达应用程序呢？其过程如下图所示：<br><img src="https://img-blog.csdnimg.cn/20190130211851391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="3"></li>
+<li>以太网驱动程序首先根据以太网首部中的“上层协议”字段确定该数据帧的有效载荷（payload，指除去协议首部之外实际传输的数据）是IP、ARP还是RARP协议的数据报，然后交给相应的协议处理。假如是IP数据报，IP协议再根据IP首部中的“上层协议”字段确定该数据报的有效载荷是TCP、UDP、ICMP还是IGMP，然后交给相应的协议处理。假如是TCP段或UDP段，TCP或UDP协议再根据TCP首部或UDP首部的“端口号”字段确定应该将应用层数据交给哪个用户进程。IP地址是标识网络中不同主机的地址，而端口号就是同一台主机上标识不同进程的地址，IP地址和端口号合起来标识网络中唯一的进程。</li>
+<li>虽然IP、ARP和RARP数据报都需要以太网驱动程序来封装成帧，但是从功能上划分，ARP和RARP属于链路层，IP属于网络层。虽然ICMP、IGMP、TCP、UDP的数据都需要IP协议来封装成数据报，但是从功能上划分，ICMP、IGMP与IP同属于网络层，TCP和UDP属于传输层。</li>
 </ul>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>下载git<br>  <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></li>
-<li>安装git</li>
-<li>下载node.js<br>  <a href="http://nodejs.org/download/" target="_blank" rel="noopener">http://nodejs.org/download/</a></li>
-<li>安装node.js</li>
-</ul>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>在任意位置右键点击Git Bash Here</p>
-<p>使用npm安装hexo，可以先切换npm源，加速安装过程</p>
-<p>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>npm install -g hexo</p>
-<p>【注】若安装不成功，可以使用npm install hexo –save再次安装</p>
-<p>出现以下图示表示安装完成。</p>
-<p>【注】若提示This package is no longer maintained，耐心等待安装即可。</p>
-<h3 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h3><h4 id="创建hexo文件夹"><a href="#创建hexo文件夹" class="headerlink" title="创建hexo文件夹"></a>创建hexo文件夹</h4><p>在某一文件夹下如F:\hexo\blog，右键Git Bash Here，使用以下命令创建建立网站需要的文件   </p>
-<blockquote>
-<p>hexo init<br><img src="http://p15qizl76.bkt.clouddn.com/blog/171220/Fg6728KdiK.jpg?imageslim" alt="1"></p>
-<h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><p>npm install<br><img src="http://p15qizl76.bkt.clouddn.com/blog/171220/B7lkme9mkb.jpg?imageslim" alt="2"></p>
-<h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4><pre><code>hexo generate  #生成静态文件，会在当前目录下生成一个新的名为public的文件夹
-</code></pre></blockquote>
-<h4 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h4><pre><code>hexo server -p 5000 #使用hexo server 默认端口4000，会无法访问localhost:4000，因此改为5000端口
-</code></pre><h4 id="常用hexo命令"><a href="#常用hexo命令" class="headerlink" title="常用hexo命令"></a>常用hexo命令</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">hexo help #查看帮助</span><br><span class="line">hexo -v #查看本地环境</span><br><span class="line">hexo init #初始化一个目录</span><br><span class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span> #新建文章</span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> #新建页面</span><br><span class="line">hexo gernerate #生成网页，可以在<span class="keyword">public</span>目录查看整个网站的文件</span><br><span class="line">hexo server #本地预览 Ctrl+C关闭</span><br><span class="line">hexo deploy #或hexo d 部署到远端如github、heroku</span><br><span class="line">hexo clean #清除缓存 建议每次执行命令前先清理缓存，每次部署前先删除 .deploy文件夹</span><br><span class="line"></span><br><span class="line">#常用缩写</span><br><span class="line">hexo n  #hexo <span class="keyword">new</span></span><br><span class="line">hexo g  #hexo generate</span><br><span class="line">hexo s  #hexo server</span><br><span class="line">hexo d  #hexo deploy</span><br><span class="line"></span><br><span class="line">#常用组合</span><br><span class="line">hexo d -g #生成部署</span><br><span class="line">hexo s -g #生成预览</span><br></pre></td></tr></table></figure>
-<h3 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h3><h4 id="注册github账号"><a href="#注册github账号" class="headerlink" title="注册github账号"></a>注册github账号</h4><pre><code>地址: https://github.com/
-</code></pre><p>输入账号、邮箱、密码,然后点击注册按钮.–&gt;之后验证邮箱</p>
-<h4 id="创建页面仓库"><a href="#创建页面仓库" class="headerlink" title="创建页面仓库"></a>创建页面仓库</h4><p>创建一个仓库，需要和帐号对应，格式yourname.github.io，创建仓库<br><img src="http://upload-images.jianshu.io/upload_images/695365-65754452ea96e1cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="3"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/695365-e4fb878d83a8a2e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="4"></p>
-<h4 id="关联本地与github"><a href="#关联本地与github" class="headerlink" title="关联本地与github"></a>关联本地与github</h4><h5 id="生成SSH密钥"><a href="#生成SSH密钥" class="headerlink" title="生成SSH密钥"></a>生成SSH密钥</h5><blockquote>
-<p>任意地方右键Git Bash Here,执行以下命令</p>
-<p>ssh-keygen -t rsa -C “你的邮箱地址”</p>
-</blockquote>
-<p>出现Enter file in which to save the key (…..)直接回车选择默认位置</p>
-<p> 出现Enter passphrase(empty for no passphrase)直接两次回车不设密码以及确认<br><img src="https://img-blog.csdn.net/2018102423354921?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="5"></p>
-<h5 id="在Github上添加SSH密钥"><a href="#在Github上添加SSH密钥" class="headerlink" title="在Github上添加SSH密钥"></a>在Github上添加SSH密钥</h5><p>打开id_rsa.pub，复制内容。</p>
-<p>进入你的github页面，右上角找到setting，点击进去，找到ssh。</p>
-<p>点击New SSH key<br><img src="http://p15qizl76.bkt.clouddn.com/blog/171220/8HbiiJFCgB.jpg?imageslim" alt="6"><br>填写后点击Add SSH key<br><img src="http://p15qizl76.bkt.clouddn.com/blog/171220/CgdkDEDim9.jpg?imageslim" alt="7"></p>
-<h3 id="上传部署"><a href="#上传部署" class="headerlink" title="上传部署"></a>上传部署</h3><h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
-<li>deploy #需要部署的文件</li>
-<li>node_modules #Hexo插件</li>
-<li>public #生成的静态网页文件</li>
-<li>scaffolds #模板</li>
-<li>source #博客正文和其他源文件</li>
-<li>drafs #草稿</li>
-<li>posts#文章</li>
-<li>themes #主题</li>
-<li>config.yml #配置文件</li>
-</ul>
-<p><img src="http://p15qizl76.bkt.clouddn.com/blog/171220/dLaLgf5B36.jpg?imageslim" alt="8"></p>
-<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>原理</p>
-<ul>
-<li>上述步骤中在Github上创建的那个仓库username.github.io，可以通过该链接访问</li>
-<li>Hexo -g 会生成一个静态网站，第一次会生成一个public目录，这个静态文件可以直接访问</li>
-<li>需要将Hexo生成的静态网站，提交(git commit)到github上</li>
-</ul>
-<p>过程</p>
-<ul>
-<li><p>需要在_config.yml中修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:    </span><br><span class="line">  type: git   //注意：冒号后面有英文空格</span><br><span class="line">  repository: http://github.com/username/username.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure>
-<p>安装依赖包</p>
-</li>
-</ul>
-<blockquote>
-<p>npm install hexo-deployer-git –save</p>
-</blockquote>
-<p>配置好之后执行</p>
-<blockquote>
-<p>hexo genearte<br>hexo deploy</p>
-</blockquote>
-<p>【注】以上命令执行的环境必须在执行hexo init创建的文件夹下执行</p>
-<p>执行完以上命令，会出现页面输入你的github用户名和密码，验证后就可以上传成功</p>
-<p>访问 username.github.io，成功打开页面即部署成功</p>
-<h4 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h4><blockquote>
-<p>hexo new “postname”</p>
-</blockquote>
-<p>该命令会自动在hexo/source/_post文件夹下创建一个名为postname的markdown文件，会自动在文件开头添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 你的题目</span><br><span class="line">tags: 你的标签</span><br><span class="line">category: 你的分类</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>填写tags,category，新建标签页面和分类页面后即可以显示相应的标签和分类   </p>
-<h5 id="新建标签页面"><a href="#新建标签页面" class="headerlink" title="新建标签页面"></a>新建标签页面</h5><blockquote>
-<p>hexo new page tags</p>
-</blockquote>
-<p>该命令会自动在hexo/source文件夹下创建tags文件夹并在该文件夹下创建index.md文件。</p>
-<p>修改index.md文件，添加以下两项</p>
-<blockquote>
-<p>layout: tags<br>comments: false</p>
-</blockquote>
-<h5 id="新建分类页面"><a href="#新建分类页面" class="headerlink" title="新建分类页面"></a>新建分类页面</h5><blockquote>
-<p>hexo new page categories</p>
-</blockquote>
-<p>该命令会自动在hexo/source文件夹下创建categories文件夹并在该文件夹下创建index.md文件</p>
-<p>修改index.md文件，添加以下两项：</p>
-<blockquote>
-<p>layout: categories<br>comments: false</p>
-</blockquote>
-<p>最后我们hexo g -d  一把，打开自己的页面查看</p>
-<p>以下是博主的博客链接 欢迎访问 <a href="https://liuziqiao.github.io">https://liuziqiao.github.io</a></p>
+<h2 id="协议格式"><a href="#协议格式" class="headerlink" title="协议格式"></a>协议格式</h2><h3 id="数据表封装"><a href="#数据表封装" class="headerlink" title="数据表封装"></a>数据表封装</h3><p>传输层及其以下的机制由内核提供，应用层由用户进程提供（也就是我们常说的socket编写应用程序），应用程序对通讯数据的含义进行解释，而传输层及其以下处理通讯的细节，将数据从一台计算机通过一定的路径发送到另一台计算机。应用层数据通过协议栈发到网络上时，每层协议都要加上一个数据首部（header），称为封装（Encapsulation），如下图所示：<br><img src="https://img-blog.csdnimg.cn/20190130211956396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="4"><br>不同的协议层对数据包有不同的称谓，在传输层叫做段（segment），在网络层叫做数据报（datagram），在链路层叫做帧（frame）。数据封装成帧后发到传输介质上，到达目的主机后每层协议再剥掉相应的首部，最后将应用层数据交给应用程序处理。</p>
+<h3 id="以太网帧格式"><a href="#以太网帧格式" class="headerlink" title="以太网帧格式"></a>以太网帧格式</h3><p>以太网的帧格式如下所示：<br><img src="https://img-blog.csdnimg.cn/20190130212040538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="5"></p>
+<p>其中的源地址和目的地址是指网卡的硬件地址（也叫MAC地址），长度是48位，是在网卡出厂时固化的。可在shell中使用ifconfig命令查看，<code>HWaddr 00:15:F2:14:9E:3F</code>部分就是硬件地址。协议字段有三种值，分别对应IP、ARP、RARP。帧尾是CRC校验码。<br>以太网帧中的数据长度规定最小46字节，最大1500字节，ARP和RARP数据包的长度不够46字节，要在后面补填充位。<strong>最大值1500称为以太网的最大传输单元（MTU）</strong>，不同的网络类型有不同的MTU，如果一个数据包从以太网路由到拨号链路上，数据包长度大于拨号链路的MTU，则需要对数据包进行<code>分片</code>（fragmentation）。ifconfig命令输出中也有“MTU:1500”。注意，MTU这个概念指数据帧中有效载荷的最大长度，不包括帧头长度。</p>
+<p><strong>上面说到的分片？为什么要分片？如何分片？</strong></p>
+<h3 id="ARP数据报格式"><a href="#ARP数据报格式" class="headerlink" title="ARP数据报格式"></a>ARP数据报格式</h3><p>在网络通讯时，源主机的应用程序知道目的主机的IP地址和端口号，却不知道目的主机的硬件地址，而数据包首先是被网卡接收到再去处理上层协议的，如果接收到的数据包的硬件地址与本机不符，则直接丢弃。因此在通讯前必须==获得目的主机的硬件地址==。==ARP协议就起到这个作用==。例如：源主机发出ARP请求，询问“IP地址是<code>192.168.0.1</code>的主机的硬件地址是多少”，并将这个请求广播到本地网段（以太网帧首部的硬件地址填FF:FF:FF:FF:FF:FF表示广播），目的主机接收到广播的ARP请求，发现其中的IP地址与本机相符，则发送一个ARP应答数据包给源主机，将自己的硬件地址填写在应答包中。<br>每台主机都维护一个ARP缓存表，可以用<code>arp -a</code>命令查看。缓存表中的表项有过期时间（一般为20分钟），如果20分钟内没有再次使用某个表项，则该表项失效，下次还要发ARP请求来获得目的主机的硬件地址。<br><strong>为什么表项要有过期时间而不是一直有效？</strong></p>
+<p>ARP数据报的格式如下所示：<br><img src="https://img-blog.csdnimg.cn/20190130212121578.png" alt="6"></p>
+<p>源MAC地址、目的MAC地址在以太网首部和ARP请求中各出现一次，对于链路层为以太网的情况是多余的，但如果链路层是其它类型的网络则有可能是必要的。硬件类型指链路层网络类型，1为以太网，协议类型指要转换的地址类型，0x0800为IP地址，后面两个地址长度对于以太网地址和IP地址分别为6和4（字节），op字段为==1表示ARP请求==，op字段为==2表示ARP应答==。</p>
+<p><strong>源主机和目的主机不在同一网段，ARP请求的广播帧无法穿过路由器，源主机如何与目的主机通信？</strong></p>
+<h3 id="IP数据报格式"><a href="#IP数据报格式" class="headerlink" title="IP数据报格式"></a>IP数据报格式</h3><p><img src="https://img-blog.csdnimg.cn/20190130212157821.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="6"><br>IP数据报的首部长度和数据长度都是可变长的，但总是4字节的整数倍。对于IPv4，4位版本字段是4。4位首部长度的数值是以4字节为单位的，最小值为5，也就是说首部长度最小是4x5=20字节，也就是不带任何选项的IP首部，4位能表示的最大值是15，也就是说首部长度最大是60字节。8位TOS字段有3个位用来指定IP数据报的优先级（目前已经废弃不用），还有4个位表示可选的服务类型（最小延迟、最大?吐量、最大可靠性、最小成本），还有一个位总是0。总长度是整个数据报（包括IP首部和IP层payload）的字节数。每传一个IP数据报，16位的标识加1，可用于分片和重新组装数据报。3位标志和13位片偏移用于分片。TTL（Time to live)是这样用的：源主机为数据包设定一个生存时间，比如64，每过一个路由器就把该值减1，如果减到0就表示路由已经太长了仍然找不到目的主机的网络，就丢弃该包，因此这个生存时间的单位不是秒，而是跳（hop）。协议字段指示上层协议是TCP、UDP、ICMP还是IGMP。然后是校验和，只校验IP首部，数据的校验由更高层协议负责。IPv4的IP地址长度为32位。</p>
+<p>想一想，前面讲了以太网帧中的最小数据长度为46字节，不足46字节的要用填充字节补上，那么如何界定这46字节里前多少个字节是IP、ARP或RARP数据报而后面是填充字节？</p>
+<h3 id="UDP数据报格式"><a href="#UDP数据报格式" class="headerlink" title="UDP数据报格式"></a>UDP数据报格式</h3><p><img src="https://img-blog.csdnimg.cn/20190130212215315.png" alt="8"></p>
+<p>UDP首部：源端口号是客户端的端口号，目的端口号是TFTP服务的well-known端口号。UDP报长度为0x003f，即63字节，包括UDP首部和UDP层pay-load的长度。UDP首部和UDP层payload的校验和为0xac40。</p>
+<h3 id="TCP数据报格式"><a href="#TCP数据报格式" class="headerlink" title="TCP数据报格式"></a>TCP数据报格式</h3><p><img src="https://img-blog.csdnimg.cn/20190130212243418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="9"><br>与UDP协议一样也有源端口号和目的端口号，通讯的双方由IP地址和端口号标识。32位序号、32位确认序号、窗口大小等。4位首部长度和IP协议头类似，表示TCP协议头的长度，以4字节为单位，因此TCP协议头最长可以是4x15=60字节，如果没有选项字段，TCP协议头最短20字节。URG、ACK、PSH、RST、SYN、FIN是六个控制位，关于SYN、ACK、FIN、RST四个位，会在后面的文章里详细解释，其它位的解释从略。16位检验和将TCP协议头和数据都计算在内。</p>
+<p>以上为网络协议的格式介绍，协议相关的具体内容将在后面的文章里介绍。欢迎大家关注。</p>
 
       
     </div>
@@ -635,12 +563,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/10/19/github-hexo搭建博客教程/">github+hexo搭建博客教程</a></p>
+  <p><span>本文标题:</span><a href="/2019/01/30/再谈网络之“协议格式”/">再谈网络之“协议格式”</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
-  <p><span>发布时间:</span>2018年10月19日 - 23:10</p>
-  <p><span>最后更新:</span>2018年10月24日 - 23:10</p>
-  <p><span>原始链接:</span><a href="/2018/10/19/github-hexo搭建博客教程/" title="github+hexo搭建博客教程">https://LiuZiQiao.github.io/2018/10/19/github-hexo搭建博客教程/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/10/19/github-hexo搭建博客教程/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年01月30日 - 21:01</p>
+  <p><span>最后更新:</span>2019年01月30日 - 21:01</p>
+  <p><span>原始链接:</span><a href="/2019/01/30/再谈网络之“协议格式”/" title="再谈网络之“协议格式”">https://LiuZiQiao.github.io/2019/01/30/再谈网络之“协议格式”/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/01/30/再谈网络之“协议格式”/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -663,6 +591,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NET/" rel="tag"><i class="fa fa-tag"></i> NET</a>
+          
+        </div>
       
 
       
@@ -688,8 +622,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/16/Linux内核初窥探进程/" rel="next" title="Linux内核初窥探-进程">
-                <i class="fa fa-chevron-left"></i> Linux内核初窥探-进程
+              <a href="/2019/01/30/谈谈网络之设计模式与分层模型/" rel="next" title="谈谈网络之设计模式与分层模型">
+                <i class="fa fa-chevron-left"></i> 谈谈网络之设计模式与分层模型
               </a>
             
           </div>
@@ -697,10 +631,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/23/操作符重载与const/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -949,7 +879,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-Pages介绍"><span class="nav-number">1.</span> <span class="nav-text">Github Pages介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo介绍"><span class="nav-number">2.</span> <span class="nav-text">Hexo介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">3.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">4.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Hexo"><span class="nav-number">5.</span> <span class="nav-text">配置Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建hexo文件夹"><span class="nav-number">5.1.</span> <span class="nav-text">创建hexo文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖包"><span class="nav-number">5.2.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成静态文件"><span class="nav-number">5.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动Hexo"><span class="nav-number">5.4.</span> <span class="nav-text">启动Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用hexo命令"><span class="nav-number">5.5.</span> <span class="nav-text">常用hexo命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-Pages"><span class="nav-number">6.</span> <span class="nav-text">Github Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册github账号"><span class="nav-number">6.1.</span> <span class="nav-text">注册github账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建页面仓库"><span class="nav-number">6.2.</span> <span class="nav-text">创建页面仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关联本地与github"><span class="nav-number">6.3.</span> <span class="nav-text">关联本地与github</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成SSH密钥"><span class="nav-number">6.3.1.</span> <span class="nav-text">生成SSH密钥</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在Github上添加SSH密钥"><span class="nav-number">6.3.2.</span> <span class="nav-text">在Github上添加SSH密钥</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传部署"><span class="nav-number">7.</span> <span class="nav-text">上传部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目录结构"><span class="nav-number">7.1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署"><span class="nav-number">7.2.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建文章"><span class="nav-number">7.3.</span> <span class="nav-text">新建文章</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#新建标签页面"><span class="nav-number">7.3.1.</span> <span class="nav-text">新建标签页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建分类页面"><span class="nav-number">7.3.2.</span> <span class="nav-text">新建分类页面</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#通信过程"><span class="nav-number">1.</span> <span class="nav-text">通信过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协议格式"><span class="nav-number"></span> <span class="nav-text">协议格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表封装"><span class="nav-number">1.</span> <span class="nav-text">数据表封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以太网帧格式"><span class="nav-number">2.</span> <span class="nav-text">以太网帧格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP数据报格式"><span class="nav-number">3.</span> <span class="nav-text">ARP数据报格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP数据报格式"><span class="nav-number">4.</span> <span class="nav-text">IP数据报格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP数据报格式"><span class="nav-number">5.</span> <span class="nav-text">UDP数据报格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP数据报格式"><span class="nav-number">6.</span> <span class="nav-text">TCP数据报格式</span></a></li></ol></div>
             
 
           </div>

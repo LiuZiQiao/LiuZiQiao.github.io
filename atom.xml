@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-01-30T05:18:36.214Z</updated>
+  <updated>2019-01-30T13:28:02.614Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>再谈网络之“协议格式”</title>
+    <link href="https://LiuZiQiao.github.io/2019/01/30/%E5%86%8D%E8%B0%88%E7%BD%91%E7%BB%9C%E4%B9%8B%E2%80%9C%E5%8D%8F%E8%AE%AE%E6%A0%BC%E5%BC%8F%E2%80%9D/"/>
+    <id>https://LiuZiQiao.github.io/2019/01/30/再谈网络之“协议格式”/</id>
+    <published>2019-01-30T13:27:30.000Z</published>
+    <updated>2019-01-30T13:28:02.614Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>上一篇中是有关网络的设计模式和分层模型，这篇就来说说网络里面用到的几个重要协议的格式，用程序员来的话来说就是报头格式。当然，在进入主题之前，先了解下通信的过程。</p><h3 id="通信过程"><a href="#通信过程" class="headerlink" title="通信过程"></a>通信过程</h3><p><strong>两台计算机通过TCP/IP协议通讯的过程如下所示：</strong><br><img src="https://img-blog.csdnimg.cn/2019013021170727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="1"></p><p><strong>上图对应两台计算机在同一网段中的情况，如果两台计算机在不同的网段中，那么数据从一台计算机到另一台计算机传输过程中要经过一个或多个路由器，如下图所示：</strong><br><img src="https://img-blog.csdnimg.cn/20190130211750435.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="2"></p><ul><li>链路层有以太网、令牌环网等标准，链路层负责网卡设备的驱动、帧同步（即从网线上检测到什么信号算作新帧的开始）、冲突检测（如果检测到冲突就自动重发）、数据差错校验等工作。交换机是工作在链路层的网络设备，可以在不同的链路层网络之间转发数据帧（比如十兆以太网和百兆以太网之间、以太网和令牌环网之间），由于不同链路层的帧格式不同，交换机要将进来的数据包拆掉链路层首部重新封装之后再转发。   </li><li>网络层的IP协议是构成Internet的基础。Internet上的主机通过IP地址来标识，Inter-net上有大量路由器负责根据IP地址选择合适的路径转发数据包，数据包从Internet上的源主机到目的主机往往要经过十多个路由器。路由器是工作在第三层的网络设备，同时兼有交换机的功能，可以在不同的链路层接口之间转发数据包，因此路由器需要将进来的数据包拆掉网络层和链路层两层首部并重新封装。IP协议不保证传输的可靠性，数据包在传输过程中可能丢失，可靠性可以在上层协议或应用程序中提供支持。   </li><li>网络层负责点到点（ptop，point-to-point）的传输（这里的“点”指主机或路由器），而传输层负责端到端（etoe，end-to-end）的传输（这里的“端”指源主机和目的主机）。传输层可选择TCP或UDP协议。   </li><li>TCP是一种面向连接的、可靠的协议，有点像打电话，双方拿起电话互通身份之后就建立了连接，然后说话就行了，这边说 的话那边保证听得到，并且是按说话的顺序听到的，说完话挂机断开连接。也就是说TCP传输的双方需要首先建立连接，之后由TCP协议保证数据收发的可靠性，丢失的数据包自动重发，上层应用程序收到的总是可靠的数据流，通讯之后关闭连接。   </li><li>UDP是无连接的传输协议，不保证可靠性，有点像寄信，信写好放到邮筒里，既不能保证信件在邮递过程中不会丢失，也不能保证信件寄送顺序。使用UDP协议的应用程序需要自己完成丢包重发、消息排序等工作。   </li><li>那么目的主机收到数据包后，如何经过各层协议栈最后到达应用程序呢？其过程如下图所示：<br><img src="https://img-blog.csdnimg.cn/20190130211851391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="3"></li><li>以太网驱动程序首先根据以太网首部中的“上层协议”字段确定该数据帧的有效载荷（payload，指除去协议首部之外实际传输的数据）是IP、ARP还是RARP协议的数据报，然后交给相应的协议处理。假如是IP数据报，IP协议再根据IP首部中的“上层协议”字段确定该数据报的有效载荷是TCP、UDP、ICMP还是IGMP，然后交给相应的协议处理。假如是TCP段或UDP段，TCP或UDP协议再根据TCP首部或UDP首部的“端口号”字段确定应该将应用层数据交给哪个用户进程。IP地址是标识网络中不同主机的地址，而端口号就是同一台主机上标识不同进程的地址，IP地址和端口号合起来标识网络中唯一的进程。</li><li>虽然IP、ARP和RARP数据报都需要以太网驱动程序来封装成帧，但是从功能上划分，ARP和RARP属于链路层，IP属于网络层。虽然ICMP、IGMP、TCP、UDP的数据都需要IP协议来封装成数据报，但是从功能上划分，ICMP、IGMP与IP同属于网络层，TCP和UDP属于传输层。</li></ul><h2 id="协议格式"><a href="#协议格式" class="headerlink" title="协议格式"></a>协议格式</h2><h3 id="数据表封装"><a href="#数据表封装" class="headerlink" title="数据表封装"></a>数据表封装</h3><p>传输层及其以下的机制由内核提供，应用层由用户进程提供（也就是我们常说的socket编写应用程序），应用程序对通讯数据的含义进行解释，而传输层及其以下处理通讯的细节，将数据从一台计算机通过一定的路径发送到另一台计算机。应用层数据通过协议栈发到网络上时，每层协议都要加上一个数据首部（header），称为封装（Encapsulation），如下图所示：<br><img src="https://img-blog.csdnimg.cn/20190130211956396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="4"><br>不同的协议层对数据包有不同的称谓，在传输层叫做段（segment），在网络层叫做数据报（datagram），在链路层叫做帧（frame）。数据封装成帧后发到传输介质上，到达目的主机后每层协议再剥掉相应的首部，最后将应用层数据交给应用程序处理。</p><h3 id="以太网帧格式"><a href="#以太网帧格式" class="headerlink" title="以太网帧格式"></a>以太网帧格式</h3><p>以太网的帧格式如下所示：<br><img src="https://img-blog.csdnimg.cn/20190130212040538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="5"></p><p>其中的源地址和目的地址是指网卡的硬件地址（也叫MAC地址），长度是48位，是在网卡出厂时固化的。可在shell中使用ifconfig命令查看，<code>HWaddr 00:15:F2:14:9E:3F</code>部分就是硬件地址。协议字段有三种值，分别对应IP、ARP、RARP。帧尾是CRC校验码。<br>以太网帧中的数据长度规定最小46字节，最大1500字节，ARP和RARP数据包的长度不够46字节，要在后面补填充位。<strong>最大值1500称为以太网的最大传输单元（MTU）</strong>，不同的网络类型有不同的MTU，如果一个数据包从以太网路由到拨号链路上，数据包长度大于拨号链路的MTU，则需要对数据包进行<code>分片</code>（fragmentation）。ifconfig命令输出中也有“MTU:1500”。注意，MTU这个概念指数据帧中有效载荷的最大长度，不包括帧头长度。</p><p><strong>上面说到的分片？为什么要分片？如何分片？</strong></p><h3 id="ARP数据报格式"><a href="#ARP数据报格式" class="headerlink" title="ARP数据报格式"></a>ARP数据报格式</h3><p>在网络通讯时，源主机的应用程序知道目的主机的IP地址和端口号，却不知道目的主机的硬件地址，而数据包首先是被网卡接收到再去处理上层协议的，如果接收到的数据包的硬件地址与本机不符，则直接丢弃。因此在通讯前必须==获得目的主机的硬件地址==。==ARP协议就起到这个作用==。例如：源主机发出ARP请求，询问“IP地址是<code>192.168.0.1</code>的主机的硬件地址是多少”，并将这个请求广播到本地网段（以太网帧首部的硬件地址填FF:FF:FF:FF:FF:FF表示广播），目的主机接收到广播的ARP请求，发现其中的IP地址与本机相符，则发送一个ARP应答数据包给源主机，将自己的硬件地址填写在应答包中。<br>每台主机都维护一个ARP缓存表，可以用<code>arp -a</code>命令查看。缓存表中的表项有过期时间（一般为20分钟），如果20分钟内没有再次使用某个表项，则该表项失效，下次还要发ARP请求来获得目的主机的硬件地址。<br><strong>为什么表项要有过期时间而不是一直有效？</strong></p><p>ARP数据报的格式如下所示：<br><img src="https://img-blog.csdnimg.cn/20190130212121578.png" alt="6"></p><p>源MAC地址、目的MAC地址在以太网首部和ARP请求中各出现一次，对于链路层为以太网的情况是多余的，但如果链路层是其它类型的网络则有可能是必要的。硬件类型指链路层网络类型，1为以太网，协议类型指要转换的地址类型，0x0800为IP地址，后面两个地址长度对于以太网地址和IP地址分别为6和4（字节），op字段为==1表示ARP请求==，op字段为==2表示ARP应答==。</p><p><strong>源主机和目的主机不在同一网段，ARP请求的广播帧无法穿过路由器，源主机如何与目的主机通信？</strong></p><h3 id="IP数据报格式"><a href="#IP数据报格式" class="headerlink" title="IP数据报格式"></a>IP数据报格式</h3><p><img src="https://img-blog.csdnimg.cn/20190130212157821.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="6"><br>IP数据报的首部长度和数据长度都是可变长的，但总是4字节的整数倍。对于IPv4，4位版本字段是4。4位首部长度的数值是以4字节为单位的，最小值为5，也就是说首部长度最小是4x5=20字节，也就是不带任何选项的IP首部，4位能表示的最大值是15，也就是说首部长度最大是60字节。8位TOS字段有3个位用来指定IP数据报的优先级（目前已经废弃不用），还有4个位表示可选的服务类型（最小延迟、最大?吐量、最大可靠性、最小成本），还有一个位总是0。总长度是整个数据报（包括IP首部和IP层payload）的字节数。每传一个IP数据报，16位的标识加1，可用于分片和重新组装数据报。3位标志和13位片偏移用于分片。TTL（Time to live)是这样用的：源主机为数据包设定一个生存时间，比如64，每过一个路由器就把该值减1，如果减到0就表示路由已经太长了仍然找不到目的主机的网络，就丢弃该包，因此这个生存时间的单位不是秒，而是跳（hop）。协议字段指示上层协议是TCP、UDP、ICMP还是IGMP。然后是校验和，只校验IP首部，数据的校验由更高层协议负责。IPv4的IP地址长度为32位。</p><p>想一想，前面讲了以太网帧中的最小数据长度为46字节，不足46字节的要用填充字节补上，那么如何界定这46字节里前多少个字节是IP、ARP或RARP数据报而后面是填充字节？</p><h3 id="UDP数据报格式"><a href="#UDP数据报格式" class="headerlink" title="UDP数据报格式"></a>UDP数据报格式</h3><p><img src="https://img-blog.csdnimg.cn/20190130212215315.png" alt="8"></p><p>UDP首部：源端口号是客户端的端口号，目的端口号是TFTP服务的well-known端口号。UDP报长度为0x003f，即63字节，包括UDP首部和UDP层pay-load的长度。UDP首部和UDP层payload的校验和为0xac40。</p><h3 id="TCP数据报格式"><a href="#TCP数据报格式" class="headerlink" title="TCP数据报格式"></a>TCP数据报格式</h3><p><img src="https://img-blog.csdnimg.cn/20190130212243418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="9"><br>与UDP协议一样也有源端口号和目的端口号，通讯的双方由IP地址和端口号标识。32位序号、32位确认序号、窗口大小等。4位首部长度和IP协议头类似，表示TCP协议头的长度，以4字节为单位，因此TCP协议头最长可以是4x15=60字节，如果没有选项字段，TCP协议头最短20字节。URG、ACK、PSH、RST、SYN、FIN是六个控制位，关于SYN、ACK、FIN、RST四个位，会在后面的文章里详细解释，其它位的解释从略。16位检验和将TCP协议头和数据都计算在内。</p><p>以上为网络协议的格式介绍，协议相关的具体内容将在后面的文章里介绍。欢迎大家关注。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;上一篇中是有关网络的设计模式和分层模型，这篇就来说说网络里面用到的几个重要协议的格式，用程序员来的话来说就是报头格式。当然，在进入主题之前
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://LiuZiQiao.github.io/categories/Linux/"/>
+    
+    
+      <category term="NET" scheme="https://LiuZiQiao.github.io/tags/NET/"/>
+    
+  </entry>
   
   <entry>
     <title>谈谈网络之设计模式与分层模型</title>
@@ -484,31 +510,6 @@
     </summary>
     
       <category term="MySQL" scheme="https://LiuZiQiao.github.io/categories/MySQL/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>解决MySQL第一次连接失败</title>
-    <link href="https://LiuZiQiao.github.io/2018/11/15/%E8%A7%A3%E5%86%B3MySQL%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/"/>
-    <id>https://LiuZiQiao.github.io/2018/11/15/解决MySQL第一次连接失败/</id>
-    <published>2018-11-14T16:01:00.000Z</published>
-    <updated>2018-11-15T04:42:24.852Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>上一篇讲了MySQL数据库的安装，安装之后我们用Navicat工具连接时可能会出现以下这种情况，就这种情况给出了解决办法</p><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p><strong>Navicat for MySQL 连接数据库时报错 client dose not support authentication protocol requested by server;consider</strong></p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p><img src="https://img-blog.csdnimg.cn/20181115123652200.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="1"><br><img src="https://img-blog.csdnimg.cn/20181115123816493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="2"></p><p><strong>命令如下</strong>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、use mysql;</span><br><span class="line">2、alter user &apos;root&apos;@&apos;localhost&apos; identified with mysql_native_password by &apos;********&apos;;</span><br><span class="line">3、flush privileges;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;上一篇讲了MySQL数据库的安装，安装之后我们用Navicat工具连接时可能会出现以下这种情况，就这种情况给出了解决办法&lt;/p&gt;
-&lt;h3 
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://LiuZiQiao.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
