@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-01-30T13:28:02.614Z</updated>
+  <updated>2019-01-31T14:40:41.260Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>再浅谈网络之“TCP协议”</title>
+    <link href="https://LiuZiQiao.github.io/2019/01/31/%E5%86%8D%E6%B5%85%E8%B0%88%E7%BD%91%E7%BB%9C%E4%B9%8B%E2%80%9CTCP%E5%8D%8F%E8%AE%AE%E2%80%9D/"/>
+    <id>https://LiuZiQiao.github.io/2019/01/31/再浅谈网络之“TCP协议”/</id>
+    <published>2019-01-31T14:39:29.000Z</published>
+    <updated>2019-01-31T14:40:41.260Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://LiuZiQiao.github.io/categories/Linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>再谈网络之“协议格式”</title>
@@ -485,31 +508,6 @@
     </summary>
     
       <category term="java" scheme="https://LiuZiQiao.github.io/categories/java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL安装教程</title>
-    <link href="https://LiuZiQiao.github.io/2018/11/15/mysql%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
-    <id>https://LiuZiQiao.github.io/2018/11/15/mysql安装教程/</id>
-    <published>2018-11-15T04:43:07.000Z</published>
-    <updated>2018-11-15T05:10:37.584Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>MySQL安装有两种方式，一种是免安装直接下载安装包解压配置即可使用，另外一种就是下载安装</p><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p><a href="https://dev.mysql.com/downloads/installer/" target="_blank" rel="noopener">MySQL下载地址</a><br><a href="https://pan.baidu.com/s/13KGXf1UwLSfxs_-x7UGdqA" target="_blank" rel="noopener">连接工具下载</a>    <strong>提取码：fquf</strong> </p><h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><p>具体安装见<br><a href="https://blog.csdn.net/qq_39478237/article/details/84102513" target="_blank" rel="noopener">https://blog.csdn.net/qq_39478237/article/details/84102513</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;MySQL安装有两种方式，一种是免安装直接下载安装包解压配置即可使用，另外一种就是下载安装&lt;/p&gt;
-&lt;h3 id=&quot;准备工作&quot;&gt;&lt;a hr
-      
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://LiuZiQiao.github.io/categories/MySQL/"/>
     
     
   </entry>
