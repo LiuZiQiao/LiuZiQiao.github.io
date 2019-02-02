@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-02-02T11:47:44.528Z</updated>
+  <updated>2019-02-02T14:50:54.238Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>说说网络之名词解析</title>
+    <link href="https://LiuZiQiao.github.io/2019/02/02/%E8%AF%B4%E8%AF%B4%E7%BD%91%E7%BB%9C%E4%B9%8B%E5%90%8D%E8%AF%8D%E8%A7%A3%E6%9E%90/"/>
+    <id>https://LiuZiQiao.github.io/2019/02/02/说说网络之名词解析/</id>
+    <published>2019-02-02T14:49:29.000Z</published>
+    <updated>2019-02-02T14:50:54.238Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>学习一些网络之后，发现存在对一些名词的含义还是记不住，因此作此文章来梳理网络中的一些关键名词。</p><h3 id="网络名词术语解析"><a href="#网络名词术语解析" class="headerlink" title="网络名词术语解析"></a>网络名词术语解析</h3><h4 id="路由-route"><a href="#路由-route" class="headerlink" title="路由(route)"></a>路由(route)</h4><p>路由（名词）<br>数据包从源地址到目的地址所经过的路径，由一系列路由节点组成。<br>路由（动词）<br>某个路由节点为数据包选择投递方向的选路过程。</p><h4 id="路由器工作原理"><a href="#路由器工作原理" class="headerlink" title="路由器工作原理"></a>路由器工作原理</h4><p>路由器（Router）是连接因特网中各局域网、广域网的设备，它会根据信道的情况自动选择和设定路由，以最佳路径，按前后顺序发送信号的设备。   </p><p>传统地，路由器工作于OSI七层协议中的第三层，其主要任务是接收来自一个网络接口的数据包，根据其中所含的目的地址，决定转发到下一个目的地址。因此，路由器首先得在转发路由表中查找它的目的地址，若找到了目的地址，就在数据包的帧格前添加下一个MAC地址，同时IP数据包头的TTL（Time To Live）域也开始减数， 并重新计算校验和。当数据包被送到输出端口时，它需要按顺序等待，以便被传送到输出链路上。   </p><p>路由器在工作时能够按照某种路由通信协议查找设备中的路由表。如果到某一特定节点有一条以上的路径，则基本预先确定的路由准则是选择最优（或最经济）的传输路径。由于各种网络段和其相互连接情况可能会因环境变化而变化，因此路由情况的信息一般也按所使用的路由信息协议的规定而定时更新。   </p><p>网络中，每个路由器的基本功能都是按照一定的规则来动态地更新它所保持的路由表，以便保持路由信息的有效性。为了便于在网络间传送报文，路由器总是先按照预定的规则把较大的数据分解成适当大小的数据包，再将这些数据包分别通过相同或不同路径发送出去。当这些数据包按先后秩序到达目的地后，再把分解的数据包按照一定顺序包装成原有的报文形式。路由器的分层寻址功能是路由器的重要功能之一，该功能可以帮助具有很多节点站的网络来存储寻址信息，同时还能在网络间截获发送到远地网段的报文，起转发作用；选择最合理的路由，引导通信也是路由器基本功能；多协议路由器还可以连接使用不同通信协议的网络段，成为不同通信协议网络段之间的通信平台。   </p><p>路由和交换之间的主要区别就是交换发生在OSI参考模型第二层（数据链路层），而路由发生在第三层，即网络层。这一区别决定了路由和交换在移动信息的过程 中需使用不同的控制信息，所以两者实现各自功能的方式是不同的。</p><h3 id="路由表-Routing-Table"><a href="#路由表-Routing-Table" class="headerlink" title="路由表(Routing Table)"></a>路由表(Routing Table)</h3><p>在计算机网络中，路由表或称路由择域信息库（RIB）是一个存储在路由器或者联网计算机中的电子表格（文件）或类数据库。路由表存储着指向特定网络地址的路径。</p><h3 id="路由条目"><a href="#路由条目" class="headerlink" title="路由条目"></a>路由条目</h3><p>路由表中的一行，每个条目主要由目的网络地址、子网掩码、下一跳地址、发送接口四部分组成，如果要发送的数据包的目的网络地址匹配路由表中的某一行，就按规定的接口发送到下一跳地址。</p><h3 id="缺省路由条目"><a href="#缺省路由条目" class="headerlink" title="缺省路由条目"></a>缺省路由条目</h3><p>路由表中的最后一行，主要由下一跳地址和发送接口两部分组成，当目的地址与路由表中其它行都不匹配时，就按缺省路由条目规定的接口发送到下一跳地址。</p><h3 id="路由节点"><a href="#路由节点" class="headerlink" title="路由节点"></a>路由节点</h3><p>一个具有路由能力的主机或路由器，它维护一张路由表，通过查询路由表来决定向哪个接口发送数据包。</p><h3 id="以太网交换机工作原理"><a href="#以太网交换机工作原理" class="headerlink" title="以太网交换机工作原理"></a>以太网交换机工作原理</h3><p>以太网交换机是基于以太网传输数据的交换机，以太网采用共享总线型传输媒体方式的局域网。以太网交换机的结构是每个端口都直接与主机相连，并且一般都工作在全双工方式。交换机能同时连通许多对端口，使每一对相互通信的主机都能像独占通信媒体那样，进行无冲突地传输数据。<br>以太网交换机工作于OSI网络参考模型的第二层（即数据链路层），是一种基于MAC（Media Access Control，介质访问控制）地址识别、完成以太网数据帧转发的网络设备。</p><h3 id="hub工作原理"><a href="#hub工作原理" class="headerlink" title="hub工作原理"></a>hub工作原理</h3><p>集线器实际上就是中继器的一种，其区别仅在于集线器能够提供更多的端口服务，所以集线器又叫多口中继器。<br>集线器功能是随机选出某一端口的设备，并让它独占全部带宽，与集线器的上联设备（交换机、路由器或服务器等）进行通信。从Hub的工作方式可以看出，它在网络中只起到信号放大和重发作用，其目的是扩大网络的传输范围，而不具备信号的定向传送能力，是—个标准的共享式设备。其次是Hub只与它的上联设备(如上层Hub、交换机或服务器)进行通信，同层的各端口之间不会直接进行通信，而是通过上联设备再将信息广播到所有端口上。<br>由此可见，即使是在同一Hub的不同两个端口之间进行通信，都必须要经过两步操作：   </p><ul><li>第一步是将信息上传到上联设备；</li><li>第二步是上联设备再将该信息广播到所有端口上。<h3 id="半双工-全双工"><a href="#半双工-全双工" class="headerlink" title="半双工/全双工"></a>半双工/全双工</h3>Full-duplex（全双工）全双工是在通道中同时双向数据传输的能力。<br>Half-duplex（半双工）在通道中同时只能沿着一个方向传输数据。<h3 id="DNS服务器"><a href="#DNS服务器" class="headerlink" title="DNS服务器"></a>DNS服务器</h3>DNS 是域名系统 (Domain Name System) 的缩写，是因特网的一项核心服务，它作为可以将域名和IP地址相互映射的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP地址串。<br>它是由解析器以及域名服务器组成的。域名服务器是指保存有该网络中所有主机的域名和对应IP地址，并具有将域名转换为IP地址功能的服务器。<h3 id="局域网-LAN"><a href="#局域网-LAN" class="headerlink" title="局域网(LAN)"></a>局域网(LAN)</h3>local area network，一种覆盖一座或几座大楼、一个校园或者一个厂区等地理区域的小范围的计算机网。</li></ul><ol><li>覆盖的地理范围较小，只在一个相对独立的局部范围内联，如一座或集中的建筑群内。</li><li>使用专门铺设的传输介质进行联网，数据传输速率高（10Mb/s～10Gb/s）</li><li>通信延迟时间短，可靠性较高</li><li>局域网可以支持多种传输介质<h3 id="广域网-WAN"><a href="#广域网-WAN" class="headerlink" title="广域网(WAN)"></a>广域网(WAN)</h3>wide area network，一种用来实现不同地区的局域网或城域网的互连，可提供不同地区、城市和国家之间的计算机通信的远程计算机网。<br>覆盖的范围比局域网（LAN）和城域网（MAN）都广。广域网的通信子网主要使用分组交换技术。<br>广域网的通信子网可以利用公用分组交换网、卫星通信网和无线分组交换网，它将分布在不同地区的局域网或计算机系统互连起来，达到资源共享的目的。如互联网是世界范围内最大的广域网。</li><li>适应大容量与突发性通信的要求；</li><li>适应综合业务服务的要求；</li><li>开放的设备接口与规范化的协议；</li><li>完善的通信服务与网络管理。<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3>逻辑意义上的端口，一般是指TCP/IP协议中的端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等等。</li><li>端口号小于256的定义为常用端口，服务器一般都是通过常用端口号来识别的。</li><li>客户端只需保证该端口号在本机上是惟一的就可以了。客户端口号因存在时间很短暂又称临时端口号；</li><li>大多数TCP/IP实现给临时端口号分配1024—5000之间的端口号。大于5000的端口号是为其他服务器预留的。<br>我们应该在自定义端口时，避免使用well-known的端口。如：80、21等等。</li></ol><h3 id="MTU"><a href="#MTU" class="headerlink" title="MTU"></a>MTU</h3><p>MTU:通信术语 最大传输单元（Maximum Transmission Unit，MTU）<br>是指一种通信协议的某一层上面所能通过的最大数据包大小（以字节为单位）。最大传输单元这个参数通常与通信接口有关（网络接口卡、串口等）。    </p><p>以下是一些协议的MTU：<br>FDDI协议：4352字节<br>以太网（Ethernet）协议：1500字节<br>PPPoE（ADSL）协议：1492字节<br>X.25协议（Dial Up/Modem）：576字节<br>Point-to-Point：4470字节   </p><h3 id="网络知识点的一些常见题"><a href="#网络知识点的一些常见题" class="headerlink" title="网络知识点的一些常见题"></a>网络知识点的一些常见题</h3><ol><li>TCP如何建立链接</li><li>TCP如何通信</li><li>TCP如何关闭链接</li><li>什么是滑动窗口</li><li>什么是半关闭</li><li>局域网内两台机器如何利用TCP/IP通信</li><li>internet上两台主机如何进行通信</li><li>如何在internet上识别唯一一个进程<br>答：通过“IP地址+端口号”来区分不同的服务</li><li>为什么说TCP是可靠的链接，UDP不可靠</li><li>路由器和交换机的区别</li><li>点到点，端到端</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;学习一些网络之后，发现存在对一些名词的含义还是记不住，因此作此文章来梳理网络中的一些关键名词。&lt;/p&gt;
+&lt;h3 id=&quot;网络名词术语解析&quot;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://LiuZiQiao.github.io/categories/Linux/"/>
+    
+    
+      <category term="NET" scheme="https://LiuZiQiao.github.io/tags/NET/"/>
+    
+  </entry>
   
   <entry>
     <title>再浅谈网络之“TCP协议”</title>
@@ -488,29 +515,6 @@
     </summary>
     
       <category term="Linux" scheme="https://LiuZiQiao.github.io/categories/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>基于MVC用java实现的通用系统后端</title>
-    <link href="https://LiuZiQiao.github.io/2018/11/25/%E5%9F%BA%E4%BA%8EMVC%E7%94%A8java%E5%AE%9E%E7%8E%B0%E7%9A%84%E9%80%9A%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%AB%AF/"/>
-    <id>https://LiuZiQiao.github.io/2018/11/25/基于MVC用java实现的通用系统后端/</id>
-    <published>2018-11-25T15:30:49.000Z</published>
-    <updated>2018-11-25T15:31:53.265Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-      
-    
-    </summary>
-    
-      <category term="java" scheme="https://LiuZiQiao.github.io/categories/java/"/>
     
     
   </entry>
