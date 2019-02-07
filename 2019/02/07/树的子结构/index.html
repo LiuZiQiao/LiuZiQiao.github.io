@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="数据结构,栈," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -136,18 +136,17 @@
 
 
 
-<meta name="description" content="栈实现括号匹配匹配思想：从左至右扫描一个字符串(或表达式)，则每个右括号将与最近遇到的那个左括号相匹配。则可以在从左至右扫描过程中把所遇到的左括号存放到堆栈中。每当遇到一个右括号时，就将它与栈顶的左括号(如果存在)相匹配，同时从栈顶删除该左括号。算法思想：设置一个栈，当读到左括号时，左括号进栈。当读到右括号时，则从栈中弹出一个元素，与读到的左括号进行匹配，若匹配成功，继续读入；否则匹配失败，返回">
-<meta name="keywords" content="数据结构,栈">
+<meta name="description" content="题目描述输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构） 12345678910111213141516171819202122232425262728293031323334353637383940414243/*struct TreeNode &amp;#123;	int val;	struct TreeNode *left;	struct TreeNod">
 <meta property="og:type" content="article">
-<meta property="og:title" content="栈实现括号匹配">
-<meta property="og:url" content="https://LiuZiQiao.github.io/2018/08/23/栈实现括号匹配/index.html">
+<meta property="og:title" content="树的子结构">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2019/02/07/树的子结构/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="栈实现括号匹配匹配思想：从左至右扫描一个字符串(或表达式)，则每个右括号将与最近遇到的那个左括号相匹配。则可以在从左至右扫描过程中把所遇到的左括号存放到堆栈中。每当遇到一个右括号时，就将它与栈顶的左括号(如果存在)相匹配，同时从栈顶删除该左括号。算法思想：设置一个栈，当读到左括号时，左括号进栈。当读到右括号时，则从栈中弹出一个元素，与读到的左括号进行匹配，若匹配成功，继续读入；否则匹配失败，返回">
+<meta property="og:description" content="题目描述输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构） 12345678910111213141516171819202122232425262728293031323334353637383940414243/*struct TreeNode &amp;#123;	int val;	struct TreeNode *left;	struct TreeNod">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T00:53:20.897Z">
+<meta property="og:updated_time" content="2019-02-07T15:33:09.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="栈实现括号匹配">
-<meta name="twitter:description" content="栈实现括号匹配匹配思想：从左至右扫描一个字符串(或表达式)，则每个右括号将与最近遇到的那个左括号相匹配。则可以在从左至右扫描过程中把所遇到的左括号存放到堆栈中。每当遇到一个右括号时，就将它与栈顶的左括号(如果存在)相匹配，同时从栈顶删除该左括号。算法思想：设置一个栈，当读到左括号时，左括号进栈。当读到右括号时，则从栈中弹出一个元素，与读到的左括号进行匹配，若匹配成功，继续读入；否则匹配失败，返回">
+<meta name="twitter:title" content="树的子结构">
+<meta name="twitter:description" content="题目描述输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构） 12345678910111213141516171819202122232425262728293031323334353637383940414243/*struct TreeNode &amp;#123;	int val;	struct TreeNode *left;	struct TreeNod">
 
 
 
@@ -177,7 +176,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/08/23/栈实现括号匹配/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2019/02/07/树的子结构/"/>
 
 
 
@@ -200,7 +199,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>栈实现括号匹配 | LiuxiaoKun</title>
+  <title>树的子结构 | LiuxiaoKun</title>
   
 
 
@@ -356,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/08/23/栈实现括号匹配/">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2019/02/07/树的子结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -373,7 +372,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">栈实现括号匹配</h2>
+          <h2 class="post-title" itemprop="name headline">树的子结构</h2>
         
 
         <div class="post-meta">
@@ -385,8 +384,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T08:57:33+08:00">
-                2018-08-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-07T23:32:17+08:00">
+                2019-02-07
               </time>
             
 
@@ -401,8 +400,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-19T08:53:20+08:00">
-                2018-09-19
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-07T23:33:09+08:00">
+                2019-02-07
               </time>
             
           </span>
@@ -420,8 +419,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/剑指offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
                   </a>
                 </span>
 
@@ -438,8 +437,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/23/栈实现括号匹配/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/23/栈实现括号匹配/" itemprop="commentsCount"></span>
+                <a href="/2019/02/07/树的子结构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/07/树的子结构/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -466,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  657
+                  179
                 </span>
               
 
@@ -482,7 +481,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -503,11 +502,9 @@
       
 
       
-        <script src="\assets\js\APlayer.min.js"> </script><h3 id="栈实现括号匹配"><a href="#栈实现括号匹配" class="headerlink" title="栈实现括号匹配"></a>栈实现括号匹配</h3><p><strong>匹配思想</strong>：从左至右扫描一个字符串(或表达式)，则每个右括号将与最近遇到的那个左括号相匹配。则可以在从左至右扫描过程中把所遇到的左括号存放到堆栈中。每当遇到一个右括号时，就将它与栈顶的左括号(如果存在)相匹配，同时从栈顶删除该左括号。<br><strong>算法思想</strong>：设置一个栈，当读到左括号时，左括号进栈。当读到右括号时，则从栈中弹出一个元素，与读到的左括号进行匹配，若匹配成功，继续读入；否则匹配失败，返回FLASE。另外,在算法的开始和结束时,栈都应该是空的.所以匹配到最后还要判断栈是否为空,若非空,则说明匹配失败.   </p>
-<p><strong>创建一个StackTest.h的文件</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下是括号匹配具体代码</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BracketMatch</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str,<span class="keyword">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Stack <span class="built_in">stack</span>;</span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line">	<span class="keyword">char</span> leftBracket;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	StackInit(&amp;<span class="built_in">stack</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;size;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ch = str[i];</span><br><span class="line"></span><br><span class="line">		<span class="keyword">switch</span>(ch)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">'('</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="string">'['</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="string">'&#123;'</span>:</span><br><span class="line">			StackPush(&amp;<span class="built_in">stack</span>,(DataType)ch);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">')'</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="string">']'</span>:</span><br><span class="line">		<span class="keyword">case</span> <span class="string">'&#125;'</span>:</span><br><span class="line">			<span class="keyword">if</span> (StackEmpty(&amp;<span class="built_in">stack</span>))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"右括号多\n"</span>);</span><br><span class="line">				StackDestory(&amp;<span class="built_in">stack</span>);</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			leftBracket = (<span class="keyword">char</span>)StackTop(&amp;<span class="built_in">stack</span>);</span><br><span class="line">			StackPop(&amp;<span class="built_in">stack</span>);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (leftBracket == <span class="string">'('</span> &amp;&amp; ch != <span class="string">')'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不匹配\n"</span>);</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (leftBracket == <span class="string">'['</span> &amp;&amp; ch != <span class="string">']'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不匹配\n"</span>);</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (leftBracket == <span class="string">'&#123;'</span> &amp;&amp; ch != <span class="string">'&#125;'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"不匹配\n"</span>);</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!StackEmpty(&amp;<span class="built_in">stack</span>))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"左括号多\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"匹配正常\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下是Stack.h文件</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> DataType;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_SIZE (100)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Stack</span>&#123;</span></span><br><span class="line">	</span><br><span class="line">	DataType arr[MAX_SIZE];</span><br><span class="line">	<span class="keyword">int</span> top;</span><br><span class="line">&#125;Stack;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StackInit</span><span class="params">(Stack *<span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">stack</span>-&gt;top = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StackDestory</span><span class="params">(Stack *<span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">stack</span>-&gt;top = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StackPush</span><span class="params">(Stack *<span class="built_in">stack</span>,DataType data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	assert(<span class="built_in">stack</span>-&gt;top &lt;MAX_SIZE);</span><br><span class="line">	<span class="built_in">stack</span>-&gt;arr[<span class="built_in">stack</span>-&gt;top++] = data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StackPop</span><span class="params">(Stack *<span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	assert(<span class="built_in">stack</span>-&gt;top &gt; <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">stack</span>-&gt;top--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">DataType <span class="title">StackTop</span><span class="params">(<span class="keyword">const</span> Stack *<span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	assert(<span class="built_in">stack</span>-&gt;top &gt; <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">stack</span>-&gt;arr[<span class="built_in">stack</span>-&gt;top<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">stackSize</span><span class="params">(Stack *<span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">StackFull</span><span class="params">(Stack *<span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">stack</span>-&gt;top &gt;= MAX_SIZE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">StackEmpty</span><span class="params">(Stack *<span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">stack</span>-&gt;top &lt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下我们测试括号是否匹配</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TestBracket</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> *seq[]=&#123;</span><br><span class="line">		<span class="string">"(())abc&#123;[(])&#125;"</span>,</span><br><span class="line">		<span class="string">"(()))abc&#123;[]&#125;"</span>,</span><br><span class="line">		<span class="string">"(()()abc&#123;[]&#125;"</span>,</span><br><span class="line">		<span class="string">"(())abc&#123;[]()&#125;"</span></span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		BracketMatch(seq[i],<span class="built_in">strlen</span>(seq[i]));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">打印结果：</span><br><span class="line">不匹配   </span><br><span class="line">右括号多  </span><br><span class="line">左括号多  </span><br><span class="line">匹配正常</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//以上就是括号匹配的问题，如有问题望批评指正</span><br></pre></td></tr></table></figure>
+        <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">struct TreeNode &#123;</span></span><br><span class="line"><span class="comment">	int val;</span></span><br><span class="line"><span class="comment">	struct TreeNode *left;</span></span><br><span class="line"><span class="comment">	struct TreeNode *right;</span></span><br><span class="line"><span class="comment">	TreeNode(int x) :</span></span><br><span class="line"><span class="comment">			val(x), left(NULL), right(NULL) &#123;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;;*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">HasSubtree</span><span class="params">(TreeNode* pRoot1, TreeNode* pRoot2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(pRoot1 != <span class="literal">NULL</span> &amp;&amp; pRoot2 != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(pRoot1-&gt;val == pRoot2-&gt;val)</span><br><span class="line">            &#123;</span><br><span class="line">                flag = isSubtree(pRoot1,pRoot2);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!flag)</span><br><span class="line">            &#123;</span><br><span class="line">                flag = HasSubtree(pRoot1-&gt;left,pRoot2);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!flag)</span><br><span class="line">            &#123;</span><br><span class="line">                flag = HasSubtree(pRoot1-&gt;right,pRoot2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;    </span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSubtree</span><span class="params">(TreeNode* pRoot1, TreeNode* pRoot2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pRoot2 == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(pRoot1 == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(pRoot1-&gt;val == pRoot2-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> isSubtree(pRoot1-&gt;left,pRoot2-&gt;left) &amp;&amp; isSubtree(pRoot1-&gt;right,pRoot2-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -529,12 +526,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/08/23/栈实现括号匹配/">栈实现括号匹配</a></p>
+  <p><span>本文标题:</span><a href="/2019/02/07/树的子结构/">树的子结构</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
-  <p><span>发布时间:</span>2018年08月23日 - 08:08</p>
-  <p><span>最后更新:</span>2018年09月19日 - 08:09</p>
-  <p><span>原始链接:</span><a href="/2018/08/23/栈实现括号匹配/" title="栈实现括号匹配">https://LiuZiQiao.github.io/2018/08/23/栈实现括号匹配/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/08/23/栈实现括号匹配/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年02月07日 - 23:02</p>
+  <p><span>最后更新:</span>2019年02月07日 - 23:02</p>
+  <p><span>原始链接:</span><a href="/2019/02/07/树的子结构/" title="树的子结构">https://LiuZiQiao.github.io/2019/02/07/树的子结构/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/02/07/树的子结构/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -557,14 +554,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
-          
-            <a href="/tags/栈/" rel="tag"><i class="fa fa-tag"></i> 栈</a>
-          
-        </div>
       
 
       
@@ -590,8 +579,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/25/git教程/" rel="next" title="搭建git服务器教程">
-                <i class="fa fa-chevron-left"></i> 搭建git服务器教程
+              <a href="/2019/02/02/说说网络之名词解析/" rel="next" title="说说网络之名词解析">
+                <i class="fa fa-chevron-left"></i> 说说网络之名词解析
               </a>
             
           </div>
@@ -599,10 +588,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/23/判断元素出栈入栈合法性/" rel="prev" title="判断元素出栈入栈合法性">
-                判断元素出栈入栈合法性 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -851,7 +836,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈实现括号匹配"><span class="nav-number">1.</span> <span class="nav-text">栈实现括号匹配</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li></ol></div>
             
 
           </div>
