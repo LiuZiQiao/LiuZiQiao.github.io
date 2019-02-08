@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-02-07T15:40:08.321Z</updated>
+  <updated>2019-02-08T14:18:44.488Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>顺时针打印矩阵</title>
+    <link href="https://LiuZiQiao.github.io/2019/02/08/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/"/>
+    <id>https://LiuZiQiao.github.io/2019/02/08/顺时针打印矩阵/</id>
+    <published>2019-02-08T14:17:43.000Z</published>
+    <updated>2019-02-08T14:18:44.488Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+      
+    
+    </summary>
+    
+      <category term="剑指offer" scheme="https://LiuZiQiao.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>重建二叉树</title>
@@ -493,30 +516,6 @@
     </summary>
     
       <category term="Linux" scheme="https://LiuZiQiao.github.io/categories/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>字符串替换</title>
-    <link href="https://LiuZiQiao.github.io/2018/12/02/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9B%BF%E6%8D%A2/"/>
-    <id>https://LiuZiQiao.github.io/2018/12/02/字符串替换/</id>
-    <published>2018-12-02T12:15:55.000Z</published>
-    <updated>2018-12-02T12:16:27.748Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>实现一个简单的字符串替换函数。原串中需要替换的占位符为”%s”,请按照参数列表的顺序一一替换占位符。若参数列表的字符数大于占位符个数。则将剩下的参数字符添加到字符串的结尾。</p><p>给定一个字符串A，同时给定它的长度n及参数字符数组arg，请返回替换后的字符串。保证参数个数大于等于占位符个数。保证原串由大小写英文字母组成，同时长度小于等于500。</p><p>测试样例：</p><blockquote><p>“A%sC%sE”,7,[‘B’,’D’,’F’]<br>返回：”ABCDEF”</p></blockquote><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>思路：定义一个新的字符串来接收返回的字符串，接收过程中将%s去掉即可。话不多说，上代码。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">formatString</span><span class="params">(<span class="built_in">string</span> A, <span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt; arg, <span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        <span class="built_in">string</span> strRet;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">size_t</span> i=<span class="number">0</span>;i&lt;A.size();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(A[i] == <span class="string">'%'</span> &amp;&amp; A[i+<span class="number">1</span>] == <span class="string">'s'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">               strRet += arg[index++];</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                strRet += A[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(;index&lt;m;++index)</span><br><span class="line">        &#123;</span><br><span class="line">            strRet += arg[index];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> strRet;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;实现
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://LiuZiQiao.github.io/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
   </entry>
