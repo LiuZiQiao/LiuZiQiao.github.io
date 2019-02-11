@@ -136,22 +136,22 @@
 
 
 
-<meta name="description" content="套接字概念Socket本身有“插座”的意思，在Linux环境下，用于表示进程间网络通信的特殊文件类型。其本质为内核借助缓冲区形成的伪文件。因为我们常说，Linux下一切皆文件。既然是文件，那么理所当然的，我们使用==文件描述符==引用套接字。与管道类似的，Linux系统将其封装成文件的目的是为了统一接口，使得读写套接字和读写文件的操作一致。区别是管道主要应用于本地进程间通信，而套接字多应用于网">
+<meta name="description" content="套接字概念Socket本身有“插座”的意思，在Linux环境下，用于表示进程间网络通信的特殊文件类型。其本质为内核借助缓冲区形成的伪文件。因为我们常说，Linux下一切皆文件。既然是文件，那么理所当然的，我们使用文件描述符引用套接字。与管道类似的，Linux系统将其封装成文件的目的是为了统一接口，使得读写套接字和读写文件的操作一致。区别是管道主要应用于本地进程间通信，而套接字多应用于网络进程间">
 <meta name="keywords" content="NET">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学学网络之Socket套接字">
 <meta property="og:url" content="https://LiuZiQiao.github.io/2019/02/11/学学网络之Socket套接字/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="套接字概念Socket本身有“插座”的意思，在Linux环境下，用于表示进程间网络通信的特殊文件类型。其本质为内核借助缓冲区形成的伪文件。因为我们常说，Linux下一切皆文件。既然是文件，那么理所当然的，我们使用==文件描述符==引用套接字。与管道类似的，Linux系统将其封装成文件的目的是为了统一接口，使得读写套接字和读写文件的操作一致。区别是管道主要应用于本地进程间通信，而套接字多应用于网">
+<meta property="og:description" content="套接字概念Socket本身有“插座”的意思，在Linux环境下，用于表示进程间网络通信的特殊文件类型。其本质为内核借助缓冲区形成的伪文件。因为我们常说，Linux下一切皆文件。既然是文件，那么理所当然的，我们使用文件描述符引用套接字。与管道类似的，Linux系统将其封装成文件的目的是为了统一接口，使得读写套接字和读写文件的操作一致。区别是管道主要应用于本地进程间通信，而套接字多应用于网络进程间">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190211222541780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019021122262628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190211222821652.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190211222855352.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-02-11T14:48:16.344Z">
+<meta property="og:updated_time" content="2019-02-11T14:50:54.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学学网络之Socket套接字">
-<meta name="twitter:description" content="套接字概念Socket本身有“插座”的意思，在Linux环境下，用于表示进程间网络通信的特殊文件类型。其本质为内核借助缓冲区形成的伪文件。因为我们常说，Linux下一切皆文件。既然是文件，那么理所当然的，我们使用==文件描述符==引用套接字。与管道类似的，Linux系统将其封装成文件的目的是为了统一接口，使得读写套接字和读写文件的操作一致。区别是管道主要应用于本地进程间通信，而套接字多应用于网">
+<meta name="twitter:description" content="套接字概念Socket本身有“插座”的意思，在Linux环境下，用于表示进程间网络通信的特殊文件类型。其本质为内核借助缓冲区形成的伪文件。因为我们常说，Linux下一切皆文件。既然是文件，那么理所当然的，我们使用文件描述符引用套接字。与管道类似的，Linux系统将其封装成文件的目的是为了统一接口，使得读写套接字和读写文件的操作一致。区别是管道主要应用于本地进程间通信，而套接字多应用于网络进程间">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190211222541780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
 
 
@@ -406,7 +406,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-02-11T22:48:16+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-11T22:50:54+08:00">
                 2019-02-11
               </time>
             
@@ -509,7 +509,7 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<h3 id="套接字概念"><a href="#套接字概念" class="headerlink" title="套接字概念"></a>套接字概念</h3><p>Socket本身有“插座”的意思，在Linux环境下，用于表示进程间网络通信的特殊文件类型。其本质为内核借助缓冲区形成的伪文件。因为我们常说，Linux下一切皆文件。<br>既然是文件，那么理所当然的，我们使用==文件描述符==引用套接字。与管道类似的，Linux系统将其封装成文件的<code>目的</code>是为了统一接口，使得读写套接字和读写文件的操作一致。<code>区别</code>是管道主要应用于本地进程间通信，而套接字多应用于网络进程间数据的传递。</p>
+<h3 id="套接字概念"><a href="#套接字概念" class="headerlink" title="套接字概念"></a>套接字概念</h3><p>Socket本身有“插座”的意思，在Linux环境下，用于表示进程间网络通信的特殊文件类型。其本质为内核借助缓冲区形成的伪文件。因为我们常说，Linux下一切皆文件。<br>既然是文件，那么理所当然的，我们使用<code>文件描述符</code>引用套接字。与管道类似的，Linux系统将其封装成文件的<code>目的</code>是为了统一接口，使得读写套接字和读写文件的操作一致。<code>区别</code>是管道主要应用于本地进程间通信，而套接字多应用于网络进程间数据的传递。</p>
 <p>在TCP/IP协议中，“IP地址+TCP或UDP端口号”唯一标识网络通讯中的一个进程。“IP地址+端口号”就对应一个socket。欲建立连接的两个进程各自有一个socket来标识，那么这两个socket组成的socket pair就唯一标识一个连接。因此可以用Socket来描述网络连接的一对一关系。<br>套接字通信原理如下图所示：<br><img src="https://img-blog.csdnimg.cn/20190211222541780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="1"></p>
 <p>在网络通信中，套接字一定是成对出现的。一端的发送缓冲区对应对端的接收缓冲区。我们使用同一个文件描述符索发送缓冲区和接收缓冲区。<br>TCP/IP协议最早在BSD UNIX上实现，为TCP/IP协议设计的应用层编程接口称为socket API。</p>
 <p><img src="https://img-blog.csdnimg.cn/2019021122262628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="2">   </p>
