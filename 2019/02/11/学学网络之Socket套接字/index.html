@@ -148,7 +148,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019021122262628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190211222821652.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190211222855352.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-02-11T14:50:54.513Z">
+<meta property="og:updated_time" content="2019-02-11T14:51:13.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学学网络之Socket套接字">
 <meta name="twitter:description" content="套接字概念Socket本身有“插座”的意思，在Linux环境下，用于表示进程间网络通信的特殊文件类型。其本质为内核借助缓冲区形成的伪文件。因为我们常说，Linux下一切皆文件。既然是文件，那么理所当然的，我们使用文件描述符引用套接字。与管道类似的，Linux系统将其封装成文件的目的是为了统一接口，使得读写套接字和读写文件的操作一致。区别是管道主要应用于本地进程间通信，而套接字多应用于网络进程间">
@@ -406,7 +406,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-02-11T22:50:54+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-11T22:51:13+08:00">
                 2019-02-11
               </time>
             
@@ -516,7 +516,9 @@
 <h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><h4 id="网络字节序"><a href="#网络字节序" class="headerlink" title="网络字节序"></a>网络字节序</h4><p>我们已经知道，内存中的多字节数据相对于内存地址有大端和小端之分，磁盘文件中的多字节数据相对于文件中的偏移地址也有大端小端之分。网络数据流同样有大端小端之分，那么如何定义网络数据流的地址呢？发送主机通常将发送缓冲区中的数据按内存地址从低到高的顺序发出，接收主机把从网络上接到的字节依次保存在接收缓冲区中，也是按内存地址从低到高的顺序保存，因此，网络数据流的地址应这样规定：先发出的数据是低地址，后发出的数据是高地址。<br>TCP/IP协议规定，网络数据流应采用大端字节序，即低地址高字节。例如上一节的UDP段格式，地址0-1是16位的源端口号，如果这个端口号是1000（0x3e8），则地址0是0x03，地址1是0xe8，也就是先发0x03，再发0xe8，这16位在发送主机的缓冲区中也应该是低地址存0x03，高地址存0xe8。但是，如果发送主机是小端字节序的，这16位被解释成0xe803，而不是1000。因此，发送主机把1000填到发送缓冲区之前需要做字节序的转换。同样地，接收主机如果是小端字节序的，接到16位的源端口号也要做字节序的转换。如果主机是大端字节序的，发送和接收都不需要做转换。同理，32位的IP地址也要考虑网络字节序和主机字节序的问题。</p>
 <p>为使网络程序具有可移植性，使同样的C代码在大端和小端计算机上编译后都能正常运行，可以调用以下库函数做网络字节序和主机字节序的转换。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uint32_t</span> htonl(<span class="keyword">uint32_t</span> hostlong);</span><br><span class="line"><span class="keyword">uint16_t</span> htons(<span class="keyword">uint16_t</span> hostshort);</span><br><span class="line"><span class="keyword">uint32_t</span> ntohl(<span class="keyword">uint32_t</span> netlong);</span><br><span class="line"><span class="keyword">uint16_t</span> ntohs(<span class="keyword">uint16_t</span> netshort);</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>h表示host，n表示network，l表示32位长整数，s表示16位短整数。<br>如果主机是小端字节序，这些函数将参数做相应的大小端转换然后返回，如果主机是大端字节序，这些函数不做转换，将参数原封不动地返回。</p>
+</blockquote>
 <h4 id="IP地址转换函数"><a href="#IP地址转换函数" class="headerlink" title="IP地址转换函数"></a>IP地址转换函数</h4><p>早期：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">inet_aton</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *cp, struct in_addr *inp)</span></span>;</span><br><span class="line"><span class="keyword">in_addr_t</span> inet_addr(<span class="keyword">const</span> <span class="keyword">char</span> *cp);</span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">inet_ntoa</span><span class="params">(struct in_addr in)</span></span>;</span><br></pre></td></tr></table></figure></p>
 <pre><code>只能处理IPv4的ip地址
 不可重入函数
