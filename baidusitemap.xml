@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>https://LiuZiQiao.github.io/2018/09/20/MergeTwoSortedArray/</loc>
+    <lastmod>2019-02-12T15:50:50.875Z</lastmod>
+    <data>
+        <display>
+        <title>MergeTwoSortedArray</title>
+        <pubTime>2018-09-19T22:59:05.000Z</pubTime>
+        
+        <tag>Array</tag>
+         
+         
+           
+             
+              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://LiuZiQiao.github.io/2018/09/18/RemoveDuplicates2/</loc>
+    <lastmod>2019-02-12T15:50:10.905Z</lastmod>
+    <data>
+        <display>
+        <title>RemoveDuplicates2</title>
+        <pubTime>2018-09-18T08:46:12.000Z</pubTime>
+        
+        <tag>Array</tag>
+         
+         
+           
+             
+              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://LiuZiQiao.github.io/2018/09/18/RemoveDuplicates1/</loc>
+    <lastmod>2019-02-12T15:49:58.121Z</lastmod>
+    <data>
+        <display>
+        <title>RemoveDuplicates|</title>
+        <pubTime>2018-09-18T08:23:27.000Z</pubTime>
+        
+        <tag>Array</tag>
+         
+         
+           
+             
+              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://LiuZiQiao.github.io/2018/12/02/%E5%BE%AE%E4%BF%A1%E7%BA%A2%E5%8C%85/</loc>
     <lastmod>2019-02-12T15:47:11.039Z</lastmod>
     <data>
@@ -1048,26 +1108,6 @@
 
     
   <url>
-    <loc>https://LiuZiQiao.github.io/2018/09/20/MergeTwoSortedArray/</loc>
-    <lastmod>2018-09-21T13:06:20.277Z</lastmod>
-    <data>
-        <display>
-        <title>MergeTwoSortedArray</title>
-        <pubTime>2018-09-19T22:59:05.000Z</pubTime>
-        
-        <tag>Array</tag>
-         
-         
-           
-             
-              <breadCrumb title="每日一题" url="https://LiuZiQiao.github.io/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://LiuZiQiao.github.io/2018/09/14/%E5%93%88%E5%B8%8C%E8%A1%A8(%E4%B8%8B)/</loc>
     <lastmod>2018-09-19T10:13:22.778Z</lastmod>
     <data>
@@ -1114,46 +1154,6 @@
         <display>
         <title>maxProfit</title>
         <pubTime>2018-09-12T02:55:17.000Z</pubTime>
-        
-        <tag>Array</tag>
-         
-         
-           
-             
-              <breadCrumb title="每日一题" url="https://LiuZiQiao.github.io/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://LiuZiQiao.github.io/2018/09/18/RemoveDuplicates2/</loc>
-    <lastmod>2018-09-19T00:57:13.015Z</lastmod>
-    <data>
-        <display>
-        <title>RemoveDuplicates2</title>
-        <pubTime>2018-09-18T08:46:12.000Z</pubTime>
-        
-        <tag>Array</tag>
-         
-         
-           
-             
-              <breadCrumb title="每日一题" url="https://LiuZiQiao.github.io/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://LiuZiQiao.github.io/2018/09/18/RemoveDuplicates1/</loc>
-    <lastmod>2018-09-19T00:57:04.954Z</lastmod>
-    <data>
-        <display>
-        <title>RemoveDuplicates|</title>
-        <pubTime>2018-09-18T08:23:27.000Z</pubTime>
         
         <tag>Array</tag>
          
