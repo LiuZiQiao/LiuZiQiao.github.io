@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>https://LiuZiQiao.github.io/2018/09/20/MergeTwoSortedArray/</loc>
+    <lastmod>2019-02-13T08:29:12.305Z</lastmod>
+    <data>
+        <display>
+        <title>88.MergeTwoSortedArray</title>
+        <pubTime>2018-09-19T22:59:05.000Z</pubTime>
+        
+        <tag>Array</tag>
+         
+         
+           
+             
+              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://LiuZiQiao.github.io/2018/09/18/RemoveDuplicates2/</loc>
+    <lastmod>2019-02-13T08:27:39.627Z</lastmod>
+    <data>
+        <display>
+        <title>80.RemoveDuplicates2</title>
+        <pubTime>2018-09-18T08:46:12.000Z</pubTime>
+        
+        <tag>Array</tag>
+         
+         
+           
+             
+              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://LiuZiQiao.github.io/2018/09/18/RemoveDuplicates1/</loc>
+    <lastmod>2019-02-13T08:27:31.620Z</lastmod>
+    <data>
+        <display>
+        <title>26.RemoveDuplicates|</title>
+        <pubTime>2018-09-18T08:23:27.000Z</pubTime>
+        
+        <tag>Array</tag>
+         
+         
+           
+             
+              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://LiuZiQiao.github.io/2018/09/12/AddTwoNumbers/</loc>
     <lastmod>2019-02-13T08:24:16.062Z</lastmod>
     <data>
@@ -177,66 +237,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://LiuZiQiao.github.io/2018/09/20/MergeTwoSortedArray/</loc>
-    <lastmod>2019-02-12T15:50:50.875Z</lastmod>
-    <data>
-        <display>
-        <title>MergeTwoSortedArray</title>
-        <pubTime>2018-09-19T22:59:05.000Z</pubTime>
-        
-        <tag>Array</tag>
-         
-         
-           
-             
-              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://LiuZiQiao.github.io/2018/09/18/RemoveDuplicates2/</loc>
-    <lastmod>2019-02-12T15:50:10.905Z</lastmod>
-    <data>
-        <display>
-        <title>RemoveDuplicates2</title>
-        <pubTime>2018-09-18T08:46:12.000Z</pubTime>
-        
-        <tag>Array</tag>
-         
-         
-           
-             
-              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://LiuZiQiao.github.io/2018/09/18/RemoveDuplicates1/</loc>
-    <lastmod>2019-02-12T15:49:58.121Z</lastmod>
-    <data>
-        <display>
-        <title>RemoveDuplicates|</title>
-        <pubTime>2018-09-18T08:23:27.000Z</pubTime>
-        
-        <tag>Array</tag>
-         
-         
-           
-             
-              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
-          
         </display>
     </data>
     </url>
