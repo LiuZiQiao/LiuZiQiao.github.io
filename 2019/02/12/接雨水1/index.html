@@ -145,7 +145,7 @@
 <meta property="og:description" content="题目描述给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。  上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。    示例: 输入: [0,1,0,2,1,0,1,3,2,1,2,1] 输出: 6 方法一1234567891">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/rainwatertrap.png">
-<meta property="og:updated_time" content="2019-02-12T15:41:52.394Z">
+<meta property="og:updated_time" content="2019-02-13T10:55:04.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="接雨水1">
 <meta name="twitter:description" content="题目描述给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。  上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。    示例: 输入: [0,1,0,2,1,0,1,3,2,1,2,1] 输出: 6 方法一1234567891">
@@ -403,8 +403,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-02-12T23:41:52+08:00">
-                2019-02-12
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-13T18:55:04+08:00">
+                2019-02-13
               </time>
             
           </span>
@@ -468,7 +468,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  213
+                  436
                 </span>
               
 
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -513,6 +513,9 @@
 <pre><code>输入: [0,1,0,2,1,0,1,3,2,1,2,1]
 输出: 6
 </code></pre><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> res = <span class="number">0</span>,mx=<span class="number">0</span>,n = height.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(n,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i] = mx;</span><br><span class="line">            mx=max(mx,height[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        mx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i] = min(dp[i],mx);</span><br><span class="line">            mx = max(mx,height[i]);</span><br><span class="line">            <span class="keyword">if</span>(dp[i]&gt;height[i])</span><br><span class="line">                res += dp[i]-height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>,l=<span class="number">0</span>,r =height.size()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> mn = min(height[l],height[r]);</span><br><span class="line">            <span class="keyword">if</span>(mn == height[l])</span><br><span class="line">            &#123;</span><br><span class="line">                ++l;</span><br><span class="line">                <span class="keyword">while</span>(l&lt;r&amp;&amp; height[l]&lt;mn)</span><br><span class="line">                &#123;</span><br><span class="line">                    res += mn-height[l++];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                --r;</span><br><span class="line">                <span class="keyword">while</span>(l&lt;r&amp;&amp;height[r]&lt;mn)</span><br><span class="line">                &#123;</span><br><span class="line">                    res += mn-height[r--];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l=<span class="number">0</span>,r=height.size()<span class="number">-1</span>,level=<span class="number">0</span>,res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> lower=height[(height[l]&lt;height[r])? l++:r--];</span><br><span class="line">            level = max(level,lower);</span><br><span class="line">            res+= level-lower;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span></span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,res=<span class="number">0</span>,n=height.size();</span><br><span class="line">        <span class="keyword">while</span>(i&lt;n)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(st.empty()||height[i]&lt;=height[st.top()])</span><br><span class="line">            &#123;</span><br><span class="line">                st.push(i++);</span><br><span class="line">            &#125;<span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> t=st.top();</span><br><span class="line">                st.pop();</span><br><span class="line">                <span class="keyword">if</span>(st.empty()) <span class="keyword">continue</span>;</span><br><span class="line">                res+=(min(height[i],height[st.top()]) - height[t])*(i-st.top()<span class="number">-1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -538,7 +541,7 @@
   <p><span>本文标题:</span><a href="/2019/02/12/接雨水1/">接雨水1</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2019年02月12日 - 23:02</p>
-  <p><span>最后更新:</span>2019年02月12日 - 23:02</p>
+  <p><span>最后更新:</span>2019年02月13日 - 18:02</p>
   <p><span>原始链接:</span><a href="/2019/02/12/接雨水1/" title="接雨水1">https://LiuZiQiao.github.io/2019/02/12/接雨水1/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/02/12/接雨水1/"  aria-label="复制成功！"></i></span>
   </p>
@@ -855,7 +858,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.</span> <span class="nav-text">方法一</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">1.2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三"><span class="nav-number">1.3.</span> <span class="nav-text">方法三</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法四"><span class="nav-number">1.4.</span> <span class="nav-text">方法四</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -892,7 +895,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">94.2k</span>
+    <span title="Site words total count">94.4k</span>
   
 </div>
 
