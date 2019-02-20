@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-02-20T14:56:33.814Z</updated>
+  <updated>2019-02-20T15:00:10.447Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最小的K个数</title>
+    <link href="https://LiuZiQiao.github.io/2019/02/20/%E6%9C%80%E5%B0%8F%E7%9A%84K%E4%B8%AA%E6%95%B0/"/>
+    <id>https://LiuZiQiao.github.io/2019/02/20/最小的K个数/</id>
+    <published>2019-02-20T14:59:52.000Z</published>
+    <updated>2019-02-20T15:00:10.447Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>利用优先级队列很好的解决该问题，知道优先级队列的伙伴理解起来就非常简单啦。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; GetLeastNumbers_Solution(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input, <span class="keyword">int</span> k) &#123;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec;</span><br><span class="line">        <span class="keyword">if</span>(k&gt;input.size()) <span class="keyword">return</span> vec;</span><br><span class="line">        priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">queue</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;num :input)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">queue</span>.push(num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i)</span><br><span class="line">&#123;</span><br><span class="line">vec.push_back(<span class="built_in">queue</span>.top());</span><br><span class="line"><span class="built_in">queue</span>.pop();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> vec;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
+      
+    
+    </summary>
+    
+      <category term="剑指offer" scheme="https://LiuZiQiao.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>包含min函数的栈</title>
@@ -499,30 +523,6 @@
     
     
       <category term="git centos" scheme="https://LiuZiQiao.github.io/tags/git-centos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS7环境下安装vscode</title>
-    <link href="https://LiuZiQiao.github.io/2019/01/03/CentOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85vscode/"/>
-    <id>https://LiuZiQiao.github.io/2019/01/03/CentOS7环境下安装vscode/</id>
-    <published>2019-01-02T16:00:47.000Z</published>
-    <updated>2019-01-02T16:01:07.936Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>最近在Linux环境下写几个程序时发现用vim时总出现一点问题，配置了vim也还是不太习惯，因此就安装了vscode，这篇文章记录了CentOS7下安装过程。</p><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>环境参数：<br>操作系统版本：CentOS-7-x86_64-1511<br>软件版本：visual stdio code 1.2   </p><p>操作步骤：<br>1.下载 <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">vscode_x86_64.rpm</a><br>2.安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh code-insiders-1.25.0-1530077090.el7.x86_64.rpm</span><br></pre></td></tr></table></figure></p><p>可能会报这样一个错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libXss.so.1()(64bit) is needed by code-insiders-1.25.0-1530077090.el7.x86_64.rpm</span><br></pre></td></tr></table></figure></p><p>执行下面命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install libXss*  -y</span><br></pre></td></tr></table></figure></p><p>然后在重新安装rpm文件，没报错可以跳过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh code-insiders-1.25.0-1530077090.el7.x86_64.rpm</span><br></pre></td></tr></table></figure></p><p>然后打开应用程序可以看见vscode安装好了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;最近在Linux环境下写几个程序时发现用vim时总出现一点问题，配置了vim也还是不太习惯，因此就安装了vscode，这篇文章记录了Cen
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="https://LiuZiQiao.github.io/categories/Linux/"/>
-    
     
   </entry>
   
