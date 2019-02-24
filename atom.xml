@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-02-21T15:28:05.432Z</updated>
+  <updated>2019-02-24T13:54:33.987Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2.两数相加</title>
+    <link href="https://LiuZiQiao.github.io/2019/02/24/2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/"/>
+    <id>https://LiuZiQiao.github.io/2019/02/24/2-两数相加/</id>
+    <published>2019-02-24T13:54:15.000Z</published>
+    <updated>2019-02-24T13:54:33.987Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p><p>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p><p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。   </p><p>示例：</p><pre><code>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)输出：7 -&gt; 0 -&gt; 8原因：342 + 465 = 807</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>方法：初等数学<br>思路</p><p>我们使用变量来跟踪进位，并从包含最低有效位的表头开始模拟逐位相加的过程。</p><p><img src="https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg" alt=""></p><p>图1，对两数相加方法的可视化: 342 + 465 = 807342+465=807， 每个结点都包含一个数字，并且数字按位逆序存储。</p><p>伪代码如下：</p><ul><li style="list-style: none"><input type="checkbox"> 将当前结点初始化为返回列表的哑结点。</li><li style="list-style: none"><input type="checkbox"> 将进位 carrycarry 初始化为 00。</li><li style="list-style: none"><input type="checkbox"> 将 pp 和 qq 分别初始化为列表 l1l1 和 l2l2 的头部。</li><li style="list-style: none"><input type="checkbox"> 遍历列表 l1l1 和 l2l2 直至到达它们的尾端。</li><li>将 xx 设为结点 pp 的值。如果 pp 已经到达 l1l1 的末尾，则将其值设置为 00。</li><li>将 yy 设为结点 qq 的值。如果 qq 已经到达 l2l2 的末尾，则将其值设置为 00。</li><li>设定 sum = x + y + carrysum=x+y+carry。</li><li>更新进位的值，carry = sum / 10carry=sum/10。</li><li>创建一个数值为 (sum \bmod 10)(summod10) 的新结点，并将其设置为当前结点的下一个结点，然后将当前结点前进到下一个结点。</li><li>同时，将 pp 和 qq 前进到下一个结点。</li><li style="list-style: none"><input type="checkbox"> 检查 carry = 1carry=1 是否成立，如果成立，则向返回列表追加一个含有数字 11 的新结点。</li><li style="list-style: none"><input type="checkbox"> 返回哑结点的下一个结点。</li></ul><p>以下是具体的代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode* root = <span class="keyword">new</span> ListNode(<span class="number">-1</span>);</span><br><span class="line">        ListNode* node = root;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 || l2)&#123;</span><br><span class="line">            <span class="keyword">int</span> n1 = l1 ? l1-&gt;val:<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> n2 = l2 ? l2-&gt;val:<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> sum = n1+n2+carry;</span><br><span class="line">            carry = sum/<span class="number">10</span>;</span><br><span class="line">            </span><br><span class="line">            node-&gt;next = <span class="keyword">new</span> ListNode(sum%<span class="number">10</span>);            </span><br><span class="line">            node = node-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(l1) l1= l1-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(l2) l2= l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry) node-&gt;next = <span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://LiuZiQiao.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="list" scheme="https://LiuZiQiao.github.io/tags/list/"/>
+    
+  </entry>
   
   <entry>
     <title>删除链表中重复的结点</title>
@@ -482,33 +508,6 @@
       
         &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;上一篇中是有关网络的设计模式和分层模型，这篇就来说说网络里面用到的几个重要协议的格式，用程序员来的话来说就是报头格式。当然，在进入主题之前
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="https://LiuZiQiao.github.io/categories/Linux/"/>
-    
-    
-      <category term="NET" scheme="https://LiuZiQiao.github.io/tags/NET/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>谈谈网络之设计模式与分层模型</title>
-    <link href="https://LiuZiQiao.github.io/2019/01/30/%E8%B0%88%E8%B0%88%E7%BD%91%E7%BB%9C%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%88%86%E5%B1%82%E6%A8%A1%E5%9E%8B/"/>
-    <id>https://LiuZiQiao.github.io/2019/01/30/谈谈网络之设计模式与分层模型/</id>
-    <published>2019-01-30T05:18:09.000Z</published>
-    <updated>2019-01-30T05:18:36.214Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>在学习网络之前，我们先了解下网络应用程序设计模式和网络的分层模型</p><h3 id="网络应用程序设计模式"><a href="#网络应用程序设计模式" class="headerlink" title="网络应用程序设计模式"></a>网络应用程序设计模式</h3><h4 id="C-S模式"><a href="#C-S模式" class="headerlink" title="C/S模式"></a>C/S模式</h4><p>传统的网络应用设计模式，客户机(client)/服务器(server)模式。需要在通讯两端各自部署客户机和服务器来完成数据通信。</p><h4 id="B-S模式"><a href="#B-S模式" class="headerlink" title="B/S模式"></a>B/S模式</h4><p>浏览器()/服务器(server)模式。只需在一端部署服务器，而另外一端使用每台PC都默认配置的浏览器即可完成数据的传输。</p><p><strong>优缺点：</strong> 对于C/S模式来说，其优点明显。客户端位于目标主机上可以保证性能，将数据缓存至客户端本地，从而<code>提高数据传输效率。</code>且一般来说客户端和服务器程序由一个开发团队创作，所以他们之间所<code>采用的协议相对灵活。</code>可以在标准协议的基础上根据需求裁剪及定制。例如，腾讯公司所采用的通信协议，即为ftp协议的修改剪裁版。<br>    因此，传统的网络应用程序及较大型的网络应用程序都首选C/S模式进行开发。如，知名的网络游戏英雄联盟。3D画面，数据量庞大，使用C/S模式可以提前在本地进行大量数据的缓存处理，从而提高观感。<br>    C/S模式的缺点也较突出。由于客户端和服务器都需要有一个开发团队来完成开发。<code>工作量</code>将成倍提升，开发周期较长。另外，从用户角度出发，需要将客户端安插至用户主机上，对用户主机的<code>安全性</code>构成威胁。这也是很多用户不愿使用C/S模式应用程序的重要原因。<br>    B/S模式相比C/S模式而言，由于它没有独立的客户端，使用标准浏览器作为客户端，其<code>工作开发量较小</code>。只需开发服务器端即可。另外由于其采用浏览器显示数据，因此移植性非常好，不受平台限制。如早期的偷菜游戏，在各个平台上都可以完美运行。<br>    B/S模式的缺点也较明显。由于使用第三方浏览器，因此网络应用支持受限。另外，没有客户端放到对方主机上，<code>缓存数据不尽如人意</code>，从而<code>传输数据量受到限制</code>。应用的观感大打折扣。第三，必须与浏览器一样，采用标准http协议进行通信，<code>协议选择不灵活</code>。<br>    因此在开发过程中，模式的选择由上述各自的特点决定。根据实际需求选择应用程序设计模式。</p><h3 id="分层模型"><a href="#分层模型" class="headerlink" title="分层模型"></a>分层模型</h3><h4 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h4><p><img src="https://img-blog.csdnimg.cn/20190130131007694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="1"></p><ol><li>物理层：主要定义物理设备标准，如网线的接口类型、光纤的接口类型、各种传输介质的传输速率等。它的主要作用是传输比特流（就是由1、0转化为电流强弱来进行传输，到达目的地后再转化为1、0，也就是我们常说的数模转换与模数转换）。这一层的数据叫做比特。</li><li>数据链路层：定义了如何让格式化数据以帧为单位进行传输，以及如何让控制对物理介质的访问。这一层通常还提供错误检测和纠正，以确保数据的可靠传输。如：串口通信中使用到的115200、8、N、1</li><li>网络层：在位于不同地理位置的网络中的两个主机系统之间提供连接和路径选择。Internet的发展使得从世界各站点访问信息的用户数大大增加，而网络层正是管理这种连接的层。</li><li>传输层：定义了一些传输数据的协议和端口号（WWW端口80等），如：TCP（传输控制协议，传输效率低，可靠性强，用于传输可靠性要求高，数据量大的数据），UDP（用户数据报协议，与TCP特性恰恰相反，用于传输可靠性要求不高，数据量小的数据，如QQ聊天数据就是通过这种方式传输的）。 主要是将从下层接收的数据进行分段和传输，到达目的地址后再进行重组。常常把这一层数据叫做段。</li><li>会话层：通过传输层(端口号：传输端口与接收端口)建立数据传输的通路。主要在你的系统之间发起会话或者接受会话请求（设备之间需要互相认识可以是IP也可以是MAC或者是主机名）。</li><li>表示层：可确保一个系统的应用层所发送的信息可以被另一个系统的应用层读取。例如，PC程序与另一台计算机进行通信，其中一台计算机使用扩展二一十进制交换码(EBCDIC)，而另一台则使用美国信息交换标准码（ASCII）来表示相同的字符。如有必要，表示层会通过使用一种通格式来实现多种数据格式之间的转换。</li><li>应用层：是最靠近用户的OSI层。这一层为用户的应用程序（例如电子邮件、文件传输和终端仿真）提供网络服务。</li></ol><h4 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h4><p>TCP/IP网络协议栈分为应用层（Application）、传输层（Transport）、网络层（Network）和链路层（Link）四层。如下图所示：</p><p><img src="https://img-blog.csdnimg.cn/20190130131054219.png" alt="2"></p><p>一般在应用开发过程中，讨论最多的是TCP/IP模型。但也有一些自定义协议类型，只是在其之上进行一些修改完成需求功能即可的。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;在学习网络之前，我们先了解下网络应用程序设计模式和网络的分层模型&lt;/p&gt;
-&lt;h3 id=&quot;网络应用程序设计模式&quot;&gt;&lt;a href=&quot;#网络
       
     
     </summary>
