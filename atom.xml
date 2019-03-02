@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-03-02T15:25:23.874Z</updated>
+  <updated>2019-03-02T15:32:41.474Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://LiuZiQiao.github.io/2019/03/02/%E5%AE%8F%E6%9B%BF%E6%8D%A2%EF%BC%9F%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/"/>
     <id>https://LiuZiQiao.github.io/2019/03/02/宏替换？内联函数/</id>
     <published>2019-03-02T15:24:57.000Z</published>
-    <updated>2019-03-02T15:25:23.874Z</updated>
+    <updated>2019-03-02T15:32:41.474Z</updated>
     
     <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>在上一篇中提到了宏定义常量，说到宏这个概念，我们就来谈谈C++中关于宏的真正概念。</p><h3 id="用内联函数取代宏"><a href="#用内联函数取代宏" class="headerlink" title="用内联函数取代宏"></a>用内联函数取代宏</h3><p>在C++ 语言中支持函数内联，目的是为了提高函数的执行效率。在C语言中使用宏代码的方式提高执行效率。宏本身不是函数，但使用起来像是函数。在编译预处理阶段拷贝宏代码的方式取代函数调用，省去了参数压栈，生成汇编语言的CALL调用，返回参数等等。但是使用==宏的最大缺点就是容易出错==。<br>因此在C++中采用了一种内联函数来取代宏。==内联函数的优点是可以调试==</p><h3 id="如何使用内联函数替代宏？"><a href="#如何使用内联函数替代宏？" class="headerlink" title="如何使用内联函数替代宏？"></a>如何使用内联函数替代宏？</h3><p>使用inline关键字。<br>如下代码函数Fun不能成为内联函数：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Fun</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>如下代码Fun能成为内联函数：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fun</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>总结：关键字inline必须与函数定义放在一起才能是函数真正内联，仅把inline放在函数声明的前面不起任何作用。一句话：内联是用于实现的不是用于定义的！！！</strong></p><p>tip：当然，在一些集成开发环境，如vs2017使用该关键字时，如果没有预期的效果，检查vs2017是否开启内联函数的支持。</p>]]></content>
     
@@ -36,7 +36,7 @@
     
     </summary>
     
-      <category term="C++" scheme="https://LiuZiQiao.github.io/categories/C/"/>
+      <category term="C/C++" scheme="https://LiuZiQiao.github.io/categories/C-C/"/>
     
     
   </entry>
@@ -46,7 +46,7 @@
     <link href="https://LiuZiQiao.github.io/2019/03/02/const%E5%9C%A8C%E8%AF%AD%E8%A8%80%E5%92%8CC-%E4%B8%AD%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://LiuZiQiao.github.io/2019/03/02/const在C语言和C-中的区别/</id>
     <published>2019-03-02T15:23:14.000Z</published>
-    <updated>2019-03-02T15:23:47.296Z</updated>
+    <updated>2019-03-02T15:32:48.687Z</updated>
     
     <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h4 id="const在C语言和C-中的对比一"><a href="#const在C语言和C-中的对比一" class="headerlink" title="const在C语言和C++中的对比一"></a>const在C语言和C++中的对比一</h4><ul><li>C语言中const是定义了一个const变量，该变量只具备读的功能，不具备写的功能。</li><li>C++中const是定义了一个常量。</li></ul><pre><code>const int a = 5;int array[a]; //在C语言中编译错误，因为a是一个变量   int array[a];//在C++中正确，因为a是一个常量</code></pre><h4 id="const在C语言和C-中的对比二"><a href="#const在C语言和C-中的对比二" class="headerlink" title="const在C语言和C++中的对比二"></a>const在C语言和C++中的对比二</h4><ul><li>C语言中不能定义const函数，而C++中可以定义const函数   </li><li>C++中的const成员函数：不能修改类的成员变量的值。</li></ul><p>下面这段代码在C语言中和C++中表现出不同结果<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> *p = <span class="literal">NULL</span>:</span><br><span class="line">    p = (<span class="keyword">int</span>*)&amp;a;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><table><thead><tr><th>环境</th><th>C语言中</th><th>C++中</th></tr></thead><tbody><tr><td>结果</td><td>20</td><td>10</td></tr></tbody></table><p><strong>总结：const在C语言中修饰的变量的值是可以被修改的，而C++中不能被修改</strong></p><p>指针常量和常量指针：</p><ul><li><p>指向指针的常量：当const在* 前面就是指向常量的指针</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下面两种方式是一样的</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> b;</span><br><span class="line">----------------</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *p=<span class="string">"123456"</span>;</span><br><span class="line">p1 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="comment">//表示指针p所指向的空间不能被修改,但是可以指向其它常量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> <span class="keyword">const</span>* p=<span class="string">"123456"</span>;</span><br><span class="line">p[<span class="number">0</span>] = <span class="string">'a'</span>;</span><br><span class="line"><span class="comment">//这种写法错误，表示p指向地址的值不能被修改</span></span><br></pre></td></tr></table></figure></li><li><p>常量指针：当const在* 后</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *<span class="keyword">const</span> p = <span class="string">"123456"</span>;</span><br><span class="line">p[<span class="number">0</span>] = <span class="string">"a"</span>;<span class="comment">//正确，可以修改指向内存的值</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">"abc"</span>; <span class="comment">//错误，不能修改p指向的内存</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> e;<span class="comment">//e不能被修改，指向的空间也不能被修改</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
@@ -60,7 +60,7 @@
     
     </summary>
     
-      <category term="C++" scheme="https://LiuZiQiao.github.io/categories/C/"/>
+      <category term="C/C++" scheme="https://LiuZiQiao.github.io/categories/C-C/"/>
     
     
   </entry>
@@ -70,7 +70,7 @@
     <link href="https://LiuZiQiao.github.io/2019/03/02/const%E4%B8%8Edefine%E7%9A%84%E6%AF%94%E8%BE%83/"/>
     <id>https://LiuZiQiao.github.io/2019/03/02/const与define的比较/</id>
     <published>2019-03-02T15:21:52.000Z</published>
-    <updated>2019-03-02T15:22:18.979Z</updated>
+    <updated>2019-03-02T15:32:53.854Z</updated>
     
     <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="const与define"><a href="#const与define" class="headerlink" title="const与define"></a>const与define</h3><p>在C++中定义一个常量用const修饰，也可以用#define来定义，但是前者比后者更具有优点：</p><ul><li>const所修饰的常量可以具有类型，而宏常量没有数据类型。编译器可以对前者进行静态类型安全检查；而对后者只进行字符替换，没有类型安全检查，并且在字符替换的时候可能产生意料不到的错误。</li><li>集成开发环境可以对const常量进行调试，而不能对宏常量进行调试。</li></ul><p><strong>建议在C++程序中尽量使用const来定义符号常量，包括字符串常量。</strong></p>]]></content>
     
@@ -84,7 +84,7 @@
     
     </summary>
     
-      <category term="C++" scheme="https://LiuZiQiao.github.io/categories/C/"/>
+      <category term="C/C++" scheme="https://LiuZiQiao.github.io/categories/C-C/"/>
     
     
   </entry>
