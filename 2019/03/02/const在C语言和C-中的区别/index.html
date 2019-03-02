@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="vim," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -136,18 +136,17 @@
 
 
 
-<meta name="description" content="Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。 没有Makefile工具时如何进行编译首先我们看一个例子：当前我们">
-<meta name="keywords" content="vim">
+<meta name="description" content="const在C语言和C++中的对比一 C语言中const是定义了一个const变量，该变量只具备读的功能，不具备写的功能。 C++中const是定义了一个常量。  const int a = 5; int array[a]; //在C语言中编译错误，因为a是一个变量    int array[a];//在C++中正确，因为a是一个常量 const在C语言和C++中的对比二 C语言中不能定义co">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Makefile工具使用">
-<meta property="og:url" content="https://LiuZiQiao.github.io/2018/09/24/Makefile工具使用/index.html">
+<meta property="og:title" content="const在C语言和C++中的区别">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2019/03/02/const在C语言和C-中的区别/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。 没有Makefile工具时如何进行编译首先我们看一个例子：当前我们">
+<meta property="og:description" content="const在C语言和C++中的对比一 C语言中const是定义了一个const变量，该变量只具备读的功能，不具备写的功能。 C++中const是定义了一个常量。  const int a = 5; int array[a]; //在C语言中编译错误，因为a是一个变量    int array[a];//在C++中正确，因为a是一个常量 const在C语言和C++中的对比二 C语言中不能定义co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-05T06:08:30.862Z">
+<meta property="og:updated_time" content="2019-03-02T15:23:47.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Makefile工具使用">
-<meta name="twitter:description" content="Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。 没有Makefile工具时如何进行编译首先我们看一个例子：当前我们">
+<meta name="twitter:title" content="const在C语言和C++中的区别">
+<meta name="twitter:description" content="const在C语言和C++中的对比一 C语言中const是定义了一个const变量，该变量只具备读的功能，不具备写的功能。 C++中const是定义了一个常量。  const int a = 5; int array[a]; //在C语言中编译错误，因为a是一个变量    int array[a];//在C++中正确，因为a是一个常量 const在C语言和C++中的对比二 C语言中不能定义co">
 
 
 
@@ -177,7 +176,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/09/24/Makefile工具使用/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2019/03/02/const在C语言和C-中的区别/"/>
 
 
 
@@ -200,7 +199,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>Makefile工具使用 | LiuxiaoKun</title>
+  <title>const在C语言和C++中的区别 | LiuxiaoKun</title>
   
 
 
@@ -356,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/09/24/Makefile工具使用/">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2019/03/02/const在C语言和C-中的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -373,7 +372,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Makefile工具使用</h2>
+          <h2 class="post-title" itemprop="name headline">const在C语言和C++中的区别</h2>
         
 
         <div class="post-meta">
@@ -385,8 +384,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T16:31:48+08:00">
-                2018-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-02T23:23:14+08:00">
+                2019-03-02
               </time>
             
 
@@ -401,8 +400,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T14:08:30+08:00">
-                2018-10-05
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-02T23:23:47+08:00">
+                2019-03-02
               </time>
             
           </span>
@@ -420,8 +419,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
                   </a>
                 </span>
 
@@ -438,8 +437,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/24/Makefile工具使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/24/Makefile工具使用/" itemprop="commentsCount"></span>
+                <a href="/2019/03/02/const在C语言和C-中的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/02/const在C语言和C-中的区别/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -466,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,261
+                  408
                 </span>
               
 
@@ -482,7 +481,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  2
                 </span>
               
             </div>
@@ -504,58 +503,43 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<p>Makefile是一个c语言的编译工具。如果学过Java，可能会认识Maven工具，makefile也是类似的工作。<br>Makefile能帮助c语言建立自动化的编译。一旦写好，执行一个make命令就可以编译整个工程。当然编写Makefile文件的时候有很多知识点在里面。这篇文章主要讲解如何编写基础性以及常用的Makefile文件。</p>
-<h3 id="没有Makefile工具时如何进行编译"><a href="#没有Makefile工具时如何进行编译" class="headerlink" title="没有Makefile工具时如何进行编译"></a>没有Makefile工具时如何进行编译</h3><p>首先我们看一个例子：<br>当前我们有3个文件，分别是test.h test.c main.c<br>在main.c中,头文件定义如下<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"test.h"</span></span></span><br></pre></td></tr></table></figure></p>
-<p>在test.h中,头文件定义如下<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"test.c"</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_print</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></p>
-<p>在test.c中<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_print</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"this is test.c \n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当我们编译运行程序时，我们使用的命令是<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc test.h main.c -o main</span><br></pre></td></tr></table></figure></p>
-<p>运行结果就是<br>    this is test.c   </p>
-<p>对于小程序我们可以使用这样的命令，但是当我们这样运行一个大项目时，我们需要多少文件名来定义，此时Makefile就是一个很好的工具</p>
-<h3 id="makefile简单示例"><a href="#makefile简单示例" class="headerlink" title="makefile简单示例"></a>makefile简单示例</h3><p>就如上面的三个文件<br>我们vim 一个名为Makefile的文件<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main.o:test.o main.c</span><br><span class="line">    gcc test.o main.c</span><br><span class="line">test.o:test.c</span><br><span class="line">    gcc -c test.c</span><br></pre></td></tr></table></figure></p>
-<p>编辑好Makefile文件后，我们返回，执行make后，将会输出<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -c test.c   </span><br><span class="line">gcc test.o main.c</span><br></pre></td></tr></table></figure></p>
-<p>这样是不是比原始的编译方便很多呢。其实也不是罪方便的，既然发明了make工具，那么肯定会让make工具更加方便开发人员使用的。</p>
-<h3 id="Makefile具体使用"><a href="#Makefile具体使用" class="headerlink" title="Makefile具体使用"></a>Makefile具体使用</h3><h4 id="伪目标"><a href="#伪目标" class="headerlink" title="伪目标"></a>伪目标</h4><p>伪目标：不管是不是最新的，都需要重新生成；使用.PHONY来声明一个目标是伪目标；执行伪目标的效果等于执行了某一个动作，并不产生目标文件。例如添加一个伪目标：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">main.o:test.o main.c</span><br><span class="line">    gcc test.o main.c</span><br><span class="line">test.o:test.c</span><br><span class="line">    gcc -c test.c</span><br><span class="line">clean :                                        【这是一个伪目标】</span><br><span class="line">        rm -f $(OBJECTS) main</span><br></pre></td></tr></table></figure></p>
-<p>使用make来执行伪目标<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ make clean</span><br><span class="line">rm -f test.o main.c main.o</span><br></pre></td></tr></table></figure></p>
-<h4 id="Makefile自动变量"><a href="#Makefile自动变量" class="headerlink" title="Makefile自动变量"></a>Makefile自动变量</h4><table>
+<h4 id="const在C语言和C-中的对比一"><a href="#const在C语言和C-中的对比一" class="headerlink" title="const在C语言和C++中的对比一"></a>const在C语言和C++中的对比一</h4><ul>
+<li>C语言中const是定义了一个const变量，该变量只具备读的功能，不具备写的功能。</li>
+<li>C++中const是定义了一个常量。</li>
+</ul>
+<pre><code>const int a = 5;
+int array[a]; //在C语言中编译错误，因为a是一个变量   
+int array[a];//在C++中正确，因为a是一个常量
+</code></pre><h4 id="const在C语言和C-中的对比二"><a href="#const在C语言和C-中的对比二" class="headerlink" title="const在C语言和C++中的对比二"></a>const在C语言和C++中的对比二</h4><ul>
+<li>C语言中不能定义const函数，而C++中可以定义const函数   </li>
+<li>C++中的const成员函数：不能修改类的成员变量的值。</li>
+</ul>
+<p>下面这段代码在C语言中和C++中表现出不同结果<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> *p = <span class="literal">NULL</span>:</span><br><span class="line">    p = (<span class="keyword">int</span>*)&amp;a;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<table>
 <thead>
 <tr>
-<th>选项名</th>
-<th>作用</th>
+<th>环境</th>
+<th>C语言中</th>
+<th>C++中</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>$@</td>
-<td>编写规则中啊哟生成的目标对象</td>
-</tr>
-<tr>
-<td>$^</td>
-<td>编写规则中所有依赖文件列表</td>
-</tr>
-<tr>
-<td>$&lt;</td>
-<td>编写规定中第一个依赖对象</td>
+<td>结果</td>
+<td>20</td>
+<td>10</td>
 </tr>
 </tbody>
 </table>
-<p>因此，上面的Makefile文件我们可以改下如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main.o:test.o main.c</span><br><span class="line">    gcc -g $^ -o $@</span><br><span class="line">test.o:test.c</span><br><span class="line">    gcc -g -c  $&lt; -o $@</span><br></pre></td></tr></table></figure></p>
-<p>执行make，可以看到效果还是一样的：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -c test.c   </span><br><span class="line">gcc test.o main.c</span><br></pre></td></tr></table></figure></p>
-<h4 id="编译生成多个可执行文件"><a href="#编译生成多个可执行文件" class="headerlink" title="编译生成多个可执行文件"></a>编译生成多个可执行文件</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">bin=main main2   <span class="comment">//自定义变量bin</span></span><br><span class="line">src=main.o test.o</span><br><span class="line">all:$(bin)    <span class="comment">//重点</span></span><br><span class="line">main: $(src)</span><br><span class="line">    gcc -g $^ -o $@</span><br><span class="line">main2:$(bin)</span><br><span class="line">    gcc -g $&lt; -o $@</span><br><span class="line">main.o :main.c</span><br><span class="line">    gcc -g -c $&lt; -o $@</span><br><span class="line">main2.o :main2.c</span><br><span class="line">    gcc -g -c $&lt; -o $@</span><br><span class="line">clean :</span><br><span class="line">    rm -f $(src) $(bin)</span><br></pre></td></tr></table></figure>
-<p>为了生成目标文件all，需要生成bin，也就是main main2.这样就生成了两个可执行文件，利用自定义变量可以简化这段Makefile，但是这样写看起来内容其实还是很多的，因此下面我将介绍make的内嵌函数</p>
-<h4 id="make常用内嵌函数"><a href="#make常用内嵌函数" class="headerlink" title="make常用内嵌函数"></a>make常用内嵌函数</h4><p>首先看到make中函数的调用形式<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(function arguments)   <span class="comment">//functions是函数名称，arguments是参数，使用$来调用</span></span><br></pre></td></tr></table></figure></p>
-<p><strong><em>函数名与参数之间是空格</em></strong><br>以下三个重要的内嵌函数</p>
+<p><strong>总结：const在C语言中修饰的变量的值是可以被修改的，而C++中不能被修改</strong></p>
+<p>指针常量和常量指针：</p>
 <ul>
-<li><p>$(wildcard path)<br>  当前目录下匹配模式的文件</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">src=$(wildcard *.c)  <span class="comment">// 在当前目录下搜索所以.c文件，文件名称保存到src中</span></span><br></pre></td></tr></table></figure>
+<li><p>指向指针的常量：当const在* 前面就是指向常量的指针</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下面两种方式是一样的</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> b;</span><br><span class="line">----------------</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *p=<span class="string">"123456"</span>;</span><br><span class="line">p1 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="comment">//表示指针p所指向的空间不能被修改,但是可以指向其它常量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> <span class="keyword">const</span>* p=<span class="string">"123456"</span>;</span><br><span class="line">p[<span class="number">0</span>] = <span class="string">'a'</span>;</span><br><span class="line"><span class="comment">//这种写法错误，表示p指向地址的值不能被修改</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>$(patsubst pattern,replacement,text)模式替换函数，就是把text中文件列表从模式pattern替换为replacement模式</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(patsubst %.c,%.o,$src)  <span class="comment">// 把src中的.c文件列表中的文件从.c替换为.o</span></span><br><span class="line">等价于：$(src:.c=.o)  <span class="comment">//这种方式更为常用</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>shell函数<br>shell函数可以执行shell下的命令，同样是使用$来引用的，例如</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(shell ls -d */)  <span class="comment">//将当前目录下的所有文件列出来</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><p>常量指针：当const在* 后</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *<span class="keyword">const</span> p = <span class="string">"123456"</span>;</span><br><span class="line">p[<span class="number">0</span>] = <span class="string">"a"</span>;<span class="comment">//正确，可以修改指向内存的值</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">"abc"</span>; <span class="comment">//错误，不能修改p指向的内存</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> e;<span class="comment">//e不能被修改，指向的空间也不能被修改</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>下面我们通过一个例子来使用上面三个函数。假设当前目录下有main.c文件，同时还有若干个目录，每个目录中都有各自的.c文件，利用所有的.c文件编译生成最后的main文件：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">CC      = gcc</span><br><span class="line">CFLAGS  = -g</span><br><span class="line">BIN     = main</span><br><span class="line">SUBDIR  = $(shell ls -d */)     <span class="comment">// SUBDIR变量保存了子目录的列表</span></span><br><span class="line">ROOTSRC = $(wildcard *.c)       <span class="comment">//ROOTSRC保存了当前目录下的.c文件列表</span></span><br><span class="line">ROOTOBJ = $(ROOTSRC:%.c = %.o)  <span class="comment">//ROOTBOJ 保存了当前目录下.c文件同名的.o列表</span></span><br><span class="line">SUBSRC  = $(shell find $(SUBDIR) -name '*.c')       //SUBSRC 保存了所有子目录下的的.c文件</span><br><span class="line">SUBOBJ  = $(SUBSRC:%.c = %.o)       <span class="comment">//SUBOBJ保存了所有子目录下的.c文件同名的.o文件列表</span></span><br><span class="line">$(BIN):$(ROOTOBJ) $(SUBOBJ)         <span class="comment">//main的生成依赖与当前目录及所有子目录下的.o文件</span></span><br><span class="line">    $(CC) $(CFLAGS) -o $(BIN) $(ROOTOBJ) $(SUBOBJ)</span><br><span class="line">.o .c:</span><br><span class="line">    $(CC) $(CFLAGS) -c %&lt; -o $@</span><br><span class="line">clean:</span><br><span class="line">    rm -f $(BIN) $(ROOTOBJ) $(SUBOBJ)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -578,12 +562,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/09/24/Makefile工具使用/">Makefile工具使用</a></p>
+  <p><span>本文标题:</span><a href="/2019/03/02/const在C语言和C-中的区别/">const在C语言和C++中的区别</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
-  <p><span>发布时间:</span>2018年09月24日 - 16:09</p>
-  <p><span>最后更新:</span>2018年10月05日 - 14:10</p>
-  <p><span>原始链接:</span><a href="/2018/09/24/Makefile工具使用/" title="Makefile工具使用">https://LiuZiQiao.github.io/2018/09/24/Makefile工具使用/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/09/24/Makefile工具使用/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年03月02日 - 23:03</p>
+  <p><span>最后更新:</span>2019年03月02日 - 23:03</p>
+  <p><span>原始链接:</span><a href="/2019/03/02/const在C语言和C-中的区别/" title="const在C语言和C++中的区别">https://LiuZiQiao.github.io/2019/03/02/const在C语言和C-中的区别/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/03/02/const在C语言和C-中的区别/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -606,12 +590,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/vim/" rel="tag"><i class="fa fa-tag"></i> vim</a>
-          
-        </div>
       
 
       
@@ -637,8 +615,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/23/vim使用命令大全/" rel="next" title="vim使用命令大全">
-                <i class="fa fa-chevron-left"></i> vim使用命令大全
+              <a href="/2019/03/02/const与define的比较/" rel="next" title="const与define的比较">
+                <i class="fa fa-chevron-left"></i> const与define的比较
               </a>
             
           </div>
@@ -646,10 +624,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/25/ThreeSum/" rel="prev" title="15.ThreeSum">
-                15.ThreeSum <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -898,7 +872,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#没有Makefile工具时如何进行编译"><span class="nav-number">1.</span> <span class="nav-text">没有Makefile工具时如何进行编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#makefile简单示例"><span class="nav-number">2.</span> <span class="nav-text">makefile简单示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Makefile具体使用"><span class="nav-number">3.</span> <span class="nav-text">Makefile具体使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伪目标"><span class="nav-number">3.1.</span> <span class="nav-text">伪目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Makefile自动变量"><span class="nav-number">3.2.</span> <span class="nav-text">Makefile自动变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译生成多个可执行文件"><span class="nav-number">3.3.</span> <span class="nav-text">编译生成多个可执行文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#make常用内嵌函数"><span class="nav-number">3.4.</span> <span class="nav-text">make常用内嵌函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#const在C语言和C-中的对比一"><span class="nav-number">1.</span> <span class="nav-text">const在C语言和C++中的对比一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const在C语言和C-中的对比二"><span class="nav-number">2.</span> <span class="nav-text">const在C语言和C++中的对比二</span></a></li></ol></div>
             
 
           </div>
