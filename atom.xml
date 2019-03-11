@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-03-11T15:13:56.612Z</updated>
+  <updated>2019-03-11T15:19:09.908Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>求最小步变成斐波拉契数</title>
+    <link href="https://LiuZiQiao.github.io/2019/03/11/%E6%B1%82%E6%9C%80%E5%B0%8F%E6%AD%A5%E5%8F%98%E6%88%90%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0/"/>
+    <id>https://LiuZiQiao.github.io/2019/03/11/求最小步变成斐波拉契数/</id>
+    <published>2019-03-11T15:18:46.000Z</published>
+    <updated>2019-03-11T15:19:09.908Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>Fibonacci数列是这样定义的：</p><pre><code>F[0] = 0F[1] = 1for each i ≥ 2: F[i] = F[i-1] + F[i-2]   </code></pre><p>因此，Fibonacci数列就形如：0, 1, 1, 2, 3, 5, 8, 13, …，在Fibonacci数列中的数我们称为Fibonacci数。给你一个N，你想让其变为一个Fibonacci数，每一步你可以把当前数字X变为X-1或者X+1，现在给你一个数N求最少需要多少步可以变为Fibonacci数。   </p><p>输入描述:   </p><pre><code>输入为一个正整数N(1 ≤ N ≤ 1,000,000)   </code></pre><p>输出描述:</p><pre><code>输出一个最小的步数变为Fibonacci数&quot;</code></pre><p>示例1<br>输入</p><pre><code>15</code></pre><p>输出</p><pre><code>2</code></pre><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>思路：这个题非常容易理解，在求斐波拉契数的过程中找到整数N的左右即可，然后算出最小步数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>, b=<span class="number">1</span>, c=<span class="number">1</span>,leftstep = <span class="number">0</span>,rightstep = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">a = b;</span><br><span class="line">b = c;</span><br><span class="line">c = a + b;</span><br><span class="line"><span class="keyword">if</span> (c&lt;n)</span><br><span class="line">&#123;</span><br><span class="line">leftstep = n - c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">rightstep = c - n;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; min(leftstep,rightstep) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
+      
+    
+    </summary>
+    
+      <category term="模拟面试题集" scheme="https://LiuZiQiao.github.io/categories/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>删除公共字符串</title>
+    <link href="https://LiuZiQiao.github.io/2019/03/11/%E5%88%A0%E9%99%A4%E5%85%AC%E5%85%B1%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>https://LiuZiQiao.github.io/2019/03/11/删除公共字符串/</id>
+    <published>2019-03-11T15:17:37.000Z</published>
+    <updated>2019-03-11T15:18:17.908Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入两个字符串，从第一字符串中删除第二个字符串中所有的字符。例如，输入<code>They are students.</code>和<code>aeiou</code>，则删除之后的第一个字符串变成<code>Thy r stdnts.</code>   </p><p>输入描述:   </p><pre><code>每个测试输入包含2个字符串</code></pre><p>输出描述:   </p><pre><code>输出删除后的字符串</code></pre><p>示例1<br>输入</p><pre><code>They are students. aeiou</code></pre><p>输出</p><pre><code>Thy r stdnts.</code></pre><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>思路：这个思路真的非常不容易想到，我们利用一维数组制作一个哈希映射，利用字符串2中字符映射一个值，然后<br>遍历字符串1中的字符与字符串2中的字符值进行比对，如果字符串1中的字符映射结果为0，那说明该字符不存在于字符串2中。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">string</span> str1, str2;</span><br><span class="line">getline(<span class="built_in">cin</span>, str1);</span><br><span class="line">getline(<span class="built_in">cin</span>, str2);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> hashtable[<span class="number">256</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str2.size(); i++)</span><br><span class="line">&#123;</span><br><span class="line">hashtable[str2[i]]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> ret;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str1.size(); i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (hashtable[str1[i]] == <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">ret += str1[i];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; ret &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
+      
+    
+    </summary>
+    
+      <category term="模拟面试题集" scheme="https://LiuZiQiao.github.io/categories/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>连续最大和</title>
@@ -462,56 +510,6 @@
     
       <category term="LeetCode" scheme="https://LiuZiQiao.github.io/categories/LeetCode/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>279.完全平方数</title>
-    <link href="https://LiuZiQiao.github.io/2019/02/14/279-%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/"/>
-    <id>https://LiuZiQiao.github.io/2019/02/14/279-完全平方数/</id>
-    <published>2019-02-14T05:57:28.000Z</published>
-    <updated>2019-02-14T05:58:05.900Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。</p><p>示例 1:</p><blockquote><p>输入: n = 12<br>输出: 3<br>解释: 12 = 4 + 4 + 4.</p></blockquote><p>示例 2:</p><blockquote><p>输入: n = 13<br>输出: 2<br>解释: 13 = 4 + 9.   </p></blockquote><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h4><p>是考察四平方和定理，to be honest, 这是我第一次听说这个定理，天啦撸，我的数学是语文老师教的么?! 闲话不多扯，回来做题。先来看第一种很高效的方法，根据四平方和定理，任意一个正整数均可表示为4个整数的平方和，其实是可以表示为4个以内的平方数之和，那么就是说返回结果只有1,2,3或4其中的一个，首先我们将数字化简一下，由于一个数如果含有因子4，那么我们可以把4都去掉，并不影响结果，比如2和8,3和12等等，返回的结果都相同，读者可自行举更多的栗子。还有一个可以化简的地方就是，如果一个数除以8余7的话，那么肯定是由4个完全平方数组成，这里就不证明了，因为我也不会证明，读者可自行举例验证。那么做完两步后，一个很大的数有可能就会变得很小了，大大减少了运算时间，下面我们就来尝试的将其拆为两个平方数之和，如果拆成功了那么就会返回1或2，因为其中一个平方数可能为0. (注：由于输入的n是正整数，所以不存在两个平方数均为0的情况)。注意下面的!!a + !!b这个表达式，可能很多人不太理解这个的意思，其实很简单，感叹号!表示逻辑取反，那么一个正整数逻辑取反为0，再取反为1，所以用两个感叹号!!的作用就是看a和b是否为正整数，都为正整数的话返回2，只有一个是正整数的话返回1，参见代码如下：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numSquares</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(n%<span class="number">4</span>==<span class="number">0</span>) n /=<span class="number">4</span>;</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">8</span>  ==<span class="number">7</span>) <span class="keyword">return</span> <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i*i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="built_in">sqrt</span>(n-i*i);</span><br><span class="line">            <span class="keyword">if</span>(i*i + j*j == n)</span><br><span class="line">                <span class="keyword">return</span> !!i+!!j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h4 id="动态规划思路二"><a href="#动态规划思路二" class="headerlink" title="动态规划思路二"></a>动态规划思路二</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numSquares</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(n+<span class="number">1</span>,INT_MAX);</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;i+j*j&lt;=n;++j)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[i+j*j] = min(dp[i+j*j],dp[i]+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp.back();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h4 id="递归解法"><a href="#递归解法" class="headerlink" title="递归解法"></a>递归解法</h4><p>这样写的好处是简洁，但是效率不敢恭维。我们的目的是遍历所有比n小的完全平方数，然后对n与完全平方数的差值递归调用函数，目的是不断的更新最终结果，直到找到最小的那个，代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numSquares</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = n, num = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(num*num &lt;= n)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> a =n/(num*num),b = n%(num*num);</span><br><span class="line">            res = min(res,a+numSquares(b));</span><br><span class="line">            ++num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://LiuZiQiao.github.io/categories/LeetCode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>199.二叉树的右视图</title>
-    <link href="https://LiuZiQiao.github.io/2019/02/13/199%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B3%E8%A7%86%E5%9B%BE/"/>
-    <id>https://LiuZiQiao.github.io/2019/02/13/199二叉树的右视图/</id>
-    <published>2019-02-13T09:00:53.000Z</published>
-    <updated>2019-02-13T09:01:35.509Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一棵二叉树，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。</p><p>示例:</p><pre><code>输入: [1,2,3,null,5,null,4]输出: [1, 3, 4]解释:   1            &lt;--- /   \2     3         &lt;--- \     \  5     4       &lt;---</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>思路：与之前二叉树的层次遍历类似的，该问题需要用到队列,   </p><ul><li>建立一个queue</li><li>遍历每层的节点时，把下一层的节点都存入到queue中</li><li>每当开始新一层节点的遍历之前，先把新一层最后一个节点值存到结果中<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rightSideView(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; q;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>) </span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        q.push(root);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            res.push_back(q.back()-&gt;val);</span><br><span class="line">            <span class="keyword">int</span> size=q.size();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;size;++i)</span><br><span class="line">            &#123;</span><br><span class="line">                TreeNode *node = q.front();</span><br><span class="line">                q.pop();</span><br><span class="line">                <span class="keyword">if</span>(node-&gt;left) q.push(node-&gt;left);</span><br><span class="line">                <span class="keyword">if</span>(node-&gt;right) q.push(node-&gt;right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://LiuZiQiao.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="二叉树" scheme="https://LiuZiQiao.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
   </entry>
   
