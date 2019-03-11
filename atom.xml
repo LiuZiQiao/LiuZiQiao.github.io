@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-03-10T14:25:19.306Z</updated>
+  <updated>2019-03-11T15:13:56.612Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>连续最大和</title>
+    <link href="https://LiuZiQiao.github.io/2019/03/11/%E8%BF%9E%E7%BB%AD%E6%9C%80%E5%A4%A7%E5%92%8C/"/>
+    <id>https://LiuZiQiao.github.io/2019/03/11/连续最大和/</id>
+    <published>2019-03-11T15:12:54.000Z</published>
+    <updated>2019-03-11T15:13:56.612Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>一个数组有 N 个元素，求连续子数组的最大和。 例如：[-1,2,1]，和最大的连续子数组为[2,1]，其和为 3   </p><p>输入描述:   </p><pre><code>输入为两行。第一行一个整数n(1 &lt;= n &lt;= 100000)，表示一共有n个元素第二行为n个数，即每个元素,每个整数都在32位int范围内。以空格分隔。</code></pre><p>输出描述:   </p><pre><code>所有连续子数组中和最大的值。   </code></pre><p>示例1<br>输入</p><pre><code>3 -1 2 1</code></pre><p>输出</p><pre><code>3</code></pre><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; num;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(num);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; num; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;vec[i];</span><br><span class="line">&#125;</span><br><span class="line">result = vec[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; vec.size(); i++)</span><br><span class="line">&#123;</span><br><span class="line">sum += vec[i];</span><br><span class="line"><span class="keyword">if</span> (sum &gt; result)</span><br><span class="line">&#123;</span><br><span class="line">result = sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (sum&lt;<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">sum = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
+      
+    
+    </summary>
+    
+      <category term="模拟面试题集" scheme="https://LiuZiQiao.github.io/categories/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>组队竞赛</title>
@@ -488,32 +512,6 @@
     
     
       <category term="二叉树" scheme="https://LiuZiQiao.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20.有效的括号</title>
-    <link href="https://LiuZiQiao.github.io/2019/02/13/20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/"/>
-    <id>https://LiuZiQiao.github.io/2019/02/13/20-有效的括号/</id>
-    <published>2019-02-13T08:17:18.000Z</published>
-    <updated>2019-02-13T08:17:48.015Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个只包括 <code>&#39;(&#39;，&#39;)&#39;，&#39;{&#39;，&#39;}&#39;，&#39;[&#39;，&#39;]&#39;</code> 的字符串，判断字符串是否有效。</p><p>有效字符串需满足：</p><p>1.左括号必须用相同类型的右括号闭合。<br>2.左括号必须以正确的顺序闭合。   </p><p>注意空字符串可被认为是有效字符串。 </p><p>示例 1:</p><blockquote><p>输入: “()”<br>输出: true</p></blockquote><p>示例 2:</p><blockquote><p>输入: “()[]{}”<br>输出: true</p></blockquote><p>示例 3:</p><blockquote><p>输入: “(]”<br> 输出: false</p></blockquote><p>示例 4:</p><blockquote><p>输入: “([)]”<br>输出: false</p></blockquote><p>示例 5:</p><blockquote><p>输入: “{[]}”<br>输出: true</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; parentheses;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i] == <span class="string">'('</span>||s[i]==<span class="string">'['</span> || s[i]==<span class="string">'&#123;'</span>)</span><br><span class="line">                parentheses.push(s[i]);</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(parentheses.empty()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">if</span>(s[i] == <span class="string">')'</span>&amp;&amp; parentheses.top() != <span class="string">'('</span>) <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">                <span class="keyword">if</span>(s[i] == <span class="string">']'</span>&amp;&amp; parentheses.top() != <span class="string">'['</span>) <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">                <span class="keyword">if</span>(s[i] == <span class="string">'&#125;'</span>&amp;&amp; parentheses.top() != <span class="string">'&#123;'</span>) <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">                parentheses.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> parentheses.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://LiuZiQiao.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="stack" scheme="https://LiuZiQiao.github.io/tags/stack/"/>
     
   </entry>
   
