@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-03-11T15:19:09.908Z</updated>
+  <updated>2019-03-12T15:15:41.811Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据流中的中位数</title>
+    <link href="https://LiuZiQiao.github.io/2019/03/12/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"/>
+    <id>https://LiuZiQiao.github.io/2019/03/12/数据流中的中位数/</id>
+    <published>2019-03-12T15:15:26.000Z</published>
+    <updated>2019-03-12T15:15:41.811Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。</p><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    priority_queue&lt;int,vector&lt;int&gt;,less&lt;int&gt; &gt; p;</span><br><span class="line">    priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt; &gt; q;</span><br><span class="line"> </span><br><span class="line">    void Insert(int num)</span><br><span class="line">    &#123;</span><br><span class="line">        if(p.empty() || num &lt;= p.top())</span><br><span class="line">            p.push(num);</span><br><span class="line">        else</span><br><span class="line">            q.push(num);</span><br><span class="line">        if(p.size() == q.size()+2)&#123;</span><br><span class="line">            q.push(p.top());</span><br><span class="line">            p.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        if(p.size() +1 == q.size())</span><br><span class="line">        &#123;</span><br><span class="line">            p.push(q.top());</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    double GetMedian()</span><br><span class="line">    &#123;</span><br><span class="line">        return p.size() == q.size()?(p.top()+q.top())/2.0:p.top();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
+      
+    
+    </summary>
+    
+      <category term="剑指offer" scheme="https://LiuZiQiao.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>求最小步变成斐波拉契数</title>
@@ -486,30 +510,6 @@
     
     
       <category term="二叉树" scheme="https://LiuZiQiao.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>752.打开转盘数</title>
-    <link href="https://LiuZiQiao.github.io/2019/02/15/752-%E6%89%93%E5%BC%80%E8%BD%AC%E7%9B%98%E6%95%B0/"/>
-    <id>https://LiuZiQiao.github.io/2019/02/15/752-打开转盘数/</id>
-    <published>2019-02-15T14:44:07.000Z</published>
-    <updated>2019-02-15T14:45:53.275Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>你有一个带有四个圆形拨轮的转盘锁。每个拨轮都有10个数字： ‘0’, ‘1’, ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’, ‘9’ 。每个拨轮可以自由旋转：例如把 ‘9’ 变为  ‘0’，’0’ 变为 ‘9’ 。每次旋转都只能旋转一个拨轮的一位数字。</p><p>锁的初始数字为 ‘0000’ ，一个代表四个拨轮的数字的字符串。</p><p>列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。</p><p>字符串 target 代表可以解锁的数字，你需要给出最小的旋转次数，如果无论如何不能解锁，返回 -1。</p><p>示例 1:</p><blockquote><p>输入：deadends =    [“0201”,”0101”,”0102”,”1212”,”2002”], target = “0202”<br>输出：6<br>解释：<br>可能的移动序列为 “0000” -&gt; “1000” -&gt; “1100” -&gt; “1200” -&gt; “1201” -&gt; “1202” -&gt; “0202”。<br>注意 “0000” -&gt; “0001” -&gt; “0002” -&gt; “0102” -&gt; “0202” 这样的序列是不能解锁的，<br>因为当拨动到 “0102” 时这个锁就会被锁定。</p></blockquote><p>示例 2:</p><blockquote><p>输入: deadends = [“8888”], target = “0009”<br>输出：1<br>解释：<br>把最后一位反向旋转一次即可 “0000” -&gt; “0009”。</p></blockquote><p>示例 3:</p><blockquote><p>输入: deadends =    [“8887”,”8889”,”8878”,”8898”,”8788”,”8988”,”7888”,”9888”], target = “8888”<br>输出：-1<br>解释：<br>无法旋转到目标数字且不被锁定。</p></blockquote><p>示例 4:</p><blockquote><p>输入: deadends = [“0000”], target = “8888”<br>输出：-1</p></blockquote><p>提示：</p><p>1.死亡列表 deadends 的长度范围为 [1, 500]。<br>2.目标数字 target 不会在 deadends 之中。<br>3.每个 deadends 和 target 中的字符串的数字会在 10,000 个可能的情况 ‘0000’ 到 ‘9999’ 中产生。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">openLock</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; deadends, <span class="built_in">string</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="built_in">string</span>&gt; deadlock(deadends.begin(),deadends.end());</span><br><span class="line">        <span class="keyword">if</span>(deadlock.count(<span class="string">"0000"</span>)) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="built_in">string</span>&gt; visited&#123;&#123;<span class="string">"0000"</span>&#125;&#125;;</span><br><span class="line">        <span class="built_in">queue</span>&lt;<span class="built_in">string</span>&gt; q&#123;&#123;<span class="string">"0000"</span>&#125;&#125;;</span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            ++res;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=q.size();k&gt;<span class="number">0</span>;--k)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">auto</span> t = q.front();q.pop();</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;t.size();++i)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">-1</span>;j&lt;=<span class="number">1</span>;++j)&#123;</span><br><span class="line">                        <span class="keyword">if</span>(j==<span class="number">0</span>)  <span class="keyword">continue</span>;</span><br><span class="line">                        <span class="built_in">string</span> str = t;</span><br><span class="line">                        str[i] = ((t[i]-<span class="string">'0'</span>)+<span class="number">10</span>+j)%<span class="number">10</span>+<span class="string">'0'</span>;</span><br><span class="line">                        <span class="keyword">if</span>(str == target) <span class="keyword">return</span> res;</span><br><span class="line">                        <span class="keyword">if</span>(!visited.count(str)&amp;&amp;!deadlock.count(str)) </span><br><span class="line">                            q.push(str);</span><br><span class="line">                        visited.insert(str);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://LiuZiQiao.github.io/categories/LeetCode/"/>
-    
     
   </entry>
   
