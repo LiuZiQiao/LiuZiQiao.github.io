@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-03-15T08:18:17.194Z</updated>
+  <updated>2019-03-15T08:46:23.157Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树中和为某一值的路径</title>
+    <link href="https://LiuZiQiao.github.io/2019/03/15/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/"/>
+    <id>https://LiuZiQiao.github.io/2019/03/15/二叉树中和为某一值的路径/</id>
+    <published>2019-03-15T08:45:49.000Z</published>
+    <updated>2019-03-15T08:46:23.157Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>题目描述</p><p>输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)</p><p>解决方案</p><p>/<em><br>struct TreeNode {<br>    int val;<br>    struct TreeNode </em>left;<br>    struct TreeNode <em>right;<br>    TreeNode(int x) :<br>            val(x), left(NULL), right(NULL) {<br>    }<br>};</em>/</p><p>class Solution {<br>public:<br>    vector<vector<int>&gt; vec;<br>    vector<int> v;<br>    vector<vector<int> &gt; FindPath(TreeNode* root,int expectNumber)<br>    {<br>        if(root == NULL) return vec;<br>        v.push_back(root-&gt;val);<br>        if( (expectNumber-root-&gt;val == 0) &amp;&amp; root-&gt;left == NULL &amp;&amp; root-&gt;right == NULL )<br>        {<br>            vec.push_back(v);<br>        }<br>        FindPath(root-&gt;left,expectNumber-root-&gt;val);<br>        FindPath(root-&gt;right,expectNumber-root-&gt;val);<br>        if(v.size() != 0)<br>            v.pop_back();<br>    return vec;<br>    }<br>};</vector<int></int></vector<int></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;题目描述&lt;/p&gt;
+&lt;p&gt;输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直
+      
+    
+    </summary>
+    
+      <category term="剑指offer" scheme="https://LiuZiQiao.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>C++之继承</title>
@@ -471,30 +496,6 @@
     <updated>2019-02-20T15:00:10.447Z</updated>
     
     <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>利用优先级队列很好的解决该问题，知道优先级队列的伙伴理解起来就非常简单啦。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; GetLeastNumbers_Solution(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input, <span class="keyword">int</span> k) &#123;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec;</span><br><span class="line">        <span class="keyword">if</span>(k&gt;input.size()) <span class="keyword">return</span> vec;</span><br><span class="line">        priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">queue</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;num :input)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">queue</span>.push(num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i)</span><br><span class="line">&#123;</span><br><span class="line">vec.push_back(<span class="built_in">queue</span>.top());</span><br><span class="line"><span class="built_in">queue</span>.pop();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> vec;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
-      
-    
-    </summary>
-    
-      <category term="剑指offer" scheme="https://LiuZiQiao.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>包含min函数的栈</title>
-    <link href="https://LiuZiQiao.github.io/2019/02/20/%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/"/>
-    <id>https://LiuZiQiao.github.io/2019/02/20/包含min函数的栈/</id>
-    <published>2019-02-20T14:55:59.000Z</published>
-    <updated>2019-02-20T14:56:33.814Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        s1.push(x);</span><br><span class="line">        <span class="keyword">if</span>(s2.empty() || x &lt;= s2.top())</span><br><span class="line">        &#123;</span><br><span class="line">            s2.push(x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s1.top() == s2.top())</span><br><span class="line">            s2.pop();</span><br><span class="line">            s1.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> s1.top();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> s2.top();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s1,s2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
