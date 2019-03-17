@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>格子走法</title>
+      <link href="/2019/03/17/%E6%A0%BC%E5%AD%90%E8%B5%B0%E6%B3%95/"/>
+      <url>/2019/03/17/%E6%A0%BC%E5%AD%90%E8%B5%B0%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和往上走。</p><p>输入描述:<br>输入两个正整数</p><p>输出描述:<br>返回结果</p><p>示例1<br>输入</p><pre><code>22</code></pre><p>输出</p><pre><code>6</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><pre><code>/*-------------| 1 | 2 | 3 |-------------比特科技制作| 4 | 5 | 6 |-------------| 7 | 8 | 9 |-------------1. 对于上面的n*m(3*3)的格子，有两种情况a. 如果n或者m为1，则只有一行或者一列，从左上角走到右下角的路径数为n + m比如： 1 * 1格子，可以先向下走，再向右走，到达右下角；或者先向右走，再向下走，到达右下角，共两条，即 1 + 1 = 2，对于1 * m和 n * m的情况同学们自己画一下b. 如果n,m都大于1，那么走到[n][m]格子的右下角只有两条路径，&lt;1&gt;: 从[n - 1][m]格子的右下角向下走，到达&lt;2&gt;: 从[n][m - 1]格子的右下角向右走，到达所以走到[n][m]格子的右下角的数量为[n-1][m] + [n][m - 1],可以通过递归 实现，情况a为递归的终止条件。*/</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">1</span>&amp;&amp;y&gt;<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> sum(x,y<span class="number">-1</span>)+sum(x<span class="number">-1</span>,y);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>((x&gt;=<span class="number">1</span> &amp;&amp; y==<span class="number">1</span>)|| (x==<span class="number">1</span>)&amp;&amp;(y&gt;=<span class="number">1</span>))&#123;</span><br><span class="line">        <span class="keyword">return</span> x+y;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> col,row;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;col&gt;&gt;row)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sum(row,col)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 模拟面试题集 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>进制转换</title>
       <link href="/2019/03/17/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
       <url>/2019/03/17/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</url>
