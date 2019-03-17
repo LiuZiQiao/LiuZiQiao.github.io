@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-03-17T13:43:04.911Z</updated>
+  <updated>2019-03-17T13:44:12.225Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>进制转换</title>
+    <link href="https://LiuZiQiao.github.io/2019/03/17/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
+    <id>https://LiuZiQiao.github.io/2019/03/17/进制转换/</id>
+    <published>2019-03-17T13:43:53.000Z</published>
+    <updated>2019-03-17T13:44:12.225Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个十进制数M，以及需要转换的进制数N。将十进制数M转化为N进制数</p><p>输入描述:<br>输入为一行，M(32位整数)、N(2 ≤ N ≤ 16)，以空格隔开。   </p><p>输出描述:   </p><p>为每个测试实例输出转换后的数，每个输出占一行。如果N大于9，则对应的数字规则参考16进制（比如，10用A表示，等等）</p><p>示例1<br>输入</p><pre><code>7 2</code></pre><p>输出</p><pre><code>111</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s=<span class="string">""</span>;</span><br><span class="line">    <span class="built_in">string</span> tables = <span class="string">"0123456789ABCDEF"</span>;</span><br><span class="line">    <span class="keyword">int</span> M=<span class="number">0</span>,N=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;M&gt;&gt;N)&#123;</span><br><span class="line">        <span class="keyword">if</span>(M == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'0'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(M)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(M&lt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            M = -M;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">'-'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        s = tables[M%N]+s;</span><br><span class="line">        M /=N;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
+      
+    
+    </summary>
+    
+      <category term="模拟面试题集" scheme="https://LiuZiQiao.github.io/categories/%E6%A8%A1%E6%8B%9F%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>统计回文</title>
@@ -484,30 +508,6 @@
     </summary>
     
       <category term="LeetCode" scheme="https://LiuZiQiao.github.io/categories/LeetCode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数组中出现次数超过一半的数字</title>
-    <link href="https://LiuZiQiao.github.io/2019/02/20/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/"/>
-    <id>https://LiuZiQiao.github.io/2019/02/20/数组中出现次数超过一半的数字/</id>
-    <published>2019-02-20T15:04:41.000Z</published>
-    <updated>2019-02-20T15:05:24.880Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MoreThanHalfNum_Solution</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; numbers)</span> </span>&#123;</span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; <span class="built_in">map</span>;</span><br><span class="line"><span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; <span class="built_in">set</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> num : numbers) <span class="built_in">set</span>.insert(num);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> num:numbers)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">map</span>.count(num))</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">map</span>[num]++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">map</span>[num] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> num : numbers)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">map</span>[num]&gt;(numbers.size() / <span class="number">2</span>))</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
-      
-    
-    </summary>
-    
-      <category term="剑指offer" scheme="https://LiuZiQiao.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
     
     
   </entry>
