@@ -136,17 +136,17 @@
 
 
 
-<meta name="description" content="题目描述给定一个十进制数M，以及需要转换的进制数N。将十进制数M转化为N进制数 输入描述:输入为一行，M(32位整数)、N(2 ≤ N ≤ 16)，以空格隔开。    输出描述:    为每个测试实例输出转换后的数，每个输出占一行。如果N大于9，则对应的数字规则参考16进制（比如，10用A表示，等等） 示例1输入 7 2 输出 111 12345678910111213141516171819">
+<meta name="description" content="题目描述给定一个十进制数M，以及需要转换的进制数N。将十进制数M转化为N进制数 输入描述:输入为一行，M(32位整数)、N(2 ≤ N ≤ 16)，以空格隔开。    输出描述:    为每个测试实例输出转换后的数，每个输出占一行。如果N大于9，则对应的数字规则参考16进制（比如，10用A表示，等等） 示例1输入 7 2 输出 111 解决方案1234567891011121314151617">
 <meta property="og:type" content="article">
 <meta property="og:title" content="进制转换">
 <meta property="og:url" content="https://LiuZiQiao.github.io/2019/03/17/进制转换/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="题目描述给定一个十进制数M，以及需要转换的进制数N。将十进制数M转化为N进制数 输入描述:输入为一行，M(32位整数)、N(2 ≤ N ≤ 16)，以空格隔开。    输出描述:    为每个测试实例输出转换后的数，每个输出占一行。如果N大于9，则对应的数字规则参考16进制（比如，10用A表示，等等） 示例1输入 7 2 输出 111 12345678910111213141516171819">
+<meta property="og:description" content="题目描述给定一个十进制数M，以及需要转换的进制数N。将十进制数M转化为N进制数 输入描述:输入为一行，M(32位整数)、N(2 ≤ N ≤ 16)，以空格隔开。    输出描述:    为每个测试实例输出转换后的数，每个输出占一行。如果N大于9，则对应的数字规则参考16进制（比如，10用A表示，等等） 示例1输入 7 2 输出 111 解决方案1234567891011121314151617">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T13:44:12.225Z">
+<meta property="og:updated_time" content="2019-03-17T13:47:02.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进制转换">
-<meta name="twitter:description" content="题目描述给定一个十进制数M，以及需要转换的进制数N。将十进制数M转化为N进制数 输入描述:输入为一行，M(32位整数)、N(2 ≤ N ≤ 16)，以空格隔开。    输出描述:    为每个测试实例输出转换后的数，每个输出占一行。如果N大于9，则对应的数字规则参考16进制（比如，10用A表示，等等） 示例1输入 7 2 输出 111 12345678910111213141516171819">
+<meta name="twitter:description" content="题目描述给定一个十进制数M，以及需要转换的进制数N。将十进制数M转化为N进制数 输入描述:输入为一行，M(32位整数)、N(2 ≤ N ≤ 16)，以空格隔开。    输出描述:    为每个测试实例输出转换后的数，每个输出占一行。如果N大于9，则对应的数字规则参考16进制（比如，10用A表示，等等） 示例1输入 7 2 输出 111 解决方案1234567891011121314151617">
 
 
 
@@ -434,7 +434,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-17T21:44:12+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-17T21:47:02+08:00">
                 2019-03-17
               </time>
             
@@ -499,7 +499,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  198
+                  202
                 </span>
               
 
@@ -545,7 +545,7 @@
 <pre><code>7 2
 </code></pre><p>输出</p>
 <pre><code>111
-</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s=<span class="string">""</span>;</span><br><span class="line">    <span class="built_in">string</span> tables = <span class="string">"0123456789ABCDEF"</span>;</span><br><span class="line">    <span class="keyword">int</span> M=<span class="number">0</span>,N=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;M&gt;&gt;N)&#123;</span><br><span class="line">        <span class="keyword">if</span>(M == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'0'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(M)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(M&lt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            M = -M;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">'-'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        s = tables[M%N]+s;</span><br><span class="line">        M /=N;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s=<span class="string">""</span>;</span><br><span class="line">    <span class="built_in">string</span> tables = <span class="string">"0123456789ABCDEF"</span>;</span><br><span class="line">    <span class="keyword">int</span> M=<span class="number">0</span>,N=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;M&gt;&gt;N)&#123;</span><br><span class="line">        <span class="keyword">if</span>(M == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'0'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(M)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(M&lt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            M = -M;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">'-'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        s = tables[M%N]+s;</span><br><span class="line">        M /=N;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -882,7 +882,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
             
 
           </div>
