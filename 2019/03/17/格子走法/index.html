@@ -136,17 +136,17 @@
 
 
 
-<meta name="description" content="题目描述请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和往上走。 输入描述:输入两个正整数 输出描述:返回结果 示例1输入 2 2 输出 6 解决方案/* ------------- | 1 | 2 | 3 | ------------- 比特科">
+<meta name="description" content="题目描述请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和往上走。 输入描述:输入两个正整数 输出描述:返回结果 示例1输入 2 2 输出 6 解决方案------------- | 1 | 2 | 3 | ------------- | 4 |">
 <meta property="og:type" content="article">
 <meta property="og:title" content="格子走法">
 <meta property="og:url" content="https://LiuZiQiao.github.io/2019/03/17/格子走法/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="题目描述请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和往上走。 输入描述:输入两个正整数 输出描述:返回结果 示例1输入 2 2 输出 6 解决方案/* ------------- | 1 | 2 | 3 | ------------- 比特科">
+<meta property="og:description" content="题目描述请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和往上走。 输入描述:输入两个正整数 输出描述:返回结果 示例1输入 2 2 输出 6 解决方案------------- | 1 | 2 | 3 | ------------- | 4 |">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T13:45:18.646Z">
+<meta property="og:updated_time" content="2019-03-17T14:08:49.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="格子走法">
-<meta name="twitter:description" content="题目描述请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和往上走。 输入描述:输入两个正整数 输出描述:返回结果 示例1输入 2 2 输出 6 解决方案/* ------------- | 1 | 2 | 3 | ------------- 比特科">
+<meta name="twitter:description" content="题目描述请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和往上走。 输入描述:输入两个正整数 输出描述:返回结果 示例1输入 2 2 输出 6 解决方案------------- | 1 | 2 | 3 | ------------- | 4 |">
 
 
 
@@ -434,7 +434,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-17T21:45:18+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-17T22:08:49+08:00">
                 2019-03-17
               </time>
             
@@ -499,7 +499,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  430
+                  424
                 </span>
               
 
@@ -545,11 +545,9 @@
 2
 </code></pre><p>输出</p>
 <pre><code>6
-</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><pre><code>/*
--------------
+</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><pre><code>-------------
 | 1 | 2 | 3 |
 -------------
-比特科技制作
 | 4 | 5 | 6 |
 -------------
 | 7 | 8 | 9 |
@@ -564,7 +562,6 @@ b. 如果n,m都大于1，那么走到[n][m]格子的右下角只有两条路径�
 &lt;2&gt;: 从[n][m - 1]格子的右下角向右走，到达
 所以走到[n][m]格子的右下角的数量为[n-1][m] + [n][m - 1],可以通过递归 实现，情况a
 为递归的终止条件。
-*/
 </code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">1</span>&amp;&amp;y&gt;<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> sum(x,y<span class="number">-1</span>)+sum(x<span class="number">-1</span>,y);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>((x&gt;=<span class="number">1</span> &amp;&amp; y==<span class="number">1</span>)|| (x==<span class="number">1</span>)&amp;&amp;(y&gt;=<span class="number">1</span>))&#123;</span><br><span class="line">        <span class="keyword">return</span> x+y;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> col,row;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;col&gt;&gt;row)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sum(row,col)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -591,7 +588,7 @@ b. 如果n,m都大于1，那么走到[n][m]格子的右下角只有两条路径�
   <p><span>本文标题:</span><a href="/2019/03/17/格子走法/">格子走法</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2019年03月17日 - 21:03</p>
-  <p><span>最后更新:</span>2019年03月17日 - 21:03</p>
+  <p><span>最后更新:</span>2019年03月17日 - 22:03</p>
   <p><span>原始链接:</span><a href="/2019/03/17/格子走法/" title="格子走法">https://LiuZiQiao.github.io/2019/03/17/格子走法/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/03/17/格子走法/"  aria-label="复制成功！"></i></span>
   </p>
