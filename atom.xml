@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-03-17T14:08:49.419Z</updated>
+  <updated>2019-03-19T08:36:42.043Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++中指针常量与常量指针的区别</title>
+    <link href="https://LiuZiQiao.github.io/2019/03/19/C-%E4%B8%AD%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://LiuZiQiao.github.io/2019/03/19/C-中指针常量与常量指针的区别/</id>
+    <published>2019-03-19T08:35:58.000Z</published>
+    <updated>2019-03-19T08:36:42.043Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>在C++学习过程使用中，每个人都不可避免的会把指针错误理解或在不理解，尤其是对指针常量和常量指针的理解，特别容易把概念搞混淆。本文就针对该问题简单的说说指针常量和常量指针的区别。</p><h3 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h3><p>   本质是一个常量，而用指针修饰它。指针常量的值是指针，这个值因为是常量，所以不能被赋值。</p><h4 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h4><ul><li>是个常量。</li><li>指针锁保存的地址可以改变，但指针指向的值不能改变。</li><li>指针本身是常量，指向的地址不可以变，但指向的地址所对应的内容可以变。</li></ul><p>形式如下：</p><pre><code>int* const p;</code></pre><h3 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h3><p>常量指针又叫常指针，可以理解为常量的指针，也就是这个是指针，但指向的是常量，这个常量是指针的值（地址），并不是地址指向的值。</p><h4 id="特征：-1"><a href="#特征：-1" class="headerlink" title="特征："></a>特征：</h4><ul><li>常量指针指向的对象不能通过这个指针来修改，可以通过原来的声明修改。</li><li>常量指针可以被赋值为变量的地址，之所以叫常量指针，就是限制了通过这个指针修改变量的值。</li><li>指针还可以指向别处，因为指针本身只是一个变量，可以指向任意地址。</li></ul><p>形式如下：</p><pre><code>int const* p;const int* p;</code></pre><h3 id="指向常量的常指针"><a href="#指向常量的常指针" class="headerlink" title="指向常量的常指针"></a>指向常量的常指针</h3><p>指向常量的指针常量是一个常量，且所指向的对象也是一个常量。</p><h4 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h4><ul><li>一个指针常量，指向的是一个指针对象；</li><li>它所指向的指针对象且是一个常量，即指向的对象不能变。</li></ul><p>形式如下：</p><pre><code>const int* const p;</code></pre><p>如何区别这些呢？</p><h3 id="区分宝典"><a href="#区分宝典" class="headerlink" title="区分宝典"></a>区分宝典</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>看*和const的排列顺序，如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="keyword">const</span>* p;  <span class="comment">//const* 常量指针</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* p;  <span class="comment">//const* 常量指针</span></span><br><span class="line"><span class="keyword">int</span>* <span class="keyword">const</span> p;  <span class="comment">//*const 指针常量</span></span><br></pre></td></tr></table></figure></p><h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>看const离谁近，即从右往左看，如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> cont* p;  <span class="comment">//const修饰的是*p，即*p的内容不可通过p改变，但p不是const，p可以修改，*p不可修改。</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* p; <span class="comment">//和上面一样</span></span><br><span class="line"><span class="keyword">int</span>* <span class="keyword">const</span> p; <span class="comment">//const修饰的是p，p是指针，p指向的地址不能修改，p不能修改，但*p可以修改</span></span><br></pre></td></tr></table></figure></p><p>看一个实例</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------常量指针-------</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p1 = &amp;a;</span><br><span class="line">a = <span class="number">300</span>;     <span class="comment">//OK,仍然可以通过原来的声明修改值，</span></span><br><span class="line"><span class="comment">//*p1 = 56;  //Error,*p1是const int的，不可修改，即常量指针不可修改其指向地址</span></span><br><span class="line">p1 = &amp;b;     <span class="comment">//OK,指针还可以指向别处，因为指针只是个变量，可以随意指向；</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------指针常量-------//</span></span><br><span class="line"><span class="keyword">int</span>*  <span class="keyword">const</span> p2 = &amp;a;</span><br><span class="line">a = <span class="number">500</span>;     <span class="comment">//OK,仍然可以通过原来的声明修改值，</span></span><br><span class="line">*p2 = <span class="number">400</span>;   <span class="comment">//OK,指针是常量，指向的地址不可以变化,但是指向的地址所对应的内容可以变化</span></span><br><span class="line"><span class="comment">//p2 = &amp;b;     //Error,因为p2是const 指针，因此不能改变p2指向的内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------指向常量的常量指针-------//</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* <span class="keyword">const</span> p3 = &amp;a;</span><br><span class="line"><span class="comment">//*p3 = 1;    //Error</span></span><br><span class="line"><span class="comment">//p3 = &amp;b;    //Error</span></span><br><span class="line">a = <span class="number">5000</span>;    <span class="comment">//OK,仍然可以通过原来的声明修改值</span></span><br></pre></td></tr></table></figure><p>在实际应用中，常量指针要比指针常量用的多，比如常量指针经常用在函数传参中，以避免函数内部修改内容。</p><pre><code>size_t strlen(const char* src); //常量指针，src的值不可改变；char a[] = &quot;hello&quot;;char b[] = &quot;world&quot;;size_t a1 = strlen(a);size_t b1 = strlen(b);</code></pre><p>虽然a、b是可以修改的，但是可以保证在strlen函数内部不会修改a、b的内容。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;在C++学习过程使用中，每个人都不可避免的会把指针错误理解或在不理解，尤其是对指针常量和常量指针的理解，特别容易把概念搞混淆。本文就针对该
+      
+    
+    </summary>
+    
+      <category term="C/C++" scheme="https://LiuZiQiao.github.io/categories/C-C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>格子走法</title>
@@ -485,30 +509,6 @@
     
     
       <category term="list" scheme="https://LiuZiQiao.github.io/tags/list/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>删除链表中重复的结点</title>
-    <link href="https://LiuZiQiao.github.io/2019/02/21/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E7%BB%93%E7%82%B9/"/>
-    <id>https://LiuZiQiao.github.io/2019/02/21/删除链表中重复的结点/</id>
-    <published>2019-02-21T15:27:44.000Z</published>
-    <updated>2019-02-21T15:28:05.432Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">struct ListNode &#123;</span></span><br><span class="line"><span class="comment">    int val;</span></span><br><span class="line"><span class="comment">    struct ListNode *next;</span></span><br><span class="line"><span class="comment">    ListNode(int x) :</span></span><br><span class="line"><span class="comment">        val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">deleteDuplication</span><span class="params">(ListNode* pHead)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!pHead || !pHead-&gt;next) <span class="keyword">return</span> pHead;</span><br><span class="line">        ListNode* start = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        start-&gt;next = pHead;</span><br><span class="line">        ListNode* pre = start;</span><br><span class="line">        <span class="keyword">while</span>(pre-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            ListNode* cur = pre-&gt;next;</span><br><span class="line">            <span class="keyword">while</span>(cur-&gt;next &amp;&amp; cur-&gt;next-&gt;val == cur-&gt;val)</span><br><span class="line">            &#123;</span><br><span class="line">                cur = cur-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur != pre-&gt;next) </span><br><span class="line">            &#123;</span><br><span class="line">                pre-&gt;next = cur-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                pre = pre-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> start-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/
-      
-    
-    </summary>
-    
-      <category term="剑指offer" scheme="https://LiuZiQiao.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
-    
     
   </entry>
   

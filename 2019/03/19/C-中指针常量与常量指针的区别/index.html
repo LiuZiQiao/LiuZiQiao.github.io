@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="Queue," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -136,18 +136,17 @@
 
 
 
-<meta name="description" content="利用两个队列实现一个栈要求：Push：往非空队列里插入（如果两个队列都是空，选第一个插入） Pop：从非空队列中 move  size - 1 个元素到 空队列中，pop 剩下的一个 Top: 从非空队列中 move  size - 1 个元素到 空队列中，返回剩下的一个的值，     把剩下的一个也放入另一个队列中 实现部分结构体定义以下代码基于队列的基本操作Queue.h，关于Queue.">
-<meta name="keywords" content="Queue">
+<meta name="description" content="在C++学习过程使用中，每个人都不可避免的会把指针错误理解或在不理解，尤其是对指针常量和常量指针的理解，特别容易把概念搞混淆。本文就针对该问题简单的说说指针常量和常量指针的区别。 指针常量   本质是一个常量，而用指针修饰它。指针常量的值是指针，这个值因为是常量，所以不能被赋值。 特征： 是个常量。 指针锁保存的地址可以改变，但指针指向的值不能改变。 指针本身是常量，指向的地址不可以变，但指向">
 <meta property="og:type" content="article">
-<meta property="og:title" content="队列实现栈">
-<meta property="og:url" content="https://LiuZiQiao.github.io/2018/10/14/队列实现栈/index.html">
+<meta property="og:title" content="C++中指针常量与常量指针的区别">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2019/03/19/C-中指针常量与常量指针的区别/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="利用两个队列实现一个栈要求：Push：往非空队列里插入（如果两个队列都是空，选第一个插入） Pop：从非空队列中 move  size - 1 个元素到 空队列中，pop 剩下的一个 Top: 从非空队列中 move  size - 1 个元素到 空队列中，返回剩下的一个的值，     把剩下的一个也放入另一个队列中 实现部分结构体定义以下代码基于队列的基本操作Queue.h，关于Queue.">
+<meta property="og:description" content="在C++学习过程使用中，每个人都不可避免的会把指针错误理解或在不理解，尤其是对指针常量和常量指针的理解，特别容易把概念搞混淆。本文就针对该问题简单的说说指针常量和常量指针的区别。 指针常量   本质是一个常量，而用指针修饰它。指针常量的值是指针，这个值因为是常量，所以不能被赋值。 特征： 是个常量。 指针锁保存的地址可以改变，但指针指向的值不能改变。 指针本身是常量，指向的地址不可以变，但指向">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-14T12:59:48.442Z">
+<meta property="og:updated_time" content="2019-03-19T08:36:42.043Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="队列实现栈">
-<meta name="twitter:description" content="利用两个队列实现一个栈要求：Push：往非空队列里插入（如果两个队列都是空，选第一个插入） Pop：从非空队列中 move  size - 1 个元素到 空队列中，pop 剩下的一个 Top: 从非空队列中 move  size - 1 个元素到 空队列中，返回剩下的一个的值，     把剩下的一个也放入另一个队列中 实现部分结构体定义以下代码基于队列的基本操作Queue.h，关于Queue.">
+<meta name="twitter:title" content="C++中指针常量与常量指针的区别">
+<meta name="twitter:description" content="在C++学习过程使用中，每个人都不可避免的会把指针错误理解或在不理解，尤其是对指针常量和常量指针的理解，特别容易把概念搞混淆。本文就针对该问题简单的说说指针常量和常量指针的区别。 指针常量   本质是一个常量，而用指针修饰它。指针常量的值是指针，这个值因为是常量，所以不能被赋值。 特征： 是个常量。 指针锁保存的地址可以改变，但指针指向的值不能改变。 指针本身是常量，指向的地址不可以变，但指向">
 
 
 
@@ -177,7 +176,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/2018/10/14/队列实现栈/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2019/03/19/C-中指针常量与常量指针的区别/"/>
 
 
 
@@ -200,7 +199,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>队列实现栈 | LiuxiaoKun</title>
+  <title>C++中指针常量与常量指针的区别 | LiuxiaoKun</title>
   
 
 
@@ -390,7 +389,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2018/10/14/队列实现栈/">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2019/03/19/C-中指针常量与常量指针的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -407,7 +406,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">队列实现栈</h2>
+          <h2 class="post-title" itemprop="name headline">C++中指针常量与常量指针的区别</h2>
         
 
         <div class="post-meta">
@@ -419,8 +418,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-14T20:20:34+08:00">
-                2018-10-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T16:35:58+08:00">
+                2019-03-19
               </time>
             
 
@@ -435,8 +434,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-14T20:59:48+08:00">
-                2018-10-14
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-19T16:36:42+08:00">
+                2019-03-19
               </time>
             
           </span>
@@ -454,8 +453,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
                   </a>
                 </span>
 
@@ -472,8 +471,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/14/队列实现栈/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/10/14/队列实现栈/" itemprop="commentsCount"></span>
+                <a href="/2019/03/19/C-中指针常量与常量指针的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/19/C-中指针常量与常量指针的区别/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -500,7 +499,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  515
+                  913
                 </span>
               
 
@@ -538,15 +537,43 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<h3 id="利用两个队列实现一个栈"><a href="#利用两个队列实现一个栈" class="headerlink" title="利用两个队列实现一个栈"></a>利用两个队列实现一个栈</h3><p><strong>要求：</strong><br>Push：往非空队列里插入（如果两个队列都是空，选第一个插入）</p>
-<p>Pop：从非空队列中 move  size - 1 个元素到 空队列中，pop 剩下的一个</p>
-<p>Top: 从非空队列中 move  size - 1 个元素到 空队列中，返回剩下的一个的值，<br>     把剩下的一个也放入另一个队列中</p>
-<h3 id="实现部分"><a href="#实现部分" class="headerlink" title="实现部分"></a>实现部分</h3><h4 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a>结构体定义</h4><p>以下代码基于队列的基本操作Queue.h，关于Queue.h请自行在本博客中查找<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Queue.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QStack</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	Queue queue1;</span><br><span class="line">	Queue queue2;</span><br><span class="line">&#125;QStack;</span><br></pre></td></tr></table></figure></p>
-<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QStackInit</span><span class="params">(QStack *pQS)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	QueueInit(&amp;(pQS-&gt;queue1));</span><br><span class="line">	QueueInit(&amp;(pQS-&gt;queue2));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QStackDestory</span><span class="params">(QStack *pQS)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	QueueDestroy(&amp;(pQS-&gt;queue1));</span><br><span class="line">	QueueDestroy(&amp;(pQS-&gt;queue2));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QStackPush</span><span class="params">(QStack *pQS,QDataType data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Queue *pNotEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (QueueEmpty(pNotEmpty))		    <span class="comment">// 如果队列二为空，则不为空的就假设为队列一，就将队列一中的插入队列二</span></span><br><span class="line">	&#123;</span><br><span class="line">		pNotEmpty = &amp;(pQS-&gt;queue1);		<span class="comment">//如果队列二不为空，则直接将队列一中的插入队列二</span></span><br><span class="line">	&#125;</span><br><span class="line">	QueuePush(pNotEmpty,data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QStackPop</span><span class="params">(QStack *pQS)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Queue *pEmpty = &amp;(pQS-&gt;queue1);</span><br><span class="line">	Queue *pNotEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line">	<span class="keyword">if</span> (QueueEmpty(pNotEmpty))		 <span class="comment">//假设队列二是空，如果队列二空，则不空的就是队列一</span></span><br><span class="line">	&#123;</span><br><span class="line">		pEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line">		pNotEmpty = &amp;(pQS-&gt;queue1);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> (QueueSize(pNotEmpty) &gt; <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		QDataType data = QueueFront(pNotEmpty);</span><br><span class="line">		QueuePop(pNotEmpty);</span><br><span class="line">		QueuePush(pEmpty,data);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	QueuePop(pNotEmpty);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="获取压入的元素"><a href="#获取压入的元素" class="headerlink" title="获取压入的元素"></a>获取压入的元素</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">QDataType <span class="title">QStackTop</span><span class="params">(QStack *pQS)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	QDataType data;</span><br><span class="line">	QDataType r;</span><br><span class="line">	Queue *pEmpty = &amp;(pQS-&gt;queue1);</span><br><span class="line">	Queue *pNotEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line">	<span class="keyword">if</span> (QueueEmpty(pNotEmpty))		 <span class="comment">//假设队列二是空，如果队列二空，则不空的就是队列一</span></span><br><span class="line">	&#123;</span><br><span class="line">		pEmpty = &amp;(pQS-&gt;queue2);</span><br><span class="line">		pNotEmpty = &amp;(pQS-&gt;queue1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (QueueSize(pNotEmpty) &gt; <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		data = QueueFront(pNotEmpty);</span><br><span class="line">		QueuePop(pNotEmpty);</span><br><span class="line">		QueuePush(pEmpty,data);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	r = QueueFront(pNotEmpty);</span><br><span class="line">	QueuePop(pNotEmpty);</span><br><span class="line">	QueuePush(pEmpty,r);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TestQStack</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	QStack qstack;</span><br><span class="line">	QStackInit(&amp;qstack);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">9</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		QStackPush(&amp;qstack,i);</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"压入第%d ,压入 %d\n"</span>,i+<span class="number">1</span>,QStackTop(&amp;qstack));</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Top = %d "</span>,QStackTop(&amp;qstack));</span><br><span class="line">		<span class="comment">//QStackPop(&amp;qstack);</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在C++学习过程使用中，每个人都不可避免的会把指针错误理解或在不理解，尤其是对指针常量和常量指针的理解，特别容易把概念搞混淆。本文就针对该问题简单的说说指针常量和常量指针的区别。</p>
+<h3 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h3><p>   本质是一个常量，而用指针修饰它。指针常量的值是指针，这个值因为是常量，所以不能被赋值。</p>
+<h4 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h4><ul>
+<li>是个常量。</li>
+<li>指针锁保存的地址可以改变，但指针指向的值不能改变。</li>
+<li>指针本身是常量，指向的地址不可以变，但指向的地址所对应的内容可以变。</li>
+</ul>
+<p>形式如下：</p>
+<pre><code>int* const p;
+</code></pre><h3 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h3><p>常量指针又叫常指针，可以理解为常量的指针，也就是这个是指针，但指向的是常量，这个常量是指针的值（地址），并不是地址指向的值。</p>
+<h4 id="特征：-1"><a href="#特征：-1" class="headerlink" title="特征："></a>特征：</h4><ul>
+<li>常量指针指向的对象不能通过这个指针来修改，可以通过原来的声明修改。</li>
+<li>常量指针可以被赋值为变量的地址，之所以叫常量指针，就是限制了通过这个指针修改变量的值。</li>
+<li>指针还可以指向别处，因为指针本身只是一个变量，可以指向任意地址。</li>
+</ul>
+<p>形式如下：</p>
+<pre><code>int const* p;
+const int* p;
+</code></pre><h3 id="指向常量的常指针"><a href="#指向常量的常指针" class="headerlink" title="指向常量的常指针"></a>指向常量的常指针</h3><p>指向常量的指针常量是一个常量，且所指向的对象也是一个常量。</p>
+<h4 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h4><ul>
+<li>一个指针常量，指向的是一个指针对象；</li>
+<li>它所指向的指针对象且是一个常量，即指向的对象不能变。</li>
+</ul>
+<p>形式如下：</p>
+<pre><code>const int* const p;
+</code></pre><p>如何区别这些呢？</p>
+<h3 id="区分宝典"><a href="#区分宝典" class="headerlink" title="区分宝典"></a>区分宝典</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>看*和const的排列顺序，如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="keyword">const</span>* p;  <span class="comment">//const* 常量指针</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* p;  <span class="comment">//const* 常量指针</span></span><br><span class="line"><span class="keyword">int</span>* <span class="keyword">const</span> p;  <span class="comment">//*const 指针常量</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>看const离谁近，即从右往左看，如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> cont* p;  <span class="comment">//const修饰的是*p，即*p的内容不可通过p改变，但p不是const，p可以修改，*p不可修改。</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* p; <span class="comment">//和上面一样</span></span><br><span class="line"><span class="keyword">int</span>* <span class="keyword">const</span> p; <span class="comment">//const修饰的是p，p是指针，p指向的地址不能修改，p不能修改，但*p可以修改</span></span><br></pre></td></tr></table></figure></p>
+<p>看一个实例</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//-------常量指针-------</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p1 = &amp;a;</span><br><span class="line">a = <span class="number">300</span>;     <span class="comment">//OK,仍然可以通过原来的声明修改值，</span></span><br><span class="line"><span class="comment">//*p1 = 56;  //Error,*p1是const int的，不可修改，即常量指针不可修改其指向地址</span></span><br><span class="line">p1 = &amp;b;     <span class="comment">//OK,指针还可以指向别处，因为指针只是个变量，可以随意指向；</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------指针常量-------//</span></span><br><span class="line"><span class="keyword">int</span>*  <span class="keyword">const</span> p2 = &amp;a;</span><br><span class="line">a = <span class="number">500</span>;     <span class="comment">//OK,仍然可以通过原来的声明修改值，</span></span><br><span class="line">*p2 = <span class="number">400</span>;   <span class="comment">//OK,指针是常量，指向的地址不可以变化,但是指向的地址所对应的内容可以变化</span></span><br><span class="line"><span class="comment">//p2 = &amp;b;     //Error,因为p2是const 指针，因此不能改变p2指向的内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------指向常量的常量指针-------//</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* <span class="keyword">const</span> p3 = &amp;a;</span><br><span class="line"><span class="comment">//*p3 = 1;    //Error</span></span><br><span class="line"><span class="comment">//p3 = &amp;b;    //Error</span></span><br><span class="line">a = <span class="number">5000</span>;    <span class="comment">//OK,仍然可以通过原来的声明修改值</span></span><br></pre></td></tr></table></figure>
+<p>在实际应用中，常量指针要比指针常量用的多，比如常量指针经常用在函数传参中，以避免函数内部修改内容。</p>
+<pre><code>size_t strlen(const char* src); //常量指针，src的值不可改变；
+char a[] = &quot;hello&quot;;
+char b[] = &quot;world&quot;;
+size_t a1 = strlen(a);
+size_t b1 = strlen(b);
+</code></pre><p>虽然a、b是可以修改的，但是可以保证在strlen函数内部不会修改a、b的内容。</p>
 
       
     </div>
@@ -569,12 +596,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/10/14/队列实现栈/">队列实现栈</a></p>
+  <p><span>本文标题:</span><a href="/2019/03/19/C-中指针常量与常量指针的区别/">C++中指针常量与常量指针的区别</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
-  <p><span>发布时间:</span>2018年10月14日 - 20:10</p>
-  <p><span>最后更新:</span>2018年10月14日 - 20:10</p>
-  <p><span>原始链接:</span><a href="/2018/10/14/队列实现栈/" title="队列实现栈">https://LiuZiQiao.github.io/2018/10/14/队列实现栈/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2018/10/14/队列实现栈/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年03月19日 - 16:03</p>
+  <p><span>最后更新:</span>2019年03月19日 - 16:03</p>
+  <p><span>原始链接:</span><a href="/2019/03/19/C-中指针常量与常量指针的区别/" title="C++中指针常量与常量指针的区别">https://LiuZiQiao.github.io/2019/03/19/C-中指针常量与常量指针的区别/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/03/19/C-中指针常量与常量指针的区别/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -597,12 +624,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Queue/" rel="tag"><i class="fa fa-tag"></i> Queue</a>
-          
-        </div>
       
 
       
@@ -628,8 +649,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/14/栈实现队列/" rel="next" title="栈实现队列">
-                <i class="fa fa-chevron-left"></i> 栈实现队列
+              <a href="/2019/03/17/格子走法/" rel="next" title="格子走法">
+                <i class="fa fa-chevron-left"></i> 格子走法
               </a>
             
           </div>
@@ -637,10 +658,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/15/Ubuntu18-04安装教程/" rel="prev" title="Ubuntu18.04安装教程">
-                Ubuntu18.04安装教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -889,7 +906,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用两个队列实现一个栈"><span class="nav-number">1.</span> <span class="nav-text">利用两个队列实现一个栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现部分"><span class="nav-number">2.</span> <span class="nav-text">实现部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结构体定义"><span class="nav-number">2.1.</span> <span class="nav-text">结构体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">2.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#销毁"><span class="nav-number">2.3.</span> <span class="nav-text">销毁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入"><span class="nav-number">2.4.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">2.5.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取压入的元素"><span class="nav-number">2.6.</span> <span class="nav-text">获取压入的元素</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#指针常量"><span class="nav-number">1.</span> <span class="nav-text">指针常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特征："><span class="nav-number">1.1.</span> <span class="nav-text">特征：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量指针"><span class="nav-number">2.</span> <span class="nav-text">常量指针</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特征：-1"><span class="nav-number">2.1.</span> <span class="nav-text">特征：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指向常量的常指针"><span class="nav-number">3.</span> <span class="nav-text">指向常量的常指针</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特征"><span class="nav-number">3.1.</span> <span class="nav-text">特征</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区分宝典"><span class="nav-number">4.</span> <span class="nav-text">区分宝典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方式一"><span class="nav-number">4.1.</span> <span class="nav-text">方式一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方式二"><span class="nav-number">4.2.</span> <span class="nav-text">方式二</span></a></li></ol></li></ol></div>
             
 
           </div>
