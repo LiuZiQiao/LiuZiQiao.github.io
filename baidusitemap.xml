@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>https://LiuZiQiao.github.io/2019/03/20/507-%E5%AE%8C%E7%BE%8E%E6%95%B0/</loc>
+    <lastmod>2019-03-20T13:01:08.670Z</lastmod>
+    <data>
+        <display>
+        <title>507.完美数</title>
+        <pubTime>2019-03-20T13:00:45.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="LeetCode" url="https://LiuZiQiao.github.io/categories/LeetCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://LiuZiQiao.github.io/2019/03/20/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</loc>
     <lastmod>2019-03-20T12:59:56.958Z</lastmod>
     <data>
@@ -1857,9 +1875,9 @@
         <title>复杂链表的复制</title>
         <pubTime>2018-08-24T00:46:06.000Z</pubTime>
         
-        <tag>链表</tag>
-         
         <tag>数据结构</tag>
+         
+        <tag>链表</tag>
          
          
            
