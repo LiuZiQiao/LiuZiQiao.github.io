@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>公共字符串计算</title>
+      <link href="/2019/03/20/%E5%85%AC%E5%85%B1%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%AE%A1%E7%AE%97/"/>
+      <url>/2019/03/20/%E5%85%AC%E5%85%B1%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%AE%A1%E7%AE%97/</url>
+      
+        <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>题目标题：</p><p>计算两个字符串的最大公共字串的长度，字符不区分大小写</p><p>详细描述：</p><p>接口说明</p><p>原型：<br><code>int getCommonStrLength(char * pFirstStr, char * pSecondStr);</code></p><p>输入参数：</p><pre><code>char * pFirstStr //第一个字符串char * pSecondStr//第二个字符串</code></pre><p>输入描述:</p><pre><code>输入两个字符串</code></pre><p>输出描述:</p><pre><code>输出一个整数</code></pre><p>示例1   </p><p>输入</p><pre><code>asdfas werasdfaswer</code></pre><p>输出</p><pre><code>6</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> max = <span class="number">0</span>; <span class="comment">//max初值.</span></span><br><span class="line"><span class="built_in">string</span> str1, str2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; str1 &gt;&gt; str2)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> len1 = str1.size();</span><br><span class="line"><span class="keyword">int</span> len2 = str2.size();</span><br><span class="line"><span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//所有值初始化为0</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(len1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(len2, <span class="number">0</span>));</span><br><span class="line"><span class="comment">//计算dp</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len1; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len2; j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//如果当前结尾的字符相等，则在dp[i-1][j-1]的基础上加1</span></span><br><span class="line"><span class="keyword">if</span> (str1[i] == str2[j])</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (i &gt;= <span class="number">1</span> &amp;&amp; j &gt;= <span class="number">1</span>)</span><br><span class="line">dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="comment">//dp[i][0] or dp[0][j]</span></span><br><span class="line">dp[i][j] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//更新最大值</span></span><br><span class="line"><span class="keyword">if</span> (dp[i][j] &gt; max)</span><br><span class="line">max = dp[i][j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; max &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 模拟面试题集 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>507.完美数</title>
       <link href="/2019/03/20/507-%E5%AE%8C%E7%BE%8E%E6%95%B0/"/>
       <url>/2019/03/20/507-%E5%AE%8C%E7%BE%8E%E6%95%B0/</url>
@@ -1795,9 +1814,9 @@
       
         <tags>
             
-            <tag> List </tag>
-            
             <tag> java </tag>
+            
+            <tag> List </tag>
             
         </tags>
       
