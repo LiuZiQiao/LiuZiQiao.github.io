@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>完美数计算</title>
+      <link href="/2019/03/21/%E5%AE%8C%E7%BE%8E%E6%95%B0%E8%AE%A1%E7%AE%97/"/>
+      <url>/2019/03/21/%E5%AE%8C%E7%BE%8E%E6%95%B0%E8%AE%A1%E7%AE%97/</url>
+      
+        <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>完全数（Perfect number），又称完美数或完备数，是一些特殊的自然数。</p><p>它所有的真因子（即除了自身以外的约数）的和（即因子函数），恰好等于它本身。</p><p>例如：28，它有约数1、2、4、7、14、28，除去它本身28外，其余5个数相加，1+2+4+7+14=28。</p><p>给定函数count(int n),用于计算n以内(含n)完全数的个数。计算范围, 0 &lt; n &lt;= 500000</p><p>返回n以内完全数的个数。 异常情况返回-1</p><pre><code>/** *  *  完全数（Perfect number），又称完美数或完备数，是一些特殊的自然数。 *  它所有的真因子（即除了自身以外的约数）的和（即因子函数），恰好等于它本身。 *  例如：28，它有约数1、2、4、7、14、28，除去它本身28外，其余5个数相加，1+2+4+7+14=28。 *  *  给定函数count(int n),用于计算n以内(含n)完全数的个数 * @param n  计算范围, 0 &lt; n &lt;= 500000 * @return n 以内完全数的个数, 异常情况返回-1 *  */    public   static   int  count( int  n)</code></pre><p>输入描述:</p><pre><code>输入一个数字</code></pre><p>输出描述:</p><pre><code>输出完全数的个数</code></pre><p>示例1<br>输入</p><pre><code>1000</code></pre><p>输出</p><pre><code>3</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    约数计算可以遍历sqrt(n)的范围</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(num &lt; <span class="number">0</span> | num&gt; <span class="number">500000</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=num;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//遍历范围</span></span><br><span class="line">            <span class="keyword">int</span> sq = <span class="built_in">sqrt</span>(i);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=sq;++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i%j == <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="comment">//如果j^2 = i,说明两个约数相同，只加一个</span></span><br><span class="line">                    <span class="keyword">if</span>(i/j==j)</span><br><span class="line">                        sum +=j;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        <span class="comment">//否则，两个不同的约数都要相加</span></span><br><span class="line">                        sum += j+(i/j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum +<span class="number">1</span> == i)</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;num)</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;count(num)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 模拟面试题集 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>公共字符串计算</title>
       <link href="/2019/03/20/%E5%85%AC%E5%85%B1%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%AE%A1%E7%AE%97/"/>
       <url>/2019/03/20/%E5%85%AC%E5%85%B1%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%AE%A1%E7%AE%97/</url>
@@ -1814,9 +1833,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> List </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -2351,9 +2370,9 @@
       
         <tags>
             
-            <tag> 数据结构 </tag>
-            
             <tag> 链表 </tag>
+            
+            <tag> 数据结构 </tag>
             
         </tags>
       
