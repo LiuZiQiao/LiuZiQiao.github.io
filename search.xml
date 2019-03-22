@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>超长正整数相加</title>
+      <link href="/2019/03/22/%E8%B6%85%E9%95%BF%E6%AD%A3%E6%95%B4%E6%95%B0%E7%9B%B8%E5%8A%A0/"/>
+      <url>/2019/03/22/%E8%B6%85%E9%95%BF%E6%AD%A3%E6%95%B4%E6%95%B0%E7%9B%B8%E5%8A%A0/</url>
+      
+        <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请设计一个算法完成两个超长正整数的加法。</p><p>接口说明</p><pre><code>/*请设计一个算法完成两个超长正整数的加法。输入参数：String addend：加数String augend：被加数返回值：加法结果*/public String AddLongInteger(String addend, String augend){    /*在这里实现功能*/ return null;     }</code></pre><p>输入描述:<br>输入两个字符串数字</p><p>输出描述:<br>输出相加后的结果，string型</p><p>示例1<br>输入</p><pre><code>999999999999999999999999999999999999999999999999991</code></pre><p>输出</p><pre><code>100000000000000000000000000000000000000000000000000</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">AddLongInteger</span><span class="params">(<span class="built_in">string</span> &amp;str1, <span class="built_in">string</span> &amp;str2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n = str1.size() - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> m = str2.size() - <span class="number">1</span>;</span><br><span class="line"><span class="built_in">string</span> result = <span class="string">""</span>; <span class="comment">//存放结果字符串</span></span><br><span class="line"><span class="keyword">int</span> carry = <span class="number">0</span>; <span class="comment">// 记录是否进位</span></span><br><span class="line"><span class="keyword">while</span> (n &gt;= <span class="number">0</span> || m &gt;= <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (n &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">carry += str1[n] - <span class="string">'0'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (m &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">carry += str2[m] - <span class="string">'0'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">result += (<span class="keyword">char</span>)(carry % <span class="number">10</span> + <span class="string">'0'</span>);</span><br><span class="line">carry /= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">n--;</span><br><span class="line">m--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否进位</span></span><br><span class="line"><span class="keyword">if</span> (carry == <span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">result += <span class="string">'1'</span>;</span><br><span class="line">&#125;</span><br><span class="line">reverse(result.begin(), result.end());</span><br><span class="line"><span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">string</span> str1, str2;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; str1 &gt;&gt; str2)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; AddLongInteger(str1, str2) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 模拟笔试题集 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>完美数计算</title>
       <link href="/2019/03/21/%E5%AE%8C%E7%BE%8E%E6%95%B0%E8%AE%A1%E7%AE%97/"/>
       <url>/2019/03/21/%E5%AE%8C%E7%BE%8E%E6%95%B0%E8%AE%A1%E7%AE%97/</url>
@@ -2370,9 +2389,9 @@
       
         <tags>
             
-            <tag> 链表 </tag>
-            
             <tag> 数据结构 </tag>
+            
+            <tag> 链表 </tag>
             
         </tags>
       
