@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-03-24T14:28:41.556Z</updated>
+  <updated>2019-03-27T14:51:03.710Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单例模式</title>
+    <link href="https://LiuZiQiao.github.io/2019/03/27/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://LiuZiQiao.github.io/2019/03/27/单例模式/</id>
+    <published>2019-03-27T14:50:33.000Z</published>
+    <updated>2019-03-27T14:51:03.710Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="单例模式："><a href="#单例模式：" class="headerlink" title="单例模式："></a>单例模式：</h3><p>一个类只能创建一个对象，该模式可以保证系统中只有一个实例，并提供一个访问它的全局访问点，该实例被所有程序模块共享。</p><h4 id="单例模式的要点有三个："><a href="#单例模式的要点有三个：" class="headerlink" title="单例模式的要点有三个："></a>单例模式的要点有三个：</h4><ol><li>单例类只能有一个实例 </li><li>它必须自行创建这个实例 </li><li>它必须自行向整个系统提供提供这个实例</li></ol><h4 id="具体实现角度来说-就是以下三点"><a href="#具体实现角度来说-就是以下三点" class="headerlink" title="具体实现角度来说,就是以下三点:"></a>具体实现角度来说,就是以下三点:</h4><ol><li>单例模式的类只提供私有的构造函数</li><li>类定义中含有一个该类的静态私有对象 </li><li>该类提供了一个静态的公有的函数用于创建或获取它本身的静态私有对象</li></ol><h4 id="单例模式的优点"><a href="#单例模式的优点" class="headerlink" title="单例模式的优点:"></a>单例模式的优点:</h4><ol><li>在内存中只有一个对象,节省内存空间</li><li>避免频繁的创建销毁对象,可以提高性能</li><li>避免对共享资源的多重占用</li><li>可以全局访问</li></ol><h4 id="单例模式的适用场景"><a href="#单例模式的适用场景" class="headerlink" title="单例模式的适用场景:"></a>单例模式的适用场景:</h4><ol><li>需要频繁实例化然后销毁的对象</li><li>创建对象耗时过多或者耗资源过多,但又经常用到的对象</li><li>有状态的工具类对象</li><li>频繁访问数据库或文件的对象</li><li>以及其他要求只有一个对象的场景</li></ol><h3 id="单例模式的两种实现方式"><a href="#单例模式的两种实现方式" class="headerlink" title="单例模式的两种实现方式"></a>单例模式的两种实现方式</h3><p><strong>饿汉式</strong>：就是说不管将来用不用，程序启动时就创建一个唯一的实例对象。<br>（如果这个单例对象在多线程高并发环境下频繁使用，性能要求较高，那么显然使用饿汉模式来避免资源竞争，提高响应速度更好。）</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">static</span> Singleton* <span class="title">GetInstance</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;m_instance;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">// 构造函数私有</span></span><br><span class="line">    Singleton()&#123;&#125;;</span><br><span class="line">    <span class="comment">// C++98 防拷贝</span></span><br><span class="line">    Singleton(Singleton <span class="keyword">const</span>&amp;);</span><br><span class="line">    Singleton&amp; <span class="keyword">operator</span>=(Singleton <span class="keyword">const</span>&amp;);</span><br><span class="line">    <span class="comment">// or</span></span><br><span class="line">    <span class="comment">// C++11</span></span><br><span class="line">    Singleton(Singleton <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</span><br><span class="line">    Singleton&amp; <span class="keyword">operator</span>=(Singleton <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</span><br><span class="line">    <span class="keyword">static</span> Singleton m_instance;</span><br><span class="line">&#125;;</span><br><span class="line">Singleton Singleton::m_instance; <span class="comment">//</span></span><br></pre></td></tr></table></figure><p> 在程序入口之前就完成单例对象的初始化</p><p><strong>懒汉式</strong>：如果单例对象构造十分耗时或者占用很多资源，比如加载插件啊， 初始化网络连接啊，读取文件等等，而有可能该对象程序运行时不会用到，那么也要在程序一开始就进行初始化，就会导致程序启动时非常的缓慢。 所以这种情况使用懒汉模式（延迟加载）更好。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 懒汉</span></span><br><span class="line"><span class="comment">// 优点：第一次使用实例对象时，创建对象。进程启动无负载。多个单例实例启动顺序自由控制。</span></span><br><span class="line"><span class="comment">// 缺点：复杂</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="function"><span class="keyword">static</span> Singleton* <span class="title">GetInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">// 注意这里一定要使用Double-Check的方式加锁，才能保证效率和线程安全</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">nullptr</span> == m_pInstance) &#123;</span><br><span class="line">        m_mtx.lock();</span><br><span class="line">        <span class="keyword">if</span> (<span class="literal">nullptr</span> == m_pInstance)</span><br><span class="line">        &#123;</span><br><span class="line">            m_pInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        m_mtx.unlock();  </span><br><span class="line">    &#125;        </span><br><span class="line">    <span class="keyword">return</span> m_pInstance;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现一个内嵌垃圾回收类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CGarbo</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ~CGarbo()&#123;</span><br><span class="line">    <span class="keyword">if</span> (Singleton::m_pInstance)</span><br><span class="line">    <span class="keyword">delete</span> Singleton::m_pInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">    <span class="comment">// 定义一个静态成员变量，程序结束时，系统会自动调用它的析构函数从而释放单例对象</span></span><br><span class="line">    <span class="keyword">static</span> CGarbo Garbo;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">// 构造函数私有</span></span><br><span class="line">    Singleton()&#123;&#125;;</span><br><span class="line">    <span class="comment">// 防拷贝</span></span><br><span class="line">    Singleton(Singleton <span class="keyword">const</span>&amp;);</span><br><span class="line">    Singleton&amp; <span class="keyword">operator</span>=(Singleton <span class="keyword">const</span>&amp;);</span><br><span class="line">    <span class="keyword">static</span> Singleton* m_pInstance; <span class="comment">// 单例对象指针</span></span><br><span class="line">    <span class="keyword">static</span> mutex m_mtx; <span class="comment">//互斥锁</span></span><br><span class="line">&#125;;</span><br><span class="line">    Singleton* Singleton::m_pInstance = <span class="literal">nullptr</span>;</span><br><span class="line">    Singleton::CGarbo Garbo;</span><br><span class="line">    mutex Singleton::m_mtx;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt; Singleton::GetInstance() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 多线程环境下演示上面GetInstance()加锁和不加锁的区别。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">thread <span class="title">t1</span><span class="params">(func, <span class="number">10</span>)</span></span>;</span><br><span class="line">    <span class="function">thread <span class="title">t2</span><span class="params">(func, <span class="number">10</span>)</span></span>;</span><br><span class="line">    t1.join();</span><br><span class="line">    t2.join();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; Singleton::GetInstance() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; Singleton::GetInstance() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;单例模式：&quot;&gt;&lt;a href=&quot;#单例模式：&quot; class=&quot;headerlink&quot; title=&quot;单例模式：&quot;&gt;&lt;/a&gt;单例模
+      
+    
+    </summary>
+    
+      <category term="C/C++" scheme="https://LiuZiQiao.github.io/categories/C-C/"/>
+    
+    
+      <category term="设计模式" scheme="https://LiuZiQiao.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>字符串通配符</title>
@@ -467,30 +493,6 @@
       
         &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h4 id=&quot;const在C语言和C-中的对比一&quot;&gt;&lt;a href=&quot;#const在C语言和C-中的对比一&quot; class=&quot;headerlin
-      
-    
-    </summary>
-    
-      <category term="C/C++" scheme="https://LiuZiQiao.github.io/categories/C-C/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>const与define的比较</title>
-    <link href="https://LiuZiQiao.github.io/2019/03/02/const%E4%B8%8Edefine%E7%9A%84%E6%AF%94%E8%BE%83/"/>
-    <id>https://LiuZiQiao.github.io/2019/03/02/const与define的比较/</id>
-    <published>2019-03-02T15:21:52.000Z</published>
-    <updated>2019-03-02T15:32:53.854Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="const与define"><a href="#const与define" class="headerlink" title="const与define"></a>const与define</h3><p>在C++中定义一个常量用const修饰，也可以用#define来定义，但是前者比后者更具有优点：</p><ul><li>const所修饰的常量可以具有类型，而宏常量没有数据类型。编译器可以对前者进行静态类型安全检查；而对后者只进行字符替换，没有类型安全检查，并且在字符替换的时候可能产生意料不到的错误。</li><li>集成开发环境可以对const常量进行调试，而不能对宏常量进行调试。</li></ul><p><strong>建议在C++程序中尽量使用const来定义符号常量，包括字符串常量。</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;const与define&quot;&gt;&lt;a href=&quot;#const与define&quot; class=&quot;headerlink&quot; title=&quot;
       
     
     </summary>
