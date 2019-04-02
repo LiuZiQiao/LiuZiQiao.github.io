@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>树根</title>
+      <link href="/2019/04/02/day25%E6%A0%91%E6%A0%B9/"/>
+      <url>/2019/04/02/day25%E6%A0%91%E6%A0%B9/</url>
+      
+        <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>数根可以通过把一个数的各个位上的数字加起来得到。如果得到的数是一位数，那么这个数就是数根；如果结果是两位数或者包括更多位的数字，那么再把这些数字加起来。如此进行下去，直到得到是一位数为止。<br>比如，对于24 来说，把2 和4 相加得到6，由于6 是一位数，因此6 是24 的数根。<br>再比如39，把3 和9 加起来得到12，由于12 不是一位数，因此还得把1 和2 加起来，最后得到3，这是一个一位数，因此3 是39 的数根。<br>现在给你一个正整数，输出它的数根。</p><p>输入描述:   </p><pre><code>输入包含多组数据。每组数据数据包含一个正整数n（1≤n≤10E1000）。</code></pre><p>输出描述:   </p><pre><code>对应每一组数据，输出该正整数的数根。</code></pre><p>示例1   </p><p>输入</p><pre><code>2439</code></pre><p>输出</p><pre><code>63</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>思路：</p><pre><code>36-&gt;9 98-&gt;17-&gt;81. 接收字符串得到各个数字2. 对每个数字进行求数根操作1. 计算数字字符串长度2. 对每个字节数据减去 ‘0’求和3. 对数字求根    1. 循环每次只获取数字个位数后删除个位数    98 % 10 = 8 ；98 / 10 = 9； 8 + 9 = 17；    17 % 10 = 7； 17 / 10 = 1； 7 + 1 = 8；</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numRoot</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nroot = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        nroot += num % <span class="number">10</span>;<span class="comment">/*每次只获取个位数字*/</span></span><br><span class="line">        num /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (nroot &gt; <span class="number">9</span>) &#123;</span><br><span class="line">        nroot = numRoot(nroot);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nroot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> origin;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; origin) &#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; origin.length(); i++) &#123;</span><br><span class="line">        sum += origin[i] - <span class="string">'0'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; numRoot(sum) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 模拟面试题集 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【剑指offer】变态跳台阶</title>
       <link href="/2019/03/31/%E3%80%90%E5%89%91%E6%8C%87offer%E3%80%91%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/"/>
       <url>/2019/03/31/%E3%80%90%E5%89%91%E6%8C%87offer%E3%80%91%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/</url>
