@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>【nowcoder】错排问题</title>
+      <link href="/2019/04/19/%E3%80%90nowcoder%E3%80%91%E9%94%99%E6%8E%92%E9%97%AE%E9%A2%98/"/>
+      <url>/2019/04/19/%E3%80%90nowcoder%E3%80%91%E9%94%99%E6%8E%92%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>NowCoder每天要给很多人发邮件。有一天他发现发错了邮件，把发给A的邮件发给了B，把发给B的邮件发给了A。于是他就思考，要给n个人发邮件，在每个人仅收到1封邮件的情况下，有多少种情况是所有人都收到了错误的邮件？<br>即没有人收到属于自己的邮件。</p><p><a href="https://www.nowcoder.com/questionTerminal/95e35e7f6ad34821bc2958e37c08918b" target="_blank" rel="noopener">题目原地址</a><br>输入描述<br>    输入包含多组数据，每组数据包含一个正整数n（2≤n≤20）。</p><p>输出描述:</p><p>对应每一组数据，输出一个正整数，表示无人收到自己邮件的种数。<br>示例1<br>    输入  2 3<br>    输出  1 2</p><h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>当n个编号元素放在n个编号位置，元素编号与位置编号各不对应的方法数用D(n)表示，那么D(n-1)就表示n-1个编号元素放在n-1个编号位置，各不对应的方法数，其它类推.<br>第一步，把第n个元素放在一个位置，比如位置k，一共有n-1种方法；<br>第二步，放编号为k的元素，这时有两种情况：⑴把它放到位置n，那么，对于剩下的n-1个元素，由于第k个元素放到了位置n，剩下n-2个元素就有D(n-2)种方法；⑵第k个元素不把它放到位置n，这时，对于这n-1个元素，有D(n-1)种方法；<br>综上得到<br>D(n) = (n-1) [D(n-2) + D(n-1)]<br>特殊地，D(1) = 0, D(2) = 1.<br>有了递推公式，一切就迎刃而解了。</p><h3 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// write your code here cpp</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> der[ <span class="number">21</span> ] = &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> ( i = <span class="number">3</span>; i &lt; <span class="number">21</span>; i++ )&#123;</span><br><span class="line">        der[ i ] = ( i - <span class="number">1</span> ) * ( der[ i - <span class="number">2</span>] + der[ i - <span class="number">1</span> ] );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span> ( <span class="built_in">scanf</span>( <span class="string">"%d"</span>, &amp;n ) != EOF )&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, der[ n ] );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 模拟笔试题集 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>字符串区间的个数</title>
       <link href="/2019/04/15/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%BA%E9%97%B4%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
       <url>/2019/04/15/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%BA%E9%97%B4%E7%9A%84%E4%B8%AA%E6%95%B0/</url>
