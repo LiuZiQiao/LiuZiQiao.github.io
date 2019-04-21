@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://LiuZiQiao.github.io/"/>
-  <updated>2019-04-19T02:14:00.035Z</updated>
+  <updated>2019-04-21T06:14:36.111Z</updated>
   <id>https://LiuZiQiao.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>day39_最长公共子序列</title>
+    <link href="https://LiuZiQiao.github.io/2019/04/21/day39-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
+    <id>https://LiuZiQiao.github.io/2019/04/21/day39-最长公共子序列/</id>
+    <published>2019-04-21T06:14:36.000Z</published>
+    <updated>2019-04-21T06:14:36.111Z</updated>
+    
+    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>【nowcoder】错排问题</title>
@@ -474,31 +495,6 @@
     </summary>
     
       <category term="模拟笔试题集" scheme="https://LiuZiQiao.github.io/categories/%E6%A8%A1%E6%8B%9F%E7%AC%94%E8%AF%95%E9%A2%98%E9%9B%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>二叉树中和为某一值的路径</title>
-    <link href="https://LiuZiQiao.github.io/2019/03/15/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/"/>
-    <id>https://LiuZiQiao.github.io/2019/03/15/二叉树中和为某一值的路径/</id>
-    <published>2019-03-15T08:45:49.000Z</published>
-    <updated>2019-03-15T08:46:23.157Z</updated>
-    
-    <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><p>题目描述</p><p>输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)</p><p>解决方案</p><p>/<em><br>struct TreeNode {<br>    int val;<br>    struct TreeNode </em>left;<br>    struct TreeNode <em>right;<br>    TreeNode(int x) :<br>            val(x), left(NULL), right(NULL) {<br>    }<br>};</em>/</p><p>class Solution {<br>public:<br>    vector<vector<int>&gt; vec;<br>    vector<int> v;<br>    vector<vector<int> &gt; FindPath(TreeNode* root,int expectNumber)<br>    {<br>        if(root == NULL) return vec;<br>        v.push_back(root-&gt;val);<br>        if( (expectNumber-root-&gt;val == 0) &amp;&amp; root-&gt;left == NULL &amp;&amp; root-&gt;right == NULL )<br>        {<br>            vec.push_back(v);<br>        }<br>        FindPath(root-&gt;left,expectNumber-root-&gt;val);<br>        FindPath(root-&gt;right,expectNumber-root-&gt;val);<br>        if(v.size() != 0)<br>            v.pop_back();<br>    return vec;<br>    }<br>};</vector<int></int></vector<int></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;\assets\js\APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;题目描述&lt;/p&gt;
-&lt;p&gt;输入一颗二叉树的跟节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直
-      
-    
-    </summary>
-    
-      <category term="剑指offer" scheme="https://LiuZiQiao.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
     
     
   </entry>
