@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="dp," />
 
 
 
@@ -136,14 +136,20 @@
 
 
 
+<meta name="description" content="题目描述我们有两个字符串m和n，如果它们的子串a和b内容相同，则称a和b是m和n的公共子序列。子串中的字符不一定在原字符串中连续。例如字符串“abcfbc”和“abfcab”，其中“abc”同时出现在两个字符串中，因此“abc”是它们的公共子序列。此外，“ab”、“af”等都是它们的字串。现在给你两个任意字符串（不包含空格），请帮忙计算它们的最长公共子序列的长度。 输入描述:    输入包含多">
+<meta name="keywords" content="dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="day39_最长公共子序列">
+<meta property="og:title" content="【newcoder】最长公共子序列">
 <meta property="og:url" content="https://LiuZiQiao.github.io/2019/04/21/day39-最长公共子序列/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
+<meta property="og:description" content="题目描述我们有两个字符串m和n，如果它们的子串a和b内容相同，则称a和b是m和n的公共子序列。子串中的字符不一定在原字符串中连续。例如字符串“abcfbc”和“abfcab”，其中“abc”同时出现在两个字符串中，因此“abc”是它们的公共子序列。此外，“ab”、“af”等都是它们的字串。现在给你两个任意字符串（不包含空格），请帮忙计算它们的最长公共子序列的长度。 输入描述:    输入包含多">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T06:14:36.111Z">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1358881/201807/1358881-20180724195351829-1792192564.png">
+<meta property="og:updated_time" content="2019-04-21T07:25:36.903Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="day39_最长公共子序列">
+<meta name="twitter:title" content="【newcoder】最长公共子序列">
+<meta name="twitter:description" content="题目描述我们有两个字符串m和n，如果它们的子串a和b内容相同，则称a和b是m和n的公共子序列。子串中的字符不一定在原字符串中连续。例如字符串“abcfbc”和“abfcab”，其中“abc”同时出现在两个字符串中，因此“abc”是它们的公共子序列。此外，“ab”、“af”等都是它们的字串。现在给你两个任意字符串（不包含空格），请帮忙计算它们的最长公共子序列的长度。 输入描述:    输入包含多">
+<meta name="twitter:image" content="https://images2018.cnblogs.com/blog/1358881/201807/1358881-20180724195351829-1792192564.png">
 
 
 
@@ -196,7 +202,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>day39_最长公共子序列 | LiuxiaoKun</title>
+  <title>【newcoder】最长公共子序列 | LiuxiaoKun</title>
   
 
 
@@ -403,7 +409,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">day39_最长公共子序列</h2>
+          <h2 class="post-title" itemprop="name headline">【newcoder】最长公共子序列</h2>
         
 
         <div class="post-meta">
@@ -431,12 +437,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-04-21T14:14:36+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-21T15:25:36+08:00">
                 2019-04-21
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/模拟笔试题集/" itemprop="url" rel="index">
+                    <span itemprop="name">模拟笔试题集</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -474,7 +502,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1,271
                 </span>
               
 
@@ -490,7 +518,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -512,6 +540,46 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>我们有两个字符串m和n，如果它们的子串a和b内容相同，则称a和b是m和n的公共子序列。子串中的字符不一定在原字符串中连续。<br>例如字符串<code>“abcfbc”</code>和<code>“abfcab”</code>，其中<code>“abc”</code>同时出现在两个字符串中，因此<code>“abc”</code>是它们的公共子序列。此外，<code>“ab”</code>、<code>“af”</code>等都是它们的字串。<br>现在给你两个任意字符串（不包含空格），请帮忙计算它们的最长公共子序列的长度。</p>
+<p>输入描述:   </p>
+<pre><code>输入包含多组数据。
+</code></pre><p>每组数据包含两个字符串m和n，它们仅包含字母，并且长度不超过1024。</p>
+<p>输出描述:   </p>
+<pre><code>对应每组输入，输出最长公共子序列的长度。
+</code></pre><p>示例1<br>输入</p>
+<pre><code>abcfbc abfcab
+programming contest
+abcd mnp
+</code></pre><p>输出</p>
+<pre><code>4
+2
+0
+</code></pre><p><a href="https://www.nowcoder.com/questionTerminal/9ae56e5bdf4f480387df781671db5172" target="_blank" rel="noopener">原链接</a></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这个题是一个动态规划问题。对于动态规划求解问题，一般有两个特征：①最优子结构；②重叠子问题</p>
+<p><strong>①最优子结构</strong>     </p>
+<p>设X = (x1,x2,…xn)和Y = (y1,y2,…ym) 是两个序列，将X和Y的最长公共序列记为LCS(X,Y)  <br><br>找出LCS(X,Y)就是一个最优化问题。因为需要找到X和Y最长的公共子序列。而要找X和Y的LCS，就需要考虑X的最后一个元素和Y的最后一个元素。<br>1）如果 xn=ym，即X的最后一个元素与Y的最后一个元素相同，这说明该元素一定位于公共子序列中。因此，现在只需要找：LCS(Xn-1，Ym-1)</p>
+<p>LCS(Xn-1，Ym-1)就是原问题的一个子问题。为什么叫子问题？因为它的规模比原问题小。（小一个元素也是小嘛….）</p>
+<p>为什么是最优的子问题？因为我们要找的是Xn-1 和 Ym-1 的最长公共子序列啊。。。最长的！！！换句话说，就是最优的那个。（这里的最优就是最长的意思）</p>
+<p>2）如果xn != ym，这下要麻烦一点，因为它产生了两个子问题：LCS(Xn-1，Ym) 和 LCS(Xn，Ym-1)</p>
+<p>因为序列X 和 序列Y 的最后一个元素不相等嘛，那说明最后一个元素不可能是最长公共子序列中的元素嘛。（都不相等了，怎么公共嘛）。</p>
+<p>LCS(Xn-1，Ym)表示：最长公共序列可以在(x1,x2,….x(n-1)) 和 (y1,y2,…yn)中找。</p>
+<p>LCS(Xn，Ym-1)表示：最长公共序列可以在(x1,x2,….xn) 和 (y1,y2,…y(n-1))中找。</p>
+<p>求解上面两个子问题，得到的公共子序列谁最长，那谁就是 LCS（X,Y）。用数学表示就是：</p>
+<p>LCS=max{LCS(Xn-1，Ym)，LCS(Xn，Ym-1)}</p>
+<p>由于条件 1)  和  2)  考虑到了所有可能的情况。因此，我们成功地把原问题 转化 成了 三个规模更小的子问题。</p>
+<p><strong>②重叠子问题</strong>   </p>
+<p>重叠子问题是啥？就是说原问题 转化 成子问题后，  子问题中有相同的问题。咦？我怎么没有发现上面的三个子问题中有相同的啊？</p>
+<p>OK，来看看，原问题是：LCS(X,Y)。子问题有 </p>
+<pre><code>❶LCS(Xn-1，Ym-1)   
+❷LCS(Xn-1，Ym)   
+❸LCS(Xn，Ym-1)
+</code></pre><p>初一看，这三个子问题是不重叠的。可本质上它们是重叠的，因为它们只重叠了一大部分。举例：</p>
+<p>第二个子问题：LCS(Xn-1，Ym) 就包含了：问题❶LCS(Xn-1，Ym-1)，为什么？</p>
+<p>因为，当Xn-1 和 Ym 的最后一个元素不相同时，我们又需要将LCS(Xn-1，Ym)进行分解：分解成：LCS(Xn-1，Ym-1) 和 LCS(Xn-2，Ym)</p>
+<p>也就是说：在子问题的继续分解中，有些问题是重叠的。   </p>
+<p>由于像LCS这样的问题，它具有重叠子问题的性质，因此：用递归来求解就太不划算了。因为采用递归，它重复地求解了子问题啊。==注意，所有子问题加起来的个数 可是指数级的哦。。。==</p>
+<p>这张DP表很是重要，从中我们可以窥见最长公共子序列的来源，同时可以根据这张表打印出最长公共子序列的构成路径<br><img src="https://images2018.cnblogs.com/blog/1358881/201807/1358881-20180724195351829-1792192564.png" alt="dp"></p>
+<h3 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// write your code here cpp</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str1,str2;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;str1&gt;&gt;str2)&#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = str1.length();</span><br><span class="line">        <span class="keyword">int</span> len2 = str2.length();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt;dp(len1,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(len2,<span class="number">0</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//初始化边界</span></span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = (str1[<span class="number">0</span>] == str2[<span class="number">0</span>])?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;len1;i++)&#123;</span><br><span class="line">            dp[i][<span class="number">0</span>] = (str1[i] == str2[<span class="number">0</span>])?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">            dp[i][<span class="number">0</span>]  = max(dp[i<span class="number">-1</span>][<span class="number">0</span>],dp[i][<span class="number">0</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;len2;j++)&#123;</span><br><span class="line">            dp[<span class="number">0</span>][j] = (str1[<span class="number">0</span>] == str2[j])?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">            dp[<span class="number">0</span>][j]  = max(dp[<span class="number">0</span>][j<span class="number">-1</span>],dp[<span class="number">0</span>][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 计算</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;len1;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;len2;j++)&#123;</span><br><span class="line">                dp[i][j] = max(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">if</span>(str1[i] == str2[j])&#123;</span><br><span class="line">                    dp[i][j] = max(dp[i][j],dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; dp[len1<span class="number">-1</span>][len2<span class="number">-1</span>] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -533,11 +601,11 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2019/04/21/day39-最长公共子序列/">day39_最长公共子序列</a></p>
+  <p><span>本文标题:</span><a href="/2019/04/21/day39-最长公共子序列/">【newcoder】最长公共子序列</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2019年04月21日 - 14:04</p>
-  <p><span>最后更新:</span>2019年04月21日 - 14:04</p>
-  <p><span>原始链接:</span><a href="/2019/04/21/day39-最长公共子序列/" title="day39_最长公共子序列">https://LiuZiQiao.github.io/2019/04/21/day39-最长公共子序列/</a>
+  <p><span>最后更新:</span>2019年04月21日 - 15:04</p>
+  <p><span>原始链接:</span><a href="/2019/04/21/day39-最长公共子序列/" title="【newcoder】最长公共子序列">https://LiuZiQiao.github.io/2019/04/21/day39-最长公共子序列/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/04/21/day39-最长公共子序列/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -561,6 +629,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dp/" rel="tag"><i class="fa fa-tag"></i> dp</a>
+          
+        </div>
       
 
       
@@ -595,6 +669,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/22/【LeetCode】5-最长回文子串/" rel="prev" title="【LeetCode】5.最长回文子串">
+                【LeetCode】5.最长回文子串 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -655,8 +733,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -688,7 +775,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">123</span>
+                  <span class="site-state-item-count">124</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -710,7 +797,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -825,6 +912,22 @@ var ap = new APlayer({
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体代码"><span class="nav-number">3.</span> <span class="nav-text">具体代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -855,7 +958,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">110.4k</span>
+    <span title="Site words total count">112.4k</span>
   
 </div>
 
