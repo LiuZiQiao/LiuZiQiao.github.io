@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="LiuxiaoKun">
 <meta property="og:description" content="题目描述给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。 示例 1： 输入: &amp;quot;babad&amp;quot; 输出: &amp;quot;bab&amp;quot; 注意: “aba” 也是一个有效答案。示例 2： 输入: &amp;quot;cbbd&amp;quot; 输出: &amp;quot;bb&amp;quot; 思路一常见错误 有些人会忍不住提出一个快速的解决方案，不幸的是，这个解决">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-22T09:45:39.038Z">
+<meta property="og:updated_time" content="2019-04-22T11:59:39.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【LeetCode】5.最长回文子串">
 <meta name="twitter:description" content="题目描述给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。 示例 1： 输入: &amp;quot;babad&amp;quot; 输出: &amp;quot;bab&amp;quot; 注意: “aba” 也是一个有效答案。示例 2： 输入: &amp;quot;cbbd&amp;quot; 输出: &amp;quot;bb&amp;quot; 思路一常见错误 有些人会忍不住提出一个快速的解决方案，不幸的是，这个解决">
@@ -435,7 +435,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-04-22T17:45:39+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-22T19:59:39+08:00">
                 2019-04-22
               </time>
             
@@ -500,7 +500,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  779
+                  784
                 </span>
               
 
@@ -560,14 +560,15 @@ S 以及 S′之间的最长公共子串为 “abacd” “abacd”，显然，�
 <p>这给我们提供了一个复杂度为 O(n^2) 动态规划解法，它将占用 O(n^2)的空间（可以改进为使用 O(n) 的空间）。    </p>
 <h3 id="思路二-（动态规划）"><a href="#思路二-（动态规划）" class="headerlink" title="思路二 （动态规划）"></a>思路二 （动态规划）</h3><p>为了改进暴力法，我们首先观察如何避免在验证回文时进行不必要的重复计算。考虑<code>“ababa”</code> 这个示例。如果我们已经知道<code>“bab”</code>是回文，那么很明显，<code>“ababa”</code>一定是回文，因为它的左首字母和右尾字母是相同的。</p>
 <p>我们给出 P(i,j)P(i,j) 的定义如下：</p>
-<p>如果子串是回文子串其他情况<br>$$f(i,j)=<br>\begin{cases}<br>true&amp; \text{如果子串Si…Sj是回文子串}\<br>false&amp; \text{其他情况}<br>\end{cases}$$</p>
+<p>如果子串是回文子串其他情况<br>$$f(i,j)=<br>\begin{cases}<br>true&amp; \text{如果子串Si…Sj是回文子串}\<br>false&amp; \text{其他情况}<br>\end{cases}​$$</p>
 <p>因此，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P(i,j) = (P(i+1,j-1) and S_i==S_j)</span><br></pre></td></tr></table></figure></p>
-<p>基本示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">P(i,j) = true; </span><br><span class="line"></span><br><span class="line">P(i,i+1) = (S_i == S_i+_1)</span><br></pre></td></tr></table></figure></p>
+<p>基本示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">P(i,j) = true; </span><br><span class="line">P(i,i+1) = (S_i == S_i+_1)</span><br></pre></td></tr></table></figure></p>
 <p>这产生了一个直观的动态规划解法，我们首先初始化一字母和二字母的回文，然后找到所有三字母回文，并依此类推…</p>
 <p>复杂度分析</p>
 <p>时间复杂度：<code>O(n^2)</code>,这里给出我们的运行时间复杂度为 <code>O(n^2)</code>。</p>
 <p>空间复杂度：<code>O(n^2)</code>，该方法使用<code>O(n^2)</code>的空间来存储表。</p>
-<h3 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> dp[s.size()][s.size()] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>,right = <span class="number">0</span>,len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();++i)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;++j)&#123;</span><br><span class="line">                dp[j][i] = (s[i] == s[j] &amp;&amp; (i-j&lt;<span class="number">2</span>) || dp[j+<span class="number">1</span>][i<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">if</span>(dp[j][i] &amp;&amp; len &lt; i-j+<span class="number">1</span>)&#123;</span><br><span class="line">                    len = i-j+<span class="number">1</span>;</span><br><span class="line">                    left = j;</span><br><span class="line">                    right = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            dp[i][i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(left,right-left+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.empty()) <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">int</span> dp[s.size()][s.size()] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>,right = <span class="number">0</span>,len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();++i)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;++j)&#123;</span><br><span class="line">                dp[j][i] = (s[i] == s[j] &amp;&amp; (i-j&lt;<span class="number">2</span>) || dp[j+<span class="number">1</span>][i<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">if</span>(dp[j][i] &amp;&amp; len &lt; i-j+<span class="number">1</span>)&#123;</span><br><span class="line">                    len = i-j+<span class="number">1</span>;</span><br><span class="line">                    left = j;</span><br><span class="line">                    right = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            dp[i][i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(left,right-left+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -592,7 +593,7 @@ S 以及 S′之间的最长公共子串为 “abacd” “abacd”，显然，�
   <p><span>本文标题:</span><a href="/2019/04/22/【LeetCode】5-最长回文子串/">【LeetCode】5.最长回文子串</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
   <p><span>发布时间:</span>2019年04月22日 - 17:04</p>
-  <p><span>最后更新:</span>2019年04月22日 - 17:04</p>
+  <p><span>最后更新:</span>2019年04月22日 - 19:04</p>
   <p><span>原始链接:</span><a href="/2019/04/22/【LeetCode】5-最长回文子串/" title="【LeetCode】5.最长回文子串">https://LiuZiQiao.github.io/2019/04/22/【LeetCode】5-最长回文子串/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/04/22/【LeetCode】5-最长回文子串/"  aria-label="复制成功！"></i></span>
   </p>
@@ -657,6 +658,10 @@ S 以及 S′之间的最长公共子串为 “abacd” “abacd”，显然，�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/22/扑克牌/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -759,7 +764,7 @@ S 以及 S′之间的最长公共子串为 “abacd” “abacd”，显然，�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">124</span>
+                  <span class="site-state-item-count">126</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -781,7 +786,7 @@ S 以及 S′之间的最长公共子串为 “abacd” “abacd”，显然，�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -942,7 +947,7 @@ var ap = new APlayer({
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">112.4k</span>
+    <span title="Site words total count">113.0k</span>
   
 </div>
 
