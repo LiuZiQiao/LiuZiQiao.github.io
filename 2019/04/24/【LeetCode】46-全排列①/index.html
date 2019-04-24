@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="TCP," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -136,24 +136,17 @@
 
 
 
-<meta name="description" content="什么是”三次握手，四次挥手“TCP是一种面向连接的单播协议，在发送数据前，通信双方必须在彼此间建立一条连接。所谓的“连接”，其实是客户端和服务器的内存里保存的一份关于对方的信息，如ip地址、端口号等。 TCP可以看成是一种字节流，它会处理IP层或以下的层的丢包、重复以及错误问题。在连接的建立过程中，双方需要交换一些连接的参数。这些参数可以放在TCP头部。 TCP提供了一种可靠、面向连接、字节流">
-<meta name="keywords" content="TCP">
+<meta name="description" content="题目描述给定一个没有重复数字的序列，返回其所有可能的全排列。 示例: 输入: [1,2,3] 输出: [   [1,2,3],   [1,3,2],   [2,1,3],   [2,3,1],   [3,1,2],   [3,2,1] ] 解题思路思路①   该题给的输入数组是没有重复项的，故该题采用递归DFS来解决，我们需要用到一个visited数组标记某个数是否访问过，然后DFS递归函数的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="“三次握手，四次挥手”你真的懂吗？">
-<meta property="og:url" content="https://LiuZiQiao.github.io/2019/01/24/“三次握手，四次挥手”你真的懂吗？/index.html">
+<meta property="og:title" content="【LeetCode】46.全排列①">
+<meta property="og:url" content="https://LiuZiQiao.github.io/2019/04/24/【LeetCode】46-全排列①/index.html">
 <meta property="og:site_name" content="LiuxiaoKun">
-<meta property="og:description" content="什么是”三次握手，四次挥手“TCP是一种面向连接的单播协议，在发送数据前，通信双方必须在彼此间建立一条连接。所谓的“连接”，其实是客户端和服务器的内存里保存的一份关于对方的信息，如ip地址、端口号等。 TCP可以看成是一种字节流，它会处理IP层或以下的层的丢包、重复以及错误问题。在连接的建立过程中，双方需要交换一些连接的参数。这些参数可以放在TCP头部。 TCP提供了一种可靠、面向连接、字节流">
+<meta property="og:description" content="题目描述给定一个没有重复数字的序列，返回其所有可能的全排列。 示例: 输入: [1,2,3] 输出: [   [1,2,3],   [1,3,2],   [2,1,3],   [2,3,1],   [3,1,2],   [3,2,1] ] 解题思路思路①   该题给的输入数组是没有重复项的，故该题采用递归DFS来解决，我们需要用到一个visited数组标记某个数是否访问过，然后DFS递归函数的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190124115039196.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190124115225958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190124115513655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190124115650864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190124122642462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-01-24T04:31:02.327Z">
+<meta property="og:updated_time" content="2019-04-24T09:22:16.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="“三次握手，四次挥手”你真的懂吗？">
-<meta name="twitter:description" content="什么是”三次握手，四次挥手“TCP是一种面向连接的单播协议，在发送数据前，通信双方必须在彼此间建立一条连接。所谓的“连接”，其实是客户端和服务器的内存里保存的一份关于对方的信息，如ip地址、端口号等。 TCP可以看成是一种字节流，它会处理IP层或以下的层的丢包、重复以及错误问题。在连接的建立过程中，双方需要交换一些连接的参数。这些参数可以放在TCP头部。 TCP提供了一种可靠、面向连接、字节流">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190124115039196.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="【LeetCode】46.全排列①">
+<meta name="twitter:description" content="题目描述给定一个没有重复数字的序列，返回其所有可能的全排列。 示例: 输入: [1,2,3] 输出: [   [1,2,3],   [1,3,2],   [2,1,3],   [2,3,1],   [3,1,2],   [3,2,1] ] 解题思路思路①   该题给的输入数组是没有重复项的，故该题采用递归DFS来解决，我们需要用到一个visited数组标记某个数是否访问过，然后DFS递归函数的">
 
 
 
@@ -183,7 +176,7 @@
 
 
 
-  <link rel="canonical" href="https://LiuZiQiao.github.io/2019/01/24/“三次握手，四次挥手”你真的懂吗？/"/>
+  <link rel="canonical" href="https://LiuZiQiao.github.io/2019/04/24/【LeetCode】46-全排列①/"/>
 
 
 
@@ -206,7 +199,7 @@
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
 </style>
-  <title>“三次握手，四次挥手”你真的懂吗？ | LiuxiaoKun</title>
+  <title>【LeetCode】46.全排列① | LiuxiaoKun</title>
   
 
 
@@ -396,7 +389,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2019/01/24/“三次握手，四次挥手”你真的懂吗？/">
+    <link itemprop="mainEntityOfPage" href="https://LiuZiQiao.github.io/2019/04/24/【LeetCode】46-全排列①/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiuXiaoKun">
@@ -413,7 +406,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">“三次握手，四次挥手”你真的懂吗？</h2>
+          <h2 class="post-title" itemprop="name headline">【LeetCode】46.全排列①</h2>
         
 
         <div class="post-meta">
@@ -425,8 +418,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T12:30:19+08:00">
-                2019-01-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T17:17:30+08:00">
+                2019-04-24
               </time>
             
 
@@ -441,34 +434,12 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-24T12:31:02+08:00">
-                2019-01-24
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-24T17:22:16+08:00">
+                2019-04-24
               </time>
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -478,8 +449,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/24/“三次握手，四次挥手”你真的懂吗？/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/24/“三次握手，四次挥手”你真的懂吗？/" itemprop="commentsCount"></span>
+                <a href="/2019/04/24/【LeetCode】46-全排列①/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/04/24/【LeetCode】46-全排列①/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -506,7 +477,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,473
+                  1,073
                 </span>
               
 
@@ -522,7 +493,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  16
+                  5
                 </span>
               
             </div>
@@ -544,75 +515,43 @@
 
       
         <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<h3 id="什么是”三次握手，四次挥手“"><a href="#什么是”三次握手，四次挥手“" class="headerlink" title="什么是”三次握手，四次挥手“"></a>什么是”三次握手，四次挥手“</h3><p>TCP是一种面向连接的单播协议，在发送数据前，通信双方必须在彼此间建立一条连接。所谓的“连接”，其实是客户端和服务器的内存里保存的一份关于对方的信息，如ip地址、端口号等。</p>
-<p>TCP可以看成是一种字节流，它会处理IP层或以下的层的丢包、重复以及错误问题。在连接的建立过程中，双方需要交换一些连接的参数。这些参数可以放在TCP头部。</p>
-<p>TCP提供了一种可靠、面向连接、字节流、传输层的服务，采用3次握手建立一个连接。采用4次挥手来关闭一个连接。</p>
-<h4 id="TCP服务模型"><a href="#TCP服务模型" class="headerlink" title="TCP服务模型"></a>TCP服务模型</h4><p>在了解了建立连接、关闭连接的“三次握手和四次挥手”后，我们再来看下TCP相关的东西。</p>
-<p>一个TCP连接由一个4元组构成，分别是两个IP地址和两个端口号。一个TCP连接通常分为三个阶段：启动、数据传输、退出（关闭）。</p>
-<p>当TCP接收到另一端的数据时，它会发送一个确认，但这个确认不会立即发送，一般会延迟一会儿。ACK是累积的，一个确认字节号N的ACK表示所有直到N的字节（不包括N）已经成功被接收了。这样的好处是如果一个ACK丢失，很可能后续的ACK就足以确认前面的报文段了。</p>
-<p>一个完整的TCP连接是双向和对称的，数据可以在两个方向上平等地流动。给上层应用程序提供一种双工服务。一旦建立了一个连接，这个连接的一个方向上的每个TCP报文段都包含了相反方向上的报文段的一个ACK。</p>
-<p>序列号的作用是使得一个TCP接收端可丢弃重复的报文段，记录以杂乱次序到达的报文段。因为TCP使用IP来传输报文段，而IP不提供重复消除或者保证次序正确的功能。另一方面，TCP是一个字节流协议，绝不会以杂乱的次序给上层程序发送数据。因此TCP接收端会被迫先保持大序列号的数据不交给应用程序，直到缺失的小序列号的报文段被填满。</p>
-<h4 id="TCP头部"><a href="#TCP头部" class="headerlink" title="TCP头部"></a>TCP头部</h4><p><img src="https://img-blog.csdnimg.cn/20190124115039196.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="1"><br>源端口和目的端口在TCP层确定双方进程，序列号表示的是报文段数据中的第一个字节号，ACK表示确认号，该确认号的发送方期待接收的下一个序列号，即最后被成功接收的数据字节序列号加1，这个字段只有在ACK位被启用的时候才有效。</p>
-<p>当新建一个连接时，从客户端发送到服务端的第一个报文段的SYN位被启用，这称为SYN报文段，这时序列号字段包含了在本次连接的这个方向上要使用的第一个序列号，即初始序列号ISN，之后发送的数据是ISN加1，因此SYN位字段会消耗一个序列号，这意味着使用重传进行可靠传输。而不消耗序列号的ACK则不是。</p>
-<p>头部长度（图中的数据偏移）以32位字为单位，也就是以4bytes为单位，它只有4位，最大为15，因此头部最大长度为60字节，而其最小为5，也就是头部最小为20字节（可变选项为空）。</p>
-<p>ACK —— 确认，使得确认号有效。 RST —— 重置连接（经常看到的reset by peer）就是此字段搞的鬼。 SYN —— 用于初如化一个连接的序列号。 FIN —— 该报文段的发送方已经结束向对方发送数据。</p>
-<p>当一个连接被建立或被终止时，交换的报文段只包含TCP头部，而没有数据。</p>
-<h4 id="状态转换"><a href="#状态转换" class="headerlink" title="状态转换"></a>状态转换</h4><p>三次握手和四次挥手的状态转换如下图<br><img src="https://img-blog.csdnimg.cn/20190124115225958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="2"></p>
-<h3 id="为什么要“三次握手，四次挥手”"><a href="#为什么要“三次握手，四次挥手”" class="headerlink" title="为什么要“三次握手，四次挥手”"></a>为什么要“三次握手，四次挥手”</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><p>换个易于理解的视角来看为什么要3次握手。</p>
-<p>客户端和服务端通信前要进行连接，“3次握手”的作用就是双方都能明确自己和对方的收、发能力是正常的。</p>
-<p>第一次握手：客户端发送网络包，服务端收到了。这样服务端就能得出结论：客户端的发送能力、服务端的接收能力是正常的。</p>
-<p>第二次握手：服务端发包，客户端收到了。这样客户端就能得出结论：服务端的接收、发送能力，客户端的接收、发送能力是正常的。 从客户端的视角来看，我接到了服务端发送过来的响应数据包，说明服务端接收到了我在第一次握手时发送的网络包，并且成功发送了响应数据包，这就说明，服务端的接收、发送能力正常。而另一方面，我收到了服务端的响应数据包，说明我第一次发送的网络包成功到达服务端，这样，我自己的发送和接收能力也是正常的。</p>
-<p>第三次握手：客户端发包，服务端收到了。这样服务端就能得出结论：客户端的接收、发送能力，服务端的发送、接收能力是正常的。 第一、二次握手后，服务端并不知道客户端的接收能力以及自己的发送能力是否正常。而在第三次握手时，服务端收到了客户端对第二次握手作的回应。从服务端的角度，我在第二次握手时的响应数据发送出去了，客户端接收到了。所以，我的发送能力是正常的。而客户端的接收能力也是正常的。</p>
-<p>经历了上面的三次握手过程，客户端和服务端都确认了自己的接收、发送能力是正常的。之后就可以正常通信了。</p>
-<p>每次都是接收到数据包的一方可以得到一些结论，发送的一方其实没有任何头绪。我虽然有发包的动作，但是我怎么知道我有没有发出去，而对方有没有接收到呢？</p>
-<p>而从上面的过程可以看到，最少是需要三次握手过程的。两次达不到让双方都得出自己、对方的接收、发送能力都正常的结论。其实每次收到网络包的一方至少是可以得到：对方的发送、我方的接收是正常的。而每一步都是有关联的，下一次的“响应”是由于第一次的“请求”触发，因此每次握手其实是可以得到额外的结论的。比如第三次握手时，服务端收到数据包，表明看服务端只能得到客户端的发送能力、服务端的接收能力是正常的，但是结合第二次，说明服务端在第二次发送的响应包，客户端接收到了，并且作出了响应，从而得到额外的结论：客户端的接收、服务端的发送是正常的。</p>
-<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><p>TCP连接是双向传输的对等的模式，就是说双方都可以同时向对方发送或接收数据。当有一方要关闭连接时，会发送指令告知对方，我要关闭连接了。这时对方会回一个ACK，此时一个方向的连接关闭。但是另一个方向仍然可以继续传输数据，等到发送完了所有的数据后，会发送一个FIN段来关闭此方向上的连接。接收方发送ACK确认关闭连接。注意，接收到FIN报文的一方只能回复一个ACK, 它是无法马上返回对方一个FIN报文段的，因为结束数据传输的“指令”是上层应用层给出的，我只是一个“搬运工”，我无法了解“上层的意志”。</p>
-<h4 id="“三次握手，四次挥手”是怎么完成的？"><a href="#“三次握手，四次挥手”是怎么完成的？" class="headerlink" title="“三次握手，四次挥手”是怎么完成的？"></a>“三次握手，四次挥手”是怎么完成的？</h4><p>其实3次握手的目的并不只是让通信双方都了解到一个连接正在建立，还在于利用数据包的选项来传输特殊的信息，交换初始序列号ISN。</p>
-<p>3次握手是指发送了3个报文段，4次挥手是指发送了4个报文段。注意，SYN和FIN段都是会利用重传进行可靠传输的。<br><img src="https://img-blog.csdnimg.cn/20190124115513655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="3"></p>
-<h5 id="三次握手-1"><a href="#三次握手-1" class="headerlink" title="三次握手"></a>三次握手</h5><ol>
-<li><p>客户端发送一个FIN段，并包含一个希望接收者看到的自己当前的序列号K. 同时还包含一个ACK表示确认对方最近一次发过来的数据。 </p>
-</li>
-<li><p>服务端将K值加1作为ACK序号值，表明收到了上一个包。这时上层的应用程序会被告知另一端发起了关闭操作，通常这将引起应用程序发起自己的关闭操作。</p>
-</li>
-<li><p>服务端发起自己的FIN段，ACK=K+1, Seq=L 4. 客户端确认。ACK=L+1</p>
-<h5 id="四次挥手-1"><a href="#四次挥手-1" class="headerlink" title="四次挥手"></a>四次挥手</h5><p><img src="https://img-blog.csdnimg.cn/20190124115650864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="4"></p>
-</li>
-<li><p>客户端发送一个FIN段，并包含一个希望接收者看到的自己当前的序列号K. 同时还包含一个ACK表示确认对方最近一次发过来的数据。 </p>
-</li>
-<li><p>服务端将K值加1作为ACK序号值，表明收到了上一个包。这时上层的应用程序会被告知另一端发起了关闭操作，通常这将引起应用程序发起自己的关闭操作。</p>
-</li>
-<li><p>服务端发起自己的FIN段，ACK=K+1, Seq=L 4. 客户端确认。ACK=L+1</p>
-</li>
-</ol>
-<h4 id="为什么建立连接的时候是三次握手，而关闭连接却是四次挥手呢？"><a href="#为什么建立连接的时候是三次握手，而关闭连接却是四次挥手呢？" class="headerlink" title="为什么建立连接的时候是三次握手，而关闭连接却是四次挥手呢？"></a>为什么建立连接的时候是三次握手，而关闭连接却是四次挥手呢？</h4><p>这是因为服务端在LISTEN状态下，收到建立连接请求的SYN报文后，把ACK和SYN放在一个报文里发送给客户端。而关闭连接时，当收到对方的FIN报文时，仅仅表示对方不再发送数据了但是还能接收数据，己方是否现在关闭发送数据通道，需要上层应用来决定，因此，己方ACK和FIN一般都会分开发送。</p>
-<h3 id="”三次握手，四次挥手“进阶"><a href="#”三次握手，四次挥手“进阶" class="headerlink" title="”三次握手，四次挥手“进阶"></a>”三次握手，四次挥手“进阶</h3><h4 id="ISN"><a href="#ISN" class="headerlink" title="ISN"></a>ISN</h4><p>三次握手的一个重要功能是客户端和服务端交换ISN(Initial Sequence Number), 以便让对方知道接下来接收数据的时候如何按序列号组装数据。</p>
-<p>如果ISN是固定的，攻击者很容易猜出后续的确认号。</p>
-<p>ISN = M + F(localhost, localport, remotehost, remoteport)</p>
-<p>M是一个计时器，每隔4毫秒加1。 F是一个Hash算法，根据源IP、目的IP、源端口、目的端口生成一个随机数值。要保证hash算法不能被外部轻易推算得出。</p>
-<h4 id="syn-flood攻击"><a href="#syn-flood攻击" class="headerlink" title="syn flood攻击"></a>syn flood攻击</h4><p>最基本的DoS攻击就是利用合理的服务请求来占用过多的服务资源，从而使合法用户无法得到服务的响应。syn flood属于Dos攻击的一种。</p>
-<p>如果恶意的向某个服务器端口发送大量的SYN包，则可以使服务器打开大量的半开连接，分配TCB（Transmission Control Block）, 从而消耗大量的服务器资源，同时也使得正常的连接请求无法被相应。当开放了一个TCP端口后，该端口就处于Listening状态，不停地监视发到该端口的Syn报文，一 旦接收到Client发来的Syn报文，就需要为该请求分配一个TCB，通常一个TCB至少需要280个字节，在某些操作系统中TCB甚至需要1300个字节，并返回一个SYN ACK命令，立即转为SYN-RECEIVED即半开连接状态。系统会为此耗尽资源。</p>
-<p>常见的防攻击方法有：</p>
-<h5 id="无效连接的监视释放"><a href="#无效连接的监视释放" class="headerlink" title="无效连接的监视释放"></a>无效连接的监视释放</h5><p>监视系统的半开连接和不活动连接，当达到一定阈值时拆除这些连接，从而释放系统资源。这种方法对于所有的连接一视同仁，而且由于SYN Flood造成的半开连接数量很大，正常连接请求也被淹没在其中被这种方式误释放掉，因此这种方法属于入门级的SYN Flood方法。</p>
-<h5 id="延缓TCB分配方法"><a href="#延缓TCB分配方法" class="headerlink" title="延缓TCB分配方法"></a>延缓TCB分配方法</h5><p>消耗服务器资源主要是因为当SYN数据报文一到达，系统立即分配TCB，从而占用了资源。而SYN Flood由于很难建立起正常连接，因此，当正常连接建立起来后再分配TCB则可以有效地减轻服务器资源的消耗。常见的方法是使用Syn Cache和Syn Cookie技术。</p>
-<h5 id="使用SYN-Proxy防火墙"><a href="#使用SYN-Proxy防火墙" class="headerlink" title="使用SYN Proxy防火墙"></a>使用SYN Proxy防火墙</h5><p>一种方式是防止墙dqywb连接的有效性后，防火墙才会向内部服务器发起SYN请求。防火墙代服务器发出的SYN ACK包使用的序列号为c, 而真正的服务器回应的序列号为c’, 这样，在每个数据报文经过防火墙的时候进行序列号的修改。另一种方式是防火墙确定了连接的安全后，会发出一个safe reset命令，client会进行重新连接，这时出现的syn报文会直接放行。这样不需要修改序列号了。但是，client需要发起两次握手过程，因此建立连接的时间将会延长。</p>
-<h4 id="连接队列"><a href="#连接队列" class="headerlink" title="连接队列"></a>连接队列</h4><p>在外部请求到达时，被服务程序最终感知到前，连接可能处于SYN_RCVD状态或是ESTABLISHED状态，但还未被应用程序接受。<br><img src="https://img-blog.csdnimg.cn/20190124122642462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NDc4MjM3,size_16,color_FFFFFF,t_70" alt="5"><br>对应地，服务器端也会维护两种队列，处于SYN_RCVD状态的半连接队列，而处于ESTABLISHED状态但仍未被应用程序accept的为全连接队列。如果这两个队列满了之后，就会出现各种丢包的情形。</p>
-<p>查看是否有连接溢出 <code>netstat -s | grep LISTEN</code></p>
-<h5 id="半连接队列满了"><a href="#半连接队列满了" class="headerlink" title="半连接队列满了"></a>半连接队列满了</h5><p>在三次握手协议中，服务器维护一个半连接队列，该队列为每个客户端的SYN包开设一个条目(服务端在接收到SYN包的时候，就已经创建了request_sock结构，存储在半连接队列中)，该条目表明服务器已收到SYN包，并向客户发出确认，正在等待客户的确认包。这些条目所标识的连接在服务器处于Syn_RECV状态，当服务器收到客户的确认包时，删除该条目，服务器进入ESTABLISHED状态。</p>
-<h5 id="全连接队列满了"><a href="#全连接队列满了" class="headerlink" title="全连接队列满了"></a>全连接队列满了</h5><p>当第三次握手时，当server接收到ACK包之后，会进入一个新的叫 accept 的队列。</p>
-<p>当accept队列满了之后，即使client继续向server发送ACK的包，也会不被响应，此时ListenOverflows+1，同时server通过tcp_abort_on_overflow来决定如何返回，0表示直接丢弃该ACK，1表示发送RST通知client；相应的，client则会分别返回read timeout 或者 connection reset by peer。另外，tcp_abort_on_overflow是0的话，server过一段时间再次发送syn+ack给client（也就是重新走握手的第二步），如果client超时等待比较短，就很容易异常了。而客户端收到多个 SYN ACK 包，则会认为之前的 ACK 丢包了。于是促使客户端再次发送 ACK ，在 accept队列有空闲的时候最终完成连接。若 accept队列始终满员，则最终客户端收到 RST 包（此时服务端发送syn+ack的次数超出了tcp_synack_retries）。</p>
-<p>服务端仅仅只是创建一个定时器，以固定间隔重传syn和ack到服务端</p>
-<h5 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h5><p><code>netstat -s</code>命令</p>
-<p>[root@server ~]# netstat -s | grep “listen|LISTEN” </p>
-<p>上面看到的 667399 times ，表示全连接队列溢出的次数，隔几秒钟执行下，如果这个数字一直在增加的话肯定全连接队列偶尔满了。</p>
-<p>[root@server ~]# netstat -s | grep TCPBacklogDrop </p>
-<p>查看 Accept queue 是否有溢出</p>
-<p>ss命令</p>
-<p>[root@server ~]# ss -lnt</p>
-<p>如果State是listen状态，Send-Q 表示第三列的listen端口上的全连接队列最大为50，第一列Recv-Q为全连接队列当前使用了多少。 非 LISTEN 状态中 Recv-Q 表示 receive queue 中的 bytes 数量；Send-Q 表示 send queue 中的 bytes 数值。</p>
-<h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><p>当外部连接请求到来时，TCP模块会首先查看max_syn_backlog，如果处于SYN_RCVD状态的连接数目超过这一阈值，进入的连接会被拒绝。根据tcp_abort_on_overflow字段来决定是直接丢弃，还是直接reset.</p>
-<p>从服务端来说，三次握手中，第一步server接受到client的syn后，把相关信息放到半连接队列中，同时回复syn+ack给client. 第三步当收到客户端的ack, 将连接加入到全连接队列。</p>
-<p>一般，全连接队列比较小，会先满，此时半连接队列还没满。如果这时收到syn报文，则会进入半连接队列，没有问题。但是如果收到了三次握手中的第3步(ACK)，则会根据tcp_abort_on_overflow字段来决定是直接丢弃，还是直接reset.此时，客户端发送了ACK, 那么客户端认为三次握手完成，它认为服务端已经准备好了接收数据的准备。但此时服务端可能因为全连接队列满了而无法将连接放入，会重新发送第2步的syn+ack, 如果这时有数据到来，服务器TCP模块会将数据存入队列中。一段时间后，client端没收到回复，超时，连接异常，client会主动关闭连接。</p>
-
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个没有重复数字的序列，返回其所有可能的全排列。</p>
+<p>示例:</p>
+<pre><code>输入: [1,2,3]
+输出:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
+</code></pre><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="思路①"><a href="#思路①" class="headerlink" title="思路①"></a>思路①</h4><p>   该题给的输入数组是没有重复项的，故该题采用递归DFS来解决，我们需要用到一个visited数组标记某个数是否访问过，然后DFS递归函数的的循环应该从头开始，为什么要用visited来标记数组中个的某个数是否用过，因为求全排列的过程中每个位置都可能放任意一个数，这样就会出现数字被重复使用。</p>
+<h4 id="思路②"><a href="#思路②" class="headerlink" title="思路②"></a>思路②</h4><p>还有一种递归的写法，比上面的简单一些，就是每次交换num里面的两个数字，经过递归可以生产所有排列情况。</p>
+<h4 id="思路③"><a href="#思路③" class="headerlink" title="思路③"></a>思路③</h4><p>第三种思路其实就是我们在数学中学过的排列组合思想，这种方法挺不错的：   </p>
+<pre><code>当n=1时，数组中只有一个数A1；即全排列只有一种A1
+当n=2时，数组此时有A1A2，其全排列只有两种，A1A2，A2A1, 那么此时我们考虑和上面那种情况的关系，我们发现，其实就是在a1的前后两个位置分别加入了A2 
+当n=3时，数组中有A1A2A3，此时全排列有六种，分别为A1A2A3, A1A3A2, A2A1A3, A2A3A1, A3A1A2, 和A3A2A1。
+那么根据上面的结论，实际上是在A1A2和A2A1的基础上在不同的位置上加入A3而得到的。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_A1_A2_ : A3A1A2, A1A3A2, A1A2A3</span><br><span class="line"></span><br><span class="line">_A2_A1_ : A3A2A1, A2A3A1, A2A1A3</span><br></pre></td></tr></table></figure>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h4 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ret;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; out;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; visited(nums.size(),<span class="number">0</span>);</span><br><span class="line">        premuteDFS(nums,<span class="number">0</span>,visited,out,ret);</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">premuteDFS</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;num,<span class="keyword">int</span> level, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;visited,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;out,<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; ret)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(level == num.size())&#123;</span><br><span class="line">            ret.push_back(out);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i= <span class="number">0</span>;i&lt;num.size();++i)&#123;</span><br><span class="line">                <span class="keyword">if</span>(visited[i] == <span class="number">0</span>)&#123;</span><br><span class="line">                    visited[i] = <span class="number">1</span>;</span><br><span class="line">                    out.push_back(num[i]);</span><br><span class="line">                    premuteDFS(num,level+<span class="number">1</span>,visited,out,ret);</span><br><span class="line">                    out.pop_back();</span><br><span class="line">                    visited[i] = <span class="number">0</span>;</span><br><span class="line">                &#125;   </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<pre><code>[[3,2,1],[2,3,1],[2,1,3],[3,1,2],[1,3,2],[1,2,3]]
+</code></pre><h4 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ret;</span><br><span class="line">       </span><br><span class="line">        premuteDFS(nums,<span class="number">0</span>,ret);</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">premuteDFS</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;num,<span class="keyword">int</span> start, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; ret)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(start &gt;= num.size())&#123;</span><br><span class="line">            ret.push_back(num);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i= start;i&lt;num.size();++i)&#123;</span><br><span class="line">            swap(num[start],num[i]);    </span><br><span class="line">            premuteDFS(num,start+<span class="number">1</span>,ret);</span><br><span class="line">            swap(num[start],num[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<pre><code>[[3,2,1],[2,3,1],[2,1,3],[3,1,2],[1,3,2],[1,2,3]]
+</code></pre><h4 id="解法三"><a href="#解法三" class="headerlink" title="解法三"></a>解法三</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ret;</span><br><span class="line">        <span class="keyword">if</span>(nums.empty()) </span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; (<span class="number">1</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="keyword">int</span> first = nums[<span class="number">0</span>];</span><br><span class="line">        nums.erase(nums.begin());</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; words = permute(nums);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;a:words)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=a.size();++i)&#123;</span><br><span class="line">                a.insert(a.begin()+i,first);</span><br><span class="line">                ret.push_back(a);</span><br><span class="line">                a.erase(a.begin()+i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<pre><code>[[3,2,1],[2,3,1],[2,1,3],[3,1,2],[1,3,2],[1,2,3]]
+</code></pre><p>上面的三种解法都是递归的，当然，还有一种方法叫迭代法，以下使用迭代的方法来做。下面这个解法就上面解法的迭代写法，核心思路都是一样的，都是在现有的排列的基础上，每个空位插入一个数字，从而生成各种的全排列的情况，参见代码如下：</p>
+<h4 id="解法四"><a href="#解法四" class="headerlink" title="解法四"></a>解法四</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ret&#123;&#123;&#125;&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> a:nums)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=ret.size();i&gt;<span class="number">0</span>;--i)&#123;</span><br><span class="line">                <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; t = ret.front();</span><br><span class="line">                ret.erase(ret.begin());</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=t.size();++j)&#123;</span><br><span class="line">                    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; one = t;</span><br><span class="line">                    one.insert(one.begin()+j,a);</span><br><span class="line">                    ret.push_back(one);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>结果：<br>    [[3,2,1],[2,3,1],[2,1,3],[3,1,2],[1,3,2],[1,2,3]]</p>
+<h4 id="解法五"><a href="#解法五" class="headerlink" title="解法五"></a>解法五</h4><p>还有一种解法，就是用到STL的内置函数next_permutation();<br>专门就是用来返回一个全排列。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ret;</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        ret.push_back(nums);</span><br><span class="line">        <span class="keyword">while</span>(next_permutation(nums.begin(),nums.end()))&#123;</span><br><span class="line">            ret.push_back(nums);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<pre><code>[[3,2,1],[2,3,1],[2,1,3],[3,1,2],[1,3,2],[1,2,3]]
+</code></pre>
       
     </div>
     
@@ -634,12 +573,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2019/01/24/“三次握手，四次挥手”你真的懂吗？/">“三次握手，四次挥手”你真的懂吗？</a></p>
+  <p><span>本文标题:</span><a href="/2019/04/24/【LeetCode】46-全排列①/">【LeetCode】46.全排列①</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 LiuXiaoKun 的个人博客">LiuXiaoKun</a></p>
-  <p><span>发布时间:</span>2019年01月24日 - 12:01</p>
-  <p><span>最后更新:</span>2019年01月24日 - 12:01</p>
-  <p><span>原始链接:</span><a href="/2019/01/24/“三次握手，四次挥手”你真的懂吗？/" title="“三次握手，四次挥手”你真的懂吗？">https://LiuZiQiao.github.io/2019/01/24/“三次握手，四次挥手”你真的懂吗？/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/01/24/“三次握手，四次挥手”你真的懂吗？/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年04月24日 - 17:04</p>
+  <p><span>最后更新:</span>2019年04月24日 - 17:04</p>
+  <p><span>原始链接:</span><a href="/2019/04/24/【LeetCode】46-全排列①/" title="【LeetCode】46.全排列①">https://LiuZiQiao.github.io/2019/04/24/【LeetCode】46-全排列①/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://LiuZiQiao.github.io/2019/04/24/【LeetCode】46-全排列①/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -662,12 +601,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/TCP/" rel="tag"><i class="fa fa-tag"></i> TCP</a>
-          
-        </div>
       
 
       
@@ -693,8 +626,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/03/CentOS7安装更新git的正确打开方式/" rel="next" title="CentOS7安装更新git的正确打开方式">
-                <i class="fa fa-chevron-left"></i> CentOS7安装更新git的正确打开方式
+              <a href="/2019/04/23/day43【nowcoder】求和/" rel="next" title="【nowcoder】求和">
+                <i class="fa fa-chevron-left"></i> 【nowcoder】求和
               </a>
             
           </div>
@@ -702,10 +635,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/24/二叉搜索树的第k个结点/" rel="prev" title="二叉搜索树的第k个结点">
-                二叉搜索树的第k个结点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -954,7 +883,7 @@ var ap = new APlayer({
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是”三次握手，四次挥手“"><span class="nav-number">1.</span> <span class="nav-text">什么是”三次握手，四次挥手“</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP服务模型"><span class="nav-number">1.1.</span> <span class="nav-text">TCP服务模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP头部"><span class="nav-number">1.2.</span> <span class="nav-text">TCP头部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#状态转换"><span class="nav-number">1.3.</span> <span class="nav-text">状态转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要“三次握手，四次挥手”"><span class="nav-number">2.</span> <span class="nav-text">为什么要“三次握手，四次挥手”</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#“三次握手，四次挥手”是怎么完成的？"><span class="nav-number">2.3.</span> <span class="nav-text">“三次握手，四次挥手”是怎么完成的？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#三次握手-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四次挥手-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么建立连接的时候是三次握手，而关闭连接却是四次挥手呢？"><span class="nav-number">2.4.</span> <span class="nav-text">为什么建立连接的时候是三次握手，而关闭连接却是四次挥手呢？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#”三次握手，四次挥手“进阶"><span class="nav-number">3.</span> <span class="nav-text">”三次握手，四次挥手“进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ISN"><span class="nav-number">3.1.</span> <span class="nav-text">ISN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#syn-flood攻击"><span class="nav-number">3.2.</span> <span class="nav-text">syn flood攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#无效连接的监视释放"><span class="nav-number">3.2.1.</span> <span class="nav-text">无效连接的监视释放</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#延缓TCB分配方法"><span class="nav-number">3.2.2.</span> <span class="nav-text">延缓TCB分配方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用SYN-Proxy防火墙"><span class="nav-number">3.2.3.</span> <span class="nav-text">使用SYN Proxy防火墙</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接队列"><span class="nav-number">3.3.</span> <span class="nav-text">连接队列</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#半连接队列满了"><span class="nav-number">3.3.1.</span> <span class="nav-text">半连接队列满了</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#全连接队列满了"><span class="nav-number">3.3.2.</span> <span class="nav-text">全连接队列满了</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#命令"><span class="nav-number">3.3.3.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#小结"><span class="nav-number">3.3.4.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路①"><span class="nav-number">2.1.</span> <span class="nav-text">思路①</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思路②"><span class="nav-number">2.2.</span> <span class="nav-text">思路②</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思路③"><span class="nav-number">2.3.</span> <span class="nav-text">思路③</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解法一"><span class="nav-number">3.1.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法二"><span class="nav-number">3.2.</span> <span class="nav-text">解法二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法三"><span class="nav-number">3.3.</span> <span class="nav-text">解法三</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法四"><span class="nav-number">3.4.</span> <span class="nav-text">解法四</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法五"><span class="nav-number">3.5.</span> <span class="nav-text">解法五</span></a></li></ol></li></ol></div>
             
 
           </div>
