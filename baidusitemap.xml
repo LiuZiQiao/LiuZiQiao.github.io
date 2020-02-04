@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>https://LiuZiQiao.github.io/2018/11/25/%E5%9F%BA%E4%BA%8EMVC%E7%94%A8java%E5%AE%9E%E7%8E%B0%E7%9A%84%E9%80%9A%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%AB%AF/</loc>
+    <lastmod>2020-02-04T03:40:27.730Z</lastmod>
+    <data>
+        <display>
+        <title>基于MVC用java实现的通用系统后端</title>
+        <pubTime>2018-11-25T15:30:49.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Java" url="https://LiuZiQiao.github.io/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://LiuZiQiao.github.io/2020/01/28/python%E5%AD%97%E7%AC%A6/</loc>
     <lastmod>2020-01-28T05:29:52.074Z</lastmod>
     <data>
@@ -1839,24 +1857,6 @@
            
              
               <breadCrumb title="Linux" url="https://LiuZiQiao.github.io/categories/Linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://LiuZiQiao.github.io/2018/11/25/%E5%9F%BA%E4%BA%8EMVC%E7%94%A8java%E5%AE%9E%E7%8E%B0%E7%9A%84%E9%80%9A%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2018-11-25T15:31:53.265Z</lastmod>
-    <data>
-        <display>
-        <title>基于MVC用java实现的通用系统后端</title>
-        <pubTime>2018-11-25T15:30:49.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="java" url="https://LiuZiQiao.github.io/categories/java/"/>
           
         </display>
     </data>
