@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>[Python]Python基础之变量以及类型</title>
+      <link href="/2020/02/05/Python-Python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%8F%98%E9%87%8F%E4%BB%A5%E5%8F%8A%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2020/02/05/Python-Python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%8F%98%E9%87%8F%E4%BB%A5%E5%8F%8A%E7%B1%BB%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><a id="more"></a><h2 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h2><p> Python中，存储一个数据，需要一个叫做<code>变量</code>的东西，如下示例: </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num1 = <span class="number">100</span> <span class="comment">#num1就是一个变量，就好一个小菜篮子</span></span><br><span class="line"></span><br><span class="line">num2 = <span class="number">87</span>  <span class="comment">#num2也是一个变量</span></span><br><span class="line"></span><br><span class="line">result = num1 + num2 <span class="comment">#把num1和num2这两个"菜篮子"中的数据进行累加，然后放到 result变量中</span></span><br></pre></td></tr></table></figure><h2 id="变量的类型"><a href="#变量的类型" class="headerlink" title="变量的类型"></a>变量的类型</h2><p> 变量是有不同的类型的，如下所示: </p><p><img src="E:\Hexo\blog\source\images\python1.png" alt=""></p><p>怎样知道一个变量的类型呢？</p><ul><li>在python中，只要定义了一个变量，而且它有数据，那么它的类型就已经确定了，不需要咱们开发者主动的去说明它的类型，系统会自动辨别</li><li>可以使用type(变量的名字)，来查看变量的类型<br>例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;a=<span class="number">10</span></span><br><span class="line">&gt;&gt;print(type(a))</span><br><span class="line">&gt;&gt;&lt;<span class="class"><span class="keyword">class</span> '<span class="title">int</span>'&gt;</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python字符</title>
       <link href="/2020/01/28/python%E5%AD%97%E7%AC%A6/"/>
       <url>/2020/01/28/python%E5%AD%97%E7%AC%A6/</url>
